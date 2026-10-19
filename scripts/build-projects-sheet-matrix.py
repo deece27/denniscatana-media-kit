@@ -260,32 +260,37 @@ def build_project_matrix(posts: list[dict]) -> dict:
                 slot = next((s for s in slots if s["is_prep"]), None) if info["label"] == "Prep" else None
         if not slot and info["day_num"] is not None:
             n = info["day_num"]
-            # Prefer primary Day N column; only use a non-primary same-day
-            # column when the primary already has this platform.
+            plat = post["Platform"]
+            # Prefer primary Day N column; never overwrite it with a side post.
             primary = primary_day_slot(n)
-            if primary and post["Platform"] not in primary["by_platform"]:
+
+            def empty_same_day():
+                return next(
+                    (
+                        s
+                        for s in slots
+                        if s["day_num"] == n and plat not in s["by_platform"]
+                    ),
+                    None,
+                )
+
+            if primary and plat not in primary["by_platform"]:
                 slot = primary
-            elif primary and info.get("primary_day"):
-                # Second official beat for same day (e.g. Day 13 part 2)
+            elif info.get("primary_day"):
+                # Second official beat (e.g. Day 13 part 2)
                 slot = next(
                     (
                         s
                         for s in slots
                         if s["day_num"] == n
                         and s.get("primary_day")
-                        and post["Platform"] not in s["by_platform"]
-                    ),
-                    primary,
-                )
-            else:
-                slot = primary or next(
-                    (
-                        s
-                        for s in slots
-                        if s["day_num"] == n and post["Platform"] not in s["by_platform"]
+                        and plat not in s["by_platform"]
                     ),
                     None,
-                )
+                ) or empty_same_day()
+            else:
+                # Side post mentioning Day N → empty same-day column only
+                slot = empty_same_day()
         if not slot:
             slot = best_title_match(post)
         if slot:

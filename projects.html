@@ -183,17 +183,19 @@
           if (!slot && info.dayNum != null) {
             const n = info.dayNum;
             const primary = primaryDaySlot(n);
-            if (primary && !primary.byPlatform[post.platform]) slot = primary;
-            else if (primary && info.primaryDay) {
+            const emptySameDay = () =>
+              slots.find((s) => s.dayNum === n && !s.byPlatform[post.platform]);
+            if (primary && !primary.byPlatform[post.platform]) {
+              slot = primary;
+            } else if (info.primaryDay) {
+              // Second official beat (e.g. Day 13 part 2) — never overwrite primary
               slot =
                 slots.find(
                   (s) => s.dayNum === n && s.primaryDay && !s.byPlatform[post.platform]
-                ) || primary;
+                ) || emptySameDay();
             } else {
-              slot =
-                primary ||
-                slots.find((s) => s.dayNum === n && !s.byPlatform[post.platform]) ||
-                null;
+              // Side post mentioning Day N → empty same-day column, not occupied primary
+              slot = emptySameDay();
             }
           }
           if (!slot) slot = bestTitleMatch(post);
