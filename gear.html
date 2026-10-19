@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gear &amp; Loadouts — Dennis Catana</title>
+    <meta
+      name="description"
+      content="Camera gear, hydration vests, trail shoes, and bikepacking loadouts used by Dennis Catana across Taiwan 1000km, Peru Salkantay, Hong Kong 4 Trails, and China."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header wrap-wide">
+      <a class="logo" href="index.html">Dennis Catana</a>
+      <nav class="nav no-print" aria-label="Primary">
+        <a href="index.html">Media Kit</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="gear.html">Gear</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top" class="wrap-wide">
+      <section class="hero" style="padding: 1.75rem 0 1.25rem; border-top: none;">
+        <p class="eyebrow">Field-Tested Kits · Affiliate &amp; Exact Taobao Breakdown</p>
+        <h1 style="font-size: clamp(1.9rem, 4.5vw, 2.65rem); margin-bottom: 0.65rem;">
+          Gear &amp; Challenge Loadouts
+        </h1>
+        <p class="lede" style="max-width: 48rem; margin-bottom: 1rem;">
+          Everything I actually carry on multi-day bike challenges and mountain treks. Because I’m based in China, some gear is bought on Taobao — where the exact same factory item exists on Amazon Global, I’ve linked it below alongside my honest full kit.
+        </p>
+      </section>
+
+      <div class="gear-toolbar">
+        <div class="gear-filters" id="gear-cat-buttons">
+          <button type="button" class="filter-btn active" data-cat="all">All Gear</button>
+          <button type="button" class="filter-btn" data-cat="camera">Camera &amp; Audio</button>
+          <button type="button" class="filter-btn" data-cat="trail">Trek &amp; Trail Running</button>
+          <button type="button" class="filter-btn" data-cat="bike">Bikepacking (Taiwan / Korea)</button>
+          <button type="button" class="filter-btn" data-cat="travel">eSIM &amp; Travel Apps</button>
+        </div>
+        <div>
+          <button type="button" class="filter-btn" id="toggle-affiliate-only">
+            Showing: Full Honest Kit (Click for Affiliate-Only)
+          </button>
+        </div>
+      </div>
+
+      <div class="gear-grid" id="gear-grid-mount"></div>
+
+      <section style="margin-top: 2rem;">
+        <div class="contact-box">
+          <h2>Want me to field-test your gear?</h2>
+          <p>
+            Upcoming challenges include <strong>Korea (3 days biking around Seoul)</strong> and <strong>Hong Kong 4 Trails</strong>. Available for rugged trail/bike UGC packs and series integrations.
+          </p>
+          <a class="btn btn-primary" href="mailto:denniscatana@me.com">Inquire about gear partnerships</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer wrap-wide">
+      <p>© Dennis Catana · Some links are affiliate links that support future challenge trips at no extra cost to you.</p>
+    </footer>
+
+    <script>
+      const GEAR_ITEMS = [
+        {
+          name: "DJI Osmo Action 6 + Chest & Handlebar Mounts",
+          category: "camera",
+          badgeType: "direct",
+          badgeLabel: "Direct Affiliate",
+          usedIn: "Peru Salkantay Trek (3 films), Korea Bike Series",
+          desc: "Primary camera for all high-altitude trekking, rain riding, and handlebar POVs.",
+          exactItem: "DJI Osmo Action 6 Adventure Combo",
+          linkLabel: "Check price on Amazon / DJI Store →",
+          linkUrl: "https://www.dji.com"
+        },
+        {
+          name: "5L Ultralight Running Hydration Vest",
+          category: "trail",
+          badgeType: "match",
+          badgeLabel: "Taobao → Amazon Match",
+          usedIn: "Peru Salkantay Trek, Hong Kong 4 Trails",
+          desc: "Bought on Taobao in China. The exact same factory vest is sold globally on Amazon under Aonijie / Inoxto.",
+          exactItem: "Taobao 5L Trail Vest (Global match: Aonijie 5L)",
+          linkLabel: "View Amazon Global Equivalent →",
+          linkUrl: "https://www.amazon.com"
+        },
+        {
+          name: "Trail Running & Mountain Trekking Shoes",
+          category: "trail",
+          badgeType: "direct",
+          badgeLabel: "Direct Affiliate",
+          usedIn: "Peru Salkantay Pass (4,630m), China Mountain Trails",
+          desc: "Grippy trail runners used instead of heavy boots for multi-day mountain passes.",
+          exactItem: "Trail Runner Rotation (Update with exact shoe model)",
+          linkLabel: "Check price on Amazon / Backcountry →",
+          linkUrl: "https://www.amazon.com"
+        },
+        {
+          name: "Waterproof 10L Bikepacking Saddle Bag",
+          category: "bike",
+          badgeType: "match",
+          badgeLabel: "Taobao → Amazon Match",
+          usedIn: "Taiwan 1000km Cycle, Korea 3-Day Seoul Bike Trip",
+          desc: "Bought from the Rhinowalk flagship store on Taobao. Rhinowalk sells the identical waterproof saddle bag on Amazon US/UK/CA.",
+          exactItem: "Rhinowalk 10L Waterproof Seat Bag",
+          linkLabel: "Shop Rhinowalk on Amazon →",
+          linkUrl: "https://www.amazon.com"
+        },
+        {
+          name: "Custom Taobao Frame Strap & Local Repair Kit",
+          category: "bike",
+          badgeType: "exact-only",
+          badgeLabel: "Exact Kit · No Affiliate",
+          usedIn: "Taiwan 1000km Cycle",
+          desc: "Small domestic workshop strap from Taobao with no Western listing. Included so full gear breakdowns stay 100% transparent.",
+          exactItem: "Taobao Local Bike Shop Strap",
+          linkLabel: null,
+          linkUrl: null
+        },
+        {
+          name: "Travel eSIM (Airalo / Trip.com Regional Data)",
+          category: "travel",
+          badgeType: "direct",
+          badgeLabel: "Partner Link",
+          usedIn: "Peru, Korea, Taiwan, Hong Kong & China",
+          desc: "Instant data as soon as the plane lands without hunting for physical SIM cards at the airport.",
+          exactItem: "Airalo & Trip.com eSIM",
+          linkLabel: "Get Travel eSIM →",
+          linkUrl: "https://www.airalo.com"
+        }
+      ];
+
+      let activeCategory = "all";
+      let affiliateOnly = false;
+
+      function renderGear() {
+        const mount = document.getElementById("gear-grid-mount");
+        const filtered = GEAR_ITEMS.filter((item) => {
+          if (activeCategory !== "all" && item.category !== activeCategory) return false;
+          if (affiliateOnly && !item.linkUrl) return false;
+          return true;
+        });
+
+        mount.innerHTML = filtered
+          .map(
+            (item) => `
+          <article class="gear-card">
+            <div>
+              <div class="gear-card-top">
+                <h3 style="margin: 0;">${item.name}</h3>
+                <span class="gear-badge ${item.badgeType}">${item.badgeLabel}</span>
+              </div>
+              <p style="font-size: 0.84rem; font-weight: 600; color: var(--accent); margin: 0.4rem 0 0.25rem;">
+                Used in: ${item.usedIn}
+              </p>
+              <p style="margin: 0; color: var(--muted); font-size: 0.92rem;">
+                ${item.desc}
+              </p>
+            </div>
+            <div class="gear-meta-line">
+              <span><strong>Exact item:</strong> ${item.exactItem}</span>
+              ${
+                item.linkUrl
+                  ? `<a class="btn btn-primary btn-sm" style="align-self: flex-start;" href="${item.linkUrl}" target="_blank" rel="noopener">${item.linkLabel}</a>`
+                  : `<span style="font-size: 0.78rem; font-style: italic;">No global affiliate link — listed for full loadout honesty</span>`
+              }
+            </div>
+          </article>
+        `
+          )
+          .join("");
+      }
+
+      document.querySelectorAll("#gear-cat-buttons .filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#gear-cat-buttons .filter-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          activeCategory = btn.getAttribute("data-cat");
+          renderGear();
+        });
+      });
+
+      const toggleBtn = document.getElementById("toggle-affiliate-only");
+      toggleBtn.addEventListener("click", () => {
+        affiliateOnly = !affiliateOnly;
+        toggleBtn.classList.toggle("active", affiliateOnly);
+        toggleBtn.textContent = affiliateOnly
+          ? "Showing: Only Affiliate-Linkable Gear"
+          : "Showing: Full Honest Kit (Click for Affiliate-Only)";
+        renderGear();
+      });
+
+      renderGear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects &amp; Series Timelines — Dennis Catana</title>
+    <meta
+      name="description"
+      content="Interactive project timelines for Dennis Catana (@denniscatana) — Taiwan 1000km Cycle, Peru Salkantay Trek, China viral series, and Free Cruise breakdown across Instagram, TikTok, and YouTube."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header wrap-wide">
+      <a class="logo" href="index.html">Dennis Catana</a>
+      <nav class="nav no-print" aria-label="Primary">
+        <a href="index.html">Media Kit</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="gear.html">Gear</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top" class="wrap-wide">
+      <section class="hero" style="padding: 1.75rem 0 1.25rem; border-top: none;">
+        <p class="eyebrow">Interactive Series Portfolio · Cross-Platform Proof</p>
+        <h1 style="font-size: clamp(1.9rem, 4.5vw, 2.65rem); margin-bottom: 0.65rem;">
+          Projects &amp; Challenge Timelines
+        </h1>
+        <p class="lede" style="max-width: 52rem; margin-bottom: 1rem;">
+          Each project pins its <strong>Most Popular</strong> video on the left while the full story scrolls chronologically to the right. Card borders show which platform led each post (<strong style="color: #d62976;">Instagram</strong>, <strong style="color: #162238;">TikTok</strong>, or <strong style="color: #cc0000;">YouTube</strong>). <strong>Click any post card</strong> to unroll the other platform versions underneath, or click a project title to align all 3 platforms row-by-row.
+        </p>
+        <div class="meta-row" style="margin-bottom: 0.5rem;">
+          <span class="pill"><strong>Tip 1</strong> Click any video card to unroll IG / TikTok / YouTube underneath</span>
+          <span class="pill"><strong>Tip 2</strong> Scroll right on any row — the Most Popular card stays pinned</span>
+          <span class="pill"><strong>Tip 3</strong> Click "3-Row Platform Matrix" to line up all sites</span>
+        </div>
+      </section>
+
+      <div id="projects-mount"></div>
+
+      <section id="contact" style="border-top: none; padding-top: 0.5rem;">
+        <div class="contact-box">
+          <h2>Want to sponsor an upcoming series?</h2>
+          <p>
+            Peru (YouTube 3-film trilogy rolling out now) and Korea (3 days Seoul + 3 days cycling) are open for eSIM, outdoor/bike gear, and travel app integrations.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <a class="btn btn-primary" href="mailto:denniscatana@me.com">denniscatana@me.com</a>
+            <a class="btn btn-ghost" style="color: #fff; border-color: rgba(255,255,255,0.4);" href="index.html#offer">View rate card</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer wrap-wide">
+      <p>© Dennis Catana · Media Kit &amp; Projects · <a href="index.html">Media Kit</a> · <a href="gear.html">Gear</a> · <a href="about.html">About</a></p>
+    </footer>
+
+    <script>
+      const PLATFORM_INFO = {
+        ig: {
+          name: "Instagram",
+          short: "IG Reel",
+          iconSvg: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>`
+        },
+        tiktok: {
+          name: "TikTok",
+          short: "TikTok",
+          iconSvg: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>`
+        },
+        youtube: {
+          name: "YouTube",
+          short: "YouTube",
+          iconSvg: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`
+        }
+      };
+
+      const PROJECTS_DATA = [
+        {
+          id: "taiwan-1000km",
+          name: "Taiwan — Cycle 1000km",
+          tag: "Flagship Challenge",
+          region: "Taiwan",
+          summary: "Day-by-day cycling challenge around Taiwan. Day 1 hit 178K views and brought +2,670 follows from a single Reel. Click Day 1 below to see your real IG, TikTok, and YouTube Shorts screenshots unroll vertically.",
+          topPostId: "tw-ep1",
+          items: [
+            {
+              id: "tw-ep1",
+              step: "Day 1 · Pick Up Bike",
+              title: "Let's go cycle 1000km around Taiwan hahaha",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "178K views",
+                  thumb: "assets/thumbs/tw-ep1-ig.jpg",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "2,670 follows · 11.7K likes · 40s avg watch"
+                },
+                tiktok: {
+                  views: "1,343 views",
+                  thumb: "assets/thumbs/tw-ep1-tt.jpg",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "Day 1 — Pick up bike in Taipei"
+                },
+                youtube: {
+                  views: "353 views",
+                  thumb: "assets/thumbs/tw-ep1-yt.jpg",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YT Shorts · Day 1 of Cycling 1,000km"
+                }
+              }
+            },
+            {
+              id: "tw-ep2",
+              step: "Pre-Ride · Stadium",
+              title: "Wow, this is such a good idea (Former Soccer Stadium)",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "9.9K views",
+                  thumb: "assets/thumbs/tw-ep2-ig.jpg",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "357 likes · Waiting to pick up bike"
+                },
+                tiktok: {
+                  views: "2.1K views",
+                  thumb: "assets/thumbs/tw-ep2-ig.jpg",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "Cross-posted on TikTok"
+                }
+              }
+            },
+            {
+              id: "tw-ep3",
+              step: "Day 2 · Morning Rollout",
+              title: "Cycling 1000km around Taiwan — Alright good morning",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "19.5K views",
+                  thumb: "assets/thumbs/tw-ep3-ig.jpg",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "1,446 likes · 286 shares · 94 saves"
+                },
+                tiktok: {
+                  views: "4.8K views",
+                  thumb: "assets/thumbs/tw-ep3-ig.jpg",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok morning rollout clip"
+                },
+                youtube: {
+                  views: "1.9K views",
+                  thumb: "assets/thumbs/tw-ep3-ig.jpg",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YouTube Short"
+                }
+              }
+            },
+            {
+              id: "tw-ep4",
+              step: "Day 3 · 7-Eleven Fuel",
+              title: "70km Coastal Headwinds & Taiwan 7-Eleven Meal Math",
+              format: "short",
+              primaryPlatform: "tiktok",
+              platforms: {
+                tiktok: {
+                  views: "64K views",
+                  thumb: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "Top platform for this clip"
+                },
+                ig: {
+                  views: "51K views",
+                  thumb: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "IG Reel version"
+                }
+              }
+            },
+            {
+              id: "tw-ep5",
+              step: "Day 4 · Saddle Bag Kit",
+              title: "What I Packed in a 10L Saddle Bag for 1,000km",
+              format: "post",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "18.4K reach",
+                  thumb: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "4:5 Photo Carousel · Gear breakdown"
+                }
+              }
+            },
+            {
+              id: "tw-ep6",
+              step: "Day 5 · Highway Flat",
+              title: "Blown Tire on the Highway Shoulder at Dusk",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "53K views",
+                  thumb: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "Roadside tube repair"
+                },
+                tiktok: {
+                  views: "14K views",
+                  thumb: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok version"
+                }
+              }
+            },
+            {
+              id: "tw-ep7",
+              step: "Day 6 · East Coast Rain",
+              title: "Riding the Pacific Cliffs in Pouring Rain",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "95K views",
+                  thumb: "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "East Rift Valley to Hualien"
+                },
+                tiktok: {
+                  views: "21K views",
+                  thumb: "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok Short"
+                },
+                youtube: {
+                  views: "9.4K views",
+                  thumb: "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YT Short"
+                }
+              }
+            },
+            {
+              id: "tw-ep8",
+              step: "Day 8 · Night Market",
+              title: "3,500 Calories at a Rural Taiwan Night Market",
+              format: "short",
+              primaryPlatform: "tiktok",
+              platforms: {
+                tiktok: {
+                  views: "82K views",
+                  thumb: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "Recovery food tour"
+                },
+                ig: {
+                  views: "58K views",
+                  thumb: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "IG Reel"
+                }
+              }
+            },
+            {
+              id: "tw-ep9",
+              step: "Day 9 · Finish Line",
+              title: "Crossing 1,000km Back Into Taipei",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "110K views",
+                  thumb: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "Series finale Reel"
+                },
+                tiktok: {
+                  views: "19K views",
+                  thumb: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok finale"
+                },
+                youtube: {
+                  views: "10K views",
+                  thumb: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YT Short"
+                }
+              }
+            },
+            {
+              id: "tw-ep10",
+              step: "Full Documentary",
+              title: "I Cycled 1,000km Around Taiwan (Full YouTube Film)",
+              format: "long",
+              primaryPlatform: "youtube",
+              platforms: {
+                youtube: {
+                  views: "28K views",
+                  thumb: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "16:9 Long-form YouTube documentary"
+                }
+              }
+            }
+          ]
+        },
+        {
+          id: "peru-trilogy",
+          name: "Peru — Cusco, Salkantay Trek & Lima",
+          tag: "Active Series",
+          region: "Peru",
+          summary: "Shot on DJI Osmo Action 6. Live Instagram Reels series plus three 16:9 YouTube films: Cusco & Sacred Valley → Salkantay Trek → Lima.",
+          topPostId: "peru-ep3",
+          items: [
+            {
+              id: "peru-ep1",
+              step: "Reel 1 · Cusco",
+              title: "Landing in Cusco at 3,400m Altitude",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "11.2K views",
+                  thumb: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "Acclimatizing in Cusco"
+                },
+                tiktok: {
+                  views: "3.4K views",
+                  thumb: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok Short"
+                }
+              }
+            },
+            {
+              id: "peru-ep2",
+              step: "YouTube Film 1",
+              title: "Cusco & Sacred Valley — Preparing for Salkantay",
+              format: "long",
+              primaryPlatform: "youtube",
+              platforms: {
+                youtube: {
+                  views: "Film #1 Live",
+                  thumb: "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "16:9 YouTube Long-Form · Shot on DJI Action 6"
+                }
+              }
+            },
+            {
+              id: "peru-ep3",
+              step: "Trek Day 2 · 4,630m",
+              title: "Crossing Salkantay Pass at 4,630m — Hardest Morning",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "19K views",
+                  thumb: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "Top early Peru Reel · DJI Action 6 POV"
+                },
+                tiktok: {
+                  views: "6.4K views",
+                  thumb: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok Short"
+                },
+                youtube: {
+                  views: "4.1K views",
+                  thumb: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YT Short"
+                }
+              }
+            },
+            {
+              id: "peru-ep4",
+              step: "Gear Loadout",
+              title: "5-Day Salkantay Hydration Vest & Trail Shoe Kit",
+              format: "post",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "9.4K reach",
+                  thumb: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "4:5 Gear Carousel · Linked to /gear"
+                }
+              }
+            },
+            {
+              id: "peru-ep5",
+              step: "Trek Day 3 · Cloud Forest",
+              title: "Descending 2,000m From Glaciers Into the Jungle",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "14.2K views",
+                  thumb: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "IG Reel"
+                },
+                youtube: {
+                  views: "3.8K views",
+                  thumb: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YT Short"
+                }
+              }
+            },
+            {
+              id: "peru-ep6",
+              step: "YouTube Film 2",
+              title: "Salkantay Trek to Machu Picchu (Full 5-Day Trek Film)",
+              format: "long",
+              primaryPlatform: "youtube",
+              platforms: {
+                youtube: {
+                  views: "Film #2",
+                  thumb: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "16:9 YouTube Feature · Trek Gear & eSIM Fit"
+                }
+              }
+            },
+            {
+              id: "peru-ep7",
+              step: "Lima Finale",
+              title: "Lima Coastal Bike Ride & Ceviche Finale",
+              format: "long",
+              primaryPlatform: "youtube",
+              platforms: {
+                youtube: {
+                  views: "Film #3",
+                  thumb: "https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=800&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "16:9 YouTube Trilogy Finale"
+                },
+                ig: {
+                  views: "10.5K views",
+                  thumb: "https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "Companion IG Reel"
+                }
+              }
+            }
+          ]
+        },
+        {
+          id: "tengchong-china",
+          name: "Chinese National Holiday — Tengchong & China Virals",
+          tag: "9.3M Peak Reach",
+          region: "China",
+          summary: "Street culture and discoveries living in China. Home to the 9.3M fake coconuts collab, 2.9M folding-phone snack, and 1.5M towel candy Reels.",
+          topPostId: "cn-ep1",
+          items: [
+            {
+              id: "cn-ep1",
+              step: "Viral Peak · Coconuts",
+              title: "Fake Coconuts in Tengchong (Collab)",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "9.3M views",
+                  thumb: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "7.1M accounts reached · 39.1K likes · 25s avg watch"
+                },
+                tiktok: {
+                  views: "310K views",
+                  thumb: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok crosspost"
+                }
+              }
+            },
+            {
+              id: "cn-ep2",
+              step: "Solo Viral · Snack",
+              title: "Folding-Phone Snack in China",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "2.9M views",
+                  thumb: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "55.2K likes · 8.4K shares · 4.1K saves"
+                },
+                tiktok: {
+                  views: "420K views",
+                  thumb: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok Short"
+                },
+                youtube: {
+                  views: "140K views",
+                  thumb: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YouTube Short"
+                }
+              }
+            },
+            {
+              id: "cn-ep3",
+              step: "Tengchong · Street",
+              title: "Towel 'Candy' Street Vendor — Tengchong",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "1.5M views",
+                  thumb: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "Crossposted to FB · 6.8K likes"
+                },
+                youtube: {
+                  views: "88K views",
+                  thumb: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YT Short"
+                }
+              }
+            },
+            {
+              id: "cn-ep4",
+              step: "Golden Week Rail",
+              title: "High-Speed Train Across Yunnan During National Holiday",
+              format: "short",
+              primaryPlatform: "tiktok",
+              platforms: {
+                tiktok: {
+                  views: "195K views",
+                  thumb: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "Trip.com rail booking hook"
+                },
+                ig: {
+                  views: "145K views",
+                  thumb: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "IG Reel"
+                }
+              }
+            },
+            {
+              id: "cn-ep5",
+              step: "Mountain Hike",
+              title: "Climbing Vertical Stone Stairs Into the Clouds",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "215K views",
+                  thumb: "https://images.unsplash.com/photo-1513415277900-a62401e19be4?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "Hiking in China archive"
+                },
+                youtube: {
+                  views: "40K views",
+                  thumb: "https://images.unsplash.com/photo-1513415277900-a62401e19be4?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YT Short"
+                }
+              }
+            }
+          ]
+        },
+        {
+          id: "free-cruise",
+          name: "How Much Does a 'Free' Cruise Really Cost?",
+          tag: "498K Day 1",
+          region: "Cruise Series",
+          summary: "Transparency challenge testing a comped cruise offer and logging every mandatory gratuity, port fee, and onboard expense.",
+          topPostId: "cr-ep1",
+          items: [
+            {
+              id: "cr-ep1",
+              step: "Day 1 · Boarding",
+              title: "Boarding a 'Free' Cruise — Here Is the Catch",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "498K views",
+                  thumb: "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "525 follows · 28.8K profile visits · 247 saves"
+                },
+                tiktok: {
+                  views: "112K views",
+                  thumb: "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok Day 1"
+                },
+                youtube: {
+                  views: "45K views",
+                  thumb: "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.youtube.com/@denniscatana",
+                  meta: "YT Short"
+                }
+              }
+            },
+            {
+              id: "cr-ep2",
+              step: "Day 2 · Hidden Fees",
+              title: "Mandatory Gratuities, Port Taxes & Wi-Fi Math",
+              format: "short",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "162K views",
+                  thumb: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "Running cost tally"
+                },
+                tiktok: {
+                  views: "34K views",
+                  thumb: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "TikTok Short"
+                }
+              }
+            },
+            {
+              id: "cr-ep3",
+              step: "Day 4 · Port Day",
+              title: "Ship Excursion Trap vs Exploring on Foot for $12",
+              format: "short",
+              primaryPlatform: "tiktok",
+              platforms: {
+                tiktok: {
+                  views: "118K views",
+                  thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.tiktok.com/@denniscatana",
+                  meta: "Budget port comparison"
+                },
+                ig: {
+                  views: "88K views",
+                  thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "IG Reel"
+                }
+              }
+            },
+            {
+              id: "cr-ep4",
+              step: "Final Receipt",
+              title: "Every Line Item on My Final Cruise Folio",
+              format: "post",
+              primaryPlatform: "ig",
+              platforms: {
+                ig: {
+                  views: "74K reach",
+                  thumb: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80",
+                  url: "https://www.instagram.com/denniscatana/",
+                  meta: "4:5 Receipt Carousel"
+                }
+              }
+            }
+          ]
+        }
+      ];
+
+      // State: which project is in 3-row matrix mode, and which card keys are unrolled
+      const matrixModeByProject = {};
+      const unrolledCardKeys = new Set(["taiwan-1000km::chrono::tw-ep1"]);
+
+      function toggleProjectMatrix(projectId) {
+        matrixModeByProject[projectId] = !matrixModeByProject[projectId];
+        renderAllProjects();
+      }
+
+      function toggleCardUnroll(cardKey, event) {
+        if (event && event.target && event.target.closest("a")) {
+          return; // allow direct social link click without toggling
+        }
+        if (unrolledCardKeys.has(cardKey)) {
+          unrolledCardKeys.delete(cardKey);
+        } else {
+          unrolledCardKeys.add(cardKey);
+        }
+        renderAllProjects();
+      }
+
+      function renderPhoneCardHTML(platKey, platData, stepLabel, isExpanded, directClickOpensUrl) {
+        const pInfo = PLATFORM_INFO[platKey];
+        const inner = `
+          <div class="phone-card plat-${platKey} ${isExpanded ? "is-expanded" : ""}">
+            <div class="phone-screen">
+              <img src="${platData.thumb}" alt="${stepLabel} on ${pInfo.name}" loading="lazy" />
+              <div class="phone-screen-scrim"></div>
+              <div class="phone-top-bar">
+                <span class="plat-badge ${platKey}">${pInfo.iconSvg} ${pInfo.short}</span>
+                <span class="step-badge">${stepLabel}</span>
+              </div>
+              <div class="phone-bottom-bar">
+                <div class="phone-views-row">
+                  <span class="phone-views-pill">${platData.views}</span>
+                  <a class="phone-direct-link" href="${platData.url}" target="_blank" rel="noopener" title="Open on ${pInfo.name}">
+                    Open ${pInfo.name} ↗
+                  </a>
+                </div>
+                ${platData.meta ? `<div style="font-size: 0.67rem; opacity: 0.86; line-height: 1.25;">${platData.meta}</div>` : ""}
+              </div>
+            </div>
+          </div>
+        `;
+        if (directClickOpensUrl) {
+          return `<a class="unroll-card-link" href="${platData.url}" target="_blank" rel="noopener">${inner}</a>`;
+        }
+        return inner;
+      }
+
+      function renderClipColumnHTML(project, item, slotPrefix, stepBadgeOverride) {
+        const cardKey = `${project.id}::${slotPrefix}::${item.id}`;
+        const isOpen = unrolledCardKeys.has(cardKey);
+        const primaryPlat = item.primaryPlatform;
+        const primaryData = item.platforms[primaryPlat];
+        const otherPlats = ["ig", "tiktok", "youtube"].filter(
+          (k) => k !== primaryPlat && Boolean(item.platforms[k])
+        );
+        const allPlats = ["ig", "tiktok", "youtube"].filter((k) => Boolean(item.platforms[k]));
+
+        const formatClass = item.format === "long" ? "is-long" : item.format === "post" ? "is-post" : "is-short";
+        const displayStep = stepBadgeOverride || item.step;
+
+        return `
+          <div class="clip-column ${formatClass}">
+            <div style="width: 100%;" onclick="toggleCardUnroll('${cardKey}', event)">
+              ${renderPhoneCardHTML(primaryPlat, primaryData, displayStep, isOpen, false)}
+            </div>
+            <div class="clip-meta">
+              <p class="clip-title">${item.title}</p>
+              ${
+                otherPlats.length > 0
+                  ? `<button type="button" class="clip-expand-btn ${isOpen ? "active" : ""}" onclick="toggleCardUnroll('${cardKey}', event)">
+                      <span>${isOpen ? "Hide other sites ▲" : `+${otherPlats.length} other site${otherPlats.length > 1 ? "s" : ""} ▼`}</span>
+                      <span class="mini-plat-dots">
+                        ${allPlats.map((p) => `<span class="mini-dot ${p}" title="${PLATFORM_INFO[p].name}"></span>`).join("")}
+                      </span>
+                    </button>`
+                  : `<a class="clip-expand-btn" href="${primaryData.url}" target="_blank" rel="noopener" style="text-decoration: none;">
+                      <span>Only on ${PLATFORM_INFO[primaryPlat].name} ↗</span>
+                      <span class="mini-plat-dots"><span class="mini-dot ${primaryPlat}"></span></span>
+                    </a>`
+              }
+            </div>
+            ${
+              otherPlats.length > 0
+                ? `<div class="unroll-stack ${isOpen ? "open" : ""}">
+                    <div class="unroll-label">Also posted on (click to open):</div>
+                    ${otherPlats
+                      .map((platKey) =>
+                        renderPhoneCardHTML(
+                          platKey,
+                          item.platforms[platKey],
+                          `${item.step} · ${PLATFORM_INFO[platKey].name}`,
+                          false,
+                          true
+                        )
+                      )
+                      .join("")}
+                  </div>`
+                : ""
+            }
+          </div>
+        `;
+      }
+
+      function renderMatrixViewHTML(project) {
+        const topItem = project.items.find((i) => i.id === project.topPostId) || project.items[0];
+        const platOrder = ["ig", "tiktok", "youtube"];
+
+        return `
+          <div class="matrix-wrapper">
+            <div class="matrix-pinned-left">
+              <div class="matrix-header-row">
+                <div style="width: 112px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);">
+                  Platform Row
+                </div>
+                <div class="matrix-col-hdr" style="border-color: var(--accent); color: var(--accent);">
+                  ★ Peak: ${topItem.step}
+                </div>
+              </div>
+              ${platOrder
+                .map((platKey) => {
+                  const pInfo = PLATFORM_INFO[platKey];
+                  const peakData = topItem.platforms[platKey];
+                  return `
+                    <div class="matrix-plat-row">
+                      <div class="matrix-plat-label ${platKey}">
+                        ${pInfo.iconSvg} ${pInfo.name}
+                        <span>@denniscatana</span>
+                      </div>
+                      <div class="matrix-cell">
+                        ${
+                          peakData
+                            ? renderPhoneCardHTML(platKey, peakData, "TOP PEAK", false, true)
+                            : `<div class="matrix-blank-slot">Not posted on ${pInfo.name}</div>`
+                        }
+                      </div>
+                    </div>
+                  `;
+                })
+                .join("")}
+            </div>
+
+            <div class="matrix-scroll-right">
+              <div class="matrix-header-row">
+                ${project.items
+                  .map(
+                    (it, idx) => `
+                  <div class="matrix-col-hdr" title="${it.title}">
+                    ${idx + 1}. ${it.step}
+                  </div>
+                `
+                  )
+                  .join("")}
+              </div>
+              ${platOrder
+                .map((platKey) => {
+                  const pInfo = PLATFORM_INFO[platKey];
+                  return `
+                    <div class="matrix-plat-row">
+                      ${project.items
+                        .map((item) => {
+                          const entry = item.platforms[platKey];
+                          if (!entry) {
+                            return `
+                              <div class="matrix-blank-slot">
+                                <strong>Blank Slot</strong>
+                                <span>No ${pInfo.name} post for ${item.step}</span>
+                              </div>
+                            `;
+                          }
+                          return `
+                            <div class="matrix-cell">
+                              ${renderPhoneCardHTML(platKey, entry, item.step, false, true)}
+                            </div>
+                          `;
+                        })
+                        .join("")}
+                    </div>
+                  `;
+                })
+                .join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      function renderAllProjects() {
+        const mount = document.getElementById("projects-mount");
+        if (!mount) return;
+
+        mount.innerHTML = PROJECTS_DATA.map((project) => {
+          const isMatrix = Boolean(matrixModeByProject[project.id]);
+          const topItem = project.items.find((i) => i.id === project.topPostId) || project.items[0];
+
+          return `
+            <article class="project-block" id="proj-${project.id}">
+              <div class="project-block-header">
+                <div>
+                  <div class="project-title-row">
+                    <button type="button" class="project-title-btn" onclick="toggleProjectMatrix('${project.id}')" title="Click to toggle 3-row aligned platform view">
+                      ${project.name}
+                    </button>
+                    <span class="pill" style="background: var(--accent-soft); color: var(--accent); border-color: transparent; font-weight: 600;">
+                      ${project.tag}
+                    </span>
+                    <span class="pill">${project.items.length} timeline posts</span>
+                  </div>
+                  <p class="project-sub">${project.summary}</p>
+                </div>
+                <div class="project-controls">
+                  <button
+                    type="button"
+                    class="btn ${isMatrix ? "btn-primary" : "btn-ghost"} btn-sm"
+                    onclick="toggleProjectMatrix('${project.id}')"
+                  >
+                    ${isMatrix ? "← Back to Combined Timeline (#1 & #2)" : "View 3-Row Platform Matrix (#3)"}
+                  </button>
+                </div>
+              </div>
+
+              ${
+                isMatrix
+                  ? renderMatrixViewHTML(project)
+                  : `
+                <div class="timeline-split">
+                  <div class="timeline-pinned-left">
+                    <div class="timeline-col-label">
+                      <span>Most Popular</span>
+                      <span class="fixed-pill">Pinned</span>
+                    </div>
+                    <div class="timeline-track">
+                      ${renderClipColumnHTML(project, topItem, "peak", "★ MOST POPULAR")}
+                    </div>
+                  </div>
+
+                  <div class="timeline-scroll-right">
+                    <div class="timeline-col-label">
+                      <span>Chronological Project Timeline (Scroll Right → · Click any card to unroll other platforms underneath)</span>
+                    </div>
+                    <div class="timeline-track">
+                      ${project.items
+                        .map((item, idx) =>
+                          renderClipColumnHTML(project, item, "chrono", `${idx + 1}. ${item.step}`)
+                        )
+                        .join("")}
+                    </div>
+                  </div>
+                </div>
+              `
+              }
+            </article>
+          `;
+        }).join("");
+      }
+
+      renderAllProjects();
+    </script>
+  </body>
+</html>
