@@ -23,6 +23,7 @@
         <a href="index.html">Media Kit</a>
         <a href="projects.html">Projects</a>
         <a class="active" href="library.html">Library</a>
+        <a href="gear.html">Gear</a>
         <a href="about.html">About</a>
       </nav>
     </header>
@@ -110,6 +111,18 @@
         </div>
       </section>
 
+      <section class="lib-stats" id="lib-stats" aria-label="Filtered totals">
+        <div class="lib-stats-totals" id="lib-stats-totals">
+          <div class="lib-stat"><span class="lib-stat-label">Posts</span><span class="lib-stat-value" id="agg-posts">—</span></div>
+          <div class="lib-stat"><span class="lib-stat-label">Views</span><span class="lib-stat-value" id="agg-views">—</span></div>
+          <div class="lib-stat"><span class="lib-stat-label">Likes</span><span class="lib-stat-value" id="agg-likes">—</span></div>
+          <div class="lib-stat"><span class="lib-stat-label">Follows</span><span class="lib-stat-value" id="agg-follows">—</span></div>
+        </div>
+        <div class="lib-stats-breakdown" id="lib-stats-breakdown"></div>
+        <div class="lib-charts" id="lib-charts" aria-hidden="false"></div>
+        <p class="lib-stats-note">Totals update with filters. Follows are sparse until Instagram insights are refreshed.</p>
+      </section>
+
       <div class="lib-table-wrap">
         <table class="lib-table" id="lib-table">
           <thead>
@@ -143,6 +156,7 @@
         <a href="index.html">Media Kit</a> ·
         <a href="projects.html">Projects</a> ·
         <a href="library.html">Library</a> ·
+        <a href="gear.html">Gear</a> ·
         <a href="about.html">About</a>
       </p>
     </footer>
@@ -281,6 +295,101 @@
         return rows;
       }
 
+      function sumMetric(rows, key) {
+        let total = 0;
+        let counted = 0;
+        for (const p of rows) {
+          const v = p[key];
+          if (v == null || v === "") continue;
+          const n = Number(v);
+          if (!Number.isFinite(n)) continue;
+          total += n;
+          counted += 1;
+        }
+        return { total, counted };
+      }
+
+      function aggregate(rows) {
+        const platforms = ["Instagram", "YouTube", "TikTok"];
+        const by = {};
+        for (const plat of platforms) {
+          const subset = rows.filter((p) => p.platform === plat);
+          by[plat] = {
+            posts: subset.length,
+            views: sumMetric(subset, "views").total,
+            likes: sumMetric(subset, "likes").total,
+            follows: sumMetric(subset, "follows").total,
+          };
+        }
+        return {
+          posts: rows.length,
+          views: sumMetric(rows, "views").total,
+          likes: sumMetric(rows, "likes").total,
+          follows: sumMetric(rows, "follows").total,
+          by,
+        };
+      }
+
+      function barChartSvg(title, valuesByPlatform, colorMap) {
+        const platforms = ["Instagram", "YouTube", "TikTok"];
+        const max = Math.max(1, ...platforms.map((p) => valuesByPlatform[p] || 0));
+        const W = 320;
+        const H = 148;
+        const padL = 36;
+        const padR = 12;
+        const padT = 28;
+        const padB = 36;
+        const barW = 48;
+        const gap = (W - padL - padR - platforms.length * barW) / (platforms.length + 1);
+        let bars = "";
+        platforms.forEach((plat, i) => {
+          const v = valuesByPlatform[plat] || 0;
+          const h = Math.round(((H - padT - padB) * v) / max);
+          const x = padL + gap + i * (barW + gap);
+          const y = H - padB - h;
+          const cls = platformClass(plat);
+          bars += `<rect class="lib-bar ${cls}" x="${x}" y="${y}" width="${barW}" height="${h}" rx="4"></rect>`;
+          bars += `<text class="lib-bar-val" x="${x + barW / 2}" y="${y - 6}" text-anchor="middle">${escapeHtml(fmt(v))}</text>`;
+          bars += `<text class="lib-bar-label" x="${x + barW / 2}" y="${H - 12}" text-anchor="middle">${platformShort(plat)}</text>`;
+        });
+        return `<figure class="lib-chart">
+          <figcaption>${escapeHtml(title)}</figcaption>
+          <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${escapeAttr(title)}">${bars}</svg>
+        </figure>`;
+      }
+
+      function renderStats(rows) {
+        const agg = aggregate(rows);
+        $("agg-posts").textContent = agg.posts.toLocaleString();
+        $("agg-views").textContent = fmt(agg.views);
+        $("agg-likes").textContent = fmt(agg.likes);
+        $("agg-follows").textContent = agg.follows > 0 ? fmt(agg.follows) : "—";
+
+        const order = ["Instagram", "YouTube", "TikTok"];
+        $("lib-stats-breakdown").innerHTML = order
+          .map((plat) => {
+            const b = agg.by[plat];
+            const follows = b.follows > 0 ? fmt(b.follows) : "—";
+            return `<div class="lib-plat-card ${platformClass(plat)}">
+              <div class="lib-plat-card-head"><span class="lib-plat ${platformClass(plat)}">${platformShort(plat)}</span><span>${b.posts.toLocaleString()} posts</span></div>
+              <dl>
+                <div><dt>Views</dt><dd>${fmt(b.views)}</dd></div>
+                <div><dt>Likes</dt><dd>${fmt(b.likes)}</dd></div>
+                <div><dt>Follows</dt><dd>${follows}</dd></div>
+              </dl>
+            </div>`;
+          })
+          .join("");
+
+        const viewsMap = Object.fromEntries(order.map((p) => [p, agg.by[p].views]));
+        const likesMap = Object.fromEntries(order.map((p) => [p, agg.by[p].likes]));
+        const followsMap = Object.fromEntries(order.map((p) => [p, agg.by[p].follows]));
+        const followTotal = order.reduce((s, p) => s + (agg.by[p].follows || 0), 0);
+        let charts = barChartSvg("Views by platform", viewsMap) + barChartSvg("Likes by platform", likesMap);
+        if (followTotal > 0) charts += barChartSvg("Follows by platform", followsMap);
+        $("lib-charts").innerHTML = charts;
+      }
+
       function render() {
         const rows = applyFilters();
         const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
@@ -293,6 +402,8 @@
           `${rows.length.toLocaleString()} posts` +
           (rows.length !== allPosts.length ? ` (of ${allPosts.length.toLocaleString()})` : "") +
           ` · page ${page}/${totalPages}`;
+
+        renderStats(rows);
 
         const body = $("lib-body");
         if (!slice.length) {
