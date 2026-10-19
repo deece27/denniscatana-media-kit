@@ -824,9 +824,30 @@ h3 {
   height: auto;
 }
 
+/* Episode labels: text only (no bordered pill = no “random line” above cards) */
 .project-block .matrix-col-hdr {
   width: 186px;
   box-sizing: border-box;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 0.15rem 0.35rem;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-block .matrix-header-row {
+  height: auto;
+  min-height: 1.5rem;
+  margin-bottom: 0.15rem;
 }
 
 .project-block .matrix-cell {
@@ -836,6 +857,7 @@ h3 {
   align-self: flex-start;
 }
 
+/* Match Peak Post phone-card exactly — gradient bezel via 4px padding */
 .project-block .matrix-cell .phone-card,
 .project-block .matrix-cell a.phone-card {
   height: auto !important;
@@ -843,15 +865,18 @@ h3 {
   display: block;
   box-sizing: border-box;
   text-decoration: none;
-  /* same 4px gradient frame as Peak Post (.phone-card padding) */
   padding: 4px;
-  overflow: hidden;
+  border-radius: 0.85rem;
+  overflow: visible;
+  isolation: isolate;
 }
 
 .project-block .matrix-cell .phone-screen {
   height: 316px !important;
   width: 100%;
   flex: none;
+  border-radius: 0.65rem;
+  overflow: hidden;
 }
 
 .project-block .matrix-cell .phone-screen.is-long-screen {
@@ -863,6 +888,7 @@ h3 {
   height: 324px; /* 316 screen + 8px frame */
   box-sizing: border-box;
   align-self: flex-start;
+  border-radius: 0.85rem;
 }
 
 /* Collapsed: TikTok row peeks under a fade; YouTube hidden */
@@ -1513,6 +1539,12 @@ h3 {
   width: 186px;
 }
 
+.project-block .matrix-col-hdr {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .project-block .matrix-cell,
 .project-block .matrix-blank-slot {
   height: auto;
@@ -1522,10 +1554,14 @@ h3 {
 .project-block .matrix-cell .phone-card,
 .project-block .matrix-cell a.phone-card {
   height: auto !important;
+  padding: 4px !important;
+  border-radius: 0.85rem !important;
+  overflow: visible !important;
 }
 
 .project-block .matrix-cell .phone-screen {
   height: 316px !important;
+  border-radius: 0.65rem !important;
 }
 
 .project-block .matrix-cell .phone-screen.is-long-screen {

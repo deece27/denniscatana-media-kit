@@ -150,7 +150,7 @@
               best = slot;
             }
           }
-          return bestScore >= 2 ? best : null;
+          return bestScore >= 3 ? best : null;
         }
 
         function primaryDaySlot(n) {
@@ -168,28 +168,35 @@
           let slot = null;
 
           if (info.isPrep) {
-            slot = slots.find((s) => s.isPrep) || null;
+            slot =
+              slots.find((s) => s.isPrep && s.label === info.label) ||
+              (info.label === "Prep · Gear"
+                ? slots.find((s) =>
+                    /ultra light|almost all|all i.?ll need|gear/i.test(
+                      s.byPlatform.Instagram?.title || ""
+                    )
+                  )
+                : null) ||
+              (info.label === "Prep" ? slots.find((s) => s.isPrep) : null);
           }
           if (!slot && info.dayNum != null) {
-            // Prefer an open same-day column, then the primary Day N column
-            slot =
-              slots.find((s) => s.dayNum === info.dayNum && !s.byPlatform[post.platform]) ||
-              primaryDaySlot(info.dayNum);
+            const n = info.dayNum;
+            const primary = primaryDaySlot(n);
+            if (primary && !primary.byPlatform[post.platform]) slot = primary;
+            else if (primary && info.primaryDay) {
+              slot =
+                slots.find(
+                  (s) => s.dayNum === n && s.primaryDay && !s.byPlatform[post.platform]
+                ) || primary;
+            } else {
+              slot =
+                primary ||
+                slots.find((s) => s.dayNum === n && !s.byPlatform[post.platform]) ||
+                null;
+            }
           }
           if (!slot) slot = bestTitleMatch(post);
-          if (!slot && slots.length) {
-            // Last resort: proportional index within this platform's chrono order
-            const peers = posts
-              .filter((p) => p.platform === post.platform)
-              .slice()
-              .sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
-            const idx = Math.max(0, peers.indexOf(post));
-            const mapped = Math.min(
-              slots.length - 1,
-              Math.round((idx / Math.max(1, peers.length - 1)) * (slots.length - 1))
-            );
-            slot = slots[mapped];
-          }
+          // No proportional fallback — TT/YT dates are months later than IG
           if (slot) put(slot, post);
         }
 
@@ -208,8 +215,9 @@
             return { dayNum: -1, primaryDay: false, isPrep: true, label: "Prep" };
           }
         }
+        // Official series beats only — not mid-caption “from Day 4 of…” asides
         const primary = t.match(
-          /📍\s*Day\s*(\d+)|(?:^|\b)Day\s*(\d+)\s*(?:[-–—:,!]|\s+of\b)/i
+          /📍\s*Day\s*(\d+)|(?:^|\A)Day\s*(\d+)\s*(?:[-–—:]|\s+of\s+Cycling\b)/im
         );
         if (primary) {
           const n = Number(primary[1] != null ? primary[1] : primary[2]);
@@ -232,17 +240,42 @@
         return { dayNum: null, primaryDay: false, isPrep: false, label: shortLabel(t, "Post") };
       }
 
+      const TITLE_STOP = new Set([
+        "this",
+        "that",
+        "with",
+        "from",
+        "have",
+        "your",
+        "about",
+        "around",
+        "just",
+        "when",
+        "what",
+        "they",
+        "them",
+        "taiwan",
+        "cycling",
+        "cycle",
+        "bike",
+      ]);
+
       function titleOverlap(a, b) {
         const na = normTitle(a);
         const nb = normTitle(b);
         if (!na || !nb) return 0;
         if (na === nb) return 10;
-        if (na.includes(nb.slice(0, 24)) || nb.includes(na.slice(0, 24))) return 6;
-        const ta = new Set(na.split(" ").filter((w) => w.length > 3));
-        let hit = 0;
-        for (const w of nb.split(" ").filter((w) => w.length > 3)) {
-          if (ta.has(w)) hit += 1;
+        if (na.length >= 16 && (na.includes(nb.slice(0, 24)) || nb.includes(na.slice(0, 24)))) {
+          return 6;
         }
+        const ta = new Set(
+          na.split(" ").filter((w) => w.length > 3 && !TITLE_STOP.has(w))
+        );
+        const tb = new Set(
+          nb.split(" ").filter((w) => w.length > 3 && !TITLE_STOP.has(w))
+        );
+        let hit = 0;
+        for (const w of tb) if (ta.has(w)) hit += 1;
         return hit;
       }
 
