@@ -1,0 +1,152 @@
+{
+  "generatedAt": "2026-10-19T12:54:00Z",
+  "sourceSheet": "https://docs.google.com/spreadsheets/d/1iP9jVPMB6Di0mt2drN-1EEDP0DDAorksRrSqfvfav5I/edit",
+  "sheetTab": "Gear",
+  "categories": [
+    {
+      "id": "all",
+      "label": "All Gear"
+    },
+    {
+      "id": "camera",
+      "label": "Camera & Audio"
+    },
+    {
+      "id": "trail",
+      "label": "Trek & Trail"
+    },
+    {
+      "id": "bike",
+      "label": "Bikepacking"
+    },
+    {
+      "id": "apparel",
+      "label": "Apparel"
+    },
+    {
+      "id": "travel",
+      "label": "eSIM & Travel"
+    }
+  ],
+  "items": [
+    {
+      "name": "Jolly Gear Triple Crown shirt (Salkantay)",
+      "brand": "Jolly Gear",
+      "category": "apparel",
+      "badgeType": "direct",
+      "badgeLabel": "Affiliate / Shop",
+      "usedIn": "Peru Salkantay Trek",
+      "desc": "UPF technical button-down + hood used on the Salkantay trek — fun prints, thumbholes, built for long sun exposure days.",
+      "exactItem": "Triple Crown Button Down Long Sleeve (confirm print/size)",
+      "whereBought": "jollygear.com (US DTC) — confirm if bought or gifted",
+      "linkLabel": "Shop Jolly Gear →",
+      "linkUrl": "https://jollygear.com/",
+      "section": "Apparel",
+      "affiliateAvailable": "Unknown — no public Impact/Amazon affiliate found; Community/ambassador page exists",
+      "showOnPage": true,
+      "status": "Researching"
+    },
+    {
+      "name": "DJI Osmo Action 6 + mounts",
+      "brand": "DJI",
+      "category": "camera",
+      "badgeType": "direct",
+      "badgeLabel": "Affiliate / Shop",
+      "usedIn": "Peru Salkantay · Korea bike",
+      "desc": "Primary action cam for high-altitude trekking, rain riding, and handlebar POVs.",
+      "exactItem": "DJI Osmo Action 6 Adventure Combo + chest/handlebar mounts",
+      "whereBought": "DJI Store / Amazon",
+      "linkLabel": "Check price on DJI Store →",
+      "linkUrl": "https://www.dji.com",
+      "section": "Camera & Audio",
+      "affiliateAvailable": "Yes",
+      "showOnPage": true,
+      "status": "Live"
+    },
+    {
+      "name": "5L ultralight hydration vest",
+      "brand": "Aonijie / Inoxto (Taobao match)",
+      "category": "trail",
+      "badgeType": "match",
+      "badgeLabel": "Taobao → Amazon Match",
+      "usedIn": "Peru Salkantay · Hong Kong 4 Trails",
+      "desc": "Bought on Taobao in China. Same factory-style vest sold globally on Amazon under Aonijie / Inoxto.",
+      "exactItem": "Taobao 5L trail vest (global match: Aonijie 5L)",
+      "whereBought": "Taobao (China)",
+      "linkLabel": "View Amazon Global equivalent →",
+      "linkUrl": "https://www.amazon.com",
+      "section": "Trek & Trail",
+      "affiliateAvailable": "Partial — Amazon Global equivalent",
+      "showOnPage": true,
+      "status": "Live"
+    },
+    {
+      "name": "Trail running / trekking shoes",
+      "brand": "TBD",
+      "category": "trail",
+      "badgeType": "direct",
+      "badgeLabel": "Affiliate / Shop",
+      "usedIn": "Peru Salkantay Pass · China trails",
+      "desc": "Grippy trail runners used instead of heavy boots for multi-day mountain passes.",
+      "exactItem": "Trail runner rotation — exact model TBD",
+      "whereBought": "TBD",
+      "linkLabel": "Check trail runners →",
+      "linkUrl": "https://www.amazon.com",
+      "section": "Trek & Trail",
+      "affiliateAvailable": "Likely (Amazon / brand)",
+      "showOnPage": true,
+      "status": "Draft"
+    },
+    {
+      "name": "Rhinowalk 10L saddle bag",
+      "brand": "Rhinowalk",
+      "category": "bike",
+      "badgeType": "match",
+      "badgeLabel": "Taobao → Amazon Match",
+      "usedIn": "Taiwan 1000km · Korea bike",
+      "desc": "Waterproof saddle bag used on Taiwan 1000km and Korea bike days. Rhinowalk sells the same line on Amazon.",
+      "exactItem": "Rhinowalk 10L waterproof seat bag",
+      "whereBought": "Taobao Rhinowalk flagship · Amazon US/UK/CA",
+      "linkLabel": "Shop Rhinowalk on Amazon →",
+      "linkUrl": "https://www.amazon.com",
+      "section": "Bikepacking",
+      "affiliateAvailable": "Yes — Amazon",
+      "showOnPage": true,
+      "status": "Live"
+    },
+    {
+      "name": "Custom Taobao frame strap & repair kit",
+      "brand": "Local Taobao workshop",
+      "category": "bike",
+      "badgeType": "exact-only",
+      "badgeLabel": "Exact Kit · No Affiliate",
+      "usedIn": "Taiwan 1000km",
+      "desc": "Domestic workshop strap with no Western listing — included so the loadout stays 100% transparent.",
+      "exactItem": "Taobao local bike-shop frame strap + basic repair bits",
+      "whereBought": "Taobao",
+      "linkLabel": null,
+      "linkUrl": null,
+      "section": "Bikepacking",
+      "affiliateAvailable": "No",
+      "showOnPage": true,
+      "status": "Live"
+    },
+    {
+      "name": "Travel eSIM (Airalo / Trip.com)",
+      "brand": "Airalo / Trip.com",
+      "category": "travel",
+      "badgeType": "partner",
+      "badgeLabel": "Partner Link",
+      "usedIn": "Peru · Korea · Taiwan · HK · China",
+      "desc": "Instant data on landing without hunting airport SIMs.",
+      "exactItem": "Airalo or Trip.com regional eSIM",
+      "whereBought": "App stores",
+      "linkLabel": "Get travel eSIM →",
+      "linkUrl": "https://www.airalo.com",
+      "section": "eSIM & Travel",
+      "affiliateAvailable": "Yes — partner/affiliate portals",
+      "showOnPage": true,
+      "status": "Live"
+    }
+  ]
+}
