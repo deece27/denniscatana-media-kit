@@ -82,10 +82,14 @@
 
     <script>
       const PLATFORM_META = {
-        Instagram: { key: "ig", short: "IG", className: "plat-ig" },
-        TikTok: { key: "tiktok", short: "TT", className: "plat-tiktok" },
-        YouTube: { key: "youtube", short: "YT", className: "plat-youtube" },
+        Instagram: { key: "instagram", short: "IG", className: "plat-ig", badge: "ig" },
+        TikTok: { key: "tiktok", short: "TT", className: "plat-tiktok", badge: "tiktok" },
+        YouTube: { key: "youtube", short: "YT", className: "plat-youtube", badge: "youtube" },
       };
+
+      function platKey(platform) {
+        return (PLATFORM_META[platform] || {}).key || String(platform || "").toLowerCase();
+      }
 
       function fmt(n) {
         if (n == null || n === "") return "—";
@@ -109,14 +113,14 @@
         const thumb = peak.thumbnail
           ? `<img src="${peak.thumbnail}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
           : "";
-        const pKey = (PLATFORM_META[peak.platform] || {}).key || "ig";
+        const badge = (PLATFORM_META[peak.platform] || {}).badge || "ig";
         return `
           <a class="phone-card ${platClass(peak.platform)} peak-card-link" href="${peak.url}" target="_blank" rel="noopener">
             <div class="phone-screen">
               ${thumb}
               <div class="phone-screen-scrim"></div>
               <div class="phone-top-bar">
-                <span class="plat-badge ${pKey}">${platShort(peak.platform)}</span>
+                <span class="plat-badge ${badge}">${platShort(peak.platform)}</span>
                 <span class="step-badge">Peak</span>
               </div>
               <div class="phone-bottom-bar">
@@ -135,16 +139,16 @@
           ? `<img src="${post.thumbnail}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
           : "";
         const isLong = post.platform === "YouTube" && (post.type || "").toLowerCase() !== "short";
-        const pKey = (PLATFORM_META[post.platform] || {}).key || "ig";
+        const badge = (PLATFORM_META[post.platform] || {}).badge || "ig";
         return `
-          <div class="clip-column ${isLong ? "is-long" : ""}" data-platform="${post.platform}">
+          <div class="clip-column ${isLong ? "is-long" : ""}" data-platform="${platKey(post.platform)}">
             <div class="clip-step-label">${post.date || "—"} · ${platShort(post.platform)}</div>
             <a class="phone-card ${platClass(post.platform)}" href="${post.url}" target="_blank" rel="noopener">
               <div class="phone-screen">
                 ${thumb}
                 <div class="phone-screen-scrim"></div>
                 <div class="phone-top-bar">
-                  <span class="plat-badge ${pKey}">${platShort(post.platform)}</span>
+                  <span class="plat-badge ${badge}">${platShort(post.platform)}</span>
                   <span class="phone-views-pill">${fmt(post.views)}</span>
                 </div>
                 <div class="phone-bottom-bar">
@@ -238,9 +242,9 @@
                   <span>All posts in project</span>
                   <div class="feed-filters" id="${filterId}" role="group" aria-label="Filter by platform">
                     <button type="button" class="feed-filter is-active" data-plat="all">All</button>
-                    <button type="button" class="feed-filter" data-plat="Instagram">IG</button>
-                    <button type="button" class="feed-filter" data-plat="TikTok">TT</button>
-                    <button type="button" class="feed-filter" data-plat="YouTube">YT</button>
+                    <button type="button" class="feed-filter" data-plat="instagram">IG</button>
+                    <button type="button" class="feed-filter" data-plat="tiktok">TT</button>
+                    <button type="button" class="feed-filter" data-plat="youtube">YT</button>
                   </div>
                 </div>
                 <div class="timeline-track" data-feed-for="${project.id}">
@@ -260,9 +264,11 @@
             const btn = e.target.closest(".feed-filter");
             if (!btn) return;
             group.querySelectorAll(".feed-filter").forEach((b) => b.classList.toggle("is-active", b === btn));
-            const plat = btn.dataset.plat;
+            const plat = btn.getAttribute("data-plat");
             feed.querySelectorAll(".clip-column").forEach((col) => {
-              const show = plat === "all" || col.dataset.platform === plat;
+              const colPlat = col.getAttribute("data-platform");
+              const show = plat === "all" || colPlat === plat;
+              col.hidden = !show;
               col.style.display = show ? "" : "none";
             });
           });
