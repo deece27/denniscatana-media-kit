@@ -1040,6 +1040,11 @@ h3 {
   min-width: 12rem;
 }
 
+/* .btn { display:flex } otherwise wins over the HTML hidden attribute */
+.project-block [hidden] {
+  display: none !important;
+}
+
 /* Highlight stats stay visible collapsed + expanded */
 .project-block .peak-stats-drawer {
   display: block !important;
