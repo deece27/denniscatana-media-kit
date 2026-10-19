@@ -371,6 +371,681 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
+/* ==========================================================================
+   Multi-page Navigation, Wide Layout, Projects Timeline & Gear Page
+   ========================================================================== */
+
+.wrap-wide {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+}
+
+.nav a.active {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.15rem;
+}
+
+/* Platform Brand Frames (Instagram Gradient, TikTok Teal/Slate, YouTube Red) */
+:root {
+  --ig-grad: linear-gradient(135deg, #9b2def 0%, #e1306c 52%, #f77737 82%, #fcaf45 100%);
+  --tt-grad: linear-gradient(135deg, #25f4ee 0%, #162238 48%, #fe2c55 100%);
+  --yt-grad: linear-gradient(135deg, #ff1a1a 0%, #cc0000 65%, #8f0000 100%);
+}
+
+.project-block {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 1.35rem 1.35rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.project-block-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.project-title-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-title-btn:hover {
+  color: var(--accent);
+}
+
+.project-sub {
+  color: var(--muted);
+  font-size: 0.94rem;
+  margin: 0.25rem 0 0;
+  max-width: 54rem;
+}
+
+.project-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-sm {
+  padding: 0.42rem 0.8rem;
+  font-size: 0.82rem;
+  border-radius: 0.4rem;
+}
+
+/* Split Horizontal Track: Fixed Left Peak + Scrollable Chronological Right */
+.timeline-split {
+  display: flex;
+  align-items: flex-start;
+  background: #f2ede4;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.timeline-pinned-left {
+  flex-shrink: 0;
+  padding: 0.9rem 1rem 1.1rem;
+  background: linear-gradient(180deg, #faf6ef 0%, #f3ede2 100%);
+  border-right: 2px solid #bfb5a4;
+  box-shadow: 6px 0 18px rgba(26, 24, 20, 0.06);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeline-scroll-right {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0.9rem 1.1rem 1.15rem;
+  scroll-behavior: smooth;
+}
+
+.timeline-col-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.timeline-col-label .fixed-pill {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.1rem 0.42rem;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+}
+
+.timeline-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-top: 0.35rem;
+  min-width: max-content;
+}
+
+/* Each Timeline Slot Column (Holds Primary Card + Animated Unroll Stack Underneath) */
+.clip-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 186px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.clip-column.is-long {
+  width: 268px;
+}
+
+.clip-column.is-post {
+  width: 196px;
+}
+
+/* Platform-Colored Card Shell */
+.phone-card {
+  width: 100%;
+  border-radius: 0.85rem;
+  padding: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  user-select: none;
+}
+
+.phone-card:hover {
+  transform: translateY(-2px);
+}
+
+.phone-card.plat-ig {
+  background: var(--ig-grad);
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.24);
+}
+
+.phone-card.plat-tiktok {
+  background: var(--tt-grad);
+  box-shadow: 0 6px 18px rgba(22, 34, 56, 0.26);
+}
+
+.phone-card.plat-youtube {
+  background: var(--yt-grad);
+  box-shadow: 0 6px 18px rgba(204, 0, 0, 0.24);
+}
+
+.phone-card.is-expanded {
+  box-shadow: 0 10px 26px rgba(15, 76, 58, 0.32);
+}
+
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 316px;
+  border-radius: 0.65rem;
+  overflow: hidden;
+  background: #141413;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.clip-column.is-long .phone-screen {
+  height: 182px;
+}
+
+.clip-column.is-post .phone-screen {
+  height: 245px;
+}
+
+.phone-screen img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.35s ease;
+}
+
+.phone-card:hover .phone-screen img {
+  transform: scale(1.02);
+}
+
+.phone-screen-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.48) 0%,
+    rgba(0, 0, 0, 0.05) 35%,
+    rgba(0, 0, 0, 0.12) 62%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
+  pointer-events: none;
+}
+
+/* Top & Bottom Overlay Chrome Inside Phone Screen */
+.phone-top-bar {
+  position: relative;
+  z-index: 2;
+  padding: 0.5rem 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+
+.plat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.48rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(6px);
+}
+
+.plat-badge.ig {
+  background: linear-gradient(135deg, rgba(131, 58, 180, 0.92), rgba(225, 48, 108, 0.92), rgba(252, 175, 69, 0.92));
+}
+
+.plat-badge.tiktok {
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(37, 244, 238, 0.55);
+}
+
+.plat-badge.youtube {
+  background: rgba(204, 0, 0, 0.92);
+}
+
+.step-badge {
+  background: rgba(20, 20, 19, 0.72);
+  color: #f7f4ef;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.18rem 0.45rem;
+  border-radius: 0.3rem;
+  backdrop-filter: blur(4px);
+}
+
+.phone-bottom-bar {
+  position: relative;
+  z-index: 2;
+  padding: 0.6rem 0.6rem 0.55rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.phone-views-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.phone-views-pill {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  padding: 0.14rem 0.45rem;
+  border-radius: 0.3rem;
+  color: #fff;
+}
+
+.phone-direct-link {
+  color: #fff;
+  background: rgba(15, 76, 58, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.14rem 0.45rem;
+  border-radius: 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.phone-direct-link:hover {
+  background: #146950;
+}
+
+/* Caption + "Click to unroll other platforms" cue under each card */
+.clip-meta {
+  width: 100%;
+  padding: 0.5rem 0.2rem 0.15rem;
+}
+
+.clip-title {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0 0 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clip-expand-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  padding: 0.28rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.clip-expand-btn:hover,
+.clip-expand-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.mini-plat-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+}
+
+.mini-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.mini-dot.ig {
+  background: #e1306c;
+}
+
+.mini-dot.tiktok {
+  background: #162238;
+  border: 1px solid #25f4ee;
+}
+
+.mini-dot.youtube {
+  background: #ff0000;
+}
+
+/* Animated Vertical Unroll Stack Underneath Clicked Card (Screenshot #2) */
+.unroll-stack {
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease,
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  pointer-events: none;
+}
+
+.unroll-stack.open {
+  max-height: 920px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 0.65rem;
+  padding-top: 0.55rem;
+  border-top: 2px dashed #bfb5a4;
+  pointer-events: auto;
+}
+
+.unroll-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+  text-align: center;
+}
+
+.unroll-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.unroll-card-link .phone-screen {
+  height: 268px;
+}
+
+/* Sketch #3: Aligned 3-Row Cross-Platform Matrix */
+.matrix-wrapper {
+  display: flex;
+  align-items: stretch;
+  background: #f2ede4;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.matrix-pinned-left {
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #faf6ef 0%, #f3ede2 100%);
+  border-right: 2px solid #bfb5a4;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 2;
+}
+
+.matrix-scroll-right {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.matrix-header-row,
+.matrix-plat-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.85rem;
+  min-width: max-content;
+}
+
+.matrix-header-row {
+  height: 32px;
+  align-items: center;
+}
+
+.matrix-plat-row {
+  height: 248px;
+}
+
+.matrix-plat-label {
+  width: 112px;
+  flex-shrink: 0;
+  border-radius: 0.6rem;
+  padding: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.matrix-plat-label.ig {
+  background: var(--ig-grad);
+}
+
+.matrix-plat-label.tiktok {
+  background: var(--tt-grad);
+}
+
+.matrix-plat-label.youtube {
+  background: var(--yt-grad);
+}
+
+.matrix-plat-label span {
+  font-size: 0.72rem;
+  opacity: 0.88;
+  font-weight: 400;
+  margin-top: 0.15rem;
+}
+
+.matrix-cell {
+  width: 164px;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.matrix-cell .phone-card {
+  height: 100%;
+}
+
+.matrix-cell .phone-screen {
+  height: 100%;
+}
+
+.matrix-blank-slot {
+  width: 164px;
+  flex-shrink: 0;
+  height: 100%;
+  border: 1px dashed #c4b9a8;
+  border-radius: 0.75rem;
+  background: rgba(255, 252, 247, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.matrix-col-hdr {
+  width: 164px;
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Gear Page Styles */
+.gear-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  padding: 0.85rem 1rem;
+}
+
+.gear-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.32rem 0.75rem;
+  font-size: 0.84rem;
+  font-family: inherit;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: #f7f4ef;
+  border-color: var(--accent);
+}
+
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1rem;
+}
+
+.gear-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.gear-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.gear-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.gear-badge.direct {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.gear-badge.match {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.gear-badge.exact-only {
+  background: #ebe4d8;
+  color: var(--muted);
+}
+
+.gear-meta-line {
+  font-size: 0.83rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
 .no-print {
   /* kept for print hiding */
 }
