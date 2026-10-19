@@ -1097,3 +1097,316 @@ h3 {
     content: none;
   }
 }
+
+/* ==========================================================================
+   All Posts Library
+   ========================================================================== */
+
+.lib-toolbar {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem 0.85rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.lib-toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: flex-end;
+}
+
+.lib-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  min-width: 9rem;
+  flex: 1 1 9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.lib-field-narrow {
+  flex: 0 1 7rem;
+  min-width: 6.5rem;
+}
+
+.lib-field input,
+.lib-field select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  padding: 0.45rem 0.55rem;
+  width: 100%;
+}
+
+.lib-fieldset {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  margin: 0;
+  padding: 0.45rem 0.7rem 0.55rem;
+  flex: 1 1 14rem;
+}
+
+.lib-fieldset legend {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 0.25rem;
+}
+
+.lib-hint {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.85;
+}
+
+.lib-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+}
+
+.lib-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.lib-check input {
+  accent-color: var(--accent);
+}
+
+.lib-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.15rem;
+  border-top: 1px dashed var(--line);
+}
+
+.lib-result-count {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.lib-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--card);
+  margin-bottom: 1rem;
+}
+
+.lib-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  min-width: 820px;
+}
+
+.lib-table th,
+.lib-table td {
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.lib-table th {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: rgba(15, 76, 58, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.lib-table th.num,
+.lib-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.lib-table tbody tr:hover {
+  background: rgba(15, 76, 58, 0.035);
+}
+
+.lib-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.lib-plat {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.3rem;
+  color: #fff;
+  margin-right: 0.25rem;
+}
+
+.lib-plat.ig {
+  background: linear-gradient(135deg, #9b2def, #e1306c);
+}
+
+.lib-plat.yt {
+  background: #cc0000;
+}
+
+.lib-plat.tt {
+  background: #162238;
+}
+
+.lib-type {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.lib-date {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.lib-title {
+  max-width: 28rem;
+}
+
+.lib-title-text {
+  display: block;
+  line-height: 1.35;
+}
+
+.lib-suggest {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--bg-deep);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+}
+
+.lib-project {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.lib-project.unassigned {
+  background: transparent;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.lib-open {
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lib-open:hover {
+  text-decoration: underline;
+}
+
+.lib-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 1rem !important;
+}
+
+.lib-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.lib-page-btn {
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+
+.lib-page-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.lib-page-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #f7f4ef;
+}
+
+.lib-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lib-page-ellipsis {
+  align-self: center;
+  color: var(--muted);
+  padding: 0 0.2rem;
+}
+
+.lib-footnote {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 2rem;
+  max-width: 48rem;
+}
+
+.lib-footnote code {
+  font-size: 0.8em;
+  background: var(--bg-deep);
+  padding: 0.05rem 0.3rem;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 720px) {
+  .lib-fieldset-projects {
+    flex-basis: 100%;
+  }
+}
