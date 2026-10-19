@@ -820,14 +820,179 @@ h3 {
   height: 268px;
 }
 
+/* Page rollup + per-project stats with platform filters */
+.projects-rollup {
+  background: linear-gradient(135deg, #f3efe6 0%, #e8f0ea 55%, #f7f4ef 100%);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 1.15rem 1.25rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.rollup-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.rollup-eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rollup-title {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.rollup-sub {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 40rem;
+}
+
+.project-stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.85rem;
+  padding: 0.7rem 0.85rem;
+  background: rgba(255, 252, 247, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+}
+
+.plat-filter-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.plat-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.32rem 0.65rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.plat-filter-btn.is-off {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+.plat-filter-btn.ig.is-on {
+  border-color: #e1306c;
+  color: #9b2def;
+  background: #fff5fa;
+}
+
+.plat-filter-btn.tiktok.is-on {
+  border-color: #162238;
+  color: #162238;
+  background: #eefdff;
+}
+
+.plat-filter-btn.youtube.is-on {
+  border-color: #cc0000;
+  color: #b00000;
+  background: #fff3f3;
+}
+
+.project-stats-meters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.85rem 1.35rem;
+}
+
+.stat-meter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  min-width: 3.5rem;
+}
+
+.stat-meter-value {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.stat-meter-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stats-note {
+  font-size: 0.72rem;
+  color: var(--muted);
+  align-self: center;
+}
+
+.clip-card-hit {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 0.85rem;
+}
+
+.clip-card-hit:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.clip-card-hit:hover .phone-card {
+  transform: translateY(-2px);
+  transition: transform 0.18s ease;
+}
+
 /* Sketch #3: Aligned 3-Row Cross-Platform Matrix */
 .matrix-wrapper {
-  display: flex;
-  align-items: stretch;
   background: #f2ede4;
   border: 1px solid var(--line);
   border-radius: 0.75rem;
   overflow: hidden;
+}
+
+.matrix-focus-banner {
+  padding: 0.55rem 0.95rem;
+  font-size: 0.84rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-bottom: 1px solid #c5ddd3;
+}
+
+.matrix-body {
+  display: flex;
+  align-items: stretch;
 }
 
 .matrix-pinned-left {
@@ -849,6 +1014,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  scroll-behavior: smooth;
 }
 
 .matrix-header-row,
@@ -946,6 +1112,26 @@ h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.matrix-col-hdr.is-focused {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.matrix-cell.is-focused-col,
+.matrix-blank-slot.is-focused-col {
+  position: relative;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 0.85rem;
+  box-shadow: 0 0 0 4px rgba(15, 76, 58, 0.12);
+}
+
+.phone-card.is-matrix-focused {
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 /* Gear Page Styles */

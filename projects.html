@@ -33,7 +33,7 @@
           Projects
         </h1>
         <p class="lede" style="max-width: 48rem; margin-bottom: 1rem;">
-          Day-by-day series across Instagram, TikTok (@denniscatanaa), and YouTube. The left card is the top spike; scroll right for the timeline. Click a card to unroll the other platforms underneath.
+          Day-by-day series across Instagram, TikTok (@denniscatanaa), and YouTube. The left card is the top spike; scroll right for the timeline. Click any video card — or a project name — to open the aligned IG / TikTok / YouTube matrix for that series.
         </p>
         <div class="meta-row" style="margin-bottom: 0.5rem;">
           <a class="pill" href="https://www.instagram.com/denniscatana/" target="_blank" rel="noopener"><strong>IG</strong> @denniscatana</a>
@@ -43,6 +43,7 @@
         </div>
       </section>
 
+      <div id="projects-rollup" class="projects-rollup" aria-live="polite"></div>
       <div id="projects-mount"></div>
 
       <section id="contact" style="border-top: none; padding-top: 0.5rem;">
@@ -453,14 +454,35 @@
       }
     ]
   },
-  {
+    {
     "id": "free-cruise",
     "name": "How Much Does a 'Free' Cruise Really Cost?",
-    "tag": "1.1M TT spike",
+    "tag": "842K IG \u00b7 1.1M TT",
     "region": "Cruise Series",
-    "summary": "Transparency series. TikTok Day 2 hit 1.1M views; strong IG days too. Cross-platform links wired where matched.",
-    "topPostId": "cr-day2",
+    "summary": "Full day sequence with Instagram Reels wired for Kickoff (497K) through Finale. Day 6 Part 2 IG is the series peak (842.7K). TikTok Day 2 hit 1.1M.",
+    "topPostId": "cr-day6b",
     "items": [
+      {
+        "id": "cr-kickoff",
+        "step": "Kickoff \u00b7 Won it",
+        "title": "So I won a free cruise..but, what will it actually costs? \nMy sister and I set sail on a Caribbean Cruise Vacation with ",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "497.1K views",
+            "thumb": "assets/thumbs/cr-kickoff-ig.jpg",
+            "url": "https://www.instagram.com/reel/DD8ZvgVP1Xk/",
+            "meta": "3857 likes \u00b7 247 saves \u00b7 reach 348731"
+          },
+          "youtube": {
+            "views": "115 views",
+            "thumb": "assets/thumbs/cr-day1-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=YifeVX5Dp9U",
+            "meta": "1 likes \u00b7 intro"
+          }
+        }
+      },
       {
         "id": "cr-day1",
         "step": "Day 1",
@@ -468,135 +490,195 @@
         "format": "short",
         "primaryPlatform": "tiktok",
         "platforms": {
-          "youtube": {
-            "views": "2.8K views",
-            "thumb": "assets/thumbs/cr-day1-youtube.jpg",
-            "url": "https://www.youtube.com/watch?v=nVrMQNnBisk",
-            "meta": "84 likes"
-          },
           "tiktok": {
             "views": "718.6K views",
             "thumb": "assets/thumbs/cr-day1-tiktok.jpg",
             "url": "https://www.tiktok.com/@denniscatanaa/video/7453099168568052997",
             "meta": "37863 likes"
+          },
+          "youtube": {
+            "views": "2.8K views",
+            "thumb": "assets/thumbs/cr-day1-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=nVrMQNnBisk",
+            "meta": "84 likes"
           }
         }
       },
       {
         "id": "cr-day2",
         "step": "Day 2",
-        "title": "Day 2 of how much a \u2018Free\u2019 Crusie really costs. #norwegiancruise",
+        "title": "Day 2 of how much a \u2018free\u2019 cruise really costs.\nWe\u2019re out at sea for the day, and quite quickly found out there are way ",
         "format": "short",
         "primaryPlatform": "tiktok",
         "platforms": {
-          "youtube": {
-            "views": "282 views",
-            "thumb": "assets/thumbs/cr-day2-youtube.jpg",
-            "url": "https://www.youtube.com/watch?v=UDcKjsfjbtg",
-            "meta": "1 likes"
+          "ig": {
+            "views": "56.6K views",
+            "thumb": "assets/thumbs/cr-day2-ig.jpg",
+            "url": "https://www.instagram.com/reel/DEBC6kOvmxr/",
+            "meta": "440 likes \u00b7 12 saves \u00b7 reach 33274"
           },
           "tiktok": {
             "views": "1.1M views",
             "thumb": "assets/thumbs/cr-day2-tiktok.jpg",
             "url": "https://www.tiktok.com/@denniscatanaa/video/7453517001898675461",
             "meta": "51415 likes"
+          },
+          "youtube": {
+            "views": "282 views",
+            "thumb": "assets/thumbs/cr-day2-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=UDcKjsfjbtg",
+            "meta": "1 likes"
           }
         }
       },
       {
         "id": "cr-day3",
         "step": "Day 3",
-        "title": "Day 3 of how much a \u2018Free\u2019 Cruise really costs (part 2) #norwegiancruise #costamaya",
+        "title": "Day 3 of how much a \u2018Free\u2019 Cruise really costs. \nFirst stop: Costa Maya, Mexico! Thank god cuz it starting to feel like ",
         "format": "short",
         "primaryPlatform": "tiktok",
         "platforms": {
-          "youtube": {
-            "views": "1.3K views",
-            "thumb": "assets/thumbs/cr-day3-youtube.jpg",
-            "url": "https://www.youtube.com/watch?v=2yiDFqsnOno",
-            "meta": "36 likes"
+          "ig": {
+            "views": "30.5K views",
+            "thumb": "assets/thumbs/cr-day3-ig.jpg",
+            "url": "https://www.instagram.com/reel/DEFQGwGuqnT/",
+            "meta": "395 likes \u00b7 14 saves \u00b7 reach 21818"
           },
           "tiktok": {
             "views": "58.8K views",
             "thumb": "assets/thumbs/cr-day3-tiktok.jpg",
             "url": "https://www.tiktok.com/@denniscatanaa/video/7454203714539212037",
             "meta": "2451 likes"
+          },
+          "youtube": {
+            "views": "1.3K views",
+            "thumb": "assets/thumbs/cr-day3-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=2yiDFqsnOno",
+            "meta": "36 likes"
+          }
+        }
+      },
+      {
+        "id": "cr-day3b",
+        "step": "Day 3 \u00b7 Part 2",
+        "title": "Day 3 continued of how much a \u2018Free\u2019 Cruise really costs. \n\nWe spent some time in Mahahual, walking almost the whole len",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "31.6K views",
+            "thumb": "assets/thumbs/cr-day3b-ig.jpg",
+            "url": "https://www.instagram.com/reel/DEITIh3PFZu/",
+            "meta": "357 likes \u00b7 11 saves \u00b7 reach 20161"
+          },
+          "tiktok": {
+            "views": "52.9K views",
+            "thumb": "assets/thumbs/cr-day3-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7453979290040896774",
+            "meta": "2333 likes \u00b7 Day 3 part 1 TT"
           }
         }
       },
       {
         "id": "cr-day4",
         "step": "Day 4",
-        "title": "Day 4 of how much a \u2018Free\u2019 Cruise really costs #norwegiancruise #belize",
+        "title": "Day 4 of how much a \u2018Free\u2019 Cruise really costs. \n\nWe made it to Belize..or rather, a Norwegian Cruise Line owned sliver ",
         "format": "short",
         "primaryPlatform": "tiktok",
         "platforms": {
-          "youtube": {
-            "views": "581 views",
-            "thumb": "assets/thumbs/cr-day4-youtube.jpg",
-            "url": "https://www.youtube.com/watch?v=XxTujjPBFTY",
-            "meta": "13 likes"
+          "ig": {
+            "views": "40.3K views",
+            "thumb": "assets/thumbs/cr-day4-ig.jpg",
+            "url": "https://www.instagram.com/reel/DELvCvfvrdR/",
+            "meta": "426 likes \u00b7 14 saves \u00b7 reach 25908"
           },
           "tiktok": {
             "views": "106.1K views",
             "thumb": "assets/thumbs/cr-day4-tiktok.jpg",
             "url": "https://www.tiktok.com/@denniscatanaa/video/7454665842412817670",
             "meta": "4293 likes"
+          },
+          "youtube": {
+            "views": "581 views",
+            "thumb": "assets/thumbs/cr-day4-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=XxTujjPBFTY",
+            "meta": "13 likes"
           }
         }
       },
       {
         "id": "cr-day5",
         "step": "Day 5",
-        "title": "Day 5 of how much a \u2018Free\u2019 Cruise really costs #norwegiancruise #roatanhonduras\ud83c\udf34\ud83c\udded\ud83c\uddf3",
+        "title": "Day 5 of how much a \u2018Free\u2019 Cruise really costs.\n\nDefinitely need some more money to enjoy Roatan, Honduras (but like, a ",
         "format": "short",
         "primaryPlatform": "tiktok",
         "platforms": {
-          "youtube": {
-            "views": "1.4K views",
-            "thumb": "assets/thumbs/cr-day5-youtube.jpg",
-            "url": "https://www.youtube.com/watch?v=vGOtH3--l1w",
-            "meta": "39 likes"
+          "ig": {
+            "views": "39.3K views",
+            "thumb": "assets/thumbs/cr-day5-ig.jpg",
+            "url": "https://www.instagram.com/reel/DESXeq8uqfv/",
+            "meta": "287 likes \u00b7 7 saves \u00b7 reach 23048"
           },
           "tiktok": {
             "views": "94.9K views",
             "thumb": "assets/thumbs/cr-day5-tiktok.jpg",
             "url": "https://www.tiktok.com/@denniscatanaa/video/7454977026714373381",
             "meta": "3807 likes"
+          },
+          "youtube": {
+            "views": "1.4K views",
+            "thumb": "assets/thumbs/cr-day5-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=vGOtH3--l1w",
+            "meta": "39 likes"
           }
         }
       },
       {
         "id": "cr-day6",
         "step": "Day 6",
-        "title": "Day 6 of how much a \u2018Free\u2019 cruise really costs Part 2 ..At port, with 3 cruises and apparently about 25,000 pe",
+        "title": "Day 6 of how much a \u2018Free\u2019 Cruise really costs.\n\nLast stop before turning back to New Orleans Port, we arrive in Cozumel",
         "format": "short",
-        "primaryPlatform": "ig",
+        "primaryPlatform": "tiktok",
         "platforms": {
           "ig": {
-            "views": "842.7K views",
+            "views": "41K views",
             "thumb": "assets/thumbs/cr-day6-ig.jpg",
-            "url": "https://www.instagram.com/reel/DEZn8OszIHl/",
-            "meta": "15176 likes"
-          },
-          "youtube": {
-            "views": "3.6K views",
-            "thumb": "assets/thumbs/cr-day6-youtube.jpg",
-            "url": "https://www.youtube.com/watch?v=iBj_K-ZasNw",
-            "meta": "99 likes"
+            "url": "https://www.instagram.com/reel/DEYR8gUT6sd/",
+            "meta": "253 likes \u00b7 12 saves \u00b7 reach 21590"
           },
           "tiktok": {
             "views": "71.7K views",
             "thumb": "assets/thumbs/cr-day6-tiktok.jpg",
             "url": "https://www.tiktok.com/@denniscatanaa/video/7455817419509042438",
             "meta": "3303 likes"
+          },
+          "youtube": {
+            "views": "3.6K views",
+            "thumb": "assets/thumbs/cr-day6-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=iBj_K-ZasNw",
+            "meta": "99 likes"
+          }
+        }
+      },
+      {
+        "id": "cr-day6b",
+        "step": "Day 6 \u00b7 Part 2",
+        "title": "Day 6 of how much a \u2018Free\u2019 cruise really costs Part 2\n\n..At port, with 3 cruises and apparently about 25,000 people, the",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "842.7K views",
+            "thumb": "assets/thumbs/cr-day6b-ig.jpg",
+            "url": "https://www.instagram.com/reel/DEZn8OszIHl/",
+            "meta": "15176 likes \u00b7 86 saves \u00b7 reach 762925"
           }
         }
       },
       {
         "id": "cr-day7",
         "step": "Day 7",
-        "title": "This is day 7 of how much a \u2018Free\u2019 Cruise really costs. Last full day before heading to port, we\u2019re in a routi",
+        "title": "This is day 7 of how much a \u2018Free\u2019 Cruise really costs. \nLast full day before heading to port, we\u2019re in a routine now, a",
         "format": "short",
         "primaryPlatform": "ig",
         "platforms": {
@@ -604,13 +686,46 @@
             "views": "142K views",
             "thumb": "assets/thumbs/cr-day7-ig.jpg",
             "url": "https://www.instagram.com/reel/DEeot-fRNeJ/",
-            "meta": "987 likes"
+            "meta": "987 likes \u00b7 23 saves \u00b7 reach 117405"
+          },
+          "tiktok": {
+            "views": "29K views",
+            "thumb": "assets/thumbs/cr-day7-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7456730737144794373",
+            "meta": "1346 likes"
           },
           "youtube": {
             "views": "1.9K views",
             "thumb": "assets/thumbs/cr-day7-youtube.jpg",
             "url": "https://www.youtube.com/watch?v=VxucveHXp-w",
             "meta": "40 likes"
+          }
+        }
+      },
+      {
+        "id": "cr-finale",
+        "step": "Finale \u00b7 Cost",
+        "title": "Final cost of how much a \u2018Free\u2019 Crusie really costs #norwegiancruiseline",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "34.9K views",
+            "thumb": "assets/thumbs/cr-finale-ig.jpg",
+            "url": "https://www.instagram.com/reel/DEi53PESl7X/",
+            "meta": "444 likes \u00b7 16 saves \u00b7 reach 24563"
+          },
+          "tiktok": {
+            "views": "17.6K views",
+            "thumb": "assets/thumbs/cr-finale-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7457390978081639686",
+            "meta": "819 likes"
+          },
+          "youtube": {
+            "views": "652 views",
+            "thumb": "assets/thumbs/cr-day7-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=g-725uayHWQ",
+            "meta": "17 likes"
           }
         }
       }
@@ -716,91 +831,299 @@
       }
     ]
   },
-  {
+    {
     "id": "tengchong-china",
-    "name": "Chinese National Holiday \u2014 Tengchong & China",
-    "tag": "Needs vet",
+    "name": "Chinese National Holiday \u2014 Tengchong & Yunnan",
+    "tag": "National Holiday series",
     "region": "China",
-    "summary": "Media-kit virals (9.3M / 2.9M / 1.5M) need Dennis to confirm permalinks. Rows below are auto-bucketed candidates.",
-    "topPostId": "cn-0",
+    "summary": "Day-by-day Tengchong / Yunnan national-holiday series across IG + TikTok + YouTube. Media-kit virals (9.3M / 2.9M / 1.5M) still need permalink vet. Hainan \u201cHawaii of China\u201d kept out of this block.",
+    "topPostId": "cn-intro",
     "items": [
       {
-        "id": "cn-0",
-        "step": "Clip 1",
-        "title": "I want to know who thought it was a good idea for 1.4 billion people to have a one week vacation, on the same ",
+        "id": "cn-intro",
+        "step": "Intro \u00b7 Holiday crush",
+        "title": "I want to know who thought it was a good idea for 1.4 billion people to have a one week vacation, on the same week. \n\nWe",
         "format": "short",
-        "primaryPlatform": "ig",
-        "placeholder": true,
+        "primaryPlatform": "tiktok",
         "platforms": {
           "ig": {
             "views": "4.3K views",
-            "thumb": "assets/thumbs/cn-0-ig.jpg",
+            "thumb": "assets/thumbs/cn-intro-ig.jpg",
             "url": "https://www.instagram.com/reel/DQ5_6Quj8tB/",
-            "meta": "Needs vet \u00b7 China-HK bucket"
+            "meta": "79 likes \u00b7 8 saves \u00b7 reach 3482"
+          },
+          "tiktok": {
+            "views": "36.1K views",
+            "thumb": "assets/thumbs/cn-intro-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7584674142637575441",
+            "meta": "764 likes"
           }
         }
       },
       {
-        "id": "cn-1",
-        "step": "Clip 2",
-        "title": "Furry Ball Forest (\u6bdb\u6bdb\u7403), a natural moss covered forest near Tengchong in the Gaoliging mountains in Yunnan, Ch",
+        "id": "cn-day1",
+        "step": "Day 1",
+        "title": "Day 1",
         "format": "short",
-        "primaryPlatform": "ig",
-        "placeholder": true,
-        "platforms": {
-          "ig": {
-            "views": "2.8K views",
-            "thumb": "assets/thumbs/cn-1-ig.jpg",
-            "url": "https://www.instagram.com/reel/DSUQ4FjD4WU/",
-            "meta": "Needs vet \u00b7 China-HK bucket"
-          }
-        }
-      },
-      {
-        "id": "cn-2",
-        "step": "Clip 3",
-        "title": "Couple snap shots of our mini escape during the national holidays in Tengchong, Yunnan, China. \ud83d\ude0a",
-        "format": "short",
-        "primaryPlatform": "ig",
-        "placeholder": true,
-        "platforms": {
-          "ig": {
-            "views": "1.6K views",
-            "thumb": "assets/thumbs/cn-2-ig.jpg",
-            "url": "https://www.instagram.com/p/DSSeXilj7Gl/",
-            "meta": "Needs vet \u00b7 China-HK bucket"
-          }
-        }
-      },
-      {
-        "id": "cn-3",
-        "step": "Clip 4",
-        "title": "I didnt know they was cool like that. #Chinatravel",
-        "format": "long",
         "primaryPlatform": "youtube",
-        "placeholder": true,
         "platforms": {
           "youtube": {
-            "views": "369 views",
-            "thumb": "assets/thumbs/cn-3-youtube.jpg",
-            "url": "https://www.youtube.com/shorts/t-xJec_fm88",
-            "meta": "Needs vet \u00b7 China-HK bucket"
+            "views": "3.8K views",
+            "thumb": "assets/thumbs/cn-day1-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=pYyZ0Q8o9nc",
+            "meta": "305 likes"
           }
         }
       },
       {
-        "id": "cn-4",
-        "step": "Clip 5",
-        "title": "Day 3: Coconut scam, fat corgi's and bamboo pole rafting",
-        "format": "long",
-        "primaryPlatform": "youtube",
-        "placeholder": true,
+        "id": "cn-day2",
+        "step": "Day 2",
+        "title": "They said not to travel China during the national holiday, so we did anyway. \nThis is Day 2, where we explore the little",
+        "format": "short",
+        "primaryPlatform": "ig",
         "platforms": {
+          "ig": {
+            "views": "1.3K views",
+            "thumb": "assets/thumbs/cn-day2-ig.jpg",
+            "url": "https://www.instagram.com/reel/DRCyEmXiZhY/",
+            "meta": "17 likes \u00b7 1 saves \u00b7 reach 1090"
+          },
+          "tiktok": {
+            "views": "504 views",
+            "thumb": "assets/thumbs/cn-day2-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7585059034936462608",
+            "meta": "7 likes"
+          },
+          "youtube": {
+            "views": "189 views",
+            "thumb": "assets/thumbs/cn-day2-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=-TkzSYIQIS4",
+            "meta": "9 likes"
+          }
+        }
+      },
+      {
+        "id": "cn-day2b",
+        "step": "Day 2 \u00b7 Hands",
+        "title": "His hands were shaking\ud83e\udd72\n\nEscaping to the far west of China in a less popular city, it\u2019s hard to find a foreigner out her",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "3K views",
+            "thumb": "assets/thumbs/cn-day2b-ig.jpg",
+            "url": "https://www.instagram.com/reel/DRKdA2pjzEt/",
+            "meta": "20 likes \u00b7 reach 2563"
+          }
+        }
+      },
+      {
+        "id": "cn-day3",
+        "step": "Day 3 \u00b7 Coconut & corgi",
+        "title": "Coconut scam, fat corgi\u2019s and bamboo pole rafting: This is day 3 of travelling China during the national holiday. \n\nWe s",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.7K views",
+            "thumb": "assets/thumbs/cn-day3-ig.jpg",
+            "url": "https://www.instagram.com/reel/DRL0dlgDkFW/",
+            "meta": "8 likes \u00b7 reach 1516"
+          },
+          "tiktok": {
+            "views": "783 views",
+            "thumb": "assets/thumbs/cn-day3-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7585078488227433729",
+            "meta": "42 likes"
+          },
           "youtube": {
             "views": "184 views",
             "thumb": "assets/thumbs/cn-4-youtube.jpg",
             "url": "https://www.youtube.com/watch?v=WlmwxjKLtIU",
-            "meta": "Needs vet \u00b7 China-HK bucket"
+            "meta": "8 likes"
+          }
+        }
+      },
+      {
+        "id": "cn-tips",
+        "step": "10 things \u00b7 Tengchong",
+        "title": "\u272810 things\u2728: If you plan on visiting china, and find yourself in Tengchong or Baoshan in Yunnan province, then Beihai We",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.8K views",
+            "thumb": "assets/thumbs/cn-tips-ig.jpg",
+            "url": "https://www.instagram.com/reel/DRO5XEHkW7T/",
+            "meta": "7 likes \u00b7 1 saves \u00b7 reach 1526"
+          },
+          "tiktok": {
+            "views": "144 views",
+            "thumb": "assets/thumbs/cn-tips-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7585112435510512912",
+            "meta": "5 likes"
+          }
+        }
+      },
+      {
+        "id": "cn-day4",
+        "step": "Day 4",
+        "title": "This is day 4 of visiting China during the national holiday! From summiting a mini volcano to experiencing some explodin",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.5K views",
+            "thumb": "assets/thumbs/cn-day4-ig.jpg",
+            "url": "https://www.instagram.com/reel/DRep-OODw6u/",
+            "meta": "9 likes \u00b7 reach 1322"
+          },
+          "tiktok": {
+            "views": "277 views",
+            "thumb": "assets/thumbs/cn-day4-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7585142330475203841",
+            "meta": "10 likes"
+          },
+          "youtube": {
+            "views": "30 views",
+            "thumb": "assets/thumbs/cn-day4-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=Pi6EUVDbRbM",
+            "meta": "2 likes"
+          }
+        }
+      },
+      {
+        "id": "cn-day5",
+        "step": "Day 5 \u00b7 Pregnancy Well",
+        "title": "\u201cThe Pregnancy Well originates from a beautiful legend about \u2018the child-giving spring.\u2019 The spring flows with a pH value",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "2.4K views",
+            "thumb": "assets/thumbs/cn-day5-ig.jpg",
+            "url": "https://www.instagram.com/reel/DRjzzIjEdb_/",
+            "meta": "21 likes \u00b7 3 saves \u00b7 reach 1905"
+          }
+        }
+      },
+      {
+        "id": "cn-day5b",
+        "step": "Day 5 \u00b7 Part 2",
+        "title": "Am I gregnant? \n\nDay 5 (part 2) of visiting China during the national holidays. \nFinishing off the day by Visiting the b",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.6K views",
+            "thumb": "assets/thumbs/cn-day5b-ig.jpg",
+            "url": "https://www.instagram.com/reel/DRmre1fDx31/",
+            "meta": "14 likes \u00b7 2 saves \u00b7 reach 1396"
+          },
+          "tiktok": {
+            "views": "237 views",
+            "thumb": "assets/thumbs/cn-day5b-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7585165276535065857",
+            "meta": "15 likes"
+          }
+        }
+      },
+      {
+        "id": "cn-day6",
+        "step": "Day 6",
+        "title": "The end of Day 6 of traveling China during the national Holiday. What a day..",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.2K views",
+            "thumb": "assets/thumbs/cn-day6-ig.jpg",
+            "url": "https://www.instagram.com/reel/DRyC58sDyzZ/",
+            "meta": "5 likes \u00b7 reach 1032"
+          },
+          "youtube": {
+            "views": "11 views",
+            "thumb": "assets/thumbs/cn-day6-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=G37wkdWj_fk",
+            "meta": "3 likes"
+          }
+        }
+      },
+      {
+        "id": "cn-furry",
+        "step": "Furry Ball Forest",
+        "title": "Furry Ball Forest (\u6bdb\u6bdb\u7403), a natural moss covered forest near Tengchong in the Gaoliging mountains in Yunnan, China. On ou",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "2.8K views",
+            "thumb": "assets/thumbs/cn-furry-ig.jpg",
+            "url": "https://www.instagram.com/reel/DSUQ4FjD4WU/",
+            "meta": "50 likes \u00b7 13 saves \u00b7 reach 2369"
+          },
+          "tiktok": {
+            "views": "328 views",
+            "thumb": "assets/thumbs/cn-furry-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7585169086682844417",
+            "meta": "15 likes"
+          },
+          "youtube": {
+            "views": "166 views",
+            "thumb": "assets/thumbs/cn-furry-youtube.jpg",
+            "url": "https://www.youtube.com/shorts/Q5H48nrxxEs",
+            "meta": "0 likes"
+          }
+        }
+      },
+      {
+        "id": "cn-snaps",
+        "step": "Tengchong snaps",
+        "title": "Couple snap shots of our mini escape during the national holidays in Tengchong, Yunnan, China. \ud83d\ude0a",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.6K views",
+            "thumb": "assets/thumbs/cn-snaps-ig.jpg",
+            "url": "https://www.instagram.com/p/DSSeXilj7Gl/",
+            "meta": "44 likes \u00b7 reach 548"
+          }
+        }
+      },
+      {
+        "id": "cn-plan",
+        "step": "Plan the holiday",
+        "title": "If you plan right, travelling China during the national holiday is fine. It\u2019s a big country! if you go to the major citi",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.7K views",
+            "thumb": "assets/thumbs/cn-plan-ig.jpg",
+            "url": "https://www.instagram.com/reel/DSUiSSjj0O4/",
+            "meta": "19 likes \u00b7 1 saves \u00b7 reach 1452"
+          },
+          "tiktok": {
+            "views": "844 views",
+            "thumb": "assets/thumbs/cn-plan-tiktok.jpg",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7585172482932378896",
+            "meta": "21 likes"
+          }
+        }
+      },
+      {
+        "id": "cn-film",
+        "step": "Film \u00b7 One week Tengchong",
+        "title": "Film \u00b7 One week Tengchong",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "96 views",
+            "thumb": "assets/thumbs/cn-film-youtube.jpg",
+            "url": "https://www.youtube.com/watch?v=otRr-DYOWio",
+            "meta": "2 likes \u00b7 longer cut"
           }
         }
       }
@@ -808,31 +1131,252 @@
   }
 ];
 
-      // State: which project is in 3-row matrix mode, and which card keys are unrolled
+      // Account-level audience (from inventory pull). YouTube subs TBD.
+      const PLATFORM_AUDIENCE = {
+        ig: { handle: "@denniscatana", followers: 4617, followersLabel: "followers" },
+        tiktok: { handle: "@denniscatanaa", followers: 2639, followersLabel: "followers" },
+        youtube: { handle: "@denniscatana", followers: null, followersLabel: "subscribers" }
+      };
+
+      // State
       const matrixModeByProject = {};
-      const unrolledCardKeys = new Set(["taiwan-1000km::chrono::tw-day1"]);
+      const matrixFocusByProject = {};
+      const platformEnabled = { ig: true, tiktok: true, youtube: true };
+
+      function parseCountToken(raw) {
+        if (raw == null) return 0;
+        const m = String(raw)
+          .replace(/,/g, "")
+          .match(/([\d.]+)\s*([KMB])?/i);
+        if (!m) return 0;
+        let n = parseFloat(m[1]);
+        if (Number.isNaN(n)) return 0;
+        const u = (m[2] || "").toUpperCase();
+        if (u === "K") n *= 1e3;
+        if (u === "M") n *= 1e6;
+        if (u === "B") n *= 1e9;
+        return Math.round(n);
+      }
+
+      function parseViews(viewsStr) {
+        return parseCountToken(viewsStr);
+      }
+
+      function parseLikes(meta) {
+        if (!meta) return 0;
+        const m = String(meta)
+          .replace(/,/g, "")
+          .match(/([\d.]+)\s*([KMB])?\s*likes/i);
+        if (!m) return 0;
+        return parseCountToken(m[0]);
+      }
+
+      function formatCompact(n) {
+        if (n == null || Number.isNaN(n)) return "—";
+        if (n >= 1e6) {
+          const v = n / 1e6;
+          return (v >= 10 ? v.toFixed(0) : v.toFixed(1).replace(/\.0$/, "")) + "M";
+        }
+        if (n >= 1e3) {
+          const v = n / 1e3;
+          return (v >= 100 ? v.toFixed(0) : v.toFixed(1).replace(/\.0$/, "")) + "K";
+        }
+        return String(n);
+      }
+
+      function enabledPlatformKeys() {
+        return ["ig", "tiktok", "youtube"].filter((k) => platformEnabled[k]);
+      }
+
+      function aggregateProjectStats(project, plats) {
+        let views = 0;
+        let likes = 0;
+        let posts = 0;
+        for (const item of project.items) {
+          for (const plat of plats) {
+            const entry = item.platforms[plat];
+            if (!entry) continue;
+            posts += 1;
+            views += parseViews(entry.views);
+            likes += parseLikes(entry.meta);
+          }
+        }
+        let followers = 0;
+        let followersKnown = false;
+        for (const plat of plats) {
+          const aud = PLATFORM_AUDIENCE[plat];
+          if (aud && aud.followers != null) {
+            followers += aud.followers;
+            followersKnown = true;
+          }
+        }
+        return {
+          views,
+          likes,
+          posts,
+          followers: followersKnown ? followers : null,
+          missingYtSubs: plats.includes("youtube") && PLATFORM_AUDIENCE.youtube.followers == null
+        };
+      }
+
+      function aggregatePageStats(plats) {
+        return PROJECTS_DATA.reduce(
+          (acc, project) => {
+            const s = aggregateProjectStats(project, plats);
+            acc.views += s.views;
+            acc.likes += s.likes;
+            acc.posts += s.posts;
+            return acc;
+          },
+          { views: 0, likes: 0, posts: 0 }
+        );
+      }
+
+      function pageAudienceForPlats(plats) {
+        let followers = 0;
+        let known = false;
+        let missingYt = false;
+        for (const plat of plats) {
+          const aud = PLATFORM_AUDIENCE[plat];
+          if (aud && aud.followers != null) {
+            followers += aud.followers;
+            known = true;
+          } else if (plat === "youtube") {
+            missingYt = true;
+          }
+        }
+        return { followers: known ? followers : null, missingYt };
+      }
+
+      function togglePlatformFilter(platKey) {
+        const next = !platformEnabled[platKey];
+        // Keep at least one platform on
+        if (!next && enabledPlatformKeys().length <= 1) return;
+        platformEnabled[platKey] = next;
+        renderAllProjects();
+      }
 
       function toggleProjectMatrix(projectId) {
-        matrixModeByProject[projectId] = !matrixModeByProject[projectId];
+        const opening = !matrixModeByProject[projectId];
+        matrixModeByProject[projectId] = opening;
+        if (!opening) {
+          delete matrixFocusByProject[projectId];
+        } else if (!matrixFocusByProject[projectId]) {
+          const project = PROJECTS_DATA.find((p) => p.id === projectId);
+          if (project) matrixFocusByProject[projectId] = project.topPostId || project.items[0]?.id;
+        }
         renderAllProjects();
       }
 
-      function toggleCardUnroll(cardKey, event) {
+      function openProjectMatrixFocused(projectId, itemId, event) {
         if (event && event.target && event.target.closest("a")) {
-          return; // allow direct social link click without toggling
+          return; // allow direct social link clicks
         }
-        if (unrolledCardKeys.has(cardKey)) {
-          unrolledCardKeys.delete(cardKey);
-        } else {
-          unrolledCardKeys.add(cardKey);
-        }
+        matrixModeByProject[projectId] = true;
+        matrixFocusByProject[projectId] = itemId;
         renderAllProjects();
       }
 
-      function renderPhoneCardHTML(platKey, platData, stepLabel, isExpanded, directClickOpensUrl) {
+      function scrollMatrixFocusIntoView(projectId) {
+        const focusId = matrixFocusByProject[projectId];
+        if (!focusId) return;
+        const scroller = document.querySelector(`#proj-${projectId} .matrix-scroll-right`);
+        if (!scroller) return;
+        // Prefer header cell inside the scroller (offsetLeft alone is wrong vs pinned peak column)
+        const col =
+          scroller.querySelector(`.matrix-col-hdr[data-matrix-col="${projectId}::${focusId}"]`) ||
+          scroller.querySelector(`[data-matrix-col="${projectId}::${focusId}"]`);
+        if (!col) return;
+        const scrollerRect = scroller.getBoundingClientRect();
+        const colRect = col.getBoundingClientRect();
+        const delta =
+          colRect.left - scrollerRect.left - (scroller.clientWidth / 2 - colRect.width / 2);
+        const target = Math.max(0, scroller.scrollLeft + delta);
+        scroller.scrollTo({ left: target, behavior: "smooth" });
+      }
+
+      function renderPlatformFilterHTML(extraClass) {
+        return `
+          <div class="plat-filter-toggles ${extraClass || ""}" role="group" aria-label="Platform filters">
+            ${["ig", "tiktok", "youtube"]
+              .map((plat) => {
+                const on = platformEnabled[plat];
+                const name = PLATFORM_INFO[plat].name;
+                return `
+                  <button
+                    type="button"
+                    class="plat-filter-btn ${plat} ${on ? "is-on" : "is-off"}"
+                    aria-pressed="${on}"
+                    onclick="togglePlatformFilter('${plat}')"
+                    title="${on ? "Hide" : "Show"} ${name}"
+                  >
+                    ${PLATFORM_INFO[plat].iconSvg}
+                    <span>${name}</span>
+                  </button>
+                `;
+              })
+              .join("")}
+          </div>
+        `;
+      }
+
+      function renderStatsMetersHTML(stats, opts) {
+        const audienceNote = opts.missingYt
+          ? `<span class="stats-note">YT subscribers TBD</span>`
+          : "";
+        return `
+          <div class="project-stats-meters">
+            <div class="stat-meter">
+              <span class="stat-meter-value">${formatCompact(stats.views)}</span>
+              <span class="stat-meter-label">Views</span>
+            </div>
+            <div class="stat-meter">
+              <span class="stat-meter-value">${formatCompact(stats.likes)}</span>
+              <span class="stat-meter-label">Likes</span>
+            </div>
+            <div class="stat-meter">
+              <span class="stat-meter-value">${stats.followers == null ? "—" : formatCompact(stats.followers)}</span>
+              <span class="stat-meter-label">Follows</span>
+            </div>
+            <div class="stat-meter">
+              <span class="stat-meter-value">${formatCompact(stats.posts)}</span>
+              <span class="stat-meter-label">Posts in view</span>
+            </div>
+            ${audienceNote}
+          </div>
+        `;
+      }
+
+      function renderRollupHTML() {
+        const plats = enabledPlatformKeys();
+        const page = aggregatePageStats(plats);
+        const audience = pageAudienceForPlats(plats);
+        return `
+          <div class="rollup-inner">
+            <div class="rollup-copy">
+              <p class="rollup-eyebrow">Combined across projects</p>
+              <h2 class="rollup-title">Audience &amp; reach</h2>
+              <p class="rollup-sub">Toggle platforms to recalculate views, likes, and follows from the posts on this page.</p>
+            </div>
+            ${renderPlatformFilterHTML("rollup-filters")}
+            ${renderStatsMetersHTML(
+              {
+                views: page.views,
+                likes: page.likes,
+                posts: page.posts,
+                followers: audience.followers,
+                missingYt: audience.missingYt
+              },
+              { missingYt: audience.missingYt }
+            )}
+          </div>
+        `;
+      }
+
+      function renderPhoneCardHTML(platKey, platData, stepLabel, isFocused, directClickOpensUrl) {
         const pInfo = PLATFORM_INFO[platKey];
         const inner = `
-          <div class="phone-card plat-${platKey} ${isExpanded ? "is-expanded" : ""}">
+          <div class="phone-card plat-${platKey} ${isFocused ? "is-matrix-focused" : ""}">
             <div class="phone-screen">
               <img src="${platData.thumb}" alt="${stepLabel} on ${pInfo.name}" loading="lazy" />
               <div class="phone-screen-scrim"></div>
@@ -858,9 +1402,7 @@
         return inner;
       }
 
-      function renderClipColumnHTML(project, item, slotPrefix, stepBadgeOverride) {
-        const cardKey = `${project.id}::${slotPrefix}::${item.id}`;
-        const isOpen = unrolledCardKeys.has(cardKey);
+      function renderClipColumnHTML(project, item, stepBadgeOverride) {
         const primaryPlat = item.primaryPlatform;
         const primaryData = item.platforms[primaryPlat];
         const otherPlats = ["ig", "tiktok", "youtube"].filter(
@@ -868,141 +1410,158 @@
         );
         const allPlats = ["ig", "tiktok", "youtube"].filter((k) => Boolean(item.platforms[k]));
 
-        const formatClass = item.format === "long" ? "is-long" : item.format === "post" ? "is-post" : "is-short";
+        const formatClass =
+          item.format === "long" ? "is-long" : item.format === "post" ? "is-post" : "is-short";
         const displayStep = stepBadgeOverride || item.step;
 
         return `
           <div class="clip-column ${formatClass}">
-            <div style="width: 100%;" onclick="toggleCardUnroll('${cardKey}', event)">
-              ${renderPhoneCardHTML(primaryPlat, primaryData, displayStep, isOpen, false)}
-            </div>
+            <button
+              type="button"
+              class="clip-card-hit"
+              onclick="openProjectMatrixFocused('${project.id}', '${item.id}', event)"
+              title="Open multi-platform matrix focused on ${item.step}"
+            >
+              ${renderPhoneCardHTML(primaryPlat, primaryData, displayStep, false, false)}
+            </button>
             <div class="clip-meta">
-              <p class="clip-title">${item.placeholder ? `<span class="pill" style="font-size:0.65rem;padding:0.1rem 0.4rem;margin-right:0.35rem;">Placeholder</span>` : ""}${item.title}</p>
-              ${
-                otherPlats.length > 0
-                  ? `<button type="button" class="clip-expand-btn ${isOpen ? "active" : ""}" onclick="toggleCardUnroll('${cardKey}', event)">
-                      <span>${isOpen ? "Hide other sites ▲" : `+${otherPlats.length} other site${otherPlats.length > 1 ? "s" : ""} ▼`}</span>
-                      <span class="mini-plat-dots">
-                        ${allPlats.map((p) => `<span class="mini-dot ${p}" title="${PLATFORM_INFO[p].name}"></span>`).join("")}
-                      </span>
-                    </button>`
-                  : `<a class="clip-expand-btn" href="${primaryData.url}" target="_blank" rel="noopener" style="text-decoration: none;">
-                      <span>Only on ${PLATFORM_INFO[primaryPlat].name} ↗</span>
-                      <span class="mini-plat-dots"><span class="mini-dot ${primaryPlat}"></span></span>
-                    </a>`
-              }
+              <p class="clip-title">${
+                item.placeholder
+                  ? `<span class="pill" style="font-size:0.65rem;padding:0.1rem 0.4rem;margin-right:0.35rem;">Placeholder</span>`
+                  : ""
+              }${item.title}</p>
+              <button
+                type="button"
+                class="clip-expand-btn"
+                onclick="openProjectMatrixFocused('${project.id}', '${item.id}', event)"
+              >
+                <span>${
+                  otherPlats.length > 0
+                    ? `Open matrix · ${allPlats.length} platforms`
+                    : `Open matrix · ${PLATFORM_INFO[primaryPlat].name}`
+                }</span>
+                <span class="mini-plat-dots">
+                  ${allPlats
+                    .map((p) => `<span class="mini-dot ${p}" title="${PLATFORM_INFO[p].name}"></span>`)
+                    .join("")}
+                </span>
+              </button>
             </div>
-            ${
-              otherPlats.length > 0
-                ? `<div class="unroll-stack ${isOpen ? "open" : ""}">
-                    <div class="unroll-label">Also posted on (click to open):</div>
-                    ${otherPlats
-                      .map((platKey) =>
-                        renderPhoneCardHTML(
-                          platKey,
-                          item.platforms[platKey],
-                          `${item.step} · ${PLATFORM_INFO[platKey].name}`,
-                          false,
-                          true
-                        )
-                      )
-                      .join("")}
-                  </div>`
-                : ""
-            }
           </div>
         `;
       }
 
       function renderMatrixViewHTML(project) {
         const topItem = project.items.find((i) => i.id === project.topPostId) || project.items[0];
+        const focusId = matrixFocusByProject[project.id] || null;
         const platOrder = ["ig", "tiktok", "youtube"];
+        const focusItem = project.items.find((i) => i.id === focusId);
 
         return `
-          <div class="matrix-wrapper">
-            <div class="matrix-pinned-left">
-              <div class="matrix-header-row">
-                <div style="width: 112px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);">
-                  Platform Row
-                </div>
-                <div class="matrix-col-hdr" style="border-color: var(--accent); color: var(--accent);">
-                  ★ Peak: ${topItem.step}
-                </div>
-              </div>
-              ${platOrder
-                .map((platKey) => {
-                  const pInfo = PLATFORM_INFO[platKey];
-                  const peakData = topItem.platforms[platKey];
-                  return `
-                    <div class="matrix-plat-row">
-                      <div class="matrix-plat-label ${platKey}">
-                        ${pInfo.iconSvg} ${pInfo.name}
-                        <span>@denniscatana</span>
-                      </div>
-                      <div class="matrix-cell">
-                        ${
-                          peakData
-                            ? renderPhoneCardHTML(platKey, peakData, "TOP PEAK", false, true)
-                            : `<div class="matrix-blank-slot">Not posted on ${pInfo.name}</div>`
-                        }
-                      </div>
-                    </div>
-                  `;
-                })
-                .join("")}
-            </div>
-
-            <div class="matrix-scroll-right">
-              <div class="matrix-header-row">
-                ${project.items
-                  .map(
-                    (it, idx) => `
-                  <div class="matrix-col-hdr" title="${it.title}">
-                    ${idx + 1}. ${it.step}
+          <div class="matrix-wrapper" data-matrix-project="${project.id}">
+            ${
+              focusItem
+                ? `<div class="matrix-focus-banner">Focused on <strong>${focusItem.step}</strong> — scroll sideways for the full series</div>`
+                : ""
+            }
+            <div class="matrix-body">
+              <div class="matrix-pinned-left">
+                <div class="matrix-header-row">
+                  <div style="width: 112px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);">
+                    Platform Row
                   </div>
-                `
-                  )
+                  <div class="matrix-col-hdr" style="border-color: var(--accent); color: var(--accent);">
+                    ★ Peak: ${topItem.step}
+                  </div>
+                </div>
+                ${platOrder
+                  .map((platKey) => {
+                    const pInfo = PLATFORM_INFO[platKey];
+                    const peakData = topItem.platforms[platKey];
+                    return `
+                      <div class="matrix-plat-row">
+                        <div class="matrix-plat-label ${platKey}">
+                          ${pInfo.iconSvg} ${pInfo.name}
+                          <span>${PLATFORM_AUDIENCE[platKey].handle}</span>
+                        </div>
+                        <div class="matrix-cell">
+                          ${
+                            peakData
+                              ? renderPhoneCardHTML(platKey, peakData, "TOP PEAK", false, true)
+                              : `<div class="matrix-blank-slot">Not posted on ${pInfo.name}</div>`
+                          }
+                        </div>
+                      </div>
+                    `;
+                  })
                   .join("")}
               </div>
-              ${platOrder
-                .map((platKey) => {
-                  const pInfo = PLATFORM_INFO[platKey];
-                  return `
-                    <div class="matrix-plat-row">
-                      ${project.items
-                        .map((item) => {
-                          const entry = item.platforms[platKey];
-                          if (!entry) {
+
+              <div class="matrix-scroll-right">
+                <div class="matrix-header-row">
+                  ${project.items
+                    .map((it, idx) => {
+                      const focused = it.id === focusId;
+                      return `
+                        <div
+                          class="matrix-col-hdr ${focused ? "is-focused" : ""}"
+                          title="${it.title}"
+                          data-matrix-col="${project.id}::${it.id}"
+                        >
+                          ${idx + 1}. ${it.step}${focused ? " · Focus" : ""}
+                        </div>
+                      `;
+                    })
+                    .join("")}
+                </div>
+                ${platOrder
+                  .map((platKey) => {
+                    const pInfo = PLATFORM_INFO[platKey];
+                    return `
+                      <div class="matrix-plat-row">
+                        ${project.items
+                          .map((item) => {
+                            const entry = item.platforms[platKey];
+                            const focused = item.id === focusId;
+                            const focusClass = focused ? "is-focused-col" : "";
+                            if (!entry) {
+                              return `
+                                <div class="matrix-blank-slot ${focusClass}" data-matrix-col="${project.id}::${item.id}">
+                                  <strong>Blank Slot</strong>
+                                  <span>No ${pInfo.name} post for ${item.step}</span>
+                                </div>
+                              `;
+                            }
                             return `
-                              <div class="matrix-blank-slot">
-                                <strong>Blank Slot</strong>
-                                <span>No ${pInfo.name} post for ${item.step}</span>
+                              <div class="matrix-cell ${focusClass}" data-matrix-col="${project.id}::${item.id}">
+                                ${renderPhoneCardHTML(platKey, entry, item.step, focused, true)}
                               </div>
                             `;
-                          }
-                          return `
-                            <div class="matrix-cell">
-                              ${renderPhoneCardHTML(platKey, entry, item.step, false, true)}
-                            </div>
-                          `;
-                        })
-                        .join("")}
-                    </div>
-                  `;
-                })
-                .join("")}
+                          })
+                          .join("")}
+                      </div>
+                    `;
+                  })
+                  .join("")}
+              </div>
             </div>
           </div>
         `;
       }
 
       function renderAllProjects() {
+        const rollup = document.getElementById("projects-rollup");
+        if (rollup) rollup.innerHTML = renderRollupHTML();
+
         const mount = document.getElementById("projects-mount");
         if (!mount) return;
+
+        const plats = enabledPlatformKeys();
 
         mount.innerHTML = PROJECTS_DATA.map((project) => {
           const isMatrix = Boolean(matrixModeByProject[project.id]);
           const topItem = project.items.find((i) => i.id === project.topPostId) || project.items[0];
+          const stats = aggregateProjectStats(project, plats);
 
           return `
             <article class="project-block" id="proj-${project.id}">
@@ -1025,9 +1584,14 @@
                     class="btn ${isMatrix ? "btn-primary" : "btn-ghost"} btn-sm"
                     onclick="toggleProjectMatrix('${project.id}')"
                   >
-                    ${isMatrix ? "← Back to Combined Timeline (#1 & #2)" : "View 3-Row Platform Matrix (#3)"}
+                    ${isMatrix ? "← Back to Combined Timeline" : "View Platform Matrix"}
                   </button>
                 </div>
+              </div>
+
+              <div class="project-stats-bar">
+                ${renderPlatformFilterHTML("project-filters")}
+                ${renderStatsMetersHTML(stats, { missingYt: stats.missingYtSubs })}
               </div>
 
               ${
@@ -1041,18 +1605,18 @@
                       <span class="fixed-pill">Pinned</span>
                     </div>
                     <div class="timeline-track">
-                      ${renderClipColumnHTML(project, topItem, "peak", "★ MOST POPULAR")}
+                      ${renderClipColumnHTML(project, topItem, "★ MOST POPULAR")}
                     </div>
                   </div>
 
                   <div class="timeline-scroll-right">
                     <div class="timeline-col-label">
-                      <span>Chronological Project Timeline (Scroll Right → · Click any card to unroll other platforms underneath)</span>
+                      <span>Chronological timeline → · Click a card to open the multi-row matrix</span>
                     </div>
                     <div class="timeline-track">
                       ${project.items
                         .map((item, idx) =>
-                          renderClipColumnHTML(project, item, "chrono", `${idx + 1}. ${item.step}`)
+                          renderClipColumnHTML(project, item, `${idx + 1}. ${item.step}`)
                         )
                         .join("")}
                     </div>
@@ -1063,7 +1627,21 @@
             </article>
           `;
         }).join("");
+
+        // After DOM paint, scroll focused matrix columns into view
+        requestAnimationFrame(() => {
+          Object.keys(matrixModeByProject).forEach((pid) => {
+            if (matrixModeByProject[pid] && matrixFocusByProject[pid]) {
+              scrollMatrixFocusIntoView(pid);
+            }
+          });
+        });
       }
+
+      // Expose handlers for inline onclick
+      window.togglePlatformFilter = togglePlatformFilter;
+      window.toggleProjectMatrix = toggleProjectMatrix;
+      window.openProjectMatrixFocused = openProjectMatrixFocused;
 
       renderAllProjects();
     </script>
