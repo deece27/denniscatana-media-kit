@@ -6,7 +6,7 @@
     <title>Projects — Dennis Catana</title>
     <meta
       name="description"
-      content="Project breakdowns for Dennis Catana — peak post, preview of best clips, and expanded IG/TikTok/YouTube matrices from the posts sheet."
+      content="Project breakdowns for Dennis Catana — peak post plus Instagram day row with expandable TikTok and YouTube matrix from the posts sheet."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,12 +29,11 @@
 
     <main id="top" class="wrap-wide">
       <section class="hero" style="padding: 1.75rem 0 1.25rem; border-top: none">
-        <p class="eyebrow">Projects · Preview &amp; expanded</p>
+        <p class="eyebrow">Projects · One view</p>
         <h1 style="font-size: clamp(1.9rem, 4.5vw, 2.65rem); margin-bottom: 0.65rem">Projects</h1>
         <p class="lede" style="max-width: 48rem; margin-bottom: 1rem">
-          <strong>Preview</strong> shows each slot’s best-performing post.
-          Expand a project (title or a card) for the full Instagram · TikTok · YouTube matrix —
-          blank cells where a platform hasn’t posted yet.
+          Peak post on the left. Day columns on the right (Instagram up front). Pull up the TikTok peek
+          at the bottom to reveal the full TikTok + YouTube rows — and peak stats.
         </p>
       </section>
 
@@ -109,7 +108,6 @@
         return PLATFORM_META[platform] || PLATFORM_META.Instagram;
       }
 
-      /** Group posts into timeline slots (Day N preferred, else calendar date). */
       function buildSlots(posts) {
         const map = new Map();
 
@@ -145,37 +143,38 @@
           });
       }
 
-      function renderPhoneCard(post, { compact = false, linkOut = false } = {}) {
+      /** Prefer Instagram for the primary day row; fall back to best if no IG. */
+      function primaryPost(slot) {
+        return slot.byPlatform.Instagram || slot.best || null;
+      }
+
+      function renderPhoneCard(post) {
         if (!post) return "";
         const m = meta(post.platform);
         const thumb = post.thumbnail
           ? `<img src="${escapeHtml(post.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
           : "";
         const isLong = post.platform === "YouTube" && (post.type || "").toLowerCase() !== "short";
-        const inner = `
-          <div class="phone-screen ${compact ? "is-compact" : ""} ${isLong ? "is-long-screen" : ""}">
-            ${thumb}
-            <div class="phone-screen-scrim"></div>
-            <div class="phone-top-bar">
-              <span class="plat-logo-badge ${m.key}" title="${escapeHtml(post.platform)}">${m.logo}</span>
-              <span class="views-chip" title="Views">
-                <span class="views-icon">${m.viewsIcon}</span>
-                ${fmt(post.views)}
-              </span>
-            </div>
-            <div class="phone-bottom-bar">
-              <div class="clip-title" style="color:#fff">${escapeHtml(post.title || "")}</div>
-              <div class="phone-views-row">
-                <span>${fmt(post.likes)} likes</span>
-                ${post.comments != null ? `<span>${fmt(post.comments)} comments</span>` : ""}
+        return `
+          <a class="phone-card ${m.className}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
+            <div class="phone-screen ${isLong ? "is-long-screen" : ""}">
+              ${thumb}
+              <div class="phone-screen-scrim"></div>
+              <div class="phone-top-bar">
+                <span class="plat-logo-badge ${m.key}" title="${escapeHtml(post.platform)}">${m.logo}</span>
+                <span class="views-chip" title="Views">
+                  <span class="views-icon">${m.viewsIcon}</span>
+                  ${fmt(post.views)}
+                </span>
+              </div>
+              <div class="phone-bottom-bar">
+                <div class="clip-title" style="color:#fff">${escapeHtml(post.title || "")}</div>
+                <div class="phone-views-row">
+                  <span>${fmt(post.likes)} likes</span>
+                </div>
               </div>
             </div>
-          </div>`;
-
-        if (linkOut) {
-          return `<a class="phone-card ${m.className}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">${inner}</a>`;
-        }
-        return `<button type="button" class="phone-card ${m.className} phone-card-btn" data-expand-trigger="1">${inner}</button>`;
+          </a>`;
       }
 
       function renderBlankSlot(platform) {
@@ -188,7 +187,7 @@
           </div>`;
       }
 
-      function renderPeak(project, statsOpen) {
+      function renderPeak(project, expanded) {
         const peak = project.peak;
         const m = meta(peak.platform);
         return `
@@ -217,11 +216,7 @@
                 </div>
               </div>
             </a>
-            <button type="button" class="peak-stats-toggle ${statsOpen ? "is-open" : ""}" data-peak-stats-toggle="1" aria-expanded="${statsOpen ? "true" : "false"}">
-              <span>${statsOpen ? "Hide stats" : "Show stats"}</span>
-              <span class="chevron">${ICONS.chevron}</span>
-            </button>
-            <div class="peak-stats-drawer ${statsOpen ? "is-open" : ""}" ${statsOpen ? "" : "hidden"}>
+            <div class="peak-stats-drawer ${expanded ? "is-open" : ""}" ${expanded ? "" : "hidden"}>
               <dl class="peak-stat-list">
                 <div><dt>Views</dt><dd>${fmt(peak.views)}</dd></div>
                 <div><dt>Likes</dt><dd>${fmt(peak.likes)}</dd></div>
@@ -252,95 +247,63 @@
           </div>`;
       }
 
-      function renderPreviewTrack(slots) {
+      function renderPlatRow(platform, slots, { peek = false } = {}) {
+        const m = meta(platform);
         return `
-          <div class="timeline-scroll-right">
-            <div class="timeline-col-label" style="margin-bottom: 0.55rem">
-              <span>Preview · best post per slot</span>
-              <span class="hint-pill">Click a card to expand</span>
+          <div class="matrix-plat-row ${peek ? "is-peek" : ""}" data-plat-row="${escapeHtml(m.key)}">
+            <div class="matrix-plat-gutter">
+              <span class="plat-logo-badge ${m.key}" title="${escapeHtml(platform)}">${m.logo}</span>
+              <span class="matrix-plat-name">${escapeHtml(m.short)}</span>
             </div>
-            <div class="timeline-track">
-              ${slots
-                .map((slot) => {
-                  if (!slot.best) return "";
-                  return `
-                    <div class="clip-column" data-slot="${escapeHtml(slot.id)}">
-                      <div class="clip-step-label">${escapeHtml(slot.label)}</div>
-                      ${renderPhoneCard(slot.best, { linkOut: false })}
-                    </div>`;
-                })
-                .join("")}
-            </div>
+            ${slots
+              .map((slot) => {
+                const post =
+                  platform === "Instagram" ? primaryPost(slot) : slot.byPlatform[platform];
+                // For IG row: if primary fell back to non-IG, still show that best post
+                if (platform === "Instagram") {
+                  const ig = slot.byPlatform.Instagram;
+                  if (ig) {
+                    return `<div class="matrix-cell">${renderPhoneCard(ig)}</div>`;
+                  }
+                  // No IG — blank for Instagram-focused row (other platforms live in TT/YT rows)
+                  return `<div class="matrix-cell">${renderBlankSlot("Instagram")}</div>`;
+                }
+                if (!post) {
+                  return `<div class="matrix-cell">${renderBlankSlot(platform)}</div>`;
+                }
+                return `<div class="matrix-cell">${renderPhoneCard(post)}</div>`;
+              })
+              .join("")}
           </div>`;
       }
 
-      function renderExpandedMatrix(slots) {
-        return `
-          <div class="timeline-scroll-right matrix-scroll-right">
-            <div class="timeline-col-label" style="margin-bottom: 0.55rem">
-              <span>Expanded · Instagram · TikTok · YouTube</span>
-              <span class="hint-pill">Click a post to open</span>
-            </div>
-            <div class="matrix-header-row">
-              <div class="matrix-plat-gutter" aria-hidden="true"></div>
-              ${slots
-                .map(
-                  (slot) => `
-                <div class="matrix-col-hdr" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
-                )
-                .join("")}
-            </div>
-            ${PLAT_ORDER.map((platform) => {
-              const m = meta(platform);
-              return `
-                <div class="matrix-plat-row">
-                  <div class="matrix-plat-gutter">
-                    <span class="plat-logo-badge ${m.key}" title="${escapeHtml(platform)}">${m.logo}</span>
-                    <span class="matrix-plat-name">${escapeHtml(m.short)}</span>
-                  </div>
-                  ${slots
-                    .map((slot) => {
-                      const post = slot.byPlatform[platform];
-                      if (!post) {
-                        return `<div class="matrix-cell">${renderBlankSlot(platform)}</div>`;
-                      }
-                      return `<div class="matrix-cell">${renderPhoneCard(post, { compact: true, linkOut: true })}</div>`;
-                    })
-                    .join("")}
-                </div>`;
-            }).join("")}
-          </div>`;
-      }
-
-      function renderProject(project, state) {
+      function renderProject(project, expanded) {
         const t = project.totals || {};
         const bp = t.by_platform || {};
         const slots = project._slots;
-        const expanded = state.mode === "expanded";
-        const statsOpen = Boolean(state.statsOpen);
 
         return `
-          <article class="project-block ${expanded ? "is-expanded-mode" : "is-preview-mode"}" id="proj-${project.id}" data-project-id="${project.id}">
+          <article class="project-block ${expanded ? "is-expanded" : "is-collapsed"}" id="proj-${project.id}" data-project-id="${project.id}">
             <div class="project-block-header">
               <div>
                 <div class="project-title-row">
-                  <button type="button" class="project-title-btn" data-mode-toggle="1" aria-expanded="${expanded}">
-                    ${escapeHtml(project.name)}
-                    <span class="title-chevron ${expanded ? "is-open" : ""}">${ICONS.chevron}</span>
-                  </button>
+                  <h2 class="project-title-static">${escapeHtml(project.name)}</h2>
                   <span class="pill" style="background: var(--accent-soft); color: var(--accent); border-color: transparent; font-weight: 600;">
                     ${escapeHtml(project.tag || "Project")}
                   </span>
-                  <span class="pill mode-pill">${expanded ? "Expanded" : "Preview"}</span>
                   <span class="pill">${t.posts || project.posts.length} posts</span>
                 </div>
                 <p class="project-sub">${escapeHtml(project.summary || "")}</p>
               </div>
-              <div class="project-controls">
-                <button type="button" class="btn ${expanded ? "btn-ghost" : "btn-primary"} btn-sm" data-mode-toggle="1">
-                  ${expanded ? "← Preview mode" : "Expand matrix →"}
-                </button>
-              </div>
+              ${
+                expanded
+                  ? `<div class="project-controls">
+                      <button type="button" class="btn btn-primary btn-sm collapse-btn" data-collapse="1">
+                        ↑ Collapse
+                      </button>
+                    </div>`
+                  : ""
+              }
             </div>
 
             <div class="project-stats-bar">
@@ -351,59 +314,80 @@
               <div class="project-stat"><span class="ps-value">${fmt((bp.YouTube || {}).views)}</span><span class="ps-label">YT views</span></div>
             </div>
 
-            <div class="timeline-split ${expanded ? "is-matrix" : ""}">
-              ${renderPeak(project, statsOpen)}
-              ${expanded ? renderExpandedMatrix(slots) : renderPreviewTrack(slots)}
+            <div class="timeline-split is-matrix">
+              ${renderPeak(project, expanded)}
+              <div class="timeline-scroll-right matrix-scroll-right proj-matrix">
+                <div class="timeline-col-label" style="margin-bottom: 0.55rem">
+                  <span>Day columns · Instagram row + TikTok / YouTube underneath</span>
+                  <span class="hint-pill">${expanded ? "Expanded" : "Collapsed · peek TikTok below"}</span>
+                </div>
+                <div class="matrix-header-row">
+                  <div class="matrix-plat-gutter" aria-hidden="true"></div>
+                  ${slots
+                    .map(
+                      (slot) =>
+                        `<div class="matrix-col-hdr" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
+                    )
+                    .join("")}
+                </div>
+
+                <div class="proj-matrix-body">
+                  ${renderPlatRow("Instagram", slots)}
+                  ${renderPlatRow("TikTok", slots, { peek: !expanded })}
+                  <div class="proj-yt-wrap ${expanded ? "is-open" : ""}" ${expanded ? "" : "hidden"}>
+                    ${renderPlatRow("YouTube", slots)}
+                  </div>
+                </div>
+
+                ${
+                  expanded
+                    ? `<div class="proj-collapse-bar">
+                        <button type="button" class="btn btn-primary collapse-btn" data-collapse="1">
+                          ↑ Collapse to Instagram + TikTok peek
+                        </button>
+                      </div>`
+                    : `<button type="button" class="proj-expand-peek" data-expand="1" aria-label="Expand to show TikTok and YouTube rows">
+                        <span class="proj-expand-fade" aria-hidden="true"></span>
+                        <span class="proj-expand-cta">
+                          <span class="plat-logo-badge tiktok">${ICONS.tiktok}</span>
+                          <span>Show TikTok + YouTube</span>
+                          <span class="chevron down">${ICONS.chevron}</span>
+                        </span>
+                      </button>`
+                }
+              </div>
             </div>
           </article>`;
       }
 
       const uiState = {};
+      let PROJECTS = [];
 
       function getState(id) {
-        if (!uiState[id]) uiState[id] = { mode: "preview", statsOpen: false };
+        if (!uiState[id]) uiState[id] = { expanded: false };
         return uiState[id];
       }
 
-      let PROJECTS = [];
-
       function paint() {
         const mount = document.getElementById("projects-mount");
-        mount.innerHTML = PROJECTS.map((p) => renderProject(p, getState(p.id))).join("");
+        mount.innerHTML = PROJECTS.map((p) => renderProject(p, getState(p.id).expanded)).join("");
         wire(mount);
       }
 
       function wire(root) {
-        root.querySelectorAll("[data-mode-toggle]").forEach((el) => {
-          el.addEventListener("click", (e) => {
-            e.preventDefault();
-            const article = el.closest(".project-block");
-            const id = article.dataset.projectId;
-            const st = getState(id);
-            st.mode = st.mode === "expanded" ? "preview" : "expanded";
-            paint();
-            document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-          });
-        });
-
-        root.querySelectorAll("[data-expand-trigger]").forEach((el) => {
-          el.addEventListener("click", (e) => {
-            e.preventDefault();
-            const article = el.closest(".project-block");
-            const id = article.dataset.projectId;
-            getState(id).mode = "expanded";
-            paint();
-            document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-          });
-        });
-
-        root.querySelectorAll("[data-peak-stats-toggle]").forEach((el) => {
+        root.querySelectorAll("[data-expand]").forEach((el) => {
           el.addEventListener("click", () => {
-            const article = el.closest(".project-block");
-            const id = article.dataset.projectId;
-            const st = getState(id);
-            st.statsOpen = !st.statsOpen;
+            const id = el.closest(".project-block").dataset.projectId;
+            getState(id).expanded = true;
             paint();
+          });
+        });
+        root.querySelectorAll("[data-collapse]").forEach((el) => {
+          el.addEventListener("click", () => {
+            const id = el.closest(".project-block").dataset.projectId;
+            getState(id).expanded = false;
+            paint();
+            document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
           });
         });
       }
