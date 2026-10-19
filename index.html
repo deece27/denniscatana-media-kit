@@ -11,13 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header wrap">
+  <body class="page-kit">
+    <header class="site-header site-header--kit wrap">
       <a class="logo" href="index.html">Dennis Catana</a>
       <nav class="nav no-print" aria-label="Primary">
         <a class="active" href="index.html">Media Kit</a>
@@ -28,168 +28,206 @@
     </header>
 
     <main id="top">
-      <section class="hero wrap">
-        <p class="eyebrow">Media kit · Creator partnerships</p>
-        <h1>Dennis Catana</h1>
-        <p class="lede">
-          Travel &amp; adventure creator based in China. Challenge-style trips,
-          foreigner-in-China culture, treks &amp; bike journeys — English-language
-          content with reach far beyond follower count.
-        </p>
-        <div class="meta-row">
-          <a class="pill" href="https://www.instagram.com/denniscatana/" target="_blank" rel="noopener"
-            ><strong>IG</strong> @denniscatana · 4.6K</a
-          >
-          <a class="pill" href="https://www.tiktok.com/@denniscatanaa" target="_blank" rel="noopener"
-            ><strong>TT</strong> @denniscatanaa · 2.6K</a
-          >
-          <a class="pill" href="https://www.youtube.com/@denniscatana" target="_blank" rel="noopener"
-            ><strong>YT</strong> @denniscatana · 224</a
-          >
-          <span class="pill"><strong>Based</strong> China</span>
-        </div>
-        <div class="cta-row no-print">
-          <a class="btn btn-primary" href="#contact">Partner / inquire</a>
-          <a class="btn btn-ghost" href="projects.html">See projects</a>
-          <button class="btn btn-ghost" type="button" onclick="window.print()">Download PDF</button>
+      <section class="kit-hero" aria-label="Introduction">
+        <div class="kit-hero__atmosphere" aria-hidden="true"></div>
+        <div class="kit-hero__inner wrap">
+          <p class="kit-hero__brand">Dennis Catana</p>
+          <h1 class="kit-hero__headline">
+            Travel &amp; challenge content that outruns follower count.
+          </h1>
+          <p class="kit-hero__lede">
+            China-based micro creator. English-language treks, bike journeys, and
+            foreigner-in-Asia culture — with breakout Reels brands can actually
+            measure.
+          </p>
+          <div class="kit-hero__cta cta-row no-print">
+            <a class="btn btn-primary" href="#contact">Partner / inquire</a>
+            <a class="btn btn-ghost btn-ghost--on-dark" href="projects.html">See projects</a>
+            <button class="btn btn-ghost btn-ghost--on-dark" type="button" onclick="window.print()">
+              Download PDF
+            </button>
+          </div>
+          <p class="kit-hero__signal">
+            <span>21.1M</span> portfolio views · <span>9.3M</span> top Reel ·
+            <span>~7.5K</span> combined audience
+          </p>
         </div>
       </section>
 
-      <section id="proof" class="wrap">
-        <h2>Proof</h2>
+      <section id="proof" class="wrap kit-section">
+        <h2>Proof brands can verify</h2>
         <p class="section-intro">
-          Small following, large spikes. Portfolio totals from a full pull of owned
-          Instagram, TikTok, and YouTube posts.
+          Full pull of owned Instagram, TikTok, and YouTube posts — not a highlight
+          reel of guesses. As of 19 Oct 2026.
         </p>
-        <div class="stats">
-          <div class="stat">
-            <div class="value">9.3M</div>
-            <div class="label">Top Reel views</div>
+        <div class="kit-metrics" role="list">
+          <div class="kit-metric" role="listitem">
+            <div class="kit-metric__value">21.1M</div>
+            <div class="kit-metric__label">Post views (portfolio)</div>
           </div>
-          <div class="stat">
-            <div class="value">2.9M</div>
-            <div class="label">#2 viral Reel</div>
+          <div class="kit-metric" role="listitem">
+            <div class="kit-metric__value">9.3M</div>
+            <div class="kit-metric__label">Top IG Reel</div>
           </div>
-          <div class="stat">
-            <div class="value">21M+</div>
-            <div class="label">Post views (portfolio)</div>
+          <div class="kit-metric" role="listitem">
+            <div class="kit-metric__value">2.9M</div>
+            <div class="kit-metric__label">#2 viral Reel</div>
           </div>
-          <div class="stat">
-            <div class="value">7.5K</div>
-            <div class="label">Audience IG+TT+YT</div>
+          <div class="kit-metric" role="listitem">
+            <div class="kit-metric__value">562K</div>
+            <div class="kit-metric__label">Likes across posts</div>
           </div>
-          <div class="stat">
-            <div class="value">965</div>
-            <div class="label">Posts inventoried</div>
+          <div class="kit-metric" role="listitem">
+            <div class="kit-metric__value">151K</div>
+            <div class="kit-metric__label">Shares</div>
           </div>
-          <div class="stat">
-            <div class="value">178K</div>
-            <div class="label">Taiwan peak Reel</div>
+          <div class="kit-metric" role="listitem">
+            <div class="kit-metric__value">7.5K</div>
+            <div class="kit-metric__label">Audience IG + TT + YT</div>
           </div>
         </div>
-        <ul class="proof-list">
+
+        <div class="kit-platforms">
+          <a
+            class="kit-platform"
+            href="https://www.instagram.com/denniscatana/"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="kit-platform__name">Instagram</span>
+            <span class="kit-platform__handle">@denniscatana</span>
+            <span class="kit-platform__stat"><strong>4,617</strong> followers</span>
+            <span class="kit-platform__stat"><strong>16.1M</strong> views in pull</span>
+          </a>
+          <a
+            class="kit-platform"
+            href="https://www.tiktok.com/@denniscatanaa"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="kit-platform__name">TikTok</span>
+            <span class="kit-platform__handle">@denniscatanaa</span>
+            <span class="kit-platform__stat"><strong>2,638</strong> followers</span>
+            <span class="kit-platform__stat"><strong>4.9M</strong> views · peak 1.46M</span>
+          </a>
+          <a
+            class="kit-platform"
+            href="https://www.youtube.com/@denniscatana"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="kit-platform__name">YouTube</span>
+            <span class="kit-platform__handle">@denniscatana</span>
+            <span class="kit-platform__stat"><strong>224</strong> subscribers</span>
+            <span class="kit-platform__stat"><strong>140K</strong> views · series home</span>
+          </a>
+        </div>
+        <p class="fineprint">
+          Audience: IG 4,617 · TT 2,638 · YT 224 (combined 7,479). Portfolio views sum
+          measured post views — IG Insights available on 330 of 538 IG rows. 965 posts
+          inventoried. Demographics available from platform Insights on request.
+        </p>
+      </section>
+
+      <section id="breakouts" class="wrap kit-section">
+        <h2>Standout work</h2>
+        <p class="section-intro">
+          What brands hire for: spike reach on short-form, plus multi-day series that
+          hold attention across platforms.
+        </p>
+        <ul class="kit-breakouts">
           <li>
-            <span class="title">Fake coconuts — Tengchong</span>
-            <span class="views">9.3M</span>
-            <span class="note">7.1M reach · 39.1K likes · IG Reel</span>
+            <a href="https://www.instagram.com/reel/DRJKm_OD0fl/" target="_blank" rel="noopener">
+              <span class="kit-breakouts__title">Fake coconuts — Tengchong</span>
+              <span class="kit-breakouts__views">9.3M</span>
+              <span class="kit-breakouts__note">IG Reel · 7.1M reach · 39.1K likes</span>
+            </a>
           </li>
           <li>
-            <span class="title">Folding-phone snack — China</span>
-            <span class="views">2.9M</span>
-            <span class="note">55.2K likes · 8.4K shares · 4.1K saves</span>
+            <a href="https://www.instagram.com/reel/DTNx5XjCJKg/" target="_blank" rel="noopener">
+              <span class="kit-breakouts__title">Folding-phone snack — China</span>
+              <span class="kit-breakouts__views">2.9M</span>
+              <span class="kit-breakouts__note">IG Reel · 55.2K likes · 8.4K shares · 4.1K saves</span>
+            </a>
           </li>
           <li>
-            <span class="title">Japan Day 6 — TikTok</span>
-            <span class="views">1.5M</span>
-            <span class="note">Strongest TikTok single in the owned library</span>
+            <a
+              href="https://www.tiktok.com/@denniscatanaa/video/7573737879113895186"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="kit-breakouts__title">Japan Day 6 — TikTok</span>
+              <span class="kit-breakouts__views">1.46M</span>
+              <span class="kit-breakouts__note">Strongest TikTok single in the owned library</span>
+            </a>
           </li>
           <li>
-            <span class="title">Cycling Taiwan — Day 1</span>
-            <span class="views">178K</span>
-            <span class="note">Peak of the 100-post Taiwan project · 11.7K likes</span>
+            <a href="https://www.instagram.com/reel/DXCOs9-j3Ye/" target="_blank" rel="noopener">
+              <span class="kit-breakouts__title">Cycling Taiwan — Day 1</span>
+              <span class="kit-breakouts__views">178K</span>
+              <span class="kit-breakouts__note">Peak of the 100-post Taiwan project · 11.7K likes</span>
+            </a>
           </li>
         </ul>
-        <p class="fineprint">
-          Portfolio view total sums measured post views (IG Insights where available —
-          330 of 538 IG rows). Audience: IG 4,617 · TT 2,638 · YT 224.
-        </p>
       </section>
 
-      <section id="now" class="wrap">
+      <section id="now" class="wrap kit-section">
         <h2>Pitching now</h2>
         <p class="section-intro">Live and next-up series — best window for brand partners.</p>
-        <div class="card-stack">
-          <article class="card">
-            <span class="tag">Active</span>
+        <div class="kit-now">
+          <article class="kit-now__item">
+            <p class="kit-now__status">Active</p>
             <h3>Peru</h3>
             <p>
               Instagram series live. Three YouTube films: Cusco &amp; Sacred Valley →
               Salkantay trek → Lima. Shot on <strong>DJI Osmo Action 6</strong>.
             </p>
-            <ul>
-              <li>Fits: eSIM · trek gear · Action cam · tours / booking</li>
-            </ul>
+            <p class="kit-now__fits">Fits: eSIM · trek gear · Action cam · tours / booking</p>
           </article>
-          <article class="card">
-            <span class="tag">Next</span>
+          <article class="kit-now__item">
+            <p class="kit-now__status">Next</p>
             <h3>Korea</h3>
             <p>3 days Seoul + 3 days biking around Seoul.</p>
-            <ul>
-              <li>Fits: eSIM · bike / outdoor · Action 6 · city experiences</li>
-            </ul>
+            <p class="kit-now__fits">Fits: eSIM · bike / outdoor · Action 6 · city experiences</p>
           </article>
         </div>
       </section>
 
-      <section id="projects" class="wrap">
-        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap">
-          <h2>Featured projects</h2>
+      <section id="projects" class="wrap kit-section">
+        <div class="kit-section__head">
+          <h2>Featured project</h2>
           <a class="btn btn-ghost btn-sm no-print" href="projects.html">Open project breakdowns →</a>
         </div>
         <p class="section-intro">
-          Series with peak posts and multi-platform feeds — built from the posts sheet as
-          you assign Project tags.
+          Series peaks and multi-platform feeds — built from the posts sheet as Project
+          tags are assigned.
         </p>
-        <div class="card-stack">
-          <article class="card">
-            <span class="tag">Flagship · Live on Projects</span>
-            <h3>Cycling Taiwan</h3>
-            <p>
-              100 posts across IG · TikTok · YouTube. <strong>616K</strong> total views ·
-              peak Day 1 Reel <strong>178K</strong>. Case study for bike / destination /
-              series partnerships.
-            </p>
-            <p style="margin: 0.75rem 0 0">
-              <a href="projects.html#proj-cycling-taiwan">View peak + full feed →</a>
-            </p>
-          </article>
-          <article class="card">
-            <h3>More series coming</h3>
-            <p>
-              Cruise, Peru, China virals, Tobermory, and others — assign Project on the
-              sheet and we’ll surface peak posts + strengths the same way.
-            </p>
-          </article>
-        </div>
+        <article class="kit-featured">
+          <p class="kit-featured__tag">Flagship · Live on Projects</p>
+          <h3>Cycling Taiwan</h3>
+          <p>
+            100 posts across IG · TikTok · YouTube.
+            <strong>616K</strong> total views · peak Day 1 Reel <strong>178K</strong>.
+            Case study for bike, destination, and series partnerships.
+          </p>
+          <a class="kit-featured__link" href="projects.html#proj-cycling-taiwan"
+            >View peak + full feed →</a
+          >
+        </article>
       </section>
 
-      <section id="offer" class="wrap">
+      <section id="offer" class="wrap kit-section">
         <h2>Work with me</h2>
         <p class="section-intro">
           Sponsored Reels, UGC for your ad accounts, YouTube integrations, and
           multi-post series packages.
         </p>
-        <div class="card-stack">
-          <article class="card">
-            <h3>Deliverables</h3>
-            <ul>
-              <li>Sponsored Instagram Reels (primary)</li>
-              <li>UGC / creator-for-hire (you run the ads)</li>
-              <li>YouTube integrations in travel longs</li>
-              <li>Series partnerships (trek, bike, destination)</li>
-            </ul>
-          </article>
-        </div>
+        <ul class="kit-deliverables">
+          <li>Sponsored Instagram Reels (primary)</li>
+          <li>UGC / creator-for-hire (you run the ads)</li>
+          <li>YouTube integrations in travel longs</li>
+          <li>Series partnerships (trek, bike, destination)</li>
+        </ul>
         <table class="rates">
           <thead>
             <tr>
@@ -230,7 +268,7 @@
         </p>
       </section>
 
-      <section id="contact" class="wrap">
+      <section id="contact" class="wrap kit-section kit-section--contact">
         <div class="contact-box">
           <h2>Let’s work together</h2>
           <p>
