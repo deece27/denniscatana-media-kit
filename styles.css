@@ -732,16 +732,12 @@ h3 {
 }
 
 .peak-stats-drawer {
-  display: none;
+  display: block;
   margin-top: 0.35rem;
 }
 
 .peak-stats-drawer.is-open {
   display: block;
-}
-
-.peak-stats-drawer[hidden] {
-  display: none !important;
 }
 
 .title-chevron {
@@ -928,21 +924,36 @@ h3 {
   min-height: 0;
 }
 
-/* Collapsed: TikTok row peeks under a fade; YouTube hidden */
-.project-block.is-collapsed .matrix-plat-row.is-peek {
+/* Collapsed = visual retract only. Full IG/TT/YT matrix stays in the DOM. */
+.project-block.is-collapsed .matrix-plat-row[data-plat-row="tiktok"] {
   height: 78px;
   overflow: hidden;
   pointer-events: none;
   opacity: 0.95;
 }
 
-.project-block.is-collapsed .matrix-plat-row.is-peek .phone-card {
-  transform: none;
+.project-block.is-collapsed .proj-yt-wrap {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
 }
 
-.project-block.is-collapsed .proj-yt-wrap[hidden],
-.project-block.is-collapsed .proj-yt-wrap:not(.is-open) {
+.project-block.is-expanded .proj-yt-wrap {
+  max-height: none;
+  overflow: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-block.is-collapsed .proj-expand-peek[hidden],
+.project-block.is-expanded .proj-expand-peek {
   display: none !important;
+}
+
+.project-block.is-collapsed .proj-expand-peek:not([hidden]) {
+  display: flex;
 }
 
 .proj-matrix-body {
@@ -1029,12 +1040,9 @@ h3 {
   min-width: 12rem;
 }
 
-.project-block.is-expanded .peak-stats-drawer {
-  display: block;
-}
-
-.project-block.is-collapsed .peak-stats-drawer {
-  display: none !important;
+/* Highlight stats stay visible collapsed + expanded */
+.project-block .peak-stats-drawer {
+  display: block !important;
 }
 
 @media (max-width: 820px) {

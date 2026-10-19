@@ -32,8 +32,8 @@
         <p class="eyebrow">Projects · One view</p>
         <h1 style="font-size: clamp(1.9rem, 4.5vw, 2.65rem); margin-bottom: 0.65rem">Projects</h1>
         <p class="lede" style="max-width: 48rem; margin-bottom: 1rem">
-          Peak post on the left. Day columns on the right (Instagram up front). Pull up the TikTok peek
-          at the bottom to reveal the full TikTok + YouTube rows — and peak stats.
+          Highlight on the left. Day columns on the right (Instagram up front). Expand a project to
+          reveal the full TikTok + YouTube matrix — collapse tucks it back for denser scrolling.
         </p>
       </section>
 
@@ -248,6 +248,21 @@
           }
         }
 
+        // Manual: slide the last day-column YT Short into the final day column
+        // (immediately left of Film) when that last day cell is empty.
+        if (slots.length) {
+          const lastDay = slots[slots.length - 1];
+          if (!lastDay.byPlatform.YouTube) {
+            for (let i = slots.length - 2; i >= 0; i--) {
+              if (slots[i].byPlatform.YouTube) {
+                lastDay.byPlatform.YouTube = slots[i].byPlatform.YouTube;
+                delete slots[i].byPlatform.YouTube;
+                break;
+              }
+            }
+          }
+        }
+
         // Landscape films after all day columns (far right)
         for (const film of films) {
           slots.push({
@@ -399,14 +414,15 @@
         return `<div class="matrix-blank-slot" aria-hidden="true"></div>`;
       }
 
-      function renderPeak(project, expanded) {
+      function renderPeak(project) {
         const peak = project.peak;
         const m = meta(peak.platform);
         const t = project.totals || {};
+        const bp = t.by_platform || {};
         return `
           <div class="timeline-pinned-left peak-panel">
             <div class="timeline-col-label">
-              <span>Peak post</span>
+              <span>Highlight</span>
               <span class="fixed-pill">Best</span>
             </div>
             <a class="phone-card ${m.className} peak-card-link" href="${escapeHtml(peak.url)}" target="_blank" rel="noopener">
@@ -425,39 +441,38 @@
                   </span>
                 </div>
                 <div class="phone-bottom-bar">
-                  <div class="clip-title" style="color:#fff;-webkit-line-clamp:3">${escapeHtml(peak.title || "Peak post")}</div>
+                  <div class="clip-title" style="color:#fff;-webkit-line-clamp:3">${escapeHtml(peak.title || "Highlight")}</div>
                 </div>
               </div>
             </a>
-            <div class="peak-stats-drawer ${expanded ? "is-open" : ""}" ${expanded ? "" : "hidden"}>
+            <div class="peak-stats-drawer is-open">
               <dl class="peak-stat-list project-totals-list">
                 <div><dt>Total views</dt><dd>${fmt(t.views)}</dd></div>
                 <div><dt>Likes</dt><dd>${fmt(t.likes)}</dd></div>
               </dl>
               <div class="peak-platform-peaks">
-                <div class="timeline-col-label" style="margin-top: 0.35rem"><span>Best per platform</span></div>
-                ${Object.values(project.peaksByPlatform || {})
-                  .map((p) => {
-                    const pm = meta(p.platform);
+                <div class="timeline-col-label" style="margin-top: 0.35rem"><span>Total views per platform</span></div>
+                ${PLAT_ORDER.map((plat) => {
+                    const pm = meta(plat);
+                    const views = ((bp[plat] || {}).views) || 0;
                     return `
-                      <a class="mini-peak" href="${escapeHtml(p.url)}" target="_blank" rel="noopener" title="${escapeHtml(p.title || p.platform)}">
+                      <div class="mini-peak is-static" title="${escapeHtml(plat)} total views">
                         <span class="mini-peak-plat"><span class="plat-logo-badge sm ${pm.key}">${pm.logo}</span></span>
                         <span class="views-chip solid">
                           <span class="views-icon">${pm.viewsIcon}</span>
-                          ${fmt(p.views)}
+                          ${fmt(views)}
                         </span>
-                      </a>`;
-                  })
-                  .join("")}
+                      </div>`;
+                  }).join("")}
               </div>
             </div>
           </div>`;
       }
 
-      function renderPlatRow(platform, slots, { peek = false } = {}) {
+      function renderPlatRow(platform, slots) {
         const m = meta(platform);
         return `
-          <div class="matrix-plat-row ${peek ? "is-peek" : ""}" data-plat-row="${escapeHtml(m.key)}">
+          <div class="matrix-plat-row" data-plat-row="${escapeHtml(m.key)}">
             <div class="matrix-plat-gutter">
               <span class="plat-logo-badge ${m.key}" title="${escapeHtml(platform)}">${m.logo}</span>
               <span class="matrix-plat-name">${escapeHtml(m.short)}</span>
@@ -485,12 +500,12 @@
           </div>`;
       }
 
-      function renderProject(project, expanded) {
+      function renderProject(project) {
         const t = project.totals || {};
         const slots = project._slots;
 
         return `
-          <article class="project-block ${expanded ? "is-expanded" : "is-collapsed"}" id="proj-${project.id}" data-project-id="${project.id}">
+          <article class="project-block is-collapsed" id="proj-${project.id}" data-project-id="${project.id}">
             <div class="project-block-header">
               <div>
                 <div class="project-title-row">
@@ -502,23 +517,19 @@
                 </div>
                 <p class="project-sub">${escapeHtml(project.summary || "")}</p>
               </div>
-              ${
-                expanded
-                  ? `<div class="project-controls">
-                      <button type="button" class="btn btn-primary btn-sm collapse-btn" data-collapse="1">
-                        ↑ Collapse
-                      </button>
-                    </div>`
-                  : ""
-              }
+              <div class="project-controls">
+                <button type="button" class="btn btn-primary btn-sm collapse-btn" data-collapse="1" hidden>
+                  ↑ Collapse
+                </button>
+              </div>
             </div>
 
             <div class="timeline-split is-matrix">
-              ${renderPeak(project, expanded)}
+              ${renderPeak(project)}
               <div class="timeline-scroll-right matrix-scroll-right proj-matrix">
                 <div class="timeline-col-label" style="margin-bottom: 0.55rem">
                   <span>Instagram order · TikTok / YouTube aligned underneath</span>
-                  <span class="hint-pill">${expanded ? "Expanded" : "Collapsed · peek TikTok below"}</span>
+                  <span class="hint-pill proj-density-pill">Collapsed · peek TikTok below</span>
                 </div>
                 <div class="matrix-header-row">
                   <div class="matrix-plat-gutter" aria-hidden="true"></div>
@@ -532,63 +543,100 @@
 
                 <div class="proj-matrix-body">
                   ${renderPlatRow("Instagram", slots)}
-                  ${renderPlatRow("TikTok", slots, { peek: !expanded })}
-                  <div class="proj-yt-wrap ${expanded ? "is-open" : ""}" ${expanded ? "" : "hidden"}>
+                  ${renderPlatRow("TikTok", slots)}
+                  <div class="proj-yt-wrap is-open">
                     ${renderPlatRow("YouTube", slots)}
                   </div>
                 </div>
 
-                ${
-                  expanded
-                    ? `<div class="proj-collapse-bar">
-                        <button type="button" class="btn btn-primary collapse-btn" data-collapse="1">
-                          ↑ Collapse to Instagram + TikTok peek
-                        </button>
-                      </div>`
-                    : `<button type="button" class="proj-expand-peek" data-expand="1" aria-label="Click to see more">
-                        <span class="proj-expand-fade" aria-hidden="true"></span>
-                        <span class="proj-expand-cta">
-                          <span>Click to see more</span>
-                          <span class="chevron down">${ICONS.chevron}</span>
-                        </span>
-                      </button>`
-                }
+                <button type="button" class="proj-expand-peek" data-expand="1" aria-label="Click to see more">
+                  <span class="proj-expand-fade" aria-hidden="true"></span>
+                  <span class="proj-expand-cta">
+                    <span>Click to see more</span>
+                    <span class="chevron down">${ICONS.chevron}</span>
+                  </span>
+                </button>
+                <div class="proj-collapse-bar" hidden>
+                  <button type="button" class="btn btn-primary collapse-btn" data-collapse="1">
+                    ↑ Collapse
+                  </button>
+                </div>
               </div>
             </div>
           </article>`;
       }
 
-      const uiState = {};
       let PROJECTS = [];
 
-      function getState(id) {
-        if (!uiState[id]) uiState[id] = { expanded: false };
-        return uiState[id];
+      function setExpanded(id, expanded) {
+        const block = document.getElementById(`proj-${id}`);
+        if (!block) return;
+        block.classList.toggle("is-expanded", expanded);
+        block.classList.toggle("is-collapsed", !expanded);
+        const pill = block.querySelector(".proj-density-pill");
+        if (pill) pill.textContent = expanded ? "Expanded" : "Collapsed · peek TikTok below";
+        const expandBtn = block.querySelector(".proj-expand-peek");
+        if (expandBtn) expandBtn.hidden = expanded;
+        const collapseBar = block.querySelector(".proj-collapse-bar");
+        if (collapseBar) collapseBar.hidden = !expanded;
+        const headerCollapse = block.querySelector(".project-controls .collapse-btn");
+        if (headerCollapse) headerCollapse.hidden = !expanded;
+      }
+
+      function collapseAllExcept(keepId) {
+        PROJECTS.forEach((p) => {
+          if (p.id !== keepId) setExpanded(p.id, false);
+        });
+      }
+
+      function expandProject(id) {
+        collapseAllExcept(id);
+        setExpanded(id, true);
+      }
+
+      function collapseProject(id) {
+        setExpanded(id, false);
+        document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
       function paint() {
         const mount = document.getElementById("projects-mount");
-        mount.innerHTML = PROJECTS.map((p) => renderProject(p, getState(p.id).expanded)).join("");
+        // Full matrix always rendered; collapse is CSS density only.
+        mount.innerHTML = PROJECTS.map((p) => renderProject(p)).join("");
         wire(mount);
       }
 
       function wire(root) {
         root.querySelectorAll("[data-expand]").forEach((el) => {
-          el.addEventListener("click", () => {
+          el.addEventListener("click", (e) => {
+            e.stopPropagation();
             const id = el.closest(".project-block").dataset.projectId;
-            getState(id).expanded = true;
-            paint();
+            expandProject(id);
           });
         });
         root.querySelectorAll("[data-collapse]").forEach((el) => {
-          el.addEventListener("click", () => {
+          el.addEventListener("click", (e) => {
+            e.stopPropagation();
             const id = el.closest(".project-block").dataset.projectId;
-            getState(id).expanded = false;
-            paint();
-            document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            collapseProject(id);
+          });
+        });
+        root.querySelectorAll(".project-block").forEach((block) => {
+          block.addEventListener("click", (e) => {
+            // Focusing another project collapses the open one.
+            const id = block.dataset.projectId;
+            const open = root.querySelector(".project-block.is-expanded");
+            if (open && open !== block) setExpanded(open.dataset.projectId, false);
+            // Don't auto-expand on every click — only expand control does that.
+            void id;
           });
         });
       }
+
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".project-block, .proj-expand-peek, [data-collapse]")) return;
+        PROJECTS.forEach((p) => setExpanded(p.id, false));
+      });
 
       async function boot() {
         const mount = document.getElementById("projects-mount");

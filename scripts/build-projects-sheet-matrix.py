@@ -327,6 +327,13 @@ def build_project_matrix(posts: list[dict]) -> dict:
         for post, slot in zip(leftover, empties):
             put(slot, post)
 
+    # Manual: slide last day-column YT Short into the final day column before Film
+    if slots and "YouTube" not in slots[-1]["by_platform"]:
+        for i in range(len(slots) - 2, -1, -1):
+            if "YouTube" in slots[i]["by_platform"]:
+                slots[-1]["by_platform"]["YouTube"] = slots[i]["by_platform"].pop("YouTube")
+                break
+
     # Landscape films after all day columns (far right)
     for film in films:
         slots.append(
