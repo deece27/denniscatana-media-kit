@@ -888,6 +888,10 @@ h3 {
   height: 324px; /* 316 screen + 8px frame */
   box-sizing: border-box;
   align-self: flex-start;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
   border-radius: 0.85rem;
 }
 
@@ -1570,6 +1574,13 @@ h3 {
 
 .project-block .matrix-blank-slot {
   height: 324px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  /* visually empty — gap is the signal */
+  color: transparent;
+  font-size: 0;
 }
 
 /* Gear Page Styles */
