@@ -6,7 +6,7 @@
     <title>Projects — Dennis Catana</title>
     <meta
       name="description"
-      content="Project breakdowns for Dennis Catana — peak post, series stats, and every Instagram, TikTok, and YouTube clip from the All Social Posts sheet."
+      content="Project breakdowns for Dennis Catana — peak post, preview of best clips, and expanded IG/TikTok/YouTube matrices from the posts sheet."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,24 +29,13 @@
 
     <main id="top" class="wrap-wide">
       <section class="hero" style="padding: 1.75rem 0 1.25rem; border-top: none">
-        <p class="eyebrow">Projects · From the posts sheet</p>
+        <p class="eyebrow">Projects · Preview &amp; expanded</p>
         <h1 style="font-size: clamp(1.9rem, 4.5vw, 2.65rem); margin-bottom: 0.65rem">Projects</h1>
         <p class="lede" style="max-width: 48rem; margin-bottom: 1rem">
-          Each project surfaces its <strong>peak post</strong> on the left with series stats, and the full
-          multi-platform feed on the right. Data syncs from the All Social Posts spreadsheet as you assign
-          Project tags.
+          <strong>Preview</strong> shows each slot’s best-performing post.
+          Expand a project (title or a card) for the full Instagram · TikTok · YouTube matrix —
+          blank cells where a platform hasn’t posted yet.
         </p>
-        <div class="meta-row" style="margin-bottom: 0.5rem">
-          <a class="pill" href="https://www.instagram.com/denniscatana/" target="_blank" rel="noopener"
-            ><strong>IG</strong> @denniscatana</a
-          >
-          <a class="pill" href="https://www.tiktok.com/@denniscatanaa" target="_blank" rel="noopener"
-            ><strong>TT</strong> @denniscatanaa</a
-          >
-          <a class="pill" href="https://www.youtube.com/@denniscatana" target="_blank" rel="noopener"
-            ><strong>YT</strong> @denniscatana</a
-          >
-        </div>
       </section>
 
       <div id="projects-mount">
@@ -81,15 +70,22 @@
     </footer>
 
     <script>
-      const PLATFORM_META = {
-        Instagram: { key: "instagram", short: "IG", className: "plat-ig", badge: "ig" },
-        TikTok: { key: "tiktok", short: "TT", className: "plat-tiktok", badge: "tiktok" },
-        YouTube: { key: "youtube", short: "YT", className: "plat-youtube", badge: "youtube" },
+      const PLAT_ORDER = ["Instagram", "TikTok", "YouTube"];
+
+      const ICONS = {
+        ig: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>`,
+        tiktok: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.5 3v9.2a3.7 3.7 0 1 1-2.8-3.6V5.6c.9.1 1.8.4 2.8.9V3h0zm2.2 1.7c1.1 1.2 2.6 2 4.3 2.2v2.6c-1.6-.1-3.1-.7-4.3-1.6v6.6a5.9 5.9 0 1 1-5.9-5.9c.3 0 .7 0 1 .1v2.7a3.3 3.3 0 1 0 2.3 3.1V4.7h2.6z"/></svg>`,
+        youtube: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 12.2s0-3.4-.4-5c-.2-.9-.9-1.6-1.8-1.8C18.6 5 12 5 12 5s-6.6 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.8 1 12.2 1 12.2s0 3.4.4 5c.2.9.9 1.6 1.8 1.8 2.2.4 8.8.4 8.8.4s6.6 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-5 .4-5z"/><path fill="#fff" d="M10 15.5v-6.6l5.6 3.3L10 15.5z"/></svg>`,
+        eye: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 12S5.5 5.5 12 5.5 22.5 12 22.5 12 18.5 18.5 12 18.5 1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/></svg>`,
+        play: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M10 8.5v7l6-3.5-6-3.5z"/></svg>`,
+        chevron: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>`,
       };
 
-      function platKey(platform) {
-        return (PLATFORM_META[platform] || {}).key || String(platform || "").toLowerCase();
-      }
+      const PLATFORM_META = {
+        Instagram: { key: "ig", short: "IG", className: "plat-ig", logo: ICONS.ig, viewsIcon: ICONS.eye },
+        TikTok: { key: "tiktok", short: "TT", className: "plat-tiktok", logo: ICONS.tiktok, viewsIcon: ICONS.play },
+        YouTube: { key: "youtube", short: "YT", className: "plat-youtube", logo: ICONS.youtube, viewsIcon: ICONS.play },
+      };
 
       function fmt(n) {
         if (n == null || n === "") return "—";
@@ -101,69 +97,6 @@
         return String(Math.round(x));
       }
 
-      function platClass(platform) {
-        return (PLATFORM_META[platform] || {}).className || "plat-ig";
-      }
-
-      function platShort(platform) {
-        return (PLATFORM_META[platform] || {}).short || platform;
-      }
-
-      function renderPeakCard(peak) {
-        const thumb = peak.thumbnail
-          ? `<img src="${peak.thumbnail}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
-          : "";
-        const badge = (PLATFORM_META[peak.platform] || {}).badge || "ig";
-        return `
-          <a class="phone-card ${platClass(peak.platform)} peak-card-link" href="${peak.url}" target="_blank" rel="noopener">
-            <div class="phone-screen">
-              ${thumb}
-              <div class="phone-screen-scrim"></div>
-              <div class="phone-top-bar">
-                <span class="plat-badge ${badge}">${platShort(peak.platform)}</span>
-                <span class="step-badge">Peak</span>
-              </div>
-              <div class="phone-bottom-bar">
-                <div class="phone-views-row">
-                  <span class="phone-views-pill">${fmt(peak.views)} views</span>
-                </div>
-                <div class="clip-title" style="color:#fff;-webkit-line-clamp:3">${escapeHtml(peak.title || "Peak post")}</div>
-              </div>
-            </div>
-          </a>
-        `;
-      }
-
-      function renderFeedCard(post) {
-        const thumb = post.thumbnail
-          ? `<img src="${post.thumbnail}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
-          : "";
-        const isLong = post.platform === "YouTube" && (post.type || "").toLowerCase() !== "short";
-        const badge = (PLATFORM_META[post.platform] || {}).badge || "ig";
-        return `
-          <div class="clip-column ${isLong ? "is-long" : ""}" data-platform="${platKey(post.platform)}">
-            <div class="clip-step-label">${post.date || "—"} · ${platShort(post.platform)}</div>
-            <a class="phone-card ${platClass(post.platform)}" href="${post.url}" target="_blank" rel="noopener">
-              <div class="phone-screen">
-                ${thumb}
-                <div class="phone-screen-scrim"></div>
-                <div class="phone-top-bar">
-                  <span class="plat-badge ${badge}">${platShort(post.platform)}</span>
-                  <span class="phone-views-pill">${fmt(post.views)}</span>
-                </div>
-                <div class="phone-bottom-bar">
-                  <div class="clip-title" style="color:#fff">${escapeHtml(post.title || "")}</div>
-                  <div class="phone-views-row">
-                    <span>${fmt(post.likes)} likes</span>
-                    <span>${fmt(post.comments)} comments</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        `;
-      }
-
       function escapeHtml(s) {
         return String(s)
           .replace(/&/g, "&amp;")
@@ -172,105 +105,305 @@
           .replace(/"/g, "&quot;");
       }
 
-      function renderProject(project) {
+      function meta(platform) {
+        return PLATFORM_META[platform] || PLATFORM_META.Instagram;
+      }
+
+      /** Group posts into timeline slots (Day N preferred, else calendar date). */
+      function buildSlots(posts) {
+        const map = new Map();
+
+        function ensure(id, label, sortKey) {
+          if (!map.has(id)) map.set(id, { id, label, sortKey, byPlatform: {} });
+          return map.get(id);
+        }
+
+        for (const post of posts) {
+          const title = post.title || "";
+          const dayMatch = title.match(/Day\s*(\d+)/i);
+          let slot;
+          if (dayMatch) {
+            const n = Number(dayMatch[1]);
+            slot = ensure(`day-${String(n).padStart(2, "0")}`, `Day ${n}`, `a-${String(n).padStart(3, "0")}`);
+          } else if (/gear|prep|inspiration|flight to taipei|waiting to pick/i.test(title)) {
+            slot = ensure("day-00-prep", "Prep", "a-000");
+          } else {
+            const d = post.date || "unknown";
+            slot = ensure(`date-${d}`, d, `b-${d}`);
+          }
+          const plat = post.platform;
+          const prev = slot.byPlatform[plat];
+          if (!prev || (post.views || 0) > (prev.views || 0)) slot.byPlatform[plat] = post;
+        }
+
+        return [...map.values()]
+          .sort((a, b) => a.sortKey.localeCompare(b.sortKey))
+          .map((slot) => {
+            const candidates = PLAT_ORDER.map((p) => slot.byPlatform[p]).filter(Boolean);
+            const best = candidates.sort((a, b) => (b.views || 0) - (a.views || 0))[0] || null;
+            return { ...slot, best };
+          });
+      }
+
+      function renderPhoneCard(post, { compact = false, linkOut = false } = {}) {
+        if (!post) return "";
+        const m = meta(post.platform);
+        const thumb = post.thumbnail
+          ? `<img src="${escapeHtml(post.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
+          : "";
+        const isLong = post.platform === "YouTube" && (post.type || "").toLowerCase() !== "short";
+        const inner = `
+          <div class="phone-screen ${compact ? "is-compact" : ""} ${isLong ? "is-long-screen" : ""}">
+            ${thumb}
+            <div class="phone-screen-scrim"></div>
+            <div class="phone-top-bar">
+              <span class="plat-logo-badge ${m.key}" title="${escapeHtml(post.platform)}">${m.logo}</span>
+              <span class="views-chip" title="Views">
+                <span class="views-icon">${m.viewsIcon}</span>
+                ${fmt(post.views)}
+              </span>
+            </div>
+            <div class="phone-bottom-bar">
+              <div class="clip-title" style="color:#fff">${escapeHtml(post.title || "")}</div>
+              <div class="phone-views-row">
+                <span>${fmt(post.likes)} likes</span>
+                ${post.comments != null ? `<span>${fmt(post.comments)} comments</span>` : ""}
+              </div>
+            </div>
+          </div>`;
+
+        if (linkOut) {
+          return `<a class="phone-card ${m.className}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">${inner}</a>`;
+        }
+        return `<button type="button" class="phone-card ${m.className} phone-card-btn" data-expand-trigger="1">${inner}</button>`;
+      }
+
+      function renderBlankSlot(platform) {
+        const m = meta(platform);
+        return `
+          <div class="matrix-blank-slot">
+            <span class="plat-logo-badge muted ${m.key}">${m.logo}</span>
+            <strong>No ${escapeHtml(platform)} yet</strong>
+            <span>Blank slot</span>
+          </div>`;
+      }
+
+      function renderPeak(project, statsOpen) {
+        const peak = project.peak;
+        const m = meta(peak.platform);
+        return `
+          <div class="timeline-pinned-left peak-panel">
+            <div class="timeline-col-label">
+              <span>Peak post</span>
+              <span class="fixed-pill">Best</span>
+            </div>
+            <a class="phone-card ${m.className} peak-card-link" href="${escapeHtml(peak.url)}" target="_blank" rel="noopener">
+              <div class="phone-screen">
+                ${
+                  peak.thumbnail
+                    ? `<img src="${escapeHtml(peak.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
+                    : ""
+                }
+                <div class="phone-screen-scrim"></div>
+                <div class="phone-top-bar">
+                  <span class="plat-logo-badge ${m.key}">${m.logo}</span>
+                  <span class="views-chip">
+                    <span class="views-icon">${m.viewsIcon}</span>
+                    ${fmt(peak.views)}
+                  </span>
+                </div>
+                <div class="phone-bottom-bar">
+                  <div class="clip-title" style="color:#fff;-webkit-line-clamp:3">${escapeHtml(peak.title || "Peak post")}</div>
+                </div>
+              </div>
+            </a>
+            <button type="button" class="peak-stats-toggle ${statsOpen ? "is-open" : ""}" data-peak-stats-toggle="1" aria-expanded="${statsOpen ? "true" : "false"}">
+              <span>${statsOpen ? "Hide stats" : "Show stats"}</span>
+              <span class="chevron">${ICONS.chevron}</span>
+            </button>
+            <div class="peak-stats-drawer ${statsOpen ? "is-open" : ""}" ${statsOpen ? "" : "hidden"}>
+              <dl class="peak-stat-list">
+                <div><dt>Views</dt><dd>${fmt(peak.views)}</dd></div>
+                <div><dt>Likes</dt><dd>${fmt(peak.likes)}</dd></div>
+                <div><dt>Comments</dt><dd>${fmt(peak.comments)}</dd></div>
+                <div><dt>Shares</dt><dd>${fmt(peak.shares)}</dd></div>
+                <div><dt>Saves</dt><dd>${fmt(peak.saves)}</dd></div>
+                ${peak.reach ? `<div><dt>Reach</dt><dd>${fmt(peak.reach)}</dd></div>` : ""}
+                <div><dt>Platform</dt><dd>${escapeHtml(peak.platform)}</dd></div>
+                <div><dt>Date</dt><dd>${escapeHtml(peak.date || "—")}</dd></div>
+              </dl>
+              <div class="peak-platform-peaks">
+                <div class="timeline-col-label" style="margin-top: 0.2rem"><span>Best per platform</span></div>
+                ${Object.values(project.peaksByPlatform || {})
+                  .map((p) => {
+                    const pm = meta(p.platform);
+                    return `
+                      <a class="mini-peak" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
+                        <span class="mini-peak-plat"><span class="plat-logo-badge sm ${pm.key}">${pm.logo}</span></span>
+                        <span class="views-chip solid">
+                          <span class="views-icon">${pm.viewsIcon}</span>
+                          ${fmt(p.views)}
+                        </span>
+                      </a>`;
+                  })
+                  .join("")}
+              </div>
+            </div>
+          </div>`;
+      }
+
+      function renderPreviewTrack(slots) {
+        return `
+          <div class="timeline-scroll-right">
+            <div class="timeline-col-label" style="margin-bottom: 0.55rem">
+              <span>Preview · best post per slot</span>
+              <span class="hint-pill">Click a card to expand</span>
+            </div>
+            <div class="timeline-track">
+              ${slots
+                .map((slot) => {
+                  if (!slot.best) return "";
+                  return `
+                    <div class="clip-column" data-slot="${escapeHtml(slot.id)}">
+                      <div class="clip-step-label">${escapeHtml(slot.label)}</div>
+                      ${renderPhoneCard(slot.best, { linkOut: false })}
+                    </div>`;
+                })
+                .join("")}
+            </div>
+          </div>`;
+      }
+
+      function renderExpandedMatrix(slots) {
+        return `
+          <div class="timeline-scroll-right matrix-scroll-right">
+            <div class="timeline-col-label" style="margin-bottom: 0.55rem">
+              <span>Expanded · Instagram · TikTok · YouTube</span>
+              <span class="hint-pill">Click a post to open</span>
+            </div>
+            <div class="matrix-header-row">
+              <div class="matrix-plat-gutter" aria-hidden="true"></div>
+              ${slots
+                .map(
+                  (slot) => `
+                <div class="matrix-col-hdr" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
+                )
+                .join("")}
+            </div>
+            ${PLAT_ORDER.map((platform) => {
+              const m = meta(platform);
+              return `
+                <div class="matrix-plat-row">
+                  <div class="matrix-plat-gutter">
+                    <span class="plat-logo-badge ${m.key}" title="${escapeHtml(platform)}">${m.logo}</span>
+                    <span class="matrix-plat-name">${escapeHtml(m.short)}</span>
+                  </div>
+                  ${slots
+                    .map((slot) => {
+                      const post = slot.byPlatform[platform];
+                      if (!post) {
+                        return `<div class="matrix-cell">${renderBlankSlot(platform)}</div>`;
+                      }
+                      return `<div class="matrix-cell">${renderPhoneCard(post, { compact: true, linkOut: true })}</div>`;
+                    })
+                    .join("")}
+                </div>`;
+            }).join("")}
+          </div>`;
+      }
+
+      function renderProject(project, state) {
         const t = project.totals || {};
         const bp = t.by_platform || {};
-        const peak = project.peak;
-        const filterId = `filter-${project.id}`;
+        const slots = project._slots;
+        const expanded = state.mode === "expanded";
+        const statsOpen = Boolean(state.statsOpen);
 
         return `
-          <article class="project-block" id="proj-${project.id}" data-project-id="${project.id}">
+          <article class="project-block ${expanded ? "is-expanded-mode" : "is-preview-mode"}" id="proj-${project.id}" data-project-id="${project.id}">
             <div class="project-block-header">
               <div>
                 <div class="project-title-row">
-                  <h2 class="project-title-static">${escapeHtml(project.name)}</h2>
+                  <button type="button" class="project-title-btn" data-mode-toggle="1" aria-expanded="${expanded}">
+                    ${escapeHtml(project.name)}
+                    <span class="title-chevron ${expanded ? "is-open" : ""}">${ICONS.chevron}</span>
+                  </button>
                   <span class="pill" style="background: var(--accent-soft); color: var(--accent); border-color: transparent; font-weight: 600;">
                     ${escapeHtml(project.tag || "Project")}
                   </span>
+                  <span class="pill mode-pill">${expanded ? "Expanded" : "Preview"}</span>
                   <span class="pill">${t.posts || project.posts.length} posts</span>
                 </div>
                 <p class="project-sub">${escapeHtml(project.summary || "")}</p>
+              </div>
+              <div class="project-controls">
+                <button type="button" class="btn ${expanded ? "btn-ghost" : "btn-primary"} btn-sm" data-mode-toggle="1">
+                  ${expanded ? "← Preview mode" : "Expand matrix →"}
+                </button>
               </div>
             </div>
 
             <div class="project-stats-bar">
               <div class="project-stat"><span class="ps-value">${fmt(t.views)}</span><span class="ps-label">Total views</span></div>
               <div class="project-stat"><span class="ps-value">${fmt(t.likes)}</span><span class="ps-label">Likes</span></div>
-              <div class="project-stat"><span class="ps-value">${fmt(t.comments)}</span><span class="ps-label">Comments</span></div>
-              <div class="project-stat"><span class="ps-value">${fmt(t.shares)}</span><span class="ps-label">Shares</span></div>
-              <div class="project-stat"><span class="ps-value">${fmt(t.saves)}</span><span class="ps-label">Saves</span></div>
               <div class="project-stat"><span class="ps-value">${fmt((bp.Instagram || {}).views)}</span><span class="ps-label">IG views</span></div>
               <div class="project-stat"><span class="ps-value">${fmt((bp.TikTok || {}).views)}</span><span class="ps-label">TT views</span></div>
               <div class="project-stat"><span class="ps-value">${fmt((bp.YouTube || {}).views)}</span><span class="ps-label">YT views</span></div>
             </div>
 
-            <div class="timeline-split">
-              <div class="timeline-pinned-left">
-                <div class="timeline-col-label">
-                  <span>Peak post</span>
-                  <span class="fixed-pill">Best</span>
-                </div>
-                <div class="timeline-track" style="min-width: 0; flex-direction: column; align-items: stretch; width: 200px;">
-                  ${renderPeakCard(peak)}
-                  <dl class="peak-stat-list">
-                    <div><dt>Views</dt><dd>${fmt(peak.views)}</dd></div>
-                    <div><dt>Likes</dt><dd>${fmt(peak.likes)}</dd></div>
-                    <div><dt>Comments</dt><dd>${fmt(peak.comments)}</dd></div>
-                    <div><dt>Shares</dt><dd>${fmt(peak.shares)}</dd></div>
-                    <div><dt>Saves</dt><dd>${fmt(peak.saves)}</dd></div>
-                    ${peak.reach ? `<div><dt>Reach</dt><dd>${fmt(peak.reach)}</dd></div>` : ""}
-                    <div><dt>Platform</dt><dd>${escapeHtml(peak.platform)}</dd></div>
-                    <div><dt>Date</dt><dd>${escapeHtml(peak.date || "—")}</dd></div>
-                  </dl>
-                  <div class="peak-platform-peaks">
-                    <div class="timeline-col-label" style="margin-top: 0.35rem"><span>Best per platform</span></div>
-                    ${Object.values(project.peaksByPlatform || {})
-                      .map(
-                        (p) => `
-                      <a class="mini-peak" href="${p.url}" target="_blank" rel="noopener">
-                        <strong>${platShort(p.platform)}</strong>
-                        <span>${fmt(p.views)} views</span>
-                      </a>`
-                      )
-                      .join("")}
-                  </div>
-                </div>
-              </div>
-
-              <div class="timeline-scroll-right">
-                <div class="timeline-col-label" style="margin-bottom: 0.55rem">
-                  <span>All posts in project</span>
-                  <div class="feed-filters" id="${filterId}" role="group" aria-label="Filter by platform">
-                    <button type="button" class="feed-filter is-active" data-plat="all">All</button>
-                    <button type="button" class="feed-filter" data-plat="instagram">IG</button>
-                    <button type="button" class="feed-filter" data-plat="tiktok">TT</button>
-                    <button type="button" class="feed-filter" data-plat="youtube">YT</button>
-                  </div>
-                </div>
-                <div class="timeline-track" data-feed-for="${project.id}">
-                  ${project.posts.map(renderFeedCard).join("")}
-                </div>
-              </div>
+            <div class="timeline-split ${expanded ? "is-matrix" : ""}">
+              ${renderPeak(project, statsOpen)}
+              ${expanded ? renderExpandedMatrix(slots) : renderPreviewTrack(slots)}
             </div>
-          </article>
-        `;
+          </article>`;
       }
 
-      function wireFilters(root) {
-        root.querySelectorAll(".feed-filters").forEach((group) => {
-          const article = group.closest(".project-block");
-          const feed = article.querySelector(".timeline-track[data-feed-for]");
-          group.addEventListener("click", (e) => {
-            const btn = e.target.closest(".feed-filter");
-            if (!btn) return;
-            group.querySelectorAll(".feed-filter").forEach((b) => b.classList.toggle("is-active", b === btn));
-            const plat = btn.getAttribute("data-plat");
-            feed.querySelectorAll(".clip-column").forEach((col) => {
-              const colPlat = col.getAttribute("data-platform");
-              const show = plat === "all" || colPlat === plat;
-              col.hidden = !show;
-              col.style.display = show ? "" : "none";
-            });
+      const uiState = {};
+
+      function getState(id) {
+        if (!uiState[id]) uiState[id] = { mode: "preview", statsOpen: false };
+        return uiState[id];
+      }
+
+      let PROJECTS = [];
+
+      function paint() {
+        const mount = document.getElementById("projects-mount");
+        mount.innerHTML = PROJECTS.map((p) => renderProject(p, getState(p.id))).join("");
+        wire(mount);
+      }
+
+      function wire(root) {
+        root.querySelectorAll("[data-mode-toggle]").forEach((el) => {
+          el.addEventListener("click", (e) => {
+            e.preventDefault();
+            const article = el.closest(".project-block");
+            const id = article.dataset.projectId;
+            const st = getState(id);
+            st.mode = st.mode === "expanded" ? "preview" : "expanded";
+            paint();
+            document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+
+        root.querySelectorAll("[data-expand-trigger]").forEach((el) => {
+          el.addEventListener("click", (e) => {
+            e.preventDefault();
+            const article = el.closest(".project-block");
+            const id = article.dataset.projectId;
+            getState(id).mode = "expanded";
+            paint();
+            document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+
+        root.querySelectorAll("[data-peak-stats-toggle]").forEach((el) => {
+          el.addEventListener("click", () => {
+            const article = el.closest(".project-block");
+            const id = article.dataset.projectId;
+            const st = getState(id);
+            st.statsOpen = !st.statsOpen;
+            paint();
           });
         });
       }
@@ -281,13 +414,12 @@
           const res = await fetch("assets/projects-data.json", { cache: "no-cache" });
           if (!res.ok) throw new Error("Failed to load projects-data.json");
           const data = await res.json();
-          const projects = data.projects || [];
-          if (!projects.length) {
-            mount.innerHTML = `<p class="section-intro">No projects assigned yet. Tag rows with a Project in the <a href="https://docs.google.com/spreadsheets/d/15jVzyTbLt2oeWIgLLqROgmPgZe76EAUDZGIQ3EGCmTM/edit" target="_blank" rel="noopener">All Social Posts sheet</a>.</p>`;
+          PROJECTS = (data.projects || []).map((p) => ({ ...p, _slots: buildSlots(p.posts || []) }));
+          if (!PROJECTS.length) {
+            mount.innerHTML = `<p class="section-intro">No projects assigned yet. Tag rows in the <a href="https://docs.google.com/spreadsheets/d/15jVzyTbLt2oeWIgLLqROgmPgZe76EAUDZGIQ3EGCmTM/edit" target="_blank" rel="noopener">All Social Posts sheet</a>.</p>`;
             return;
           }
-          mount.innerHTML = projects.map(renderProject).join("");
-          wireFilters(mount);
+          paint();
         } catch (err) {
           mount.innerHTML = `<p class="section-intro">Couldn’t load projects (${escapeHtml(err.message)}).</p>`;
         }
