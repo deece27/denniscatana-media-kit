@@ -33,13 +33,13 @@
           Projects
         </h1>
         <p class="lede" style="max-width: 48rem; margin-bottom: 1rem;">
-          Day-by-day series across Instagram, TikTok, and YouTube. The left card is the top spike; scroll right for the full timeline. Click a card to unroll the other platforms underneath. Direct post links are placeholders to your profiles for now — we’ll wire exact URLs next.
+          Day-by-day series across Instagram and YouTube with live post links. The left card is the top spike; scroll right for the full timeline. Click a card to unroll the other platforms underneath. TikTok @denniscatana currently has no public videos — TT slots are omitted until content lands.
         </p>
         <div class="meta-row" style="margin-bottom: 0.5rem;">
           <a class="pill" href="https://www.instagram.com/denniscatana/" target="_blank" rel="noopener"><strong>IG</strong> @denniscatana</a>
           <a class="pill" href="https://www.tiktok.com/@denniscatana" target="_blank" rel="noopener"><strong>TT</strong> @denniscatana</a>
           <a class="pill" href="https://www.youtube.com/@denniscatana" target="_blank" rel="noopener"><strong>YT</strong> @denniscatana</a>
-          <span class="pill"><strong>Base</strong> Layout preview · placeholders OK</span>
+          <span class="pill"><strong>Live</strong> Real post URLs · some China virals need vet</span>
         </div>
       </section>
 
@@ -83,384 +83,724 @@
       };
 
       const PROJECTS_DATA = [
-        {
-          id: "taiwan-1000km",
-          name: "Taiwan — Cycle 1000km",
-          tag: "Flagship Challenge",
-          region: "Taiwan",
-          summary: "Day-by-day cycling challenge around Taiwan. Real thumbs + stats for Days 1–3 (IG Day 1: 178K views / +2,670 follows). Later days are layout placeholders until we drop in exact post links.",
-          topPostId: "tw-ep1",
-          items: [
-            {
-              id: "tw-ep1",
-              step: "Day 1 · Pick Up Bike",
-              title: "Let's go cycle 1000km around Taiwan hahaha",
-              format: "short",
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "178K views",
-                  thumb: "assets/thumbs/tw-ep1-ig.jpg",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "2,670 follows · 11.7K likes · 40s avg watch"
-                },
-                tiktok: {
-                  views: "1,343 views",
-                  thumb: "assets/thumbs/tw-ep1-tt.jpg",
-                  url: "https://www.tiktok.com/@denniscatana",
-                  meta: "Day 1 — Pick up bike in Taipei"
-                },
-                youtube: {
-                  views: "353 views",
-                  thumb: "assets/thumbs/tw-ep1-yt.jpg",
-                  url: "https://www.youtube.com/@denniscatana",
-                  meta: "YT Shorts · Day 1 of Cycling 1,000km"
-                }
-              }
-            },
-            {
-              id: "tw-ep2",
-              step: "Pre-Ride · Stadium",
-              title: "Wow, this is such a good idea (Former Soccer Stadium)",
-              format: "short",
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "9.9K views",
-                  thumb: "assets/thumbs/tw-ep2-ig.jpg",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "357 likes · Waiting to pick up bike"
-                },
-                tiktok: {
-                  views: "Placeholder",
-                  thumb: "assets/thumbs/tw-ep2-ig.jpg",
-                  url: "https://www.tiktok.com/@denniscatana",
-                  meta: "Link TBD · opens TikTok profile for now"
-                }
-              }
-            },
-            {
-              id: "tw-ep3",
-              step: "Day 2 · Morning Rollout",
-              title: "Cycling 1000km around Taiwan — Alright good morning",
-              format: "short",
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "19.5K views",
-                  thumb: "assets/thumbs/tw-ep3-ig.jpg",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "1,446 likes · 286 shares · 94 saves"
-                },
-                tiktok: {
-                  views: "Placeholder",
-                  thumb: "assets/thumbs/tw-ep3-ig.jpg",
-                  url: "https://www.tiktok.com/@denniscatana",
-                  meta: "Link TBD · opens TikTok profile for now"
-                },
-                youtube: {
-                  views: "Placeholder",
-                  thumb: "assets/thumbs/tw-ep3-ig.jpg",
-                  url: "https://www.youtube.com/@denniscatana",
-                  meta: "Link TBD · opens YouTube channel for now"
-                }
-              }
-            },
-            {
-              id: "tw-ep4",
-              step: "Day 3 · Coastal",
-              title: "70km Headwinds & 7-Eleven Fuel (placeholder)",
-              format: "short",
-              placeholder: true,
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "Layout sample · drop real Reel here"
-                },
-                tiktok: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.tiktok.com/@denniscatana",
-                  meta: "Layout sample"
-                }
-              }
-            },
-            {
-              id: "tw-ep5",
-              step: "Day 4 · Kit",
-              title: "Saddle bag / frame pack loadout (placeholder)",
-              format: "post",
-              placeholder: true,
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "4:5 photo carousel slot"
-                }
-              }
-            },
-            {
-              id: "tw-ep6",
-              step: "Later days",
-              title: "More Taiwan days — placeholders for the rest of the series",
-              format: "short",
-              placeholder: true,
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "Add Days 5–finish as you share links"
-                },
-                youtube: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
-                  url: "https://www.youtube.com/@denniscatana",
-                  meta: "Optional long-form film slot"
-                }
-              }
-            }
-          ]
-        },
-        {
-          id: "peru-trilogy",
-          name: "Peru — Cusco, Salkantay Trek & Lima",
-          tag: "Active Series",
-          region: "Peru",
-          summary: "Active series — IG Reels live (~3K–19K early views) plus a 3-film YouTube trilogy (Cusco → Salkantay → Lima), shot on DJI Osmo Action 6. Slots below are placeholders until exact post URLs are dropped in.",
-          topPostId: "peru-ep3",
-          items: [
-            {
-              id: "peru-ep1",
-              step: "Reel · Cusco",
-              title: "Landing in Cusco / Sacred Valley (placeholder)",
-              format: "short",
-              placeholder: true,
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "~3K–11K",
-                  thumb: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "Early Peru Reel range · link TBD"
-                },
-                tiktok: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.tiktok.com/@denniscatana",
-                  meta: "Link TBD"
-                }
-              }
-            },
-            {
-              id: "peru-ep2",
-              step: "YouTube Film 1",
-              title: "Cusco & Sacred Valley (placeholder film slot)",
-              format: "long",
-              placeholder: true,
-              primaryPlatform: "youtube",
-              platforms: {
-                youtube: {
-                  views: "Film #1",
-                  thumb: "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80",
-                  url: "https://www.youtube.com/@denniscatana",
-                  meta: "16:9 long-form · DJI Action 6"
-                }
-              }
-            },
-            {
-              id: "peru-ep3",
-              step: "Salkantay Pass",
-              title: "Crossing Salkantay Pass (~19K early Reel)",
-              format: "short",
-              placeholder: true,
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "~19K views",
-                  thumb: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "Top early Peru Reel · link TBD"
-                },
-                youtube: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.youtube.com/@denniscatana",
-                  meta: "Short / film clip TBD"
-                }
-              }
-            },
-            {
-              id: "peru-ep4",
-              step: "YouTube Film 2–3",
-              title: "Salkantay trek + Lima finale (placeholder)",
-              format: "long",
-              placeholder: true,
-              primaryPlatform: "youtube",
-              platforms: {
-                youtube: {
-                  views: "Films #2–3",
-                  thumb: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
-                  url: "https://www.youtube.com/@denniscatana",
-                  meta: "Trilogy slots · wire exact videos next"
-                },
-                ig: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "Companion Reels TBD"
-                }
-              }
-            }
-          ]
-        },
-        {
-          id: "tengchong-china",
-          name: "Chinese National Holiday — Tengchong & China Virals",
-          tag: "9.3M Peak Reach",
-          region: "China",
-          summary: "China street-culture spikes from your media kit: 9.3M (fake coconuts collab), 2.9M (folding-phone snack), 1.5M (towel candy). Thumbs + extra-platform rows are placeholders; IG view counts are real.",
-          topPostId: "cn-ep1",
-          items: [
-            {
-              id: "cn-ep1",
-              step: "Viral Peak · Coconuts",
-              title: "Fake Coconuts in Tengchong (Collab)",
-              format: "short",
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "9.3M views",
-                  thumb: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "7.1M accounts reached · 39.1K likes · 25s avg watch"
-                },
-                tiktok: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.tiktok.com/@denniscatana",
-                  meta: "Crosspost slot · link TBD"
-                }
-              }
-            },
-            {
-              id: "cn-ep2",
-              step: "Solo Viral · Snack",
-              title: "Folding-Phone Snack in China",
-              format: "short",
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "2.9M views",
-                  thumb: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "55.2K likes · 8.4K shares · 4.1K saves"
-                },
-                youtube: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.youtube.com/@denniscatana",
-                  meta: "Short slot · link TBD"
-                }
-              }
-            },
-            {
-              id: "cn-ep3",
-              step: "Tengchong · Street",
-              title: "Towel 'Candy' Street Vendor — Tengchong",
-              format: "short",
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "1.5M views",
-                  thumb: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "Crossposted to FB · 6.8K likes"
-                }
-              }
-            },
-            {
-              id: "cn-ep4",
-              step: "More China",
-              title: "Hiking / National Holiday clips (placeholder)",
-              format: "short",
-              placeholder: true,
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1513415277900-a62401e19be4?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "Add more China series posts here"
-                }
-              }
-            }
-          ]
-        },
-        {
-          id: "free-cruise",
-          name: "How Much Does a 'Free' Cruise Really Cost?",
-          tag: "498K Day 1",
-          region: "Cruise Series",
-          summary: "Series that kicked the creator journey forward. Day 1 IG: ~498K views, 525 follows, 28.8K profile visits. Later episodes are layout placeholders.",
-          topPostId: "cr-ep1",
-          items: [
-            {
-              id: "cr-ep1",
-              step: "Day 1 · Boarding",
-              title: "Boarding a 'Free' Cruise — Here Is the Catch",
-              format: "short",
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "~498K views",
-                  thumb: "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "525 follows · 28.8K profile visits · 247 saves"
-                },
-                tiktok: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.tiktok.com/@denniscatana",
-                  meta: "Crosspost slot · link TBD"
-                },
-                youtube: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.youtube.com/@denniscatana",
-                  meta: "Short slot · link TBD"
-                }
-              }
-            },
-            {
-              id: "cr-ep2",
-              step: "Later days",
-              title: "Fees, ports, final receipt (placeholders)",
-              format: "short",
-              placeholder: true,
-              primaryPlatform: "ig",
-              platforms: {
-                ig: {
-                  views: "Placeholder",
-                  thumb: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80",
-                  url: "https://www.instagram.com/denniscatana/",
-                  meta: "Drop Day 2+ Reels here when ready"
-                }
-              }
-            }
-          ]
+  {
+    "id": "taiwan-1000km",
+    "name": "Taiwan — Cycle 1000km",
+    "tag": "Flagship Challenge",
+    "region": "Taiwan",
+    "summary": "Full Days 0–13 wired from live IG Reels + YouTube long-form (real permalinks, local thumbs, view counts). TikTok @denniscatana currently has 0 public videos — TT slots omitted. Peak pin = Day 1 IG (~178K views).",
+    "topPostId": "tw-day1",
+    "items": [
+      {
+        "id": "tw-day0",
+        "step": "Day 0",
+        "title": "Day 0 of Cycling 1,000km around Taiwan",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "138 views",
+            "thumb": "assets/thumbs/tw-day0-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=ygMcmP1ZvbQ",
+            "meta": "YT long · 4 likes"
+          }
         }
-      ];
+      },
+      {
+        "id": "tw-stadium",
+        "step": "Pre-ride · Stadium",
+        "title": "They turned an abandoned Soccer stadium into this!",
+        "format": "short",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "847 views",
+            "thumb": "assets/thumbs/tw-ep2-ig.jpg",
+            "url": "https://www.youtube.com/shorts/IRxUVEx4MHc",
+            "meta": "YT Short · 19 likes · 2026-08-02"
+          }
+        }
+      },
+      {
+        "id": "tw-day1",
+        "step": "Day 1",
+        "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu. Total: 89/1,000km",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "178.1K views",
+            "thumb": "assets/thumbs/tw-ep1-ig.jpg",
+            "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
+            "meta": "11710 likes · 2364 saves · reach 145245"
+          },
+          "youtube": {
+            "views": "853 views",
+            "thumb": "assets/thumbs/tw-day1-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=Z6Ux1lqLQwE",
+            "meta": "YT long · 26 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day2",
+        "step": "Day 2",
+        "title": "📍Day 2 - Wind and existential joy from Hsinchu to Gaomei We’re told to appreciate the little, subtle",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "19.5K views",
+            "thumb": "assets/thumbs/tw-ep2-ig.jpg",
+            "url": "https://www.instagram.com/reel/DXFFg9Yj4j2/",
+            "meta": "1446 likes · 94 saves · reach 12777"
+          },
+          "youtube": {
+            "views": "205 views",
+            "thumb": "assets/thumbs/tw-day2-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=VfwlR60nfd0",
+            "meta": "YT long · 8 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day3",
+        "step": "Day 3",
+        "title": "📍Day 3 - A little anxious and a lot of rest Total: 219/1,000km We hit the ground running (actually..",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "15.4K views",
+            "thumb": "assets/thumbs/tw-ep3-ig.jpg",
+            "url": "https://www.instagram.com/reel/DXLeIFmD_6U/",
+            "meta": "912 likes · 69 saves · reach 10702"
+          },
+          "youtube": {
+            "views": "420 views",
+            "thumb": "assets/thumbs/tw-day3-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=ZGVkgseRWA8",
+            "meta": "YT long · 13 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day4",
+        "step": "Day 4",
+        "title": "📍Day 4 - The biggest thrill in recent memory Total: 284/1,000km Today was a genuinely a roller coast",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "10.3K views",
+            "thumb": "assets/thumbs/tw-day4-ig.jpg",
+            "url": "https://www.instagram.com/reel/DXPP18CD_MV/",
+            "meta": "657 likes · 36 saves · reach 7064"
+          },
+          "youtube": {
+            "views": "261 views",
+            "thumb": "assets/thumbs/tw-day4-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=ApmzlZtQsZI",
+            "meta": "YT long · 9 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day5",
+        "step": "Day 5",
+        "title": "📍Day 5 - Sunmoon Lake and Tim! Total: 391/1,000km They say that comparison is the thief of joy, and",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "14.6K views",
+            "thumb": "assets/thumbs/tw-day5-ig.jpg",
+            "url": "https://www.instagram.com/reel/DXVac6Fj1eW/",
+            "meta": "701 likes · 45 saves · reach 9414"
+          },
+          "youtube": {
+            "views": "645 views",
+            "thumb": "assets/thumbs/tw-day5-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=J28BNYb0WGM",
+            "meta": "YT long · 18 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day6",
+        "step": "Day 6",
+        "title": "📍Day 6 - The longest road to Kaohsiung Total: 514/1,000km Last month I ran into some youtubers on my",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "7K views",
+            "thumb": "assets/thumbs/tw-day6-ig.jpg",
+            "url": "https://www.instagram.com/reel/DXjl-_dCCbo/",
+            "meta": "383 likes · 15 saves · reach 4724"
+          },
+          "youtube": {
+            "views": "265 views",
+            "thumb": "assets/thumbs/tw-day6-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=_6D0xxKLxXE",
+            "meta": "YT long · 8 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day7",
+        "step": "Day 7",
+        "title": "📍Day 7 - Rest day is best day (kinda) Total: 506/1,000km Looking back at this whole day, in hindsigh",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "3.8K views",
+            "thumb": "assets/thumbs/tw-day7-ig.jpg",
+            "url": "https://www.instagram.com/reel/DXntB_8iB4O/",
+            "meta": "114 likes · 2 saves · reach 2310"
+          },
+          "youtube": {
+            "views": "349 views",
+            "thumb": "assets/thumbs/tw-day7-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=4F6KnALNFGQ",
+            "meta": "YT long · 5 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day8",
+        "step": "Day 8",
+        "title": "📍Day 8 - West coast is best coast (for now) Total 602/1,000km I’ve seen quite a bit of complaints fo",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "6.2K views",
+            "thumb": "assets/thumbs/tw-day8-ig.jpg",
+            "url": "https://www.instagram.com/reel/DXvWcbnot8-/",
+            "meta": "318 likes · 10 saves · reach 4434"
+          },
+          "youtube": {
+            "views": "617 views",
+            "thumb": "assets/thumbs/tw-day8-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=qtLQCm4RTic",
+            "meta": "YT long · 18 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day9",
+        "step": "Day 9",
+        "title": "📍Day 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "6.3K views",
+            "thumb": "assets/thumbs/tw-day9-ig.jpg",
+            "url": "https://www.instagram.com/reel/DYFMBwhIt_9/",
+            "meta": "397 likes · 16 saves · reach 4188"
+          },
+          "youtube": {
+            "views": "217 views",
+            "thumb": "assets/thumbs/tw-day9-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=M_eoePd2lwo",
+            "meta": "YT long · 8 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day10",
+        "step": "Day 10",
+        "title": "📍Day 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a t",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "6.2K views",
+            "thumb": "assets/thumbs/tw-day10-ig.jpg",
+            "url": "https://www.instagram.com/reel/DY1-GiooWT4/",
+            "meta": "281 likes · 18 saves · reach 4434"
+          },
+          "youtube": {
+            "views": "30 views",
+            "thumb": "assets/thumbs/tw-day10-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=xcW2rTWlv4Q",
+            "meta": "YT long · 1 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day11",
+        "step": "Day 11",
+        "title": "📍Day 11 - Scotty Doesn’t Know Total 916/1,000km After today, I’m convinced that we need low days; ot",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "4.9K views",
+            "thumb": "assets/thumbs/tw-day11-ig.jpg",
+            "url": "https://www.instagram.com/reel/DZIEWFOIEdF/",
+            "meta": "254 likes · 24 saves · reach 3612"
+          },
+          "youtube": {
+            "views": "1.3K views",
+            "thumb": "assets/thumbs/tw-day11-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=EFCNXpWe8EA",
+            "meta": "YT long · 37 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day12",
+        "step": "Day 12",
+        "title": "📍Day 12 - Taroko and Trains Initially, I was torn between visiting Taroko Gorge or not, but being so",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "3K views",
+            "thumb": "assets/thumbs/tw-day12-ig.jpg",
+            "url": "https://www.instagram.com/reel/DafqkkUIHpb/",
+            "meta": "200 likes · 18 saves · reach 2115"
+          },
+          "youtube": {
+            "views": "410 views",
+            "thumb": "assets/thumbs/tw-day12-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=y68PKpthyU8",
+            "meta": "YT long · 22 likes"
+          }
+        }
+      },
+      {
+        "id": "tw-day13",
+        "step": "Day 13",
+        "title": "📍Day 13 - The day has finally come.. I wasn’t exactly sure how long this whole trip would take, hone",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "3.7K views",
+            "thumb": "assets/thumbs/tw-day13-ig.jpg",
+            "url": "https://www.instagram.com/reel/Da4ODCdoIhh/",
+            "meta": "214 likes · 8 saves · reach 2851"
+          },
+          "youtube": {
+            "views": "497 views",
+            "thumb": "assets/thumbs/tw-day13-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=X8MwDdVNxBk",
+            "meta": "YT long · 14 likes"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "free-cruise",
+    "name": "How Much Does a 'Free' Cruise Really Cost?",
+    "tag": "842K Peak Reel",
+    "region": "Cruise Series",
+    "summary": "Series highlights with real post URLs. Peak pin = Day 6 Part 2 IG (842.7K views). Day 1 boarding is on YouTube (2.8K); media-kit ~498K Day 1 IG permalink still needs vet if a separate Reel exists.",
+    "topPostId": "cr-day6",
+    "items": [
+      {
+        "id": "cr-day1",
+        "step": "Day 1",
+        "title": "Day 1 of how much a ‘Free’ Cruise really costs #cruise #norwegiancruiseline #travelvlog",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "2.8K views",
+            "thumb": "assets/thumbs/cr-5-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=nVrMQNnBisk",
+            "meta": "Long · 84 likes · 2024-12-27"
+          }
+        }
+      },
+      {
+        "id": "cr-day2",
+        "step": "Day 2",
+        "title": "Day 2 of how much a ‘Free’ cruise really costs. #cruise #norwegiancruiseline #travelvlog",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "282 views",
+            "thumb": "https://i.ytimg.com/vi/UDcKjsfjbtg/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=UDcKjsfjbtg",
+            "meta": "Long · 1 likes · 2024-12-27"
+          }
+        }
+      },
+      {
+        "id": "cr-day3",
+        "step": "Day 3",
+        "title": "Day 3 of how much a ‘Free’ Cruise really costs (Part 2) #norwegiancruiseline #travelvlog",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "1.3K views",
+            "thumb": "https://i.ytimg.com/vi/2yiDFqsnOno/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=2yiDFqsnOno",
+            "meta": "Long · 36 likes · 2024-12-30"
+          }
+        }
+      },
+      {
+        "id": "cr-day4",
+        "step": "Day 4",
+        "title": "Day 4 of what a ‘Free’ Cruise really costs. #norwegiancruiseline #belize #travelvlog",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "581 views",
+            "thumb": "https://i.ytimg.com/vi/XxTujjPBFTY/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=XxTujjPBFTY",
+            "meta": "Long · 13 likes · 2025-01-01"
+          }
+        }
+      },
+      {
+        "id": "cr-day5",
+        "step": "Day 5",
+        "title": "Day 5 of how much a ‘Free’ Cruise really costs. #norwegiancruiseline #travel",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "1.4K views",
+            "thumb": "assets/thumbs/cr-7-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=vGOtH3--l1w",
+            "meta": "Long · 39 likes · 2025-01-02"
+          }
+        }
+      },
+      {
+        "id": "cr-day6",
+        "step": "Day 6",
+        "title": "Day 6 of how much a ‘Free’ cruise really costs Part 2 ..At port, with 3 cruises and apparently…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "842.7K views",
+            "thumb": "assets/thumbs/cr-0-ig.jpg",
+            "url": "https://www.instagram.com/reel/DEZn8OszIHl/",
+            "meta": "REELS · 15176 likes · 2025-01-04"
+          },
+          "youtube": {
+            "views": "3.6K views",
+            "thumb": "assets/thumbs/cr-4-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=iBj_K-ZasNw",
+            "meta": "Long · 99 likes · 2025-01-04"
+          }
+        }
+      },
+      {
+        "id": "cr-day7",
+        "step": "Day 7",
+        "title": "This is day 7 of how much a ‘Free’ Cruise really costs. Last full day before heading to port, …",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "142K views",
+            "thumb": "assets/thumbs/cr-1-ig.jpg",
+            "url": "https://www.instagram.com/reel/DEeot-fRNeJ/",
+            "meta": "REELS · 987 likes · 2025-01-06"
+          },
+          "youtube": {
+            "views": "1.9K views",
+            "thumb": "assets/thumbs/cr-6-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=VxucveHXp-w",
+            "meta": "Long · 40 likes · 2025-01-11"
+          }
+        }
+      },
+      {
+        "id": "cr-day99",
+        "step": "Finale · Receipt",
+        "title": "Final cost of how much a ‘Free’ Crusie really costs #norwegiancruiseline",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "34.9K views",
+            "thumb": "assets/thumbs/cr-2-ig.jpg",
+            "url": "https://www.instagram.com/reel/DEi53PESl7X/",
+            "meta": "REELS · 444 likes · 2025-01-08"
+          },
+          "youtube": {
+            "views": "652 views",
+            "thumb": "https://i.ytimg.com/vi/g-725uayHWQ/maxresdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=g-725uayHWQ",
+            "meta": "Long · 17 likes · 2025-01-11"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "peru-trilogy",
+    "name": "Peru — Cusco, Salkantay Trek & Lima",
+    "tag": "Active Series",
+    "region": "Peru",
+    "summary": "Live IG Reels from the Peru / Salkantay window with real URLs + thumbs. YouTube 3-film trilogy slots still need Dennis to confirm which videos map to Cusco / Salkantay / Lima.",
+    "topPostId": "pe-1",
+    "items": [
+      {
+        "id": "pe-0",
+        "step": "Cusco · Altitude",
+        "title": "Have you experienced this? we decided to take some high altitude medicine while in Cusco, Peru…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "12.3K views",
+            "thumb": "assets/thumbs/pe-0-ig.jpg",
+            "url": "https://www.instagram.com/reel/Dd_jyHkoQXG/",
+            "meta": "REELS · 307 likes · 2026-10-02"
+          }
+        }
+      },
+      {
+        "id": "pe-1",
+        "step": "Trek prep · Pack",
+        "title": "I mean who forgets a backpack lmao, but you get what I’m saying. If there’s a demand for a cer…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "18.2K views",
+            "thumb": "assets/thumbs/pe-1-ig.jpg",
+            "url": "https://www.instagram.com/reel/Dd8EsdnIEVi/",
+            "meta": "REELS · 221 likes · 2026-10-01"
+          }
+        }
+      },
+      {
+        "id": "pe-2",
+        "step": "Alpaca local",
+        "title": "It feels like alpaca is the perfect local animal here in Peru through history. it’s nimble eno…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "2.3K views",
+            "thumb": "assets/thumbs/pe-2-ig.jpg",
+            "url": "https://www.instagram.com/reel/DeGH9-PonSP/",
+            "meta": "REELS · 80 likes · 2026-10-05"
+          }
+        }
+      },
+      {
+        "id": "pe-3",
+        "step": "Alpaca local",
+        "title": "I mean, llamas and alpacas do their business in the same spot every time too. Crafty. Our firs…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "4.7K views",
+            "thumb": "assets/thumbs/pe-3-ig.jpg",
+            "url": "https://www.instagram.com/reel/DeW5h55Px9B/",
+            "meta": "REELS · 73 likes · 2026-10-11"
+          }
+        }
+      },
+      {
+        "id": "pe-4",
+        "step": "Street remedy",
+        "title": "The benefits they claim for this is borderline snake oil. I guess unless you chew it 24/7, may…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "9.5K views",
+            "thumb": "assets/thumbs/pe-4-ig.jpg",
+            "url": "https://www.instagram.com/reel/Dedek2iP9Gm/",
+            "meta": "REELS · 69 likes · 2026-10-14"
+          }
+        }
+      },
+      {
+        "id": "pe-5",
+        "step": "Cusco · Altitude",
+        "title": "If you have any recommendations of what to add, let me know! #peru #salkantaytrek #lima #cusco",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "3.9K views",
+            "thumb": "assets/thumbs/pe-5-ig.jpg",
+            "url": "https://www.instagram.com/reel/Dcro4byIM6C/",
+            "meta": "REELS · 48 likes · 2026-08-30"
+          }
+        }
+      },
+      {
+        "id": "pe-6",
+        "step": "Cusco · Altitude",
+        "title": "After just a few days here, I feel like I could easily do a long stay in Cusco, a month maybe …",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.9K views",
+            "thumb": "assets/thumbs/pe-6-ig.jpg",
+            "url": "https://www.instagram.com/p/Dd5gp4yFgVQ/",
+            "meta": "FEED · 46 likes · 2026-09-30"
+          }
+        }
+      },
+      {
+        "id": "pe-7",
+        "step": "Cusco · Altitude",
+        "title": "This is just white peoples stuff right? #peru #cusco #massage",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "2.6K views",
+            "thumb": "assets/thumbs/pe-7-ig.jpg",
+            "url": "https://www.instagram.com/reel/DeC0Ni9PKCU/",
+            "meta": "REELS · 40 likes · 2026-10-03"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "tengchong-china",
+    "name": "Chinese National Holiday — Tengchong & China",
+    "tag": "Series + Virals",
+    "region": "China",
+    "summary": "Clear Tengchong / National Holiday posts wired from the API pull. Media-kit peak virals (9.3M / 2.9M / 1.5M) are listed as needs-vet — exact permalinks were not confidently matched in the ~300 IG media pull.",
+    "topPostId": "cn-0",
+    "items": [
+      {
+        "id": "cn-0",
+        "step": "Holiday · Crowds",
+        "title": "I want to know who thought it was a good idea for 1.4 billion people to have a one week vacati…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "4.3K views",
+            "thumb": "assets/thumbs/cn-0-ig.jpg",
+            "url": "https://www.instagram.com/reel/DQ5_6Quj8tB/",
+            "meta": "REELS · 79 likes · 2025-11-11 · API pull (media-kit 9.3M/2.9M/1.5M posts need vet for exact URLs)"
+          }
+        },
+        "placeholder": false
+      },
+      {
+        "id": "cn-1",
+        "step": "Tengchong · Moss forest",
+        "title": "Furry Ball Forest (毛毛球), a natural moss covered forest near Tengchong in the Gaoliging mountai…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "2.8K views",
+            "thumb": "assets/thumbs/cn-1-ig.jpg",
+            "url": "https://www.instagram.com/reel/DSUQ4FjD4WU/",
+            "meta": "REELS · 50 likes · 2025-12-16 · API pull (media-kit 9.3M/2.9M/1.5M posts need vet for exact URLs)"
+          }
+        },
+        "placeholder": false
+      },
+      {
+        "id": "cn-2",
+        "step": "Tengchong · Snaps",
+        "title": "Couple snap shots of our mini escape during the national holidays in Tengchong, Yunnan, China.…",
+        "format": "short",
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "1.6K views",
+            "thumb": "assets/thumbs/cn-2-ig.jpg",
+            "url": "https://www.instagram.com/p/DSSeXilj7Gl/",
+            "meta": "FEED · 44 likes · 2025-12-15 · API pull (media-kit 9.3M/2.9M/1.5M posts need vet for exact URLs)"
+          }
+        },
+        "placeholder": false
+      },
+      {
+        "id": "cn-3",
+        "step": "China Short",
+        "title": "I didnt know they was cool like that. #Chinatravel",
+        "format": "short",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "369 views",
+            "thumb": "assets/thumbs/cn-3-yt.jpg",
+            "url": "https://www.youtube.com/shorts/t-xJec_fm88",
+            "meta": "Short · 3 likes · 2025-12-19 · API pull (media-kit 9.3M/2.9M/1.5M posts need vet for exact URLs)"
+          }
+        },
+        "placeholder": false
+      },
+      {
+        "id": "cn-4",
+        "step": "Day 3 · Coconut / raft",
+        "title": "Day 3: Coconut scam, fat corgi's and bamboo pole rafting",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "184 views",
+            "thumb": "assets/thumbs/cn-4-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=WlmwxjKLtIU",
+            "meta": "Long · 8 likes · 2025-12-20 · API pull (media-kit 9.3M/2.9M/1.5M posts need vet for exact URLs)"
+          }
+        },
+        "placeholder": false
+      },
+      {
+        "id": "cn-5",
+        "step": "YT · Tengchong week",
+        "title": "Escaping the National Holiday in China (One Week in Tengchong)",
+        "format": "long",
+        "primaryPlatform": "youtube",
+        "platforms": {
+          "youtube": {
+            "views": "96 views",
+            "thumb": "assets/thumbs/cn-5-yt.jpg",
+            "url": "https://www.youtube.com/watch?v=otRr-DYOWio",
+            "meta": "Long · 2 likes · 2026-01-18 · API pull (media-kit 9.3M/2.9M/1.5M posts need vet for exact URLs)"
+          }
+        },
+        "placeholder": false
+      },
+      {
+        "id": "cn-viral-needs-vet",
+        "step": "Needs vet · Virals",
+        "title": "Media-kit peak Reels (9.3M / 2.9M / 1.5M) — exact permalinks not matched in API pull",
+        "format": "short",
+        "placeholder": true,
+        "primaryPlatform": "ig",
+        "platforms": {
+          "ig": {
+            "views": "9.3M / 2.9M / 1.5M (kit)",
+            "thumb": "assets/thumbs/cn-0-ig.jpg",
+            "url": "https://www.instagram.com/denniscatana/",
+            "meta": "Needs Dennis vet · drop exact Reel URLs"
+          }
+        }
+      }
+    ]
+  }
+];
 
       // State: which project is in 3-row matrix mode, and which card keys are unrolled
       const matrixModeByProject = {};
-      const unrolledCardKeys = new Set(["taiwan-1000km::chrono::tw-ep1"]);
+      const unrolledCardKeys = new Set(["taiwan-1000km::chrono::tw-day1"]);
 
       function toggleProjectMatrix(projectId) {
         matrixModeByProject[projectId] = !matrixModeByProject[projectId];
