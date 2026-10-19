@@ -163,9 +163,22 @@ def cell_value(post: dict | None, *, expect_missing: bool) -> str:
     return "Missing" if expect_missing else ""
 
 
+def is_landscape_film(post: dict) -> bool:
+    """Wide 16:9 YouTube films pinned to the far-right end (not Shorts day slots)."""
+    if (post.get("Platform") or post.get("platform")) != "YouTube":
+        return False
+    t = post.get("Title/Caption snippet") or post.get("title") or ""
+    if re.search(r"urge to cycle|so you have the urge", t, re.I):
+        return True
+    return False
+
+
 def build_project_matrix(posts: list[dict]) -> dict:
+    films = [p for p in posts if is_landscape_film(p)]
+    matrix_posts = [p for p in posts if not is_landscape_film(p)]
+
     ig_posts = sorted(
-        [p for p in posts if p.get("Platform") == "Instagram"],
+        [p for p in matrix_posts if p.get("Platform") == "Instagram"],
         key=lambda p: (p.get("Date") or "", p.get("URL") or ""),
     )
 
@@ -224,13 +237,13 @@ def build_project_matrix(posts: list[dict]) -> dict:
         return best if score >= 3 else None
 
     peers_by_plat = defaultdict(list)
-    for p in posts:
+    for p in matrix_posts:
         if p.get("Platform") != "Instagram":
             peers_by_plat[p["Platform"]].append(p)
     for plat in peers_by_plat:
         peers_by_plat[plat].sort(key=lambda p: (p.get("Date") or "", p.get("URL") or ""))
 
-    for post in posts:
+    for post in matrix_posts:
         if post.get("Platform") == "Instagram":
             continue
         info = classify_title(post.get("Title/Caption snippet") or "")
@@ -299,7 +312,7 @@ def build_project_matrix(posts: list[dict]) -> dict:
     # Second pass: leftover TT/YT keep relative upload order → fill empty IG columns
     for plat in ("TikTok", "YouTube"):
         peers = sorted(
-            [p for p in posts if p.get("Platform") == plat],
+            [p for p in matrix_posts if p.get("Platform") == plat],
             key=lambda p: (p.get("Date") or "", p.get("URL") or ""),
         )
         used = {
@@ -314,9 +327,28 @@ def build_project_matrix(posts: list[dict]) -> dict:
         for post, slot in zip(leftover, empties):
             put(slot, post)
 
+    # Landscape films after all day columns (far right)
+    for film in films:
+        slots.append(
+            {
+                "id": f"film-{film.get('Permalink ID') or film.get('URL')}",
+                "label": "Film",
+                "kind": "film",
+                "day_num": None,
+                "primary_day": False,
+                "is_prep": False,
+                "is_film": True,
+                "ig_date": film.get("Date") or "",
+                "by_platform": {"YouTube": film},
+                "expect_missing": False,
+            }
+        )
+
     # Missing only for primary Day N / Prep beats (not side posts that mention a day)
     gaps = []
     for s in slots:
+        if s.get("is_film"):
+            continue
         expect = bool(s["primary_day"] or s["is_prep"])
         s["expect_missing"] = expect
         for plat in PLATFORMS:

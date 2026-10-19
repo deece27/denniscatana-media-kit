@@ -537,6 +537,15 @@ h3 {
   color: var(--accent);
 }
 
+.mini-peak.is-static {
+  cursor: default;
+}
+
+.mini-peak.is-static:hover {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
 .peak-card-link {
   text-decoration: none;
   display: block;
@@ -872,20 +881,38 @@ h3 {
 }
 
 .project-block .matrix-cell .phone-screen {
-  height: 316px !important;
   width: 100%;
   flex: none;
   border-radius: 0.65rem;
   overflow: hidden;
 }
 
+/* Shorts / Reels: true 9:16 tall frame */
+.project-block .matrix-cell .phone-screen.is-tall-screen,
+.project-block .matrix-cell .phone-screen:not(.is-wide-screen) {
+  aspect-ratio: 9 / 16;
+  height: auto !important;
+  min-height: 316px;
+}
+
+/* Landscape YouTube film at timeline end */
+.project-block .matrix-cell.is-film-col,
+.project-block .matrix-col-hdr.is-film-col {
+  width: 340px;
+}
+
+.project-block .matrix-cell .phone-screen.is-wide-screen,
 .project-block .matrix-cell .phone-screen.is-long-screen {
-  height: 200px !important;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+  min-height: 0;
 }
 
 .project-block .matrix-blank-slot {
   width: 186px;
-  height: 324px; /* 316 screen + 8px frame */
+  aspect-ratio: 9 / 16;
+  min-height: 324px; /* tall blank matching Shorts frame */
+  height: auto;
   box-sizing: border-box;
   align-self: flex-start;
   border: none;
@@ -893,6 +920,12 @@ h3 {
   box-shadow: none;
   padding: 0;
   border-radius: 0.85rem;
+}
+
+.project-block .matrix-cell.is-film-col .matrix-blank-slot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
 }
 
 /* Collapsed: TikTok row peeks under a fade; YouTube hidden */
@@ -1564,16 +1597,32 @@ h3 {
 }
 
 .project-block .matrix-cell .phone-screen {
-  height: 316px !important;
   border-radius: 0.65rem !important;
 }
 
+.project-block .matrix-cell .phone-screen.is-tall-screen,
+.project-block .matrix-cell .phone-screen:not(.is-wide-screen) {
+  aspect-ratio: 9 / 16;
+  height: auto !important;
+  min-height: 316px;
+}
+
+.project-block .matrix-cell.is-film-col,
+.project-block .matrix-col-hdr.is-film-col {
+  width: 340px;
+}
+
+.project-block .matrix-cell .phone-screen.is-wide-screen,
 .project-block .matrix-cell .phone-screen.is-long-screen {
-  height: 200px !important;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+  min-height: 0;
 }
 
 .project-block .matrix-blank-slot {
-  height: 324px;
+  aspect-ratio: 9 / 16;
+  min-height: 324px;
+  height: auto;
   border: none;
   background: transparent;
   box-shadow: none;
@@ -1581,6 +1630,12 @@ h3 {
   /* visually empty — gap is the signal */
   color: transparent;
   font-size: 0;
+}
+
+.project-block .matrix-cell.is-film-col .matrix-blank-slot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
 }
 
 /* Gear Page Styles */

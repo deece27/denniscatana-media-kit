@@ -108,9 +108,37 @@
         return PLATFORM_META[platform] || PLATFORM_META.Instagram;
       }
 
+      /** Wide 16:9 YouTube films (not Shorts) — pinned to the far-right end. */
+      function isLandscapeFilm(post) {
+        if (!post || post.platform !== "YouTube") return false;
+        const t = post.title || "";
+        if (/urge to cycle|so you have the urge/i.test(t)) return true;
+        const dur = parseDurationSeconds(post.duration);
+        const typedLong = (post.type || "").toLowerCase() === "long";
+        // Long runtime + not a Day/Short beat → landscape film
+        if (dur != null && dur >= 90 && typedLong && !/\bDay\s*\d+/i.test(t)) return true;
+        return false;
+      }
+
+      function parseDurationSeconds(v) {
+        if (v == null || v === "") return null;
+        if (typeof v === "number" && Number.isFinite(v)) return v;
+        const s = String(v).trim();
+        if (/^\d+(\.\d+)?$/.test(s)) return Number(s);
+        const m = s.match(/^(?:(\d+):)?(\d+):(\d+)$/);
+        if (m) {
+          const h = m[1] ? Number(m[1]) : 0;
+          return h * 3600 + Number(m[2]) * 60 + Number(m[3]);
+        }
+        return null;
+      }
+
       /** Instagram is the master timeline: one column per IG post, chrono by IG date. */
       function buildSlots(posts) {
-        const igPosts = posts
+        const films = posts.filter(isLandscapeFilm);
+        const matrixPosts = posts.filter((p) => !isLandscapeFilm(p));
+
+        const igPosts = matrixPosts
           .filter((p) => p.platform === "Instagram")
           .slice()
           .sort((a, b) => {
@@ -128,6 +156,7 @@
             dayNum: info.dayNum,
             primaryDay: info.primaryDay,
             isPrep: info.isPrep,
+            isFilm: false,
             igDate: ig.date || "",
             byPlatform: { Instagram: ig },
           };
@@ -163,7 +192,7 @@
         }
 
         // Align TikTok / YouTube onto IG columns (ignore their own post dates)
-        for (const post of posts) {
+        for (const post of matrixPosts) {
           if (post.platform === "Instagram") continue;
           const info = classifyTitle(post.title || "");
           let slot = null;
@@ -203,9 +232,9 @@
         }
 
         // Second pass: leftover TT/YT keep relative upload order, fill remaining
-        // empty IG columns left→right (so all 36 YT land; late TT gaps stay at end).
+        // empty IG columns left→right (so all day YT land; late TT gaps stay at end).
         for (const plat of ["TikTok", "YouTube"]) {
-          const peers = posts
+          const peers = matrixPosts
             .filter((p) => p.platform === plat)
             .slice()
             .sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
@@ -217,6 +246,20 @@
           for (let i = 0; i < leftover.length && i < empties.length; i++) {
             put(empties[i], leftover[i]);
           }
+        }
+
+        // Landscape films after all day columns (far right)
+        for (const film of films) {
+          slots.push({
+            id: `film-${film.permalinkId || film.url}`,
+            label: "Film",
+            dayNum: null,
+            primaryDay: false,
+            isPrep: false,
+            isFilm: true,
+            igDate: film.date || "",
+            byPlatform: { YouTube: film },
+          });
         }
 
         return slots.map((slot) => {
@@ -328,10 +371,11 @@
         const thumb = post.thumbnail
           ? `<img src="${escapeHtml(post.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
           : "";
-        const isLong = post.platform === "YouTube" && (post.type || "").toLowerCase() !== "short";
+        // YT Shorts (and day beats) stay tall 9:16; only landscape films go wide
+        const isWide = isLandscapeFilm(post);
         return `
-          <a class="phone-card ${m.className}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
-            <div class="phone-screen ${isLong ? "is-long-screen" : ""}">
+          <a class="phone-card ${m.className}${isWide ? " is-wide-film" : ""}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
+            <div class="phone-screen ${isWide ? "is-wide-screen" : "is-tall-screen"}">
               ${thumb}
               <div class="phone-screen-scrim"></div>
               <div class="phone-top-bar">
@@ -359,7 +403,6 @@
         const peak = project.peak;
         const m = meta(peak.platform);
         const t = project.totals || {};
-        const bp = t.by_platform || {};
         return `
           <div class="timeline-pinned-left peak-panel">
             <div class="timeline-col-label">
@@ -387,33 +430,17 @@
               </div>
             </a>
             <div class="peak-stats-drawer ${expanded ? "is-open" : ""}" ${expanded ? "" : "hidden"}>
-              <div class="timeline-col-label"><span>Project totals</span></div>
               <dl class="peak-stat-list project-totals-list">
                 <div><dt>Total views</dt><dd>${fmt(t.views)}</dd></div>
                 <div><dt>Likes</dt><dd>${fmt(t.likes)}</dd></div>
-                <div><dt>IG views</dt><dd>${fmt((bp.Instagram || {}).views)}</dd></div>
-                <div><dt>TT views</dt><dd>${fmt((bp.TikTok || {}).views)}</dd></div>
-                <div><dt>YT views</dt><dd>${fmt((bp.YouTube || {}).views)}</dd></div>
-                <div><dt>Posts</dt><dd>${fmt(t.posts || project.posts.length)}</dd></div>
-              </dl>
-              <div class="timeline-col-label" style="margin-top: 0.55rem"><span>Peak post</span></div>
-              <dl class="peak-stat-list">
-                <div><dt>Views</dt><dd>${fmt(peak.views)}</dd></div>
-                <div><dt>Likes</dt><dd>${fmt(peak.likes)}</dd></div>
-                <div><dt>Comments</dt><dd>${fmt(peak.comments)}</dd></div>
-                <div><dt>Shares</dt><dd>${fmt(peak.shares)}</dd></div>
-                <div><dt>Saves</dt><dd>${fmt(peak.saves)}</dd></div>
-                ${peak.reach ? `<div><dt>Reach</dt><dd>${fmt(peak.reach)}</dd></div>` : ""}
-                <div><dt>Platform</dt><dd>${escapeHtml(peak.platform)}</dd></div>
-                <div><dt>Date</dt><dd>${escapeHtml(peak.date || "—")}</dd></div>
               </dl>
               <div class="peak-platform-peaks">
-                <div class="timeline-col-label" style="margin-top: 0.2rem"><span>Best per platform</span></div>
+                <div class="timeline-col-label" style="margin-top: 0.35rem"><span>Best per platform</span></div>
                 ${Object.values(project.peaksByPlatform || {})
                   .map((p) => {
                     const pm = meta(p.platform);
                     return `
-                      <a class="mini-peak" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
+                      <a class="mini-peak" href="${escapeHtml(p.url)}" target="_blank" rel="noopener" title="${escapeHtml(p.title || p.platform)}">
                         <span class="mini-peak-plat"><span class="plat-logo-badge sm ${pm.key}">${pm.logo}</span></span>
                         <span class="views-chip solid">
                           <span class="views-icon">${pm.viewsIcon}</span>
@@ -437,21 +464,22 @@
             </div>
             ${slots
               .map((slot) => {
+                const filmClass = slot.isFilm ? " is-film-col" : "";
                 const post =
                   platform === "Instagram" ? primaryPost(slot) : slot.byPlatform[platform];
                 // For IG row: if primary fell back to non-IG, still show that best post
                 if (platform === "Instagram") {
                   const ig = slot.byPlatform.Instagram;
                   if (ig) {
-                    return `<div class="matrix-cell">${renderPhoneCard(ig)}</div>`;
+                    return `<div class="matrix-cell${filmClass}">${renderPhoneCard(ig)}</div>`;
                   }
                   // No IG — blank for Instagram-focused row (other platforms live in TT/YT rows)
-                  return `<div class="matrix-cell">${renderBlankSlot()}</div>`;
+                  return `<div class="matrix-cell${filmClass}">${renderBlankSlot()}</div>`;
                 }
                 if (!post) {
-                  return `<div class="matrix-cell">${renderBlankSlot()}</div>`;
+                  return `<div class="matrix-cell${filmClass}">${renderBlankSlot()}</div>`;
                 }
-                return `<div class="matrix-cell">${renderPhoneCard(post)}</div>`;
+                return `<div class="matrix-cell${filmClass}">${renderPhoneCard(post)}</div>`;
               })
               .join("")}
           </div>`;
@@ -497,7 +525,7 @@
                   ${slots
                     .map(
                       (slot) =>
-                        `<div class="matrix-col-hdr" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
+                        `<div class="matrix-col-hdr${slot.isFilm ? " is-film-col" : ""}" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
                     )
                     .join("")}
                 </div>
