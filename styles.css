@@ -770,6 +770,17 @@ h3 {
   display: none;
 }
 
+.kit-expand__panel > p {
+  margin: 0 0 0.55rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.kit-expand__meta {
+  font-size: 0.9rem !important;
+  color: var(--ink) !important;
+}
+
 .kit-expand__focus {
   display: grid;
   grid-template-columns: minmax(140px, 180px) 1fr;
