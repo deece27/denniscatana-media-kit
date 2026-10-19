@@ -958,11 +958,18 @@
       function scrollMatrixFocusIntoView(projectId) {
         const focusId = matrixFocusByProject[projectId];
         if (!focusId) return;
-        const col = document.querySelector(`[data-matrix-col="${projectId}::${focusId}"]`);
         const scroller = document.querySelector(`#proj-${projectId} .matrix-scroll-right`);
-        if (!col || !scroller) return;
-        const colLeft = col.offsetLeft;
-        const target = Math.max(0, colLeft - scroller.clientWidth / 2 + col.offsetWidth / 2);
+        if (!scroller) return;
+        // Prefer header cell inside the scroller (offsetLeft alone is wrong vs pinned peak column)
+        const col =
+          scroller.querySelector(`.matrix-col-hdr[data-matrix-col="${projectId}::${focusId}"]`) ||
+          scroller.querySelector(`[data-matrix-col="${projectId}::${focusId}"]`);
+        if (!col) return;
+        const scrollerRect = scroller.getBoundingClientRect();
+        const colRect = col.getBoundingClientRect();
+        const delta =
+          colRect.left - scrollerRect.left - (scroller.clientWidth / 2 - colRect.width / 2);
+        const target = Math.max(0, scroller.scrollLeft + delta);
         scroller.scrollTo({ left: target, behavior: "smooth" });
       }
 
