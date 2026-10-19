@@ -368,12 +368,6 @@ h3 {
   padding: 2rem 0 3rem;
   color: var(--muted);
   font-size: 0.85rem;
-}
-
-.site-footer {
-  padding: 2rem 0 3rem;
-  color: var(--muted);
-  font-size: 0.85rem;
   border-top: 1px solid var(--line);
 }
 
