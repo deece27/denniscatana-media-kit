@@ -108,39 +108,158 @@
         return PLATFORM_META[platform] || PLATFORM_META.Instagram;
       }
 
+      /** Instagram is the master timeline: one column per IG post, chrono by IG date. */
       function buildSlots(posts) {
-        const map = new Map();
+        const igPosts = posts
+          .filter((p) => p.platform === "Instagram")
+          .slice()
+          .sort((a, b) => {
+            const da = a.date || "";
+            const db = b.date || "";
+            if (da !== db) return da < db ? -1 : 1;
+            return String(a.url || "").localeCompare(String(b.url || ""));
+          });
 
-        function ensure(id, label, sortKey) {
-          if (!map.has(id)) map.set(id, { id, label, sortKey, byPlatform: {} });
-          return map.get(id);
-        }
+        const slots = igPosts.map((ig) => {
+          const info = classifyTitle(ig.title || "");
+          return {
+            id: `ig-${ig.permalinkId || ig.url || ig.date}`,
+            label: info.label,
+            dayNum: info.dayNum,
+            primaryDay: info.primaryDay,
+            isPrep: info.isPrep,
+            igDate: ig.date || "",
+            byPlatform: { Instagram: ig },
+          };
+        });
 
-        for (const post of posts) {
-          const title = post.title || "";
-          const dayMatch = title.match(/Day\s*(\d+)/i);
-          let slot;
-          if (dayMatch) {
-            const n = Number(dayMatch[1]);
-            slot = ensure(`day-${String(n).padStart(2, "0")}`, `Day ${n}`, `a-${String(n).padStart(3, "0")}`);
-          } else if (/gear|prep|inspiration|flight to taipei|waiting to pick/i.test(title)) {
-            slot = ensure("day-00-prep", "Prep", "a-000");
-          } else {
-            const d = post.date || "unknown";
-            slot = ensure(`date-${d}`, d, `b-${d}`);
-          }
+        function put(slot, post) {
           const plat = post.platform;
           const prev = slot.byPlatform[plat];
           if (!prev || (post.views || 0) > (prev.views || 0)) slot.byPlatform[plat] = post;
         }
 
-        return [...map.values()]
-          .sort((a, b) => a.sortKey.localeCompare(b.sortKey))
-          .map((slot) => {
-            const candidates = PLAT_ORDER.map((p) => slot.byPlatform[p]).filter(Boolean);
-            const best = candidates.sort((a, b) => (b.views || 0) - (a.views || 0))[0] || null;
-            return { ...slot, best };
-          });
+        function bestTitleMatch(post) {
+          let best = null;
+          let bestScore = 0;
+          for (const slot of slots) {
+            const ig = slot.byPlatform.Instagram;
+            const score = titleOverlap(post.title || "", ig.title || "");
+            if (score > bestScore) {
+              bestScore = score;
+              best = slot;
+            }
+          }
+          return bestScore >= 2 ? best : null;
+        }
+
+        function primaryDaySlot(n) {
+          return (
+            slots.find((s) => s.dayNum === n && s.primaryDay) ||
+            slots.find((s) => s.dayNum === n) ||
+            null
+          );
+        }
+
+        // Align TikTok / YouTube onto IG columns (ignore their own post dates)
+        for (const post of posts) {
+          if (post.platform === "Instagram") continue;
+          const info = classifyTitle(post.title || "");
+          let slot = null;
+
+          if (info.isPrep) {
+            slot = slots.find((s) => s.isPrep) || null;
+          }
+          if (!slot && info.dayNum != null) {
+            // Prefer an open same-day column, then the primary Day N column
+            slot =
+              slots.find((s) => s.dayNum === info.dayNum && !s.byPlatform[post.platform]) ||
+              primaryDaySlot(info.dayNum);
+          }
+          if (!slot) slot = bestTitleMatch(post);
+          if (!slot && slots.length) {
+            // Last resort: proportional index within this platform's chrono order
+            const peers = posts
+              .filter((p) => p.platform === post.platform)
+              .slice()
+              .sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
+            const idx = Math.max(0, peers.indexOf(post));
+            const mapped = Math.min(
+              slots.length - 1,
+              Math.round((idx / Math.max(1, peers.length - 1)) * (slots.length - 1))
+            );
+            slot = slots[mapped];
+          }
+          if (slot) put(slot, post);
+        }
+
+        return slots.map((slot) => {
+          const candidates = PLAT_ORDER.map((p) => slot.byPlatform[p]).filter(Boolean);
+          const best = candidates.sort((a, b) => (b.views || 0) - (a.views || 0))[0] || null;
+          return { ...slot, best };
+        });
+      }
+
+      function classifyTitle(title) {
+        const t = title || "";
+        if (/gear|prep|inspiration|flight to taipei|waiting to pick/i.test(t) && !/📍\s*Day\s*\d+/i.test(t)) {
+          // Day 0 caption also mentions inspiration/flight — keep as Day if pin present
+          if (!/Day\s*\d+/i.test(t) || /waiting to pick|gear to cycle/i.test(t)) {
+            return { dayNum: -1, primaryDay: false, isPrep: true, label: "Prep" };
+          }
+        }
+        const primary = t.match(
+          /📍\s*Day\s*(\d+)|(?:^|\b)Day\s*(\d+)\s*(?:[-–—:,!]|\s+of\b)/i
+        );
+        if (primary) {
+          const n = Number(primary[1] != null ? primary[1] : primary[2]);
+          return { dayNum: n, primaryDay: true, isPrep: false, label: `Day ${n}` };
+        }
+        const mention = t.match(/\bDay\s*(\d+)\b/i);
+        if (mention) {
+          const n = Number(mention[1]);
+          // Passing mention in a side post — keep day link, use title as column label
+          return {
+            dayNum: n,
+            primaryDay: false,
+            isPrep: false,
+            label: shortLabel(t, `Day ${n}`),
+          };
+        }
+        if (/gear|prep|inspiration|flight to taipei|waiting to pick/i.test(t)) {
+          return { dayNum: -1, primaryDay: false, isPrep: true, label: "Prep" };
+        }
+        return { dayNum: null, primaryDay: false, isPrep: false, label: shortLabel(t, "Post") };
+      }
+
+      function titleOverlap(a, b) {
+        const na = normTitle(a);
+        const nb = normTitle(b);
+        if (!na || !nb) return 0;
+        if (na === nb) return 10;
+        if (na.includes(nb.slice(0, 24)) || nb.includes(na.slice(0, 24))) return 6;
+        const ta = new Set(na.split(" ").filter((w) => w.length > 3));
+        let hit = 0;
+        for (const w of nb.split(" ").filter((w) => w.length > 3)) {
+          if (ta.has(w)) hit += 1;
+        }
+        return hit;
+      }
+
+      function normTitle(t) {
+        return String(t || "")
+          .toLowerCase()
+          .replace(/#[\w]+/g, " ")
+          .replace(/cycling\s*1,?000\s*km around taiwan/g, " ")
+          .replace(/[^\w\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function shortLabel(title, fallback) {
+        const t = (title || "").replace(/\s+/g, " ").trim();
+        if (!t) return fallback;
+        return t.length > 28 ? t.slice(0, 28) + "…" : t;
       }
 
       /** Prefer Instagram for the primary day row; fall back to best if no IG. */
@@ -318,7 +437,7 @@
               ${renderPeak(project, expanded)}
               <div class="timeline-scroll-right matrix-scroll-right proj-matrix">
                 <div class="timeline-col-label" style="margin-bottom: 0.55rem">
-                  <span>Day columns · Instagram row + TikTok / YouTube underneath</span>
+                  <span>Instagram order · TikTok / YouTube aligned underneath</span>
                   <span class="hint-pill">${expanded ? "Expanded" : "Collapsed · peek TikTok below"}</span>
                 </div>
                 <div class="matrix-header-row">
@@ -346,11 +465,10 @@
                           ↑ Collapse to Instagram + TikTok peek
                         </button>
                       </div>`
-                    : `<button type="button" class="proj-expand-peek" data-expand="1" aria-label="Expand to show TikTok and YouTube rows">
+                    : `<button type="button" class="proj-expand-peek" data-expand="1" aria-label="Click to see more">
                         <span class="proj-expand-fade" aria-hidden="true"></span>
                         <span class="proj-expand-cta">
-                          <span class="plat-logo-badge tiktok">${ICONS.tiktok}</span>
-                          <span>Show TikTok + YouTube</span>
+                          <span>Click to see more</span>
                           <span class="chevron down">${ICONS.chevron}</span>
                         </span>
                       </button>`

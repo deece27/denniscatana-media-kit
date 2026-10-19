@@ -805,30 +805,76 @@ h3 {
 .matrix-header-row,
 .matrix-plat-row {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 0.85rem;
   min-width: max-content;
 }
 
+/*
+ * Peak-matching matrix chrome.
+ * Base .matrix-* rules further down set height:100% / 248px rows which
+ * squashes the gradient phone-card frame into a thin top line — override hard.
+ */
+.project-block .matrix-header-row,
 .project-block .matrix-plat-row {
-  height: 236px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  min-width: max-content;
+  height: auto;
+}
+
+.project-block .matrix-col-hdr {
+  width: 186px;
+  box-sizing: border-box;
+}
+
+.project-block .matrix-cell {
+  width: 186px;
+  flex-shrink: 0;
+  height: auto;
+  align-self: flex-start;
+}
+
+.project-block .matrix-cell .phone-card,
+.project-block .matrix-cell a.phone-card {
+  height: auto !important;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  /* same 4px gradient frame as Peak Post (.phone-card padding) */
+  padding: 4px;
+  overflow: hidden;
 }
 
 .project-block .matrix-cell .phone-screen {
-  height: 100%;
+  height: 316px !important;
+  width: 100%;
+  flex: none;
+}
+
+.project-block .matrix-cell .phone-screen.is-long-screen {
+  height: 200px !important;
+}
+
+.project-block .matrix-blank-slot {
+  width: 186px;
+  height: 324px; /* 316 screen + 8px frame */
+  box-sizing: border-box;
+  align-self: flex-start;
 }
 
 /* Collapsed: TikTok row peeks under a fade; YouTube hidden */
 .project-block.is-collapsed .matrix-plat-row.is-peek {
-  height: 72px;
+  height: 78px;
   overflow: hidden;
   pointer-events: none;
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
-.project-block.is-collapsed .matrix-plat-row.is-peek .phone-screen,
-.project-block.is-collapsed .matrix-plat-row.is-peek .matrix-blank-slot {
-  transform: translateY(-8px);
+.project-block.is-collapsed .matrix-plat-row.is-peek .phone-card {
+  transform: none;
 }
 
 .project-block.is-collapsed .proj-yt-wrap[hidden],
@@ -880,19 +926,22 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: var(--ink);
-  color: #fff;
-  font-size: 0.86rem;
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.55rem 1rem;
+  padding: 0.6rem 1.15rem;
   border-radius: 999px;
-  box-shadow: 0 8px 22px rgba(26, 24, 20, 0.22);
-  transition: transform 0.15s ease, background 0.15s ease;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 22px rgba(26, 24, 20, 0.12);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
 .proj-expand-peek:hover .proj-expand-cta {
   transform: translateY(-2px);
-  background: #2a2620;
+  background: #fffcf7;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .proj-expand-cta .chevron.down {
@@ -1449,6 +1498,42 @@ h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Projects matrix: win over base .matrix-* height:100% squash (must follow those rules) */
+.project-block .matrix-header-row,
+.project-block .matrix-plat-row {
+  align-items: flex-start;
+  height: auto;
+}
+
+.project-block .matrix-col-hdr,
+.project-block .matrix-cell,
+.project-block .matrix-blank-slot {
+  width: 186px;
+}
+
+.project-block .matrix-cell,
+.project-block .matrix-blank-slot {
+  height: auto;
+  align-self: flex-start;
+}
+
+.project-block .matrix-cell .phone-card,
+.project-block .matrix-cell a.phone-card {
+  height: auto !important;
+}
+
+.project-block .matrix-cell .phone-screen {
+  height: 316px !important;
+}
+
+.project-block .matrix-cell .phone-screen.is-long-screen {
+  height: 200px !important;
+}
+
+.project-block .matrix-blank-slot {
+  height: 324px;
 }
 
 /* Gear Page Styles */
