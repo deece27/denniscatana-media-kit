@@ -164,13 +164,19 @@ img {
   color: #f3f7fa;
 }
 
-.btn-ghost--on-dark {
+.btn-ghost--on-dark,
+button.btn-ghost--on-dark {
   border-color: rgba(243, 247, 250, 0.35);
   color: var(--hero-ink);
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.btn-ghost--on-dark:hover {
+.btn-ghost--on-dark:hover,
+button.btn-ghost--on-dark:hover {
   background: rgba(243, 247, 250, 0.1);
+  color: var(--hero-ink);
 }
 
 .btn-primary:hover {
