@@ -17,9 +17,34 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <aside class="site-ambient" id="site-ambient" aria-label="Reel wallpaper" hidden>
+      <div class="ambient-rail ambient-rail-left" aria-hidden="true">
+        <div class="ambient-lane is-up" data-lane="0"></div>
+        <div class="ambient-lane is-down" data-lane="1"></div>
+      </div>
+      <div class="ambient-rail ambient-rail-right" aria-hidden="true">
+        <div class="ambient-lane is-down" data-lane="2"></div>
+        <div class="ambient-lane is-up" data-lane="3"></div>
+      </div>
+    </aside>
+
     <header class="site-header wrap-wide">
-      <a class="logo" href="index.html">Dennis Catana</a>
-      <nav class="nav no-print" aria-label="Primary">
+      <a class="logo" href="index.html">
+        <img class="logo-avatar" src="assets/kit-avatar.jpg" alt="" width="36" height="36" />
+        <span>Dennis Catana</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="site-nav" class="nav no-print" aria-label="Primary">
         <a href="index.html">Media Kit</a>
         <a href="projects.html">Projects</a>
         <a class="active" href="gear.html">Gear</a>
@@ -209,5 +234,6 @@
 
       init();
     </script>
+    <script src="assets/site-chrome.js" defer></script>
   </body>
 </html>
