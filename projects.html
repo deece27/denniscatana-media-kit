@@ -176,9 +176,13 @@
         return null;
       }
 
-      /** Instagram is the master timeline: one column per IG post, chrono by IG date. */
-      function buildSlots(posts) {
-        const films = posts.filter(isLandscapeFilm);
+      /** Instagram is the master timeline: one column per IG post, chrono by IG date.
+       *  opts.includeFilms — when false, skip wide YT film columns (stats still from JSON totals). */
+      function buildSlots(posts, opts = {}) {
+        const includeFilms = opts.includeFilms !== false;
+        const films = includeFilms ? posts.filter(isLandscapeFilm) : [];
+        // Landscape YT films never occupy day columns (and may be omitted entirely).
+        // Project totals in JSON still include them.
         const matrixPosts = posts.filter((p) => !isLandscapeFilm(p));
 
         const igPosts = matrixPosts
@@ -204,6 +208,40 @@
             byPlatform: { Instagram: ig },
           };
         });
+
+        // Inject missing Day N columns when TT/YT have a series day IG never posted
+        // (e.g. Free Cruise Day 1) so alignment doesn't dump them into kickoff/side posts.
+        const presentDays = new Set(
+          slots.filter((s) => s.dayNum != null && s.dayNum >= 0).map((s) => s.dayNum)
+        );
+        const neededDays = new Set();
+        for (const post of matrixPosts) {
+          if (post.platform === "Instagram") continue;
+          const info = classifyTitle(post.title || "");
+          if (info.dayNum != null && info.dayNum >= 0 && info.primaryDay) neededDays.add(info.dayNum);
+        }
+        for (const n of [...neededDays].sort((a, b) => a - b)) {
+          if (presentDays.has(n)) continue;
+          let insertAt = slots.length;
+          for (let i = 0; i < slots.length; i++) {
+            const d = slots[i].dayNum;
+            if (d != null && d >= 0 && d > n) {
+              insertAt = i;
+              break;
+            }
+          }
+          slots.splice(insertAt, 0, {
+            id: `day-${n}-gap`,
+            label: `Day ${n}`,
+            dayNum: n,
+            primaryDay: true,
+            isPrep: false,
+            isFilm: false,
+            igDate: "",
+            byPlatform: {},
+          });
+          presentDays.add(n);
+        }
 
         function put(slot, post) {
           const plat = post.platform;
@@ -274,8 +312,16 @@
           if (slot) put(slot, post);
         }
 
-        // Second pass: leftover TT/YT keep relative upload order, fill remaining
-        // empty IG columns left→right (so all day YT land; late TT gaps stay at end).
+        // Second pass: leftover TT/YT → empty columns by date proximity (not
+        // left→right), so side clips sit near the matching IG day instead of
+        // flooding kickoff / early empties.
+        function dateDist(a, b) {
+          if (!a || !b) return 1e9;
+          const ta = Date.parse(a);
+          const tb = Date.parse(b);
+          if (!Number.isFinite(ta) || !Number.isFinite(tb)) return 1e9;
+          return Math.abs(ta - tb);
+        }
         for (const plat of ["TikTok", "YouTube"]) {
           const peers = matrixPosts
             .filter((p) => p.platform === plat)
@@ -285,9 +331,21 @@
             slots.map((s) => s.byPlatform[plat]?.url || s.byPlatform[plat]?.permalinkId).filter(Boolean)
           );
           const leftover = peers.filter((p) => !used.has(p.url || p.permalinkId));
-          const empties = slots.filter((s) => !s.byPlatform[plat]);
-          for (let i = 0; i < leftover.length && i < empties.length; i++) {
-            put(empties[i], leftover[i]);
+          for (const post of leftover) {
+            let best = null;
+            let bestScore = Infinity;
+            for (const slot of slots) {
+              if (slot.byPlatform[plat]) continue;
+              // Prefer empty non-primary side columns; still allow day gaps if needed
+              const dist = dateDist(post.date, slot.igDate || slot.byPlatform.Instagram?.date);
+              const bias = slot.primaryDay && !slot.byPlatform.Instagram ? 3 : slot.primaryDay ? 2 : 0;
+              const score = dist + bias * 86400000; // +1–3 days penalty
+              if (score < bestScore) {
+                bestScore = score;
+                best = slot;
+              }
+            }
+            if (best) put(best, post);
           }
         }
 
@@ -338,13 +396,21 @@
             return { dayNum: -1, primaryDay: false, isPrep: true, label };
           }
         }
-        // Official series beats only — not mid-caption “from Day 4 of…” asides
+        // Official series beats: 📍 Day N, "Day N of …", "This is day N …"
+        // (Taiwan: of Cycling; Free Cruise: of how much a Free Cruise…)
+        // Part 2 / continued = secondary column, not the primary Day N beat.
         const primary = t.match(
-          /📍\s*Day\s*(\d+)|(?:^|\A)Day\s*(\d+)\s*(?:[-–—:]|\s+of\s+Cycling\b)/im
+          /📍\s*Day\s*(\d+)|(?:^|\A)Day\s*(\d+)\s*(?:[-–—:]|\s+of\b)|(?:^|\A)This is day\s*(\d+)\b/im
         );
         if (primary) {
-          const n = Number(primary[1] != null ? primary[1] : primary[2]);
-          return { dayNum: n, primaryDay: true, isPrep: false, label: `Day ${n}` };
+          const n = Number(primary[1] ?? primary[2] ?? primary[3]);
+          const isPart2 = /\bpart\s*2\b|\bcontinued\b/i.test(t);
+          return {
+            dayNum: n,
+            primaryDay: !isPart2,
+            isPrep: false,
+            label: isPart2 ? `Day ${n} · Part 2` : `Day ${n}`,
+          };
         }
         const mention = t.match(/\bDay\s*(\d+)\b/i);
         if (mention) {
@@ -717,7 +783,11 @@
           const res = await fetch("assets/projects-data.json", { cache: "no-cache" });
           if (!res.ok) throw new Error("Failed to load projects-data.json");
           const data = await res.json();
-          PROJECTS = (data.projects || []).map((p) => ({ ...p, _slots: buildSlots(p.posts || []) }));
+          PROJECTS = (data.projects || []).map((p) => ({
+            ...p,
+            // Free Cruise: no horizontal long-form film strip (keep totals/stats).
+            _slots: buildSlots(p.posts || [], { includeFilms: p.id !== "free-cruise" }),
+          }));
           if (!PROJECTS.length) {
             mount.innerHTML = `<p class="section-intro">No projects assigned yet. Tag rows in the <a href="https://docs.google.com/spreadsheets/d/15jVzyTbLt2oeWIgLLqROgmPgZe76EAUDZGIQ3EGCmTM/edit" target="_blank" rel="noopener">All Social Posts sheet</a>.</p>`;
             return;
