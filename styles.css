@@ -1522,11 +1522,22 @@ h3 {
   isolation: isolate;
 }
 
-.project-block .matrix-cell .phone-screen {
+.project-block .matrix-cell .phone-screen,
+.project-block .matrix-cell .feed-post-screen {
   width: 100%;
   flex: none;
   border-radius: 0.65rem;
   overflow: hidden;
+}
+
+.project-block .matrix-cell .phone-card.is-feed-post,
+.project-block .matrix-cell a.phone-card.is-feed-post {
+  padding: 0;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.16);
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Shorts / Reels: true 9:16 tall frame */
@@ -1535,6 +1546,14 @@ h3 {
   aspect-ratio: 9 / 16;
   height: auto !important;
   min-height: 316px;
+}
+
+/* IG feed posts (carousel / still): white chrome, slightly shorter than Reels */
+.project-block .matrix-cell .feed-post-screen {
+  aspect-ratio: 4 / 5;
+  height: auto !important;
+  min-height: 280px;
+  border-radius: 0.85rem;
 }
 
 /* Landscape YouTube film at timeline end */
@@ -1594,12 +1613,23 @@ h3 {
 }
 
 .project-block.is-collapsed .proj-expand-peek[hidden],
-.project-block.is-expanded .proj-expand-peek {
+.project-block.is-expanded .proj-expand-peek,
+.project-block.is-collapsed .proj-collapse-peek,
+.project-block.is-expanded .proj-collapse-peek[hidden] {
   display: none !important;
 }
 
-.project-block.is-collapsed .proj-expand-peek:not([hidden]) {
+.project-block.is-collapsed .proj-expand-peek:not([hidden]),
+.project-block.is-expanded .proj-collapse-peek:not([hidden]) {
   display: flex;
+}
+
+.proj-matrix {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .proj-matrix-body {
@@ -1676,14 +1706,70 @@ h3 {
   height: 100%;
 }
 
-.proj-collapse-bar {
+/* Collapse: full-width fade outside horizontal scroll so it stays put */
+.proj-collapse-peek {
+  position: relative;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  padding: 0.85rem 0 0.25rem;
+  width: 100%;
+  margin-top: -3.5rem;
+  min-height: 4.75rem;
+  padding: 0 1rem 0.95rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  z-index: 5;
+}
+
+.proj-collapse-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(242, 237, 228, 0) 0%,
+    rgba(242, 237, 228, 0.7) 36%,
+    rgba(242, 237, 228, 0.96) 72%,
+    #f2ede4 100%
+  );
+  pointer-events: none;
+}
+
+.proj-collapse-cta {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.proj-collapse-peek:hover .proj-collapse-cta,
+.proj-collapse-peek:focus-visible .proj-collapse-cta {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.proj-collapse-cta .chevron.up {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+  transform: rotate(180deg);
+}
+
+.proj-collapse-cta .chevron.up svg {
+  width: 100%;
+  height: 100%;
 }
 
 .collapse-btn {
-  min-width: 12rem;
+  min-width: 8rem;
 }
 
 /* .btn { display:flex } otherwise wins over the HTML hidden attribute */
@@ -1872,8 +1958,137 @@ h3 {
   transition: transform 0.35s ease;
 }
 
-.phone-card:hover .phone-screen img {
+.phone-card:hover .phone-screen img,
+.phone-card:hover .feed-post-media img {
   transform: scale(1.02);
+}
+
+/* Instagram feed post (carousel / still) — white chrome vs Reel phone */
+.phone-card.is-feed-post {
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.16);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.phone-card.is-feed-post:hover,
+.phone-card.is-feed-post:focus-visible {
+  text-decoration: none;
+}
+
+.feed-post-screen {
+  position: relative;
+  width: 100%;
+  height: 316px;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-post-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.5rem;
+  background: #fff;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.feed-post-avatar {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.feed-post-user {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #262626;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.feed-post-header .feed-post-user {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feed-post-header .views-chip {
+  flex-shrink: 0;
+  font-size: 0.62rem;
+  padding: 0.12rem 0.35rem;
+  background: rgba(0, 0, 0, 0.06);
+  color: #262626;
+  border: none;
+}
+
+.feed-post-header .views-chip .views-icon {
+  color: #262626;
+}
+
+.feed-post-media {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  background: #141413;
+  overflow: hidden;
+}
+
+.feed-post-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.35s ease;
+}
+
+.feed-carousel-icon {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  z-index: 2;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: #fff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+  pointer-events: none;
+}
+
+.feed-carousel-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.feed-post-caption {
+  flex-shrink: 0;
+  padding: 0.4rem 0.5rem 0.48rem;
+  background: #fff;
+  color: #262626;
+  font-size: 0.66rem;
+  font-weight: 400;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.feed-post-caption .feed-post-user {
+  margin-right: 0.28rem;
 }
 
 .phone-screen-scrim {
