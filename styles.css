@@ -1161,6 +1161,19 @@ h3 {
   font-size: 1.05rem;
 }
 
+a.kit-expand__metric--link {
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+a.kit-expand__metric--link:hover,
+a.kit-expand__metric--link:focus-visible {
+  border-color: rgba(15, 76, 58, 0.45);
+  box-shadow: 0 4px 14px rgba(12, 40, 28, 0.1);
+  transform: translateY(-1px);
+  outline: none;
+}
+
 .kit-expand__series-note {
   margin: 0 0 0.85rem;
   font-size: 0.9rem;
