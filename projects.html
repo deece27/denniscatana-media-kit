@@ -108,6 +108,29 @@
         return PLATFORM_META[platform] || PLATFORM_META.Instagram;
       }
 
+      /** IG feed posts (carousel / still) vs Reels — feed posts get white chrome. */
+      function isIgFeedPost(post) {
+        if (!post || post.platform !== "Instagram") return false;
+        const t = String(post.type || "").toLowerCase();
+        if (["carousel", "carousel_album", "image", "photo", "post", "album", "sidecar"].includes(t)) {
+          return true;
+        }
+        if (["reel", "reels", "video", "clip"].includes(t)) return false;
+        const url = String(post.url || "");
+        if (/instagram\.com\/p\//i.test(url)) return true;
+        if (/instagram\.com\/(?:reel|reels)\//i.test(url)) return false;
+        return false;
+      }
+
+      function isIgCarousel(post) {
+        const t = String(post?.type || "").toLowerCase();
+        return t.includes("carousel") || t === "sidecar" || t === "album";
+      }
+
+      const IG_AVATAR = "assets/ig-avatar.jpg";
+      const IG_HANDLE = "denniscatana";
+      const CAROUSEL_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 6.5h9A2.5 2.5 0 0 1 20 9v9a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 6 18V9a2.5 2.5 0 0 1 2.5-2.5zm-3 2.25V18A4.75 4.75 0 0 0 10.25 22.75h7.5A.75.75 0 0 0 18.5 21.25h-8.25A3.25 3.25 0 0 1 7 18V8.75a.75.75 0 0 0-1.5 0z"/></svg>`;
+
       /** Wide 16:9 YouTube films (not Shorts) — pinned to the far-right end. */
       function isLandscapeFilm(post) {
         if (!post || post.platform !== "YouTube") return false;
@@ -380,16 +403,45 @@
         return slot.byPlatform.Instagram || slot.best || null;
       }
 
-      function renderPhoneCard(post) {
+      function renderPhoneCard(post, extraClass = "") {
         if (!post) return "";
         const m = meta(post.platform);
         const thumb = post.thumbnail
           ? `<img src="${escapeHtml(post.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
           : "";
+        const extra = extraClass ? ` ${extraClass}` : "";
+
+        if (isIgFeedPost(post)) {
+          const metric =
+            post.views && Number(post.views) > 0
+              ? `<span class="views-chip solid" title="Views"><span class="views-icon">${m.viewsIcon}</span>${fmt(post.views)}</span>`
+              : `<span class="views-chip solid" title="Likes">${fmt(post.likes)} likes</span>`;
+          const carousel = isIgCarousel(post)
+            ? `<span class="feed-carousel-icon" title="Carousel">${CAROUSEL_ICON}</span>`
+            : "";
+          return `
+          <a class="phone-card ${m.className} is-feed-post${extra}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
+            <div class="feed-post-screen">
+              <div class="feed-post-header">
+                <img class="feed-post-avatar" src="${IG_AVATAR}" alt="" width="32" height="32" />
+                <span class="feed-post-user">${IG_HANDLE}</span>
+                ${metric}
+              </div>
+              <div class="feed-post-media">
+                ${thumb}
+                ${carousel}
+              </div>
+              <div class="feed-post-caption">
+                <span class="feed-post-user">${IG_HANDLE}</span>${escapeHtml(post.title || "")}
+              </div>
+            </div>
+          </a>`;
+        }
+
         // YT Shorts (and day beats) stay tall 9:16; only landscape films go wide
         const isWide = isLandscapeFilm(post);
         return `
-          <a class="phone-card ${m.className}${isWide ? " is-wide-film" : ""}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
+          <a class="phone-card ${m.className}${isWide ? " is-wide-film" : ""}${extra}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
             <div class="phone-screen ${isWide ? "is-wide-screen" : "is-tall-screen"}">
               ${thumb}
               <div class="phone-screen-scrim"></div>
@@ -416,7 +468,6 @@
 
       function renderPeak(project) {
         const peak = project.peak;
-        const m = meta(peak.platform);
         const t = project.totals || {};
         const bp = t.by_platform || {};
         return `
@@ -425,26 +476,7 @@
               <span>Highlight</span>
               <span class="fixed-pill">Best</span>
             </div>
-            <a class="phone-card ${m.className} peak-card-link" href="${escapeHtml(peak.url)}" target="_blank" rel="noopener">
-              <div class="phone-screen">
-                ${
-                  peak.thumbnail
-                    ? `<img src="${escapeHtml(peak.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
-                    : ""
-                }
-                <div class="phone-screen-scrim"></div>
-                <div class="phone-top-bar">
-                  <span class="plat-logo-badge ${m.key}">${m.logo}</span>
-                  <span class="views-chip">
-                    <span class="views-icon">${m.viewsIcon}</span>
-                    ${fmt(peak.views)}
-                  </span>
-                </div>
-                <div class="phone-bottom-bar">
-                  <div class="clip-title" style="color:#fff;-webkit-line-clamp:3">${escapeHtml(peak.title || "Highlight")}</div>
-                </div>
-              </div>
-            </a>
+            ${renderPhoneCard(peak, "peak-card-link")}
             <div class="peak-stats-drawer is-open">
               <dl class="peak-stat-list project-totals-list">
                 <div><dt>Total views</dt><dd>${fmt(t.views)}</dd></div>
@@ -526,26 +558,28 @@
 
             <div class="timeline-split is-matrix">
               ${renderPeak(project)}
-              <div class="timeline-scroll-right matrix-scroll-right proj-matrix">
-                <div class="timeline-col-label" style="margin-bottom: 0.55rem">
-                  <span>Instagram order · TikTok / YouTube aligned underneath</span>
-                  <span class="hint-pill proj-density-pill">Collapsed · peek TikTok below</span>
-                </div>
-                <div class="matrix-header-row">
-                  <div class="matrix-plat-gutter" aria-hidden="true"></div>
-                  ${slots
-                    .map(
-                      (slot) =>
-                        `<div class="matrix-col-hdr${slot.isFilm ? " is-film-col" : ""}" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
-                    )
-                    .join("")}
-                </div>
+              <div class="proj-matrix">
+                <div class="timeline-scroll-right matrix-scroll-right">
+                  <div class="timeline-col-label" style="margin-bottom: 0.55rem">
+                    <span>Instagram order · TikTok / YouTube aligned underneath</span>
+                    <span class="hint-pill proj-density-pill">Collapsed · peek TikTok below</span>
+                  </div>
+                  <div class="matrix-header-row">
+                    <div class="matrix-plat-gutter" aria-hidden="true"></div>
+                    ${slots
+                      .map(
+                        (slot) =>
+                          `<div class="matrix-col-hdr${slot.isFilm ? " is-film-col" : ""}" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
+                      )
+                      .join("")}
+                  </div>
 
-                <div class="proj-matrix-body">
-                  ${renderPlatRow("Instagram", slots)}
-                  ${renderPlatRow("TikTok", slots)}
-                  <div class="proj-yt-wrap is-open">
-                    ${renderPlatRow("YouTube", slots)}
+                  <div class="proj-matrix-body">
+                    ${renderPlatRow("Instagram", slots)}
+                    ${renderPlatRow("TikTok", slots)}
+                    <div class="proj-yt-wrap is-open">
+                      ${renderPlatRow("YouTube", slots)}
+                    </div>
                   </div>
                 </div>
 
@@ -556,11 +590,13 @@
                     <span class="chevron down">${ICONS.chevron}</span>
                   </span>
                 </button>
-                <div class="proj-collapse-bar" hidden>
-                  <button type="button" class="btn btn-primary collapse-btn" data-collapse="1">
-                    ↑ Collapse
-                  </button>
-                </div>
+                <button type="button" class="proj-collapse-peek" data-collapse="1" hidden aria-label="Collapse">
+                  <span class="proj-collapse-fade" aria-hidden="true"></span>
+                  <span class="proj-collapse-cta">
+                    <span>Collapse</span>
+                    <span class="chevron up">${ICONS.chevron}</span>
+                  </span>
+                </button>
               </div>
             </div>
           </article>`;
@@ -577,8 +613,8 @@
         if (pill) pill.textContent = expanded ? "Expanded" : "Collapsed · peek TikTok below";
         const expandBtn = block.querySelector(".proj-expand-peek");
         if (expandBtn) expandBtn.hidden = expanded;
-        const collapseBar = block.querySelector(".proj-collapse-bar");
-        if (collapseBar) collapseBar.hidden = !expanded;
+        const collapsePeek = block.querySelector(".proj-collapse-peek");
+        if (collapsePeek) collapsePeek.hidden = !expanded;
         const headerCollapse = block.querySelector(".project-controls .collapse-btn");
         if (headerCollapse) headerCollapse.hidden = !expanded;
       }
