@@ -3807,3 +3807,425 @@ a.kit-expand__metric--link:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   About page
+   ========================================================================== */
+
+.page-about .site-header--about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+  padding-top: 1.25rem;
+}
+
+.page-about .site-header--about .logo {
+  color: var(--hero-ink);
+}
+
+.page-about .site-header--about .nav a {
+  color: var(--hero-muted);
+}
+
+.page-about .site-header--about .nav a:hover,
+.page-about .site-header--about .nav a.active {
+  color: var(--hero-ink);
+}
+
+.about-hero {
+  position: relative;
+  min-height: min(100svh, 52rem);
+  display: flex;
+  align-items: flex-end;
+  color: var(--hero-ink);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.about-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.04);
+  animation: about-hero-drift 18s ease-in-out infinite alternate;
+}
+
+.about-hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(10, 28, 22, 0.35) 0%, rgba(10, 28, 22, 0.55) 45%, rgba(10, 28, 22, 0.88) 100%),
+    radial-gradient(80% 60% at 20% 20%, rgba(15, 76, 58, 0.35), transparent 60%);
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 2;
+  padding: 6.5rem 0 3.25rem;
+  max-width: min(100% - 2rem, 40rem);
+}
+
+.about-hero__portrait {
+  width: clamp(7.5rem, 22vw, 10.5rem);
+  height: clamp(7.5rem, 22vw, 10.5rem);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 3px solid rgba(247, 244, 239, 0.85);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  margin: 0 0 1.15rem;
+  animation: about-portrait-in 0.9s ease-out both;
+}
+
+.about-hero__brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0 0 0.85rem;
+  animation: about-rise 0.8s ease-out 0.12s both;
+}
+
+.about-hero__headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 3.2vw, 1.65rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0 0 0.85rem;
+  max-width: 22em;
+  color: rgba(247, 244, 239, 0.95);
+  animation: about-rise 0.8s ease-out 0.22s both;
+}
+
+.about-hero__lede {
+  margin: 0 0 1.5rem;
+  max-width: 34rem;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: var(--hero-muted);
+  animation: about-rise 0.8s ease-out 0.32s both;
+}
+
+.about-hero__cta {
+  animation: about-rise 0.8s ease-out 0.42s both;
+}
+
+@keyframes about-hero-drift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(0, -1.5%, 0);
+  }
+}
+
+@keyframes about-portrait-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes about-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-hero__media img,
+  .about-hero__portrait,
+  .about-hero__brand,
+  .about-hero__headline,
+  .about-hero__lede,
+  .about-hero__cta {
+    animation: none;
+  }
+}
+
+.about-section {
+  padding: 3.25rem 0 1rem;
+}
+
+.about-section--band {
+  margin-top: 1.5rem;
+  padding: 3rem 0 2.5rem;
+  background:
+    linear-gradient(180deg, rgba(15, 76, 58, 0.06), transparent 40%),
+    linear-gradient(90deg, rgba(235, 228, 216, 0.65), transparent 70%),
+    var(--bg-deep);
+  border-block: 1px solid var(--line);
+}
+
+.about-section h2 {
+  font-size: clamp(1.65rem, 3.5vw, 2.1rem);
+}
+
+.about-mosaic {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.about-mosaic__item {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  min-height: 14rem;
+}
+
+.about-mosaic__item img {
+  width: 100%;
+  height: 100%;
+  min-height: 14rem;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.about-mosaic__item:hover img {
+  transform: scale(1.04);
+}
+
+.about-mosaic__item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem 0.85rem 0.75rem;
+  font-size: 0.88rem;
+  color: #f7f4ef;
+  background: linear-gradient(180deg, transparent, rgba(12, 28, 22, 0.82));
+}
+
+.about-mosaic__item--wide {
+  min-height: 18rem;
+}
+
+.about-mosaic__item--wide img {
+  min-height: 18rem;
+}
+
+@media (max-width: 720px) {
+  .about-mosaic {
+    grid-template-columns: 1fr;
+  }
+
+  .about-mosaic__item,
+  .about-mosaic__item--wide,
+  .about-mosaic__item img,
+  .about-mosaic__item--wide img {
+    min-height: 12.5rem;
+  }
+}
+
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.about-gallery__cell {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  text-decoration: none;
+  color: #f7f4ef;
+  aspect-ratio: 4 / 5;
+  background: #1a3329;
+}
+
+.about-gallery__cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.about-gallery__cell:hover img,
+.about-gallery__cell:focus-visible img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.about-gallery__label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem 0.8rem 0.7rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent, rgba(12, 28, 22, 0.85));
+}
+
+@media (max-width: 720px) {
+  .about-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.about-langs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 2.5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+}
+
+.about-langs__name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.45rem;
+}
+
+.about-langs__name span {
+  color: var(--accent);
+  font-weight: 500;
+  margin-left: 0.35rem;
+}
+
+.about-langs__note {
+  margin: 0;
+  color: var(--muted);
+  max-width: 28rem;
+}
+
+@media (max-width: 640px) {
+  .about-langs {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+}
+
+.about-adventure {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 0.85rem;
+  align-items: stretch;
+}
+
+.about-adventure__feature {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  min-height: 22rem;
+  text-decoration: none;
+  color: #f7f4ef;
+}
+
+.about-adventure__feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.55s ease;
+}
+
+.about-adventure__feature:hover img {
+  transform: scale(1.04);
+}
+
+.about-adventure__copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem 1.1rem 1.1rem;
+  background: linear-gradient(180deg, transparent, rgba(12, 28, 22, 0.88));
+}
+
+.about-adventure__copy h3 {
+  margin: 0 0 0.35rem;
+  color: inherit;
+  font-size: 1.35rem;
+}
+
+.about-adventure__copy p {
+  margin: 0;
+  color: rgba(247, 244, 239, 0.85);
+  font-size: 0.95rem;
+}
+
+.about-adventure__stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.about-adventure__tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  min-height: 7rem;
+  text-decoration: none;
+  color: #f7f4ef;
+}
+
+.about-adventure__tile img {
+  width: 100%;
+  height: 100%;
+  min-height: 7rem;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-adventure__tile:hover img {
+  transform: scale(1.05);
+}
+
+.about-adventure__tile span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem 0.75rem 0.65rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent, rgba(12, 28, 22, 0.85));
+}
+
+@media (max-width: 800px) {
+  .about-adventure {
+    grid-template-columns: 1fr;
+  }
+
+  .about-adventure__feature {
+    min-height: 16rem;
+  }
+}
+
+.page-about .site-footer {
+  margin-top: 2rem;
+}

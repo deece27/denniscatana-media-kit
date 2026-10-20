@@ -6,7 +6,7 @@
     <title>About — Dennis Catana</title>
     <meta
       name="description"
-      content="About Dennis Catana (@denniscatana) — travel-based challenges, outdoor adventures, language immersion, and an unconventional way of living."
+      content="About Dennis Catana (@denniscatana) — travel-based challenges across 35+ countries, salsa on the road, Chinese &amp; Romanian, and long trails."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,8 +16,8 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header wrap">
+  <body class="page-about">
+    <header class="site-header site-header--about wrap">
       <a class="logo" href="index.html">Dennis Catana</a>
       <nav class="nav no-print" aria-label="Primary">
         <a href="index.html">Media Kit</a>
@@ -27,47 +27,211 @@
       </nav>
     </header>
 
-    <main id="top" class="wrap">
-      <section class="hero" style="border-top: none;">
-        <p class="eyebrow">About</p>
-        <h1>Dennis Catana</h1>
-        <p class="lede">
-          Travel-based challenges. Trips built around outdoor adventures, language
-          immersion, and getting uncomfortable on purpose. Documenting the experience
-          and the people I meet along the way. An unconventional way of living, shared
-          to inspire anyone ready to author their own path.
-        </p>
-      </section>
-
-      <section>
-        <h2>The hooks</h2>
-        <div class="card-stack">
-          <article class="card">
-            <h3>Travel-based challenges</h3>
-            <p>
-              I don’t travel for the checklist — I build trips around a dare. Cycling
-              1,000km around Taiwan, figuring out what a “free” cruise actually costs,
-              speaking only Chinese for 30 days, trails and ultras done my own way,
-              wilder ideas like crossing Mongolia on a horse with no experience. Film
-              what it’s like. Meet people along the way.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Unconventional on purpose</h3>
-            <p>
-              Speaks Chinese (barely). Dances salsa (questionable). Always looking for
-              another way out of the comfort zone — outdoor adventures, language
-              immersion, connection over the Instagram tourist script. The point isn’t
-              polish. It’s showing alternate ways to experience the world.
-            </p>
-          </article>
+    <main id="top">
+      <section class="about-hero" aria-label="About Dennis">
+        <div class="about-hero__media" aria-hidden="true">
+          <img
+            src="assets/about/cover.jpg"
+            alt=""
+            width="2400"
+            height="731"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="about-hero__veil" aria-hidden="true"></div>
+        <div class="about-hero__inner wrap">
+          <img
+            class="about-hero__portrait"
+            src="assets/about/portrait.jpg"
+            alt="Dennis Catana on trail"
+            width="320"
+            height="320"
+            decoding="async"
+          />
+          <p class="about-hero__brand">Dennis Catana</p>
+          <h1 class="about-hero__headline">
+            Travel-based challenges — filmed for the experience and the people.
+          </h1>
+          <p class="about-hero__lede">
+            I build trips around a dare: long rides, language immersion, salsa floors in new cities,
+            and trails that ask more than a tourist checklist.
+          </p>
+          <div class="about-hero__cta cta-row no-print">
+            <a class="btn btn-primary" href="#contact">Say hello</a>
+            <a class="btn btn-ghost btn-ghost--on-dark" href="projects.html">See projects</a>
+          </div>
         </div>
       </section>
 
-      <section>
+      <section id="travel" class="about-section wrap">
+        <h2>35+ countries and counting</h2>
+        <p class="section-intro">
+          Place is the set, not a home base. From cruise ports to Sacred Valley mornings to a
+          1,000&nbsp;km loop of Taiwan — the map keeps growing because the next challenge does.
+        </p>
+        <div class="about-mosaic" role="list">
+          <figure class="about-mosaic__item about-mosaic__item--wide" role="listitem">
+            <img src="assets/about/travel-taiwan.jpg" alt="Cycling through Taiwan" width="1200" height="800" loading="lazy" />
+            <figcaption>Taiwan · 1,000&nbsp;km bike challenge</figcaption>
+          </figure>
+          <figure class="about-mosaic__item" role="listitem">
+            <img src="assets/about/travel-peru.jpg" alt="Peru trek landscape" width="800" height="1000" loading="lazy" />
+            <figcaption>Peru · Salkantay &amp; Cusco</figcaption>
+          </figure>
+          <figure class="about-mosaic__item" role="listitem">
+            <img src="assets/about/travel-cruise.jpg" alt="Cruise travel still" width="800" height="1000" loading="lazy" />
+            <figcaption>At sea · free-cruise cost challenge</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="salsa" class="about-section about-section--band">
+        <div class="wrap">
+          <h2>Salsa on the road</h2>
+          <p class="section-intro">
+            Dance is how I meet people when the itinerary ends. Festivals, socials, and
+            “hear the music — drop everything” nights from Jeju to Spain to the cruise dock.
+          </p>
+          <div class="about-gallery">
+            <a
+              class="about-gallery__cell"
+              href="https://www.instagram.com/p/DWNm6orlNUp/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/about/salsa-cities.jpg" alt="Salsa travel in Milan" width="800" height="1000" loading="lazy" />
+              <span class="about-gallery__label">Best salsa cities · Milan</span>
+            </a>
+            <a
+              class="about-gallery__cell"
+              href="https://www.instagram.com/reel/DMVminIO8F7/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/about/salsa-jeju.jpg" alt="Salsa at Jeju Latin Culture Festival" width="800" height="1000" loading="lazy" />
+              <span class="about-gallery__label">Jeju Latin Culture Festival</span>
+            </a>
+            <a
+              class="about-gallery__cell"
+              href="https://www.instagram.com/reel/DW3nvwpD9F5/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/about/salsa-spain.jpg" alt="Salsa congress in Spain" width="800" height="1000" loading="lazy" />
+              <span class="about-gallery__label">Spain World Congress</span>
+            </a>
+            <a
+              class="about-gallery__cell"
+              href="https://www.youtube.com/watch?v=R69nSvYVrhM"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/about/salsa-yt-0.jpg" alt="Salsa clip from YouTube" width="1280" height="720" loading="lazy" />
+              <span class="about-gallery__label">Well, at least we got to salsa</span>
+            </a>
+            <a
+              class="about-gallery__cell"
+              href="https://www.youtube.com/watch?v=ZdBHVzDdWPQ"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/about/salsa-yt-1.jpg" alt="Street salsa when music starts" width="1280" height="720" loading="lazy" />
+              <span class="about-gallery__label">Salsa in the wild · Costa Maya</span>
+            </a>
+            <a
+              class="about-gallery__cell"
+              href="https://www.instagram.com/reel/DWVgsiQCAW4/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/about/salsa-street.jpg" alt="Unexpected dance moment on the road" width="800" height="1000" loading="lazy" />
+              <span class="about-gallery__label">Unexpected floor · Italy</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="languages" class="about-section wrap">
+        <h2>Languages</h2>
+        <p class="section-intro">
+          Words open doors the camera can’t. I speak Romanian at home in my roots, and Chinese
+          when the challenge is immersion — including stretches of Chinese-only days on the road.
+        </p>
+        <ul class="about-langs">
+          <li class="about-langs__item">
+            <p class="about-langs__name">Chinese <span lang="zh">中文</span></p>
+            <p class="about-langs__note">
+              Mandarin for markets, trains, and people — practiced in public and framed as
+              language-immersion challenges, not textbook tourism.
+            </p>
+          </li>
+          <li class="about-langs__item">
+            <p class="about-langs__name">Romanian <span lang="ro">Română</span></p>
+            <p class="about-langs__note">
+              Family language and cultural root — the quieter half of how I move between worlds.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="adventure" class="about-section wrap">
+        <h2>Trails &amp; the adventure side</h2>
+        <p class="section-intro">
+          Long days on foot when the trip asks for it — thru-hikes, high passes, and “can I finish
+          this trail my way” experiments.
+        </p>
+        <div class="about-adventure">
+          <a
+            class="about-adventure__feature"
+            href="https://www.instagram.com/p/DW4D0SaD7mV/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="assets/about/adventure-kunpeng.jpg"
+              alt="Kunpeng ridge thru-hike"
+              width="1200"
+              height="900"
+              loading="lazy"
+            />
+            <div class="about-adventure__copy">
+              <h3>Kunpeng ridge thru-hike</h3>
+              <p>253&nbsp;km · 12,000&nbsp;m+ elevation · 10 days end to end.</p>
+            </div>
+          </a>
+          <div class="about-adventure__stack">
+            <a
+              class="about-adventure__tile"
+              href="https://www.instagram.com/reel/DaZS0GGIxkK/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/about/adventure-taroko.jpg" alt="Taroko Gorge Taiwan" width="800" height="1000" loading="lazy" />
+              <span>Taiwan · Taroko &amp; bike days</span>
+            </a>
+            <a
+              class="about-adventure__tile"
+              href="projects.html"
+            >
+              <img src="assets/about/adventure-peru.jpg" alt="Peru high-altitude trek" width="800" height="1000" loading="lazy" />
+              <span>Peru · Salkantay toward Machu Picchu</span>
+            </a>
+            <a
+              class="about-adventure__tile"
+              href="projects.html"
+            >
+              <img src="assets/about/adventure-china.jpg" alt="Trail day in China" width="800" height="1000" loading="lazy" />
+              <span>China · station-to-station hikes</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="about-section wrap">
         <div class="contact-box">
           <h2>Get in touch</h2>
-          <p>For brand partnerships, gear testing, or series sponsorships:</p>
+          <p>Brand partnerships, gear testing, series sponsorships — or just say hi.</p>
           <a class="btn btn-primary" href="mailto:denniscatana@me.com">denniscatana@me.com</a>
           <div class="links">
             <a href="https://www.instagram.com/denniscatana/" target="_blank" rel="noopener">Instagram</a>
@@ -80,6 +244,13 @@
     </main>
 
     <footer class="site-footer wrap">
+      <p>
+        © Dennis Catana ·
+        <a href="index.html">Media Kit</a> ·
+        <a href="projects.html">Projects</a> ·
+        <a href="gear.html">Gear</a> ·
+        <a href="about.html">About</a>
+      </p>
     </footer>
   </body>
 </html>
