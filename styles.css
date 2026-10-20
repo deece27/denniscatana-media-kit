@@ -250,7 +250,7 @@ h3 {
 
 .kit-metrics {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
   margin: 0 0 2rem;
 }
@@ -298,6 +298,26 @@ h3 {
   color: var(--ink);
 }
 
+.kit-metric__stack {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.98rem;
+  line-height: 1.25;
+  color: var(--muted);
+}
+
+.kit-metric__stack strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.12rem;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-right: 0.2rem;
+}
+
 .kit-metric__value {
   display: flex;
   align-items: center;
@@ -309,13 +329,6 @@ h3 {
   letter-spacing: -0.03em;
   line-height: 1.05;
   color: var(--accent);
-}
-
-.kit-metric--lead .kit-metric__value {
-  font-size: clamp(1.2rem, 2.1vw, 1.75rem);
-  letter-spacing: -0.045em;
-  flex-wrap: nowrap;
-  white-space: nowrap;
 }
 
 .kit-metric__row {
@@ -370,25 +383,7 @@ h3 {
 
 @media (max-width: 820px) {
   .kit-metrics {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .kit-metric--lead {
-    grid-column: 1 / -1;
-  }
-
-  .kit-metric--lead .kit-metric__value {
-    font-size: clamp(1.85rem, 7vw, 2.55rem);
-  }
-}
-
-@media (max-width: 520px) {
-  .kit-metrics {
     grid-template-columns: 1fr;
-  }
-
-  .kit-metric--lead {
-    grid-column: auto;
   }
 }
 
@@ -1091,6 +1086,44 @@ h3 {
 
 .kit-expand__metrics strong {
   color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.kit-expand__metrics--series {
+  gap: 0.55rem;
+}
+
+.kit-expand__metric--hl {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.45rem;
+  background: rgba(15, 76, 58, 0.1);
+  border: 1px solid rgba(15, 76, 58, 0.22);
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.kit-expand__metric--hl strong {
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.kit-expand__series-note {
+  margin: 0 0 0.85rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.kit-project__hl {
+  color: var(--ink);
+}
+
+.kit-project__hl strong {
+  color: var(--accent);
   font-family: var(--font-display);
   font-weight: 600;
 }
