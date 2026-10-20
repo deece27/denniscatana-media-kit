@@ -447,7 +447,7 @@
           const metricChip =
             post.views && Number(post.views) > 0
               ? `<span class="views-chip solid" title="Views"><span class="views-icon">${m.viewsIcon}</span>${fmt(post.views)}</span>`
-              : `<span class="views-chip solid" title="Likes">${fmt(post.likes)} likes</span>`;
+              : `<span class="views-chip solid" title="Likes"><span class="views-icon">${ICONS.thumb}</span>${fmt(post.likes)}</span>`;
           const carousel = isIgCarousel(post)
             ? `<span class="feed-carousel-icon" title="Carousel">${CAROUSEL_ICON}</span>`
             : "";
@@ -487,8 +487,13 @@
               </div>
               <div class="phone-bottom-bar">
                 <div class="clip-title" style="color:#fff">${escapeHtml(post.title || "")}</div>
-                <div class="phone-views-row">
-                  <span>${fmt(post.likes)} likes</span>
+                <div class="phone-views-row phone-eng-row">
+                  <span class="eng-chip" title="Likes">
+                    <span class="eng-icon">${ICONS.thumb}</span>${fmt(post.likes)}
+                  </span>
+                  <span class="eng-chip" title="Comments">
+                    <span class="eng-icon">${ICONS.comment}</span>${fmt(post.comments)}
+                  </span>
                 </div>
               </div>
             </div>
@@ -499,10 +504,21 @@
         return `<div class="matrix-blank-slot" aria-hidden="true"></div>`;
       }
 
+      function platformBreakdown(project) {
+        const bp = { ...(project.totals?.by_platform || {}) };
+        for (const p of project.posts || []) {
+          const plat = p.platform;
+          if (!plat) continue;
+          const row = bp[plat] || (bp[plat] = {});
+          row.comments = (Number(row.comments) || 0) + (Number(p.comments) || 0);
+        }
+        return bp;
+      }
+
       function renderPeak(project) {
         const peak = project.peak;
         const t = project.totals || {};
-        const bp = t.by_platform || {};
+        const bp = platformBreakdown(project);
         return `
           <div class="timeline-pinned-left peak-panel">
             <div class="timeline-col-label">
@@ -513,6 +529,7 @@
               <div class="peak-totals-row">
                 ${metric(ICONS.eye, t.views, "Total views")}
                 ${metric(ICONS.thumb, t.likes, "Likes")}
+                ${metric(ICONS.comment, t.comments, "Comments")}
                 ${t.shares ? metric(ICONS.share, t.shares, "Shares") : ""}
               </div>
               <div class="peak-platform-peaks">
@@ -526,6 +543,7 @@
                         <span class="mini-peak-metrics">
                           ${metric(ICONS.eye, row.views || 0, `${plat} views`)}
                           ${metric(ICONS.thumb, row.likes || 0, `${plat} likes`)}
+                          ${row.comments != null ? metric(ICONS.comment, row.comments, `${plat} comments`) : ""}
                         </span>
                       </div>`;
                   }).join("")}

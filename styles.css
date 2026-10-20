@@ -1475,6 +1475,9 @@ h3 {
 .plat-logo-badge.tiktok,
 .plat-logo-badge.youtube,
 .plat-logo-badge.youtube-shorts {
+  /* Match IG badge footprint so marks align top-left the same way */
+  width: 1.55rem;
+  height: 1.55rem;
   background: transparent;
   border: none;
   color: #fff;
@@ -1484,17 +1487,36 @@ h3 {
 }
 
 .plat-logo-badge .plat-logo-img {
-  width: 100%;
-  height: 100%;
+  /* Scale image marks down to ~IG glyph size inside the badge */
+  width: 0.95rem;
+  height: 0.95rem;
   display: block;
   object-fit: contain;
   border-radius: 0;
   background: transparent;
 }
 
-.plat-logo-badge.tiktok,
 .plat-logo-badge.tiktok .plat-logo-img {
   border-radius: 50%;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.plat-logo-badge.sm.tiktok,
+.plat-logo-badge.sm.youtube,
+.plat-logo-badge.sm.youtube-shorts {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.plat-logo-badge.sm .plat-logo-img {
+  width: 0.78rem;
+  height: 0.78rem;
+}
+
+.plat-logo-badge.sm.tiktok .plat-logo-img {
+  width: 0.85rem;
+  height: 0.85rem;
 }
 
 .phone-top-bar.is-views-only {
@@ -1504,10 +1526,16 @@ h3 {
 /* Platform mark top-left, views top-right */
 .phone-top-bar.is-plat-tl {
   justify-content: space-between;
+  align-items: flex-start;
+}
+
+.phone-top-bar.is-plat-tl .plat-logo-badge {
+  align-self: flex-start;
 }
 
 .phone-top-bar.is-plat-tl .views-chip {
   margin-left: auto;
+  align-self: flex-start;
 }
 
 .feed-header-right {
@@ -2438,10 +2466,32 @@ h3 {
 .phone-views-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.35rem;
+  justify-content: flex-start;
+  gap: 0.55rem;
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.phone-eng-row .eng-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.phone-eng-row .eng-icon {
+  width: 0.82rem;
+  height: 0.82rem;
+  display: inline-flex;
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+.phone-eng-row .eng-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .phone-views-pill {
