@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-"""Build the Sheet Projects tab as a platform×episode matrix from All Posts.
+"""Build the Sheet Projects tab as an active posting tracker from All Posts.
 
-Instagram is the master chronology: one column per IG post (plus Day/Prep
-alignment for TikTok/YouTube). Missing cells are explicit for Day/Prep beats.
+Matches Dennis's mock on the Projects tab:
+  - Columns = episode clips (Instagram chronology; IG/TT/YT share a column)
+  - Rows = Instagram · YouTube · TikTok
+  - Cell = posted date (green) or blank (red = still to post)
+
+Instagram is the master chronology. TikTok / YouTube attach by Day/Prep label
+or title overlap; leftovers fill empty columns in upload order.
 """
 
 from __future__ import annotations
@@ -15,9 +20,12 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-PLATFORMS = ["Instagram", "TikTok", "YouTube"]
+# Display order matches Dennis's mock (Instagram → YouTube → TikTok)
+PLATFORMS = ["Instagram", "YouTube", "TikTok"]
+# Matching still considers all three
+MATCH_PLATFORMS = ["Instagram", "TikTok", "YouTube"]
+
 DAY_RE = re.compile(r"Day\s*(\d+)", re.I)
-# Official series beats only — not mid-caption "from Day 4 of…" asides
 PRIMARY_DAY_RE = re.compile(
     r"📍\s*Day\s*(\d+)|(?:^|\A)Day\s*(\d+)\s*(?:[-–—:]|\s+of\s+Cycling\b)",
     re.I | re.M,
@@ -26,8 +34,14 @@ PREP_RE = re.compile(
     r"gear|prep|inspiration|flight to taipei|waiting to pick", re.I
 )
 
+# Dennis mock colors (sampled from his filled cells)
+GREEN = {"red": 0.7137255, "green": 0.84313726, "blue": 0.65882355}
+RED = {"red": 0.95686275, "green": 0.8, "blue": 0.8}
+GREEN_HEX = "#B6D7A8"
+RED_HEX = "#F4CCCC"
 
-def short_label(title: str, fallback: str, n: int = 28) -> str:
+
+def short_label(title: str, fallback: str, n: int = 40) -> str:
     t = re.sub(r"\s+", " ", (title or "").strip())
     if not t:
         return fallback
@@ -122,7 +136,7 @@ _STOP = {
     "over",
     "after",
     "before",
-    "taiwan",  # too common in this project
+    "taiwan",
     "cycling",
     "cycle",
     "bike",
@@ -142,27 +156,6 @@ def title_overlap(a: str, b: str) -> int:
     return len(ta & tb)
 
 
-def fmt_views(v) -> str:
-    try:
-        n = int(float(v or 0))
-    except (TypeError, ValueError):
-        n = 0
-    if n >= 1_000_000:
-        return f"{n / 1_000_000:.1f}M".replace(".0M", "M")
-    if n >= 1_000:
-        s = f"{n / 1_000:.1f}K"
-        return s.replace(".0K", "K")
-    return str(n)
-
-
-def cell_value(post: dict | None, *, expect_missing: bool) -> str:
-    if post:
-        views = fmt_views(post.get("Views") or post.get("views") or 0)
-        return f"Posted · {views}"
-    # Primary Day/Prep gaps stay labeled Missing; side blanks are empty cells
-    return "Missing" if expect_missing else ""
-
-
 def is_landscape_film(post: dict) -> bool:
     """Wide 16:9 YouTube films pinned to the far-right end (not Shorts day slots)."""
     if (post.get("Platform") or post.get("platform")) != "YouTube":
@@ -171,6 +164,30 @@ def is_landscape_film(post: dict) -> bool:
     if re.search(r"urge to cycle|so you have the urge", t, re.I):
         return True
     return False
+
+
+def episode_header(slot: dict) -> str:
+    """Column title — prefer the IG caption (Dennis mock used clip titles)."""
+    if slot.get("is_film"):
+        yt = slot["by_platform"].get("YouTube") or {}
+        return short_label(
+            yt.get("Title/Caption snippet") or yt.get("title") or "",
+            "Film",
+            48,
+        )
+    ig = slot["by_platform"].get("Instagram") or {}
+    return short_label(
+        ig.get("Title/Caption snippet") or ig.get("title") or "",
+        slot.get("label") or "Post",
+        48,
+    )
+
+
+def is_taroko(post: dict | None) -> bool:
+    if not post:
+        return False
+    t = (post.get("Title/Caption snippet") or post.get("title") or "").lower()
+    return "taroko" in t or "earthquake in 2024" in t
 
 
 def build_project_matrix(posts: list[dict]) -> dict:
@@ -236,13 +253,6 @@ def build_project_matrix(posts: list[dict]) -> dict:
                 score, best = sc, s
         return best if score >= 3 else None
 
-    peers_by_plat = defaultdict(list)
-    for p in matrix_posts:
-        if p.get("Platform") != "Instagram":
-            peers_by_plat[p["Platform"]].append(p)
-    for plat in peers_by_plat:
-        peers_by_plat[plat].sort(key=lambda p: (p.get("Date") or "", p.get("URL") or ""))
-
     for post in matrix_posts:
         if post.get("Platform") == "Instagram":
             continue
@@ -254,7 +264,6 @@ def build_project_matrix(posts: list[dict]) -> dict:
                 None,
             )
             if not slot and info["label"] == "Prep · Gear":
-                # IG gear post is often titled “ultra light / all I’ll need”, not “Gear”
                 slot = next(
                     (
                         s
@@ -269,12 +278,14 @@ def build_project_matrix(posts: list[dict]) -> dict:
                     None,
                 )
             if not slot:
-                # Only fall back to another Prep column when labels match intent
-                slot = next((s for s in slots if s["is_prep"]), None) if info["label"] == "Prep" else None
+                slot = (
+                    next((s for s in slots if s["is_prep"]), None)
+                    if info["label"] == "Prep"
+                    else None
+                )
         if not slot and info["day_num"] is not None:
             n = info["day_num"]
             plat = post["Platform"]
-            # Prefer primary Day N column; never overwrite it with a side post.
             primary = primary_day_slot(n)
 
             def empty_same_day():
@@ -290,7 +301,6 @@ def build_project_matrix(posts: list[dict]) -> dict:
             if primary and plat not in primary["by_platform"]:
                 slot = primary
             elif info.get("primary_day"):
-                # Second official beat (e.g. Day 13 part 2)
                 slot = next(
                     (
                         s
@@ -302,21 +312,23 @@ def build_project_matrix(posts: list[dict]) -> dict:
                     None,
                 ) or empty_same_day()
             else:
-                # Side post mentioning Day N → empty same-day column only
                 slot = empty_same_day()
         if not slot:
             slot = best_title_match(post)
         if slot:
             put(slot, post)
 
-    # Second pass: leftover TT/YT keep relative upload order → fill empty IG columns
+    # Leftover TT/YT keep relative upload order → fill empty IG columns
     for plat in ("TikTok", "YouTube"):
         peers = sorted(
             [p for p in matrix_posts if p.get("Platform") == plat],
             key=lambda p: (p.get("Date") or "", p.get("URL") or ""),
         )
         used = {
-            (s["by_platform"][plat].get("URL") or s["by_platform"][plat].get("Permalink ID"))
+            (
+                s["by_platform"][plat].get("URL")
+                or s["by_platform"][plat].get("Permalink ID")
+            )
             for s in slots
             if plat in s["by_platform"]
         }
@@ -327,14 +339,15 @@ def build_project_matrix(posts: list[dict]) -> dict:
         for post, slot in zip(leftover, empties):
             put(slot, post)
 
-    # Manual: slide last day-column YT Short into the final day column before Film
+    # Slide last day-column YT Short into the final day column before Film
     if slots and "YouTube" not in slots[-1]["by_platform"]:
         for i in range(len(slots) - 2, -1, -1):
             if "YouTube" in slots[i]["by_platform"]:
-                slots[-1]["by_platform"]["YouTube"] = slots[i]["by_platform"].pop("YouTube")
+                slots[-1]["by_platform"]["YouTube"] = slots[i]["by_platform"].pop(
+                    "YouTube"
+                )
                 break
 
-    # Landscape films after all day columns (far right)
     for film in films:
         slots.append(
             {
@@ -351,16 +364,17 @@ def build_project_matrix(posts: list[dict]) -> dict:
             }
         )
 
-    # Missing only for primary Day N / Prep beats (not side posts that mention a day)
     gaps = []
     for s in slots:
         if s.get("is_film"):
+            s["expect_missing"] = False
+            # Film is YT-only by design — IG/TT blanks are expected, not gaps
             continue
         expect = bool(s["primary_day"] or s["is_prep"])
         s["expect_missing"] = expect
-        for plat in PLATFORMS:
+        for plat in MATCH_PLATFORMS:
             if expect and plat not in s["by_platform"]:
-                has = [p for p in PLATFORMS if p in s["by_platform"]]
+                has = [p for p in MATCH_PLATFORMS if p in s["by_platform"]]
                 gaps.append(
                     {
                         "episode": s["label"],
@@ -373,9 +387,18 @@ def build_project_matrix(posts: list[dict]) -> dict:
     return {"slots": slots, "gaps": gaps, "platforms": PLATFORMS}
 
 
-def render_sheet_rows(project_name: str, matrix: dict) -> list[list]:
+def col_letter(n: int) -> str:
+    """1-based column index → A1 letter(s)."""
+    s = ""
+    while n:
+        n, r = divmod(n - 1, 26)
+        s = chr(65 + r) + s
+    return s
+
+
+def render_tracker(project_name: str, matrix: dict, *, start_row: int = 1) -> dict:
+    """Build values + format ranges matching Dennis's green/red mock."""
     slots = matrix["slots"]
-    gaps = matrix["gaps"]
     platforms = matrix["platforms"]
     ncol = 1 + len(slots)
 
@@ -383,76 +406,126 @@ def render_sheet_rows(project_name: str, matrix: dict) -> list[list]:
         return (row + [""] * ncol)[:ncol]
 
     rows: list[list] = []
-    rows.append(
-        pad(
-            [
-                "PROJECTS MATRIX — auto-built from All Posts. Do not hand-edit. "
-                "Tag Project on All Posts, then refresh this tab."
-            ]
-        )
+    # Row 1 — note (col A) + project name across episode columns (Dennis mock)
+    proj_row = [""] + [project_name] * len(slots)
+    note = (
+        "POSTING TRACKER — auto-built from All Posts. Do not hand-edit. "
+        "Green = posted (date). Red = still to post. Tag Project on All Posts, then refresh."
     )
-    rows.append(pad([]))
-    rows.append(
-        pad(
-            [
-                "MISSING SUMMARY",
-                f"{project_name}: {len(gaps)} Missing · {len(slots)} episode columns · "
-                f"{sum(1 for s in slots if s.get('expect_missing'))} primary Day/Prep beats",
-            ]
-        )
-    )
-    if gaps:
-        rows.append(pad(["#", "Episode", "Missing platform", "Already on", "IG date"]))
-        for i, g in enumerate(gaps, 1):
-            rows.append(
-                pad(
-                    [
-                        i,
-                        g["episode"],
-                        g["missing"],
-                        ", ".join(g["has"]) or "—",
-                        g["ig_date"],
-                    ]
-                )
-            )
-    else:
-        rows.append(pad(["(no missing Day/Prep deliverables)"]))
+    proj_row[0] = note
+    rows.append(pad(proj_row))
 
-    rows.append(pad([]))
-    rows.append(pad([f"PROJECT · {project_name}"]))
-    rows.append(
-        pad(
-            [
-                "Platforms ↓  ·  Episodes → (Instagram chronological order). "
-                "Cell = Posted · views, Missing (Day/Prep gap), or — (side beat, no post)."
-            ]
-        )
-    )
+    # Row 2 — episode titles
+    rows.append(pad([""] + [episode_header(s) for s in slots]))
 
-    header = ["Platform"] + [s["label"] for s in slots]
-    rows.append(pad(header))
-    # Helper row: episode kind + IG date for scanning
-    rows.append(pad(["(kind / IG date)"] + [f"{s['kind']} · {s['ig_date']}" for s in slots]))
-
-    for plat in platforms:
-        row = [plat]
-        for s in slots:
-            expect = bool(s.get("expect_missing"))
-            row.append(cell_value(s["by_platform"].get(plat), expect_missing=expect))
-        rows.append(pad(row))
-
-    # Compact URL row block (optional lookup under the status matrix)
-    rows.append(pad([]))
-    rows.append(pad(["URL LOOKUP (same columns)"]))
-    rows.append(pad(["Platform"] + [s["label"] for s in slots]))
+    # Platform date rows (Instagram → YouTube → TikTok)
+    platform_row_offset = {}  # plat -> 0-based index within values
     for plat in platforms:
         row = [plat]
         for s in slots:
             post = s["by_platform"].get(plat)
-            row.append((post or {}).get("URL") or "")
+            row.append((post or {}).get("Date") or "")
+        platform_row_offset[plat] = len(rows)
         rows.append(pad(row))
 
-    return rows
+    # Compact still-to-post summary under the matrix
+    rows.append(pad([]))
+    missing_lines = []
+    for s in slots:
+        for plat in platforms:
+            if plat not in s["by_platform"]:
+                # Skip expected film-only blanks for IG/TT
+                if s.get("is_film") and plat != "YouTube":
+                    continue
+                missing_lines.append(
+                    f"{episode_header(s)[:32]} → {plat}"
+                )
+    rows.append(
+        pad(
+            [
+                "STILL TO POST",
+                f"{project_name}: {len(missing_lines)} blank cells · "
+                f"{len(slots)} episode columns",
+            ]
+        )
+    )
+    if missing_lines:
+        rows.append(pad(["#", "Episode → platform"]))
+        for i, line in enumerate(missing_lines, 1):
+            rows.append(pad([i, line]))
+
+    # Format ranges (A1, relative to sheet start_row):
+    # paint each platform row red across episode cols, then green runs for posted.
+    formats = []
+    end_col = col_letter(ncol)
+    for plat in platforms:
+        r = start_row + platform_row_offset[plat]  # 1-based sheet row
+        formats.append(
+            {
+                "range": f"B{r}:{end_col}{r}",
+                "status": "missing",
+                "background_color": RED_HEX,
+                "rgb": RED,
+            }
+        )
+        i = 0
+        while i < len(slots):
+            if plat not in slots[i]["by_platform"]:
+                i += 1
+                continue
+            j = i
+            while j < len(slots) and plat in slots[j]["by_platform"]:
+                j += 1
+            c1 = col_letter(2 + i)
+            c2 = col_letter(2 + j - 1)
+            formats.append(
+                {
+                    "range": f"{c1}{r}:{c2}{r}",
+                    "status": "posted",
+                    "background_color": GREEN_HEX,
+                    "rgb": GREEN,
+                }
+            )
+            i = j
+
+    # Posted / missing counts per platform
+    counts = {}
+    for plat in platforms:
+        posted = sum(1 for s in slots if plat in s["by_platform"])
+        if plat == "YouTube":
+            in_scope = len(slots)  # film counts
+        else:
+            in_scope = sum(1 for s in slots if not s.get("is_film"))
+        counts[plat] = {
+            "posted": posted,
+            "missing": in_scope - posted,
+            "in_scope": in_scope,
+        }
+
+    last_tt_label = None
+    last_tt_date = None
+    last_tt_is_taroko = False
+    for s in slots:
+        tt = s["by_platform"].get("TikTok")
+        if tt:
+            last_tt_label = episode_header(s)
+            last_tt_date = tt.get("Date")
+            last_tt_is_taroko = is_taroko(tt)
+
+    return {
+        "values": rows,
+        "formats": formats,
+        "platform_row_offset": platform_row_offset,
+        "counts": counts,
+        "last_tiktok": {
+            "label": last_tt_label,
+            "date": last_tt_date,
+            "is_taroko": last_tt_is_taroko,
+        },
+        "missing_lines": missing_lines,
+        "ncol": ncol,
+        "nrow": len(rows),
+    }
 
 
 def load_posts(csv_path: Path) -> list[dict]:
@@ -487,78 +560,67 @@ def main() -> int:
         by_project[proj].append(p)
 
     all_sheet_rows: list[list] = []
+    all_formats: list[dict] = []
     summary = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "layout": "matrix",
+        "layout": "posting-tracker",
         "platforms": PLATFORMS,
+        "colors": {"posted": GREEN_HEX, "missing": RED_HEX},
         "projects": [],
     }
 
-    # Stack matrices per project
     first = True
+    row_cursor = 1  # 1-based sheet row for next block
     for project_name in sorted(by_project.keys()):
         matrix = build_project_matrix(by_project[project_name])
-        block = render_sheet_rows(project_name, matrix)
         if not first:
-            all_sheet_rows.append([""] * max(len(r) for r in block))
-            all_sheet_rows.append([""] * max(len(r) for r in block))
-        all_sheet_rows.extend(block)
+            all_sheet_rows.append([])
+            all_sheet_rows.append([])
+            row_cursor += 2
+        block = render_tracker(project_name, matrix, start_row=row_cursor)
+        all_sheet_rows.extend(block["values"])
+        all_formats.extend(block["formats"])
+        row_cursor += block["nrow"]
         first = False
-
-        posted_cells = 0
-        missing_cells = 0
-        dash_cells = 0
-        for s in matrix["slots"]:
-            expect = bool(s.get("expect_missing"))
-            for plat in PLATFORMS:
-                if plat in s["by_platform"]:
-                    posted_cells += 1
-                elif expect:
-                    missing_cells += 1
-                else:
-                    dash_cells += 1
 
         summary["projects"].append(
             {
                 "name": project_name,
                 "posts": len(by_project[project_name]),
                 "episode_columns": len(matrix["slots"]),
-                "day_prep_beats": sum(
-                    1 for s in matrix["slots"] if s.get("expect_missing")
-                ),
-                "posted_cells": posted_cells,
-                "missing": missing_cells,
-                "side_blank_cells": dash_cells,
-                "column_labels": [s["label"] for s in matrix["slots"]],
+                "counts": block["counts"],
+                "last_tiktok": block["last_tiktok"],
+                "still_to_post": len(block["missing_lines"]),
+                "column_labels": [episode_header(s) for s in matrix["slots"]],
                 "gaps": matrix["gaps"],
             }
         )
 
-    # Normalize rectangular
     width = max((len(r) for r in all_sheet_rows), default=1)
-    values = [[("" if c is None else c) for c in (r + [""] * width)[:width]] for r in all_sheet_rows]
+    values = [
+        [("" if c is None else c) for c in (r + [""] * width)[:width]]
+        for r in all_sheet_rows
+    ]
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     values_path = args.out_dir / "projects_tab_matrix_values.json"
+    formats_path = args.out_dir / "projects_tab_matrix_formats.json"
     summary_path = args.out_dir / "projects_tab_summary.json"
     csv_path = args.out_dir / "projects_tab_matrix.csv"
 
     values_path.write_text(json.dumps(values, ensure_ascii=False), encoding="utf-8")
-    summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
+    formats_path.write_text(
+        json.dumps(all_formats, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    summary_path.write_text(
+        json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
 
     with csv_path.open("w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerows(values)
+        csv.writer(f).writerows(values)
 
-    # Also keep a long-form gap list for tooling
     gap_rows = [
-        [
-            "Project",
-            "Episode",
-            "Missing platform",
-            "Already on",
-            "IG date",
-        ]
+        ["Project", "Episode", "Missing platform", "Already on", "IG date"]
     ]
     for proj in summary["projects"]:
         for g in proj["gaps"]:
@@ -571,14 +633,28 @@ def main() -> int:
                     g["ig_date"],
                 ]
             )
-    (args.out_dir / "projects_tab_missing.csv").write_text(
-        "", encoding="utf-8"
-    )  # touched
-    with (args.out_dir / "projects_tab_missing.csv").open("w", newline="", encoding="utf-8") as f:
+    with (args.out_dir / "projects_tab_missing.csv").open(
+        "w", newline="", encoding="utf-8"
+    ) as f:
         csv.writer(f).writerows(gap_rows)
+
+    # Also mirror into workspace media if present
+    ws_media = Path("/workspace/media/social-posts-sheet")
+    if ws_media.parent.exists():
+        ws_media.mkdir(parents=True, exist_ok=True)
+        (ws_media / "projects_tab_matrix_values.json").write_text(
+            values_path.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+        (ws_media / "projects_tab_matrix_formats.json").write_text(
+            formats_path.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+        (ws_media / "projects_tab_summary.json").write_text(
+            summary_path.read_text(encoding="utf-8"), encoding="utf-8"
+        )
 
     print(json.dumps(summary, indent=2))
     print(f"Wrote {values_path} ({len(values)} rows × {width} cols)")
+    print(f"Wrote {formats_path} ({len(all_formats)} format ranges)")
     return 0
 
 
