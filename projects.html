@@ -16,7 +16,19 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="page-projects">
+    <!-- Ultra-wide easter egg: faded clickable reel marquees in the side gutters -->
+    <aside class="projects-ambient" id="projects-ambient" aria-label="Reel wallpaper" hidden>
+      <div class="ambient-rail ambient-rail-left" aria-hidden="true">
+        <div class="ambient-lane is-up" data-lane="0"></div>
+        <div class="ambient-lane is-down" data-lane="1"></div>
+      </div>
+      <div class="ambient-rail ambient-rail-right" aria-hidden="true">
+        <div class="ambient-lane is-down" data-lane="2"></div>
+        <div class="ambient-lane is-up" data-lane="3"></div>
+      </div>
+    </aside>
+
     <header class="site-header wrap-wide">
       <a class="logo" href="index.html">Dennis Catana</a>
       <nav class="nav no-print" aria-label="Primary">
@@ -851,6 +863,67 @@
         PROJECTS.forEach((p) => setExpanded(p.id, false));
       });
 
+      function ambientPool(projects) {
+        const seen = new Set();
+        const pool = [];
+        for (const project of projects) {
+          for (const post of project.posts || []) {
+            if (!post?.url || !post?.thumbnail) continue;
+            if (isLandscapeFilm(post)) continue;
+            const key = post.permalinkId || post.url;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            pool.push(post);
+          }
+        }
+        // Prefer higher-view clips for a richer wallpaper
+        pool.sort((a, b) => (Number(b.views) || 0) - (Number(a.views) || 0));
+        return pool;
+      }
+
+      function renderAmbientCard(post) {
+        const m = meta(post.platform);
+        const mark = platMark(post);
+        const src = thumbSrc(post.thumbnail);
+        if (!src) return "";
+        return `
+          <a class="ambient-card ${m.className}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener" title="${escapeHtml(post.title || post.platform)}">
+            <span class="ambient-card-frame">
+              <img src="${escapeHtml(src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+              <span class="ambient-card-plat" aria-hidden="true">${mark.logo}</span>
+              <span class="ambient-card-views" aria-hidden="true">${fmt(post.views)}</span>
+            </span>
+          </a>`;
+      }
+
+      function fillAmbientLane(laneEl, posts) {
+        if (!laneEl || !posts.length) return;
+        // Cap per lane — duplicate once for a seamless CSS loop
+        const need = Math.min(14, Math.max(8, posts.length));
+        const seq = [];
+        for (let i = 0; i < need; i++) seq.push(posts[i % posts.length]);
+        const track = seq.map(renderAmbientCard).join("");
+        laneEl.innerHTML = `<div class="ambient-track">${track}${track}</div>`;
+      }
+
+      function paintAmbient(projects) {
+        const root = document.getElementById("projects-ambient");
+        if (!root) return;
+        const pool = ambientPool(projects);
+        if (pool.length < 8) {
+          root.hidden = true;
+          return;
+        }
+        // Stripe posts across 4 lanes so neighbors don't match
+        const lanes = [[], [], [], []];
+        pool.forEach((post, i) => lanes[i % 4].push(post));
+        root.querySelectorAll(".ambient-lane").forEach((laneEl) => {
+          const idx = Number(laneEl.dataset.lane) || 0;
+          fillAmbientLane(laneEl, lanes[idx].length ? lanes[idx] : pool);
+        });
+        root.hidden = false;
+      }
+
       async function boot() {
         const mount = document.getElementById("projects-mount");
         try {
@@ -870,6 +943,7 @@
             return;
           }
           paint();
+          paintAmbient(PROJECTS);
         } catch (err) {
           mount.innerHTML = `<p class="section-intro">Couldn’t load projects (${escapeHtml(err.message)}).</p>`;
         }

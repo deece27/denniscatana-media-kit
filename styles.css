@@ -1390,6 +1390,215 @@ a.kit-expand__metric--link:focus-visible {
   margin-inline: auto;
 }
 
+/* Ultra-wide Projects easter egg: faded clickable reel marquees in the gutters */
+.page-projects .site-header,
+.page-projects main,
+.page-projects .site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+.projects-ambient {
+  display: none;
+  pointer-events: none;
+}
+
+.projects-ambient[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 1600px) {
+  .projects-ambient:not([hidden]) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .ambient-rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: min(214px, calc((100vw - 1220px) / 2 - 1rem));
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+  }
+
+  .ambient-rail-left {
+    left: 0.55rem;
+    justify-content: flex-end;
+  }
+
+  .ambient-rail-right {
+    right: 0.55rem;
+    justify-content: flex-start;
+  }
+
+  .ambient-lane {
+    flex: 1;
+    min-width: 0;
+    max-width: 102px;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .ambient-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    will-change: transform;
+  }
+
+  .ambient-lane.is-up .ambient-track {
+    animation: ambient-marquee-up 72s linear infinite;
+  }
+
+  .ambient-lane.is-down .ambient-track {
+    animation: ambient-marquee-down 84s linear infinite;
+  }
+
+  .ambient-rail-left .ambient-lane.is-up .ambient-track {
+    animation-duration: 78s;
+  }
+
+  .ambient-rail-right .ambient-lane.is-down .ambient-track {
+    animation-duration: 90s;
+  }
+
+  .ambient-lane:hover .ambient-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes ambient-marquee-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes ambient-marquee-down {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .ambient-card {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    pointer-events: auto;
+    opacity: 0.26;
+    filter: saturate(0.8);
+    transition: opacity 0.22s ease, filter 0.22s ease, transform 0.22s ease;
+    transform: scale(0.98);
+  }
+
+  .ambient-card:hover,
+  .ambient-card:focus-visible {
+    opacity: 0.95;
+    filter: saturate(1.08);
+    transform: scale(1);
+    outline: none;
+    z-index: 1;
+  }
+
+  .ambient-card-frame {
+    position: relative;
+    display: block;
+    aspect-ratio: 9 / 16;
+    border-radius: 0.7rem;
+    overflow: hidden;
+    padding: 3px;
+    box-shadow: 0 8px 22px rgba(26, 24, 20, 0.12);
+  }
+
+  .ambient-card.plat-ig .ambient-card-frame {
+    background: var(--ig-grad);
+  }
+
+  .ambient-card.plat-tiktok .ambient-card-frame {
+    background: var(--tt-grad);
+  }
+
+  .ambient-card.plat-youtube .ambient-card-frame {
+    background: var(--yt-grad);
+  }
+
+  .ambient-card-frame > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.52rem;
+    display: block;
+    background: #2a2620;
+  }
+
+  .ambient-card-plat {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    width: 1.05rem;
+    height: 1.05rem;
+    color: #fff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+    display: inline-flex;
+  }
+
+  .ambient-card-plat svg,
+  .ambient-card-plat img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ambient-card-views {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.35rem;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+  }
+}
+
+@media (min-width: 1600px) and (prefers-reduced-motion: reduce) {
+  .ambient-lane.is-up .ambient-track,
+  .ambient-lane.is-down .ambient-track {
+    animation: none;
+    transform: translateY(-12%);
+  }
+}
+
+@media print {
+  .projects-ambient {
+    display: none !important;
+  }
+}
+
 .nav a.active {
   color: var(--accent);
   font-weight: 600;
