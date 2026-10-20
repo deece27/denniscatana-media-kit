@@ -1471,15 +1471,21 @@ h3 {
   background: transparent;
 }
 
+.plat-logo-badge.tiktok,
+.plat-logo-badge.tiktok .plat-logo-img {
+  border-radius: 50%;
+}
+
 .phone-top-bar.is-views-only {
   justify-content: flex-end;
 }
 
-.phone-top-bar.is-plat-tr {
+/* Platform mark top-left, views top-right */
+.phone-top-bar.is-plat-tl {
   justify-content: space-between;
 }
 
-.phone-top-bar.is-plat-tr .plat-logo-badge {
+.phone-top-bar.is-plat-tl .views-chip {
   margin-left: auto;
 }
 
@@ -2285,6 +2291,20 @@ h3 {
   object-fit: cover;
   object-position: center;
   transition: transform 0.35s ease;
+}
+
+.feed-media-plat {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.feed-media-plat .plat-logo-badge {
+  width: 1.15rem;
+  height: 1.15rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 .feed-carousel-icon {
