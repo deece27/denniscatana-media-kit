@@ -250,7 +250,7 @@ h3 {
 
 .kit-metrics {
   display: grid;
-  grid-template-columns: 1.55fr repeat(3, 1fr);
+  grid-template-columns: minmax(12rem, 1.45fr) repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
   margin: 0 0 2rem;
 }
