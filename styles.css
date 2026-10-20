@@ -800,34 +800,6 @@ h3 {
   flex-wrap: wrap;
 }
 
-.kit-metrics {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem 1rem;
-  margin: 0 0 1.75rem;
-}
-
-@media (max-width: 560px) {
-  .kit-metrics {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.kit-metric__value {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.7rem, 4.5vw, 2.15rem);
-  letter-spacing: -0.03em;
-  color: var(--accent-deep);
-  line-height: 1.05;
-}
-
-.kit-metric__label {
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-top: 0.25rem;
-}
-
 .kit-platforms {
   display: grid;
   gap: 0;
