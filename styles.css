@@ -471,29 +471,25 @@ h3 {
 }
 
 .kit-hero__reels {
-  position: absolute;
-  /* Bleed past the brand stack so peeks float behind the name */
-  left: max(-12vw, -7rem);
-  right: max(-28vw, -14rem);
-  top: 50%;
-  height: clamp(9.5rem, 22vw, 13.25rem);
-  transform: translateY(-52%);
-  z-index: 0;
+  position: relative;
+  width: calc(100% + 2rem);
+  margin: 0 -1rem 1.1rem;
+  height: clamp(8.75rem, 20vw, 12.5rem);
   overflow: hidden;
   pointer-events: none;
   opacity: 0;
   mask-image: linear-gradient(
     90deg,
     transparent 0%,
-    #000 12%,
-    #000 88%,
+    #000 8%,
+    #000 92%,
     transparent 100%
   );
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent 0%,
-    #000 12%,
-    #000 88%,
+    #000 8%,
+    #000 92%,
     transparent 100%
   );
   transition: opacity 0.6s ease;
@@ -505,36 +501,36 @@ h3 {
 
 .kit-hero__reels-track {
   display: flex;
-  align-items: center;
-  gap: 0.85rem;
+  align-items: flex-end;
+  gap: 0.75rem;
   width: max-content;
   height: 100%;
-  padding-inline: 1rem;
+  padding-inline: 0.5rem;
   animation: kit-reels-scroll 48s linear infinite;
 }
 
 .kit-hero__reel {
   position: relative;
   flex: 0 0 auto;
-  width: clamp(4.4rem, 9vw, 6.1rem);
+  width: clamp(4.1rem, 8.5vw, 5.6rem);
   aspect-ratio: 9 / 16;
   border-radius: 0.7rem;
   overflow: hidden;
-  border: 1px solid rgba(247, 244, 239, 0.28);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-  opacity: 0.55;
-  transform: rotate(-4deg) translateY(0.35rem);
-  filter: saturate(0.95) brightness(0.92);
+  border: 1px solid rgba(247, 244, 239, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
+  opacity: 0.88;
+  transform: rotate(-3deg) translateY(0.2rem);
+  filter: saturate(1.02) brightness(0.98);
 }
 
 .kit-hero__reel:nth-child(even) {
-  transform: rotate(3.5deg) translateY(-0.45rem);
-  opacity: 0.62;
+  transform: rotate(2.75deg) translateY(-0.35rem);
+  opacity: 0.92;
 }
 
 .kit-hero__reel:nth-child(3n) {
-  transform: rotate(-1.5deg) translateY(0.15rem);
-  opacity: 0.5;
+  transform: rotate(-1.25deg) translateY(0.1rem);
+  opacity: 0.86;
 }
 
 .kit-hero__reel img {
@@ -617,22 +613,14 @@ h3 {
   background: #1a3329;
 }
 
-.kit-hero__brand-stack {
-  position: relative;
-  min-width: 0;
-  isolation: isolate;
-  padding-block: 0.35rem;
-}
-
 .kit-hero__brand {
-  position: relative;
-  z-index: 1;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(2.35rem, 8.5vw, 4.25rem);
   line-height: 0.98;
   letter-spacing: -0.035em;
   margin: 0;
+  min-width: 0;
   text-shadow:
     0 2px 18px rgba(0, 0, 0, 0.55),
     0 1px 2px rgba(0, 0, 0, 0.4);
@@ -1166,9 +1154,9 @@ h3 {
   }
 
   .kit-hero__reels {
-    left: -1.25rem;
-    right: -2.5rem;
-    height: 8.5rem;
+    width: calc(100% + 1.5rem);
+    margin: 0 -0.75rem 0.85rem;
+    height: 7.75rem;
   }
 
   .kit-hero__identity {
