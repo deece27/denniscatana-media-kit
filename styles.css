@@ -1451,7 +1451,9 @@ h3 {
   background: linear-gradient(135deg, #833ab4, #e1306c 55%, #f77737);
 }
 
-.plat-logo-badge.tiktok {
+.plat-logo-badge.tiktok,
+.plat-logo-badge.youtube,
+.plat-logo-badge.youtube-shorts {
   background: transparent;
   border: none;
   color: #fff;
@@ -1473,8 +1475,35 @@ h3 {
   justify-content: flex-end;
 }
 
-.plat-logo-badge.youtube {
-  background: #ff0000;
+.phone-top-bar.is-plat-tr {
+  justify-content: space-between;
+}
+
+.phone-top-bar.is-plat-tr .plat-logo-badge {
+  margin-left: auto;
+}
+
+.feed-header-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.feed-header-right .plat-logo-badge {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 0.3rem;
+}
+
+.feed-header-right .plat-logo-badge svg {
+  width: 0.72rem;
+  height: 0.72rem;
+}
+
+.feed-header-right .plat-logo-badge.ig {
+  box-shadow: none;
 }
 
 .plat-logo-badge.muted {
