@@ -2400,16 +2400,28 @@ h3 {
   transition: transform 0.35s ease;
 }
 
-/* Wide films: fill 16:9 (avoid letterbox bars from 4:3 YT thumbs) */
+/* Wide films: fill 16:9. Slight overscale crops thin baked-in YT letterbox
+   (maxres still leaves a 1–2px black strip + dark ceiling on some uploads). */
 .phone-screen.is-wide-screen > img,
 .phone-screen.is-long-screen > img {
   object-fit: cover;
-  object-position: center center;
+  object-position: center 58%;
+  width: 104%;
+  height: 112%;
+  left: -2%;
+  top: -4%;
+  right: auto;
+  bottom: auto;
 }
 
 .phone-card:hover .phone-screen > img,
 .phone-card:hover .feed-post-media > img {
   transform: scale(1.02);
+}
+
+.phone-card:hover .phone-screen.is-wide-screen > img,
+.phone-card:hover .phone-screen.is-long-screen > img {
+  transform: scale(1.04);
 }
 
 /* Instagram feed post (carousel / still) — white chrome vs Reel phone */
