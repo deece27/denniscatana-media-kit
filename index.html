@@ -29,9 +29,34 @@
 
     <main id="top">
       <section class="kit-hero" aria-label="Introduction">
-        <div class="kit-hero__atmosphere" aria-hidden="true"></div>
+        <div class="kit-hero__cover" aria-hidden="true">
+          <img
+            src="assets/kit-cover.jpg"
+            alt=""
+            width="2400"
+            height="731"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="kit-hero__veil" aria-hidden="true"></div>
         <div class="kit-hero__inner wrap">
-          <p class="kit-hero__brand">Dennis Catana</p>
+          <div class="kit-hero__identity">
+            <img
+              class="kit-hero__avatar"
+              src="assets/kit-avatar.jpg"
+              alt="Dennis Catana"
+              width="112"
+              height="112"
+              decoding="async"
+            />
+            <div class="kit-hero__brand-stack">
+              <div class="kit-hero__reels no-print" aria-hidden="true" data-kit-reels>
+                <div class="kit-hero__reels-track" data-kit-reels-track></div>
+              </div>
+              <p class="kit-hero__brand">Dennis Catana</p>
+            </div>
+          </div>
           <h1 class="kit-hero__headline">
             Travel &amp; challenge content that outruns follower count.
           </h1>
@@ -493,48 +518,87 @@
     <script>
       (function () {
         const cards = Array.from(document.querySelectorAll("[data-kit-expand]"));
-        if (!cards.length) return;
-
-        function collapse(card) {
-          card.classList.remove("is-open");
-          const hit = card.querySelector(".kit-expand__hit");
-          const panel = card.querySelector(".kit-expand__panel");
-          if (hit) hit.setAttribute("aria-expanded", "false");
-          if (panel) panel.hidden = true;
-        }
-
-        function expand(card) {
-          cards.forEach((c) => {
-            if (c !== card) collapse(c);
-          });
-          card.classList.add("is-open");
-          const hit = card.querySelector(".kit-expand__hit");
-          const panel = card.querySelector(".kit-expand__panel");
-          if (hit) hit.setAttribute("aria-expanded", "true");
-          if (panel) panel.hidden = false;
-        }
-
-        cards.forEach((card) => {
-          const hit = card.querySelector(".kit-expand__hit");
-          if (!hit) return;
-          hit.addEventListener("click", (e) => {
-            e.stopPropagation();
-            if (card.classList.contains("is-open")) collapse(card);
-            else expand(card);
-          });
-          const panel = card.querySelector(".kit-expand__panel");
-          if (panel) {
-            panel.addEventListener("click", (e) => e.stopPropagation());
+        if (cards.length) {
+          function collapse(card) {
+            card.classList.remove("is-open");
+            const hit = card.querySelector(".kit-expand__hit");
+            const panel = card.querySelector(".kit-expand__panel");
+            if (hit) hit.setAttribute("aria-expanded", "false");
+            if (panel) panel.hidden = true;
           }
-        });
 
-        document.addEventListener("click", () => {
-          cards.forEach(collapse);
-        });
+          function expand(card) {
+            cards.forEach((c) => {
+              if (c !== card) collapse(c);
+            });
+            card.classList.add("is-open");
+            const hit = card.querySelector(".kit-expand__hit");
+            const panel = card.querySelector(".kit-expand__panel");
+            if (hit) hit.setAttribute("aria-expanded", "true");
+            if (panel) panel.hidden = false;
+          }
 
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") cards.forEach(collapse);
-        });
+          cards.forEach((card) => {
+            const hit = card.querySelector(".kit-expand__hit");
+            if (!hit) return;
+            hit.addEventListener("click", (e) => {
+              e.stopPropagation();
+              if (card.classList.contains("is-open")) collapse(card);
+              else expand(card);
+            });
+            const panel = card.querySelector(".kit-expand__panel");
+            if (panel) {
+              panel.addEventListener("click", (e) => e.stopPropagation());
+            }
+          });
+
+          document.addEventListener("click", () => {
+            cards.forEach(collapse);
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") cards.forEach(collapse);
+          });
+        }
+      })();
+
+      (function () {
+        const track = document.querySelector("[data-kit-reels-track]");
+        if (!track) return;
+
+        function formatViews(n) {
+          const v = Number(n) || 0;
+          if (v >= 1e6) return (v / 1e6).toFixed(v >= 1e7 ? 0 : 1).replace(/\.0$/, "") + "M";
+          if (v >= 1e3) return (v / 1e3).toFixed(v >= 1e4 ? 0 : 1).replace(/\.0$/, "") + "K";
+          return String(v);
+        }
+
+        function cardHtml(reel) {
+          const src = reel.thumbnail || "";
+          const views = formatViews(reel.views);
+          const platform = reel.platform || "";
+          return (
+            '<div class="kit-hero__reel">' +
+            '<img src="' +
+            src +
+            '" alt="" loading="lazy" decoding="async" />' +
+            '<span class="kit-hero__reel-meta">' +
+            views +
+            (platform ? " · " + platform : "") +
+            "</span></div>"
+          );
+        }
+
+        fetch("assets/kit-hero-reels.json", { cache: "no-cache" })
+          .then((r) => (r.ok ? r.json() : Promise.reject()))
+          .then((data) => {
+            const reels = (data && data.reels) || [];
+            if (!reels.length) return;
+            const html = reels.map(cardHtml).join("");
+            track.innerHTML = html + html;
+            track.closest("[data-kit-reels]")?.classList.add("is-ready");
+          })
+          .catch(() => {});
       })();
     </script>
   </body>
