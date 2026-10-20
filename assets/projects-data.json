@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T14:57:24Z",
+  "generatedAt": "2026-10-19T16:57:52Z",
   "source": "/cursor/stores/bc-fef0428a-847c-4d0d-827b-cf3c4a0db826/media/social-posts-sheet/all-social-posts.csv",
   "sheetUrl": "https://docs.google.com/spreadsheets/d/15jVzyTbLt2oeWIgLLqROgmPgZe76EAUDZGIQ3EGCmTM/edit",
   "projects": [
@@ -10,17 +10,17 @@
       "tag": "Flagship",
       "summary": "1000km around Taiwan — day-by-day across Instagram, TikTok, and YouTube. Peak post and full feed from the All Social Posts sheet.",
       "totals": {
-        "posts": 100,
-        "views": 616032,
-        "likes": 27175,
-        "comments": 732,
-        "shares": 8201,
-        "saves": 3454,
+        "posts": 101,
+        "views": 616910,
+        "likes": 27218,
+        "comments": 736,
+        "shares": 8202,
+        "saves": 3456,
         "by_platform": {
           "TikTok": {
-            "posts": 28,
-            "views": 32071,
-            "likes": 1384
+            "posts": 29,
+            "views": 32949,
+            "likes": 1427
           },
           "Instagram": {
             "posts": 36,
@@ -596,6 +596,20 @@
           "shares": 0,
           "saves": 0,
           "thumbnail": "https://i.ytimg.com/vi/lfM9PSMkrU8/hqdefault.jpg"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling. Let’s GOOOOO 🤩🚵 #taiwan #cycletouring #bik",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7667315324534017288",
+          "permalinkId": "7667315324534017288",
+          "date": "2026-07-29",
+          "views": 878,
+          "likes": 43,
+          "comments": 4,
+          "shares": 1,
+          "saves": 2,
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oAEBni19eAs9gJBoIvoBE0BwihsSOM9ZBJwAKk~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=2c375867&x-expires=1792504800&x-signature=JMro4Rhuw16tRNSZhwjge2ort00%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",

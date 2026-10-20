@@ -32,8 +32,8 @@
         <p class="eyebrow">Projects · One view</p>
         <h1 style="font-size: clamp(1.9rem, 4.5vw, 2.65rem); margin-bottom: 0.65rem">Projects</h1>
         <p class="lede" style="max-width: 48rem; margin-bottom: 1rem">
-          Peak post on the left. Day columns on the right (Instagram up front). Pull up the TikTok peek
-          at the bottom to reveal the full TikTok + YouTube rows — and peak stats.
+          Highlight on the left. Day columns on the right (Instagram up front). Expand a project to
+          reveal the full TikTok + YouTube matrix — collapse tucks it back for denser scrolling.
         </p>
       </section>
 
@@ -108,39 +108,271 @@
         return PLATFORM_META[platform] || PLATFORM_META.Instagram;
       }
 
-      function buildSlots(posts) {
-        const map = new Map();
+      /** Wide 16:9 YouTube films (not Shorts) — pinned to the far-right end. */
+      function isLandscapeFilm(post) {
+        if (!post || post.platform !== "YouTube") return false;
+        const t = post.title || "";
+        if (/urge to cycle|so you have the urge/i.test(t)) return true;
+        const dur = parseDurationSeconds(post.duration);
+        const typedLong = (post.type || "").toLowerCase() === "long";
+        // Long runtime + not a Day/Short beat → landscape film
+        if (dur != null && dur >= 90 && typedLong && !/\bDay\s*\d+/i.test(t)) return true;
+        return false;
+      }
 
-        function ensure(id, label, sortKey) {
-          if (!map.has(id)) map.set(id, { id, label, sortKey, byPlatform: {} });
-          return map.get(id);
+      function parseDurationSeconds(v) {
+        if (v == null || v === "") return null;
+        if (typeof v === "number" && Number.isFinite(v)) return v;
+        const s = String(v).trim();
+        if (/^\d+(\.\d+)?$/.test(s)) return Number(s);
+        const m = s.match(/^(?:(\d+):)?(\d+):(\d+)$/);
+        if (m) {
+          const h = m[1] ? Number(m[1]) : 0;
+          return h * 3600 + Number(m[2]) * 60 + Number(m[3]);
         }
+        return null;
+      }
 
-        for (const post of posts) {
-          const title = post.title || "";
-          const dayMatch = title.match(/Day\s*(\d+)/i);
-          let slot;
-          if (dayMatch) {
-            const n = Number(dayMatch[1]);
-            slot = ensure(`day-${String(n).padStart(2, "0")}`, `Day ${n}`, `a-${String(n).padStart(3, "0")}`);
-          } else if (/gear|prep|inspiration|flight to taipei|waiting to pick/i.test(title)) {
-            slot = ensure("day-00-prep", "Prep", "a-000");
-          } else {
-            const d = post.date || "unknown";
-            slot = ensure(`date-${d}`, d, `b-${d}`);
-          }
+      /** Instagram is the master timeline: one column per IG post, chrono by IG date. */
+      function buildSlots(posts) {
+        const films = posts.filter(isLandscapeFilm);
+        const matrixPosts = posts.filter((p) => !isLandscapeFilm(p));
+
+        const igPosts = matrixPosts
+          .filter((p) => p.platform === "Instagram")
+          .slice()
+          .sort((a, b) => {
+            const da = a.date || "";
+            const db = b.date || "";
+            if (da !== db) return da < db ? -1 : 1;
+            return String(a.url || "").localeCompare(String(b.url || ""));
+          });
+
+        const slots = igPosts.map((ig) => {
+          const info = classifyTitle(ig.title || "");
+          return {
+            id: `ig-${ig.permalinkId || ig.url || ig.date}`,
+            label: info.label,
+            dayNum: info.dayNum,
+            primaryDay: info.primaryDay,
+            isPrep: info.isPrep,
+            isFilm: false,
+            igDate: ig.date || "",
+            byPlatform: { Instagram: ig },
+          };
+        });
+
+        function put(slot, post) {
           const plat = post.platform;
           const prev = slot.byPlatform[plat];
           if (!prev || (post.views || 0) > (prev.views || 0)) slot.byPlatform[plat] = post;
         }
 
-        return [...map.values()]
-          .sort((a, b) => a.sortKey.localeCompare(b.sortKey))
-          .map((slot) => {
-            const candidates = PLAT_ORDER.map((p) => slot.byPlatform[p]).filter(Boolean);
-            const best = candidates.sort((a, b) => (b.views || 0) - (a.views || 0))[0] || null;
-            return { ...slot, best };
+        function bestTitleMatch(post) {
+          let best = null;
+          let bestScore = 0;
+          for (const slot of slots) {
+            if (slot.byPlatform[post.platform]) continue; // prefer empty columns
+            const ig = slot.byPlatform.Instagram;
+            const score = titleOverlap(post.title || "", ig.title || "");
+            if (score > bestScore) {
+              bestScore = score;
+              best = slot;
+            }
+          }
+          return bestScore >= 3 ? best : null;
+        }
+
+        function primaryDaySlot(n) {
+          return (
+            slots.find((s) => s.dayNum === n && s.primaryDay) ||
+            slots.find((s) => s.dayNum === n) ||
+            null
+          );
+        }
+
+        // Align TikTok / YouTube onto IG columns (ignore their own post dates)
+        for (const post of matrixPosts) {
+          if (post.platform === "Instagram") continue;
+          const info = classifyTitle(post.title || "");
+          let slot = null;
+
+          if (info.isPrep) {
+            slot =
+              slots.find((s) => s.isPrep && s.label === info.label) ||
+              (info.label === "Prep · Gear"
+                ? slots.find((s) =>
+                    /ultra light|almost all|all i.?ll need|gear/i.test(
+                      s.byPlatform.Instagram?.title || ""
+                    )
+                  )
+                : null) ||
+              (info.label === "Prep" ? slots.find((s) => s.isPrep) : null);
+          }
+          if (!slot && info.dayNum != null) {
+            const n = info.dayNum;
+            const primary = primaryDaySlot(n);
+            const emptySameDay = () =>
+              slots.find((s) => s.dayNum === n && !s.byPlatform[post.platform]);
+            if (primary && !primary.byPlatform[post.platform]) {
+              slot = primary;
+            } else if (info.primaryDay) {
+              // Second official beat (e.g. Day 13 part 2) — never overwrite primary
+              slot =
+                slots.find(
+                  (s) => s.dayNum === n && s.primaryDay && !s.byPlatform[post.platform]
+                ) || emptySameDay();
+            } else {
+              // Side post mentioning Day N → empty same-day column, not occupied primary
+              slot = emptySameDay();
+            }
+          }
+          if (!slot) slot = bestTitleMatch(post);
+          if (slot) put(slot, post);
+        }
+
+        // Second pass: leftover TT/YT keep relative upload order, fill remaining
+        // empty IG columns left→right (so all day YT land; late TT gaps stay at end).
+        for (const plat of ["TikTok", "YouTube"]) {
+          const peers = matrixPosts
+            .filter((p) => p.platform === plat)
+            .slice()
+            .sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
+          const used = new Set(
+            slots.map((s) => s.byPlatform[plat]?.url || s.byPlatform[plat]?.permalinkId).filter(Boolean)
+          );
+          const leftover = peers.filter((p) => !used.has(p.url || p.permalinkId));
+          const empties = slots.filter((s) => !s.byPlatform[plat]);
+          for (let i = 0; i < leftover.length && i < empties.length; i++) {
+            put(empties[i], leftover[i]);
+          }
+        }
+
+        // Manual: slide the last day-column YT Short into the final day column
+        // (immediately left of Film) when that last day cell is empty.
+        if (slots.length) {
+          const lastDay = slots[slots.length - 1];
+          if (!lastDay.byPlatform.YouTube) {
+            for (let i = slots.length - 2; i >= 0; i--) {
+              if (slots[i].byPlatform.YouTube) {
+                lastDay.byPlatform.YouTube = slots[i].byPlatform.YouTube;
+                delete slots[i].byPlatform.YouTube;
+                break;
+              }
+            }
+          }
+        }
+
+        // Landscape films after all day columns (far right)
+        for (const film of films) {
+          slots.push({
+            id: `film-${film.permalinkId || film.url}`,
+            label: "Film",
+            dayNum: null,
+            primaryDay: false,
+            isPrep: false,
+            isFilm: true,
+            igDate: film.date || "",
+            byPlatform: { YouTube: film },
           });
+        }
+
+        return slots.map((slot) => {
+          const candidates = PLAT_ORDER.map((p) => slot.byPlatform[p]).filter(Boolean);
+          const best = candidates.sort((a, b) => (b.views || 0) - (a.views || 0))[0] || null;
+          return { ...slot, best };
+        });
+      }
+
+      function classifyTitle(title) {
+        const t = title || "";
+        if (/gear|prep|inspiration|flight to taipei|waiting to pick/i.test(t) && !/📍\s*Day\s*\d+/i.test(t)) {
+          // Day 0 caption also mentions inspiration/flight — keep as Day if pin present
+          if (!/Day\s*\d+/i.test(t) || /waiting to pick|gear to cycle/i.test(t)) {
+            let label = "Prep";
+            if (/gear to cycle|almost all.?ll need|ultra light/i.test(t)) label = "Prep · Gear";
+            else if (/waiting to pick/i.test(t)) label = "Prep · Waiting for bike";
+            return { dayNum: -1, primaryDay: false, isPrep: true, label };
+          }
+        }
+        // Official series beats only — not mid-caption “from Day 4 of…” asides
+        const primary = t.match(
+          /📍\s*Day\s*(\d+)|(?:^|\A)Day\s*(\d+)\s*(?:[-–—:]|\s+of\s+Cycling\b)/im
+        );
+        if (primary) {
+          const n = Number(primary[1] != null ? primary[1] : primary[2]);
+          return { dayNum: n, primaryDay: true, isPrep: false, label: `Day ${n}` };
+        }
+        const mention = t.match(/\bDay\s*(\d+)\b/i);
+        if (mention) {
+          const n = Number(mention[1]);
+          // Passing mention in a side post — keep day link, use title as column label
+          return {
+            dayNum: n,
+            primaryDay: false,
+            isPrep: false,
+            label: shortLabel(t, `Day ${n}`),
+          };
+        }
+        if (/gear|prep|inspiration|flight to taipei|waiting to pick/i.test(t)) {
+          return { dayNum: -1, primaryDay: false, isPrep: true, label: "Prep" };
+        }
+        return { dayNum: null, primaryDay: false, isPrep: false, label: shortLabel(t, "Post") };
+      }
+
+      const TITLE_STOP = new Set([
+        "this",
+        "that",
+        "with",
+        "from",
+        "have",
+        "your",
+        "about",
+        "around",
+        "just",
+        "when",
+        "what",
+        "they",
+        "them",
+        "taiwan",
+        "cycling",
+        "cycle",
+        "bike",
+      ]);
+
+      function titleOverlap(a, b) {
+        const na = normTitle(a);
+        const nb = normTitle(b);
+        if (!na || !nb) return 0;
+        if (na === nb) return 10;
+        if (na.length >= 16 && (na.includes(nb.slice(0, 24)) || nb.includes(na.slice(0, 24)))) {
+          return 6;
+        }
+        const ta = new Set(
+          na.split(" ").filter((w) => w.length > 3 && !TITLE_STOP.has(w))
+        );
+        const tb = new Set(
+          nb.split(" ").filter((w) => w.length > 3 && !TITLE_STOP.has(w))
+        );
+        let hit = 0;
+        for (const w of tb) if (ta.has(w)) hit += 1;
+        return hit;
+      }
+
+      function normTitle(t) {
+        return String(t || "")
+          .toLowerCase()
+          .replace(/#[\w]+/g, " ")
+          .replace(/cycling\s*1,?000\s*km around taiwan/g, " ")
+          .replace(/[^\w\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function shortLabel(title, fallback) {
+        const t = (title || "").replace(/\s+/g, " ").trim();
+        if (!t) return fallback;
+        return t.length > 28 ? t.slice(0, 28) + "…" : t;
       }
 
       /** Prefer Instagram for the primary day row; fall back to best if no IG. */
@@ -154,10 +386,11 @@
         const thumb = post.thumbnail
           ? `<img src="${escapeHtml(post.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
           : "";
-        const isLong = post.platform === "YouTube" && (post.type || "").toLowerCase() !== "short";
+        // YT Shorts (and day beats) stay tall 9:16; only landscape films go wide
+        const isWide = isLandscapeFilm(post);
         return `
-          <a class="phone-card ${m.className}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
-            <div class="phone-screen ${isLong ? "is-long-screen" : ""}">
+          <a class="phone-card ${m.className}${isWide ? " is-wide-film" : ""}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
+            <div class="phone-screen ${isWide ? "is-wide-screen" : "is-tall-screen"}">
               ${thumb}
               <div class="phone-screen-scrim"></div>
               <div class="phone-top-bar">
@@ -177,23 +410,19 @@
           </a>`;
       }
 
-      function renderBlankSlot(platform) {
-        const m = meta(platform);
-        return `
-          <div class="matrix-blank-slot">
-            <span class="plat-logo-badge muted ${m.key}">${m.logo}</span>
-            <strong>No ${escapeHtml(platform)} yet</strong>
-            <span>Blank slot</span>
-          </div>`;
+      function renderBlankSlot() {
+        return `<div class="matrix-blank-slot" aria-hidden="true"></div>`;
       }
 
-      function renderPeak(project, expanded) {
+      function renderPeak(project) {
         const peak = project.peak;
         const m = meta(peak.platform);
+        const t = project.totals || {};
+        const bp = t.by_platform || {};
         return `
           <div class="timeline-pinned-left peak-panel">
             <div class="timeline-col-label">
-              <span>Peak post</span>
+              <span>Highlight</span>
               <span class="fixed-pill">Best</span>
             </div>
             <a class="phone-card ${m.className} peak-card-link" href="${escapeHtml(peak.url)}" target="_blank" rel="noopener">
@@ -212,78 +441,71 @@
                   </span>
                 </div>
                 <div class="phone-bottom-bar">
-                  <div class="clip-title" style="color:#fff;-webkit-line-clamp:3">${escapeHtml(peak.title || "Peak post")}</div>
+                  <div class="clip-title" style="color:#fff;-webkit-line-clamp:3">${escapeHtml(peak.title || "Highlight")}</div>
                 </div>
               </div>
             </a>
-            <div class="peak-stats-drawer ${expanded ? "is-open" : ""}" ${expanded ? "" : "hidden"}>
-              <dl class="peak-stat-list">
-                <div><dt>Views</dt><dd>${fmt(peak.views)}</dd></div>
-                <div><dt>Likes</dt><dd>${fmt(peak.likes)}</dd></div>
-                <div><dt>Comments</dt><dd>${fmt(peak.comments)}</dd></div>
-                <div><dt>Shares</dt><dd>${fmt(peak.shares)}</dd></div>
-                <div><dt>Saves</dt><dd>${fmt(peak.saves)}</dd></div>
-                ${peak.reach ? `<div><dt>Reach</dt><dd>${fmt(peak.reach)}</dd></div>` : ""}
-                <div><dt>Platform</dt><dd>${escapeHtml(peak.platform)}</dd></div>
-                <div><dt>Date</dt><dd>${escapeHtml(peak.date || "—")}</dd></div>
+            <div class="peak-stats-drawer is-open">
+              <dl class="peak-stat-list project-totals-list">
+                <div><dt>Total views</dt><dd>${fmt(t.views)}</dd></div>
+                <div><dt>Likes</dt><dd>${fmt(t.likes)}</dd></div>
               </dl>
               <div class="peak-platform-peaks">
-                <div class="timeline-col-label" style="margin-top: 0.2rem"><span>Best per platform</span></div>
-                ${Object.values(project.peaksByPlatform || {})
-                  .map((p) => {
-                    const pm = meta(p.platform);
+                <div class="timeline-col-label" style="margin-top: 0.35rem"><span>Total views per platform</span></div>
+                ${PLAT_ORDER.map((plat) => {
+                    const pm = meta(plat);
+                    const views = ((bp[plat] || {}).views) || 0;
                     return `
-                      <a class="mini-peak" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
+                      <div class="mini-peak is-static" title="${escapeHtml(plat)} total views">
                         <span class="mini-peak-plat"><span class="plat-logo-badge sm ${pm.key}">${pm.logo}</span></span>
                         <span class="views-chip solid">
                           <span class="views-icon">${pm.viewsIcon}</span>
-                          ${fmt(p.views)}
+                          ${fmt(views)}
                         </span>
-                      </a>`;
-                  })
-                  .join("")}
+                      </div>`;
+                  }).join("")}
               </div>
             </div>
           </div>`;
       }
 
-      function renderPlatRow(platform, slots, { peek = false } = {}) {
+      function renderPlatRow(platform, slots) {
         const m = meta(platform);
         return `
-          <div class="matrix-plat-row ${peek ? "is-peek" : ""}" data-plat-row="${escapeHtml(m.key)}">
+          <div class="matrix-plat-row" data-plat-row="${escapeHtml(m.key)}">
             <div class="matrix-plat-gutter">
               <span class="plat-logo-badge ${m.key}" title="${escapeHtml(platform)}">${m.logo}</span>
               <span class="matrix-plat-name">${escapeHtml(m.short)}</span>
             </div>
             ${slots
               .map((slot) => {
+                const filmClass = slot.isFilm ? " is-film-col" : "";
                 const post =
                   platform === "Instagram" ? primaryPost(slot) : slot.byPlatform[platform];
                 // For IG row: if primary fell back to non-IG, still show that best post
                 if (platform === "Instagram") {
                   const ig = slot.byPlatform.Instagram;
                   if (ig) {
-                    return `<div class="matrix-cell">${renderPhoneCard(ig)}</div>`;
+                    return `<div class="matrix-cell${filmClass}">${renderPhoneCard(ig)}</div>`;
                   }
                   // No IG — blank for Instagram-focused row (other platforms live in TT/YT rows)
-                  return `<div class="matrix-cell">${renderBlankSlot("Instagram")}</div>`;
+                  return `<div class="matrix-cell${filmClass}">${renderBlankSlot()}</div>`;
                 }
                 if (!post) {
-                  return `<div class="matrix-cell">${renderBlankSlot(platform)}</div>`;
+                  return `<div class="matrix-cell${filmClass}">${renderBlankSlot()}</div>`;
                 }
-                return `<div class="matrix-cell">${renderPhoneCard(post)}</div>`;
+                return `<div class="matrix-cell${filmClass}">${renderPhoneCard(post)}</div>`;
               })
               .join("")}
           </div>`;
       }
 
-      function renderProject(project, expanded) {
+      function renderProject(project) {
         const t = project.totals || {};
-        const bp = t.by_platform || {};
         const slots = project._slots;
 
         return `
-          <article class="project-block ${expanded ? "is-expanded" : "is-collapsed"}" id="proj-${project.id}" data-project-id="${project.id}">
+          <article class="project-block is-collapsed" id="proj-${project.id}" data-project-id="${project.id}">
             <div class="project-block-header">
               <div>
                 <div class="project-title-row">
@@ -295,102 +517,126 @@
                 </div>
                 <p class="project-sub">${escapeHtml(project.summary || "")}</p>
               </div>
-              ${
-                expanded
-                  ? `<div class="project-controls">
-                      <button type="button" class="btn btn-primary btn-sm collapse-btn" data-collapse="1">
-                        ↑ Collapse
-                      </button>
-                    </div>`
-                  : ""
-              }
-            </div>
-
-            <div class="project-stats-bar">
-              <div class="project-stat"><span class="ps-value">${fmt(t.views)}</span><span class="ps-label">Total views</span></div>
-              <div class="project-stat"><span class="ps-value">${fmt(t.likes)}</span><span class="ps-label">Likes</span></div>
-              <div class="project-stat"><span class="ps-value">${fmt((bp.Instagram || {}).views)}</span><span class="ps-label">IG views</span></div>
-              <div class="project-stat"><span class="ps-value">${fmt((bp.TikTok || {}).views)}</span><span class="ps-label">TT views</span></div>
-              <div class="project-stat"><span class="ps-value">${fmt((bp.YouTube || {}).views)}</span><span class="ps-label">YT views</span></div>
+              <div class="project-controls">
+                <button type="button" class="btn btn-primary btn-sm collapse-btn" data-collapse="1" hidden>
+                  ↑ Collapse
+                </button>
+              </div>
             </div>
 
             <div class="timeline-split is-matrix">
-              ${renderPeak(project, expanded)}
+              ${renderPeak(project)}
               <div class="timeline-scroll-right matrix-scroll-right proj-matrix">
                 <div class="timeline-col-label" style="margin-bottom: 0.55rem">
-                  <span>Day columns · Instagram row + TikTok / YouTube underneath</span>
-                  <span class="hint-pill">${expanded ? "Expanded" : "Collapsed · peek TikTok below"}</span>
+                  <span>Instagram order · TikTok / YouTube aligned underneath</span>
+                  <span class="hint-pill proj-density-pill">Collapsed · peek TikTok below</span>
                 </div>
                 <div class="matrix-header-row">
                   <div class="matrix-plat-gutter" aria-hidden="true"></div>
                   ${slots
                     .map(
                       (slot) =>
-                        `<div class="matrix-col-hdr" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
+                        `<div class="matrix-col-hdr${slot.isFilm ? " is-film-col" : ""}" title="${escapeHtml(slot.label)}">${escapeHtml(slot.label)}</div>`
                     )
                     .join("")}
                 </div>
 
                 <div class="proj-matrix-body">
                   ${renderPlatRow("Instagram", slots)}
-                  ${renderPlatRow("TikTok", slots, { peek: !expanded })}
-                  <div class="proj-yt-wrap ${expanded ? "is-open" : ""}" ${expanded ? "" : "hidden"}>
+                  ${renderPlatRow("TikTok", slots)}
+                  <div class="proj-yt-wrap is-open">
                     ${renderPlatRow("YouTube", slots)}
                   </div>
                 </div>
 
-                ${
-                  expanded
-                    ? `<div class="proj-collapse-bar">
-                        <button type="button" class="btn btn-primary collapse-btn" data-collapse="1">
-                          ↑ Collapse to Instagram + TikTok peek
-                        </button>
-                      </div>`
-                    : `<button type="button" class="proj-expand-peek" data-expand="1" aria-label="Expand to show TikTok and YouTube rows">
-                        <span class="proj-expand-fade" aria-hidden="true"></span>
-                        <span class="proj-expand-cta">
-                          <span class="plat-logo-badge tiktok">${ICONS.tiktok}</span>
-                          <span>Show TikTok + YouTube</span>
-                          <span class="chevron down">${ICONS.chevron}</span>
-                        </span>
-                      </button>`
-                }
+                <button type="button" class="proj-expand-peek" data-expand="1" aria-label="Click to see more">
+                  <span class="proj-expand-fade" aria-hidden="true"></span>
+                  <span class="proj-expand-cta">
+                    <span>Click to see more</span>
+                    <span class="chevron down">${ICONS.chevron}</span>
+                  </span>
+                </button>
+                <div class="proj-collapse-bar" hidden>
+                  <button type="button" class="btn btn-primary collapse-btn" data-collapse="1">
+                    ↑ Collapse
+                  </button>
+                </div>
               </div>
             </div>
           </article>`;
       }
 
-      const uiState = {};
       let PROJECTS = [];
 
-      function getState(id) {
-        if (!uiState[id]) uiState[id] = { expanded: false };
-        return uiState[id];
+      function setExpanded(id, expanded) {
+        const block = document.getElementById(`proj-${id}`);
+        if (!block) return;
+        block.classList.toggle("is-expanded", expanded);
+        block.classList.toggle("is-collapsed", !expanded);
+        const pill = block.querySelector(".proj-density-pill");
+        if (pill) pill.textContent = expanded ? "Expanded" : "Collapsed · peek TikTok below";
+        const expandBtn = block.querySelector(".proj-expand-peek");
+        if (expandBtn) expandBtn.hidden = expanded;
+        const collapseBar = block.querySelector(".proj-collapse-bar");
+        if (collapseBar) collapseBar.hidden = !expanded;
+        const headerCollapse = block.querySelector(".project-controls .collapse-btn");
+        if (headerCollapse) headerCollapse.hidden = !expanded;
+      }
+
+      function collapseAllExcept(keepId) {
+        PROJECTS.forEach((p) => {
+          if (p.id !== keepId) setExpanded(p.id, false);
+        });
+      }
+
+      function expandProject(id) {
+        collapseAllExcept(id);
+        setExpanded(id, true);
+      }
+
+      function collapseProject(id) {
+        setExpanded(id, false);
+        document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
       function paint() {
         const mount = document.getElementById("projects-mount");
-        mount.innerHTML = PROJECTS.map((p) => renderProject(p, getState(p.id).expanded)).join("");
+        // Full matrix always rendered; collapse is CSS density only.
+        mount.innerHTML = PROJECTS.map((p) => renderProject(p)).join("");
         wire(mount);
       }
 
       function wire(root) {
         root.querySelectorAll("[data-expand]").forEach((el) => {
-          el.addEventListener("click", () => {
+          el.addEventListener("click", (e) => {
+            e.stopPropagation();
             const id = el.closest(".project-block").dataset.projectId;
-            getState(id).expanded = true;
-            paint();
+            expandProject(id);
           });
         });
         root.querySelectorAll("[data-collapse]").forEach((el) => {
-          el.addEventListener("click", () => {
+          el.addEventListener("click", (e) => {
+            e.stopPropagation();
             const id = el.closest(".project-block").dataset.projectId;
-            getState(id).expanded = false;
-            paint();
-            document.getElementById(`proj-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            collapseProject(id);
+          });
+        });
+        root.querySelectorAll(".project-block").forEach((block) => {
+          block.addEventListener("click", (e) => {
+            // Focusing another project collapses the open one.
+            const id = block.dataset.projectId;
+            const open = root.querySelector(".project-block.is-expanded");
+            if (open && open !== block) setExpanded(open.dataset.projectId, false);
+            // Don't auto-expand on every click — only expand control does that.
+            void id;
           });
         });
       }
+
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".project-block, .proj-expand-peek, [data-collapse]")) return;
+        PROJECTS.forEach((p) => setExpanded(p.id, false));
+      });
 
       async function boot() {
         const mount = document.getElementById("projects-mount");
