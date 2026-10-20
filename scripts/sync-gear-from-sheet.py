@@ -3,8 +3,9 @@
 
 Typical flow:
   1. Dennis adds rows in the Google Sheet (Item + Used on is enough to start).
-  2. We fill research / affiliate / placement columns.
-  3. Export CSV or pull via Composio → run this script → commit + deploy.
+  2. He can fill What I like / How I use for the Gear page notes.
+  3. We fill research / affiliate / placement columns.
+  4. Export CSV or pull via Composio → run this script → commit + deploy.
 
 Usage:
   python3 scripts/sync-gear-from-sheet.py --csv path/to/dennis-gear-loadout.csv
@@ -29,12 +30,31 @@ BADGE_LABELS = {
 }
 
 CATEGORIES = [
-    {"id": "all", "label": "All Gear"},
-    {"id": "camera", "label": "Camera & Audio"},
-    {"id": "trail", "label": "Trek & Trail"},
-    {"id": "bike", "label": "Bikepacking"},
-    {"id": "apparel", "label": "Apparel"},
-    {"id": "travel", "label": "eSIM & Travel"},
+    {
+        "id": "camera",
+        "label": "Camera & Audio",
+        "blurb": "How I film and record on the road — action cams, mounts, audio.",
+    },
+    {
+        "id": "trail",
+        "label": "Trek & Trail",
+        "blurb": "On-foot days — vests, shoes, anything that survives long miles.",
+    },
+    {
+        "id": "bike",
+        "label": "Bikepacking",
+        "blurb": "Bags, straps, and repair bits from Taiwan / Korea bike days.",
+    },
+    {
+        "id": "apparel",
+        "label": "Apparel",
+        "blurb": "Clothes that show up on camera and survive the day.",
+    },
+    {
+        "id": "travel",
+        "label": "eSIM & Travel",
+        "blurb": "Connectivity and travel basics that keep the trip moving.",
+    },
 ]
 
 
@@ -54,6 +74,10 @@ def row_to_item(row: dict) -> dict | None:
         return None
     badge = cell(row, "Badge type") or "exact-only"
     link = cell(row, "Public link URL")
+    desc = cell(row, "Public description")
+    why = cell(row, "What I like", "Why I like it") or desc
+    how = cell(row, "How I use", "How I use it")
+    image = cell(row, "Image URL", "Product image URL")
     return {
         "name": name,
         "brand": cell(row, "Brand"),
@@ -61,11 +85,14 @@ def row_to_item(row: dict) -> dict | None:
         "badgeType": badge,
         "badgeLabel": BADGE_LABELS.get(badge, badge),
         "usedIn": cell(row, "Used on (project/trip)"),
-        "desc": cell(row, "Public description"),
+        "desc": desc,
+        "whyLike": why,
+        "howIUse": how,
         "exactItem": cell(row, "Exact product"),
         "whereBought": cell(row, "Where bought"),
         "linkLabel": cell(row, "Public link label") or None,
         "linkUrl": link or None,
+        "imageUrl": image or None,
         "section": cell(row, "Gear page section"),
         "affiliateAvailable": cell(row, "Affiliate available?"),
         "showOnPage": True,
