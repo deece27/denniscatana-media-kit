@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Gear &amp; Loadouts — Dennis Catana</title>
+    <title>Gear — Dennis Catana</title>
     <meta
       name="description"
-      content="Field-tested camera, trek, bike, and apparel loadouts from Dennis Catana — honest affiliate vs non-affiliate links synced from the Gear spreadsheet."
+      content="Kits Dennis actually uses on trips and challenges — camera, trail, bike, apparel, travel — with honest notes and shop links when they exist."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,40 +29,41 @@
 
     <main id="top" class="wrap-wide">
       <section class="hero" style="padding: 1.75rem 0 1.25rem; border-top: none;">
-        <p class="eyebrow">Field-tested kits · Sheet-synced loadout</p>
+        <p class="eyebrow">Real kits · Sheet-synced</p>
         <h1 style="font-size: clamp(1.9rem, 4.5vw, 2.65rem); margin-bottom: 0.65rem;">
-          Gear &amp; Loadouts
+          Gear
         </h1>
         <p class="lede" style="max-width: 48rem; margin-bottom: 0.75rem;">
-          What I actually carry on multi-day bike challenges and mountain treks.
-          Some pieces are Taobao finds with Western matches; some have affiliate or partner links;
-          some stay listed with <strong>no affiliate</strong> so the kit stays honest.
+          Stuff I actually carry on trips and challenges — not a product catalog.
+          Open a kit below, read why I use each piece, and shop the link when there is one.
+          Some items stay <strong>no affiliate</strong> so the loadout stays honest.
         </p>
         <div class="meta-row" style="margin-bottom: 0.25rem;">
           <span class="pill" id="stat-count"><strong>Items</strong> —</span>
-          <span class="pill"><strong>Source</strong> Google Sheet</span>
+          <span class="pill" id="stat-kits"><strong>Kits</strong> —</span>
           <span class="pill" id="stat-synced"><strong>Synced</strong> —</span>
         </div>
       </section>
 
       <div class="gear-toolbar">
-        <div class="gear-filters" id="gear-cat-buttons"></div>
+        <p class="gear-toolbar-hint" id="gear-view-hint">Pick a kit to open — same idea as Projects expand.</p>
         <div>
           <button type="button" class="filter-btn" id="toggle-affiliate-only">
-            Showing: Full Honest Kit (Click for Affiliate-Only)
+            Showing: Full Honest Kit
           </button>
         </div>
       </div>
 
-      <p class="gear-result-count" id="gear-result-count">Loading…</p>
-      <div class="gear-grid" id="gear-grid-mount"></div>
+      <div id="gear-mount" class="gear-mount" aria-live="polite">
+        <p class="gear-empty">Loading…</p>
+      </div>
 
       <section style="margin-top: 2rem;">
         <div class="contact-box">
-          <h2>Want me to field-test your gear?</h2>
+          <h2>Want me to field-test something?</h2>
           <p>
-            Upcoming: <strong>Korea bike days</strong> and more trek/bike series.
-            Available for trail, bike, apparel, and eSIM integrations.
+            Open to partnerships that fit stories and challenges — travel, language, bike, trek, camera —
+            not outdoor-only brands for the sake of it.
           </p>
           <a class="btn btn-primary" href="mailto:denniscatana@me.com">Inquire about gear partnerships</a>
         </div>
@@ -81,17 +82,49 @@
     </footer>
 
     <script>
+      const CATEGORY_META = {
+        camera: {
+          id: "camera",
+          label: "Camera & Audio",
+          blurb: "How I film and record on the road — action cams, mounts, audio.",
+          tone: "tone-camera",
+        },
+        trail: {
+          id: "trail",
+          label: "Trek & Trail",
+          blurb: "On-foot days — vests, shoes, anything that survives long miles.",
+          tone: "tone-trail",
+        },
+        bike: {
+          id: "bike",
+          label: "Bikepacking",
+          blurb: "Bags, straps, and repair bits from Taiwan / Korea bike days.",
+          tone: "tone-bike",
+        },
+        apparel: {
+          id: "apparel",
+          label: "Apparel",
+          blurb: "Clothes that show up on camera and survive the day.",
+          tone: "tone-apparel",
+        },
+        travel: {
+          id: "travel",
+          label: "eSIM & Travel",
+          blurb: "Connectivity and travel basics that keep the trip moving.",
+          tone: "tone-travel",
+        },
+        other: {
+          id: "other",
+          label: "Other",
+          blurb: "Everything else that earns a spot in the kit.",
+          tone: "tone-other",
+        },
+      };
+
       let GEAR_ITEMS = [];
-      let CATEGORIES = [
-        { id: "all", label: "All Gear" },
-        { id: "camera", label: "Camera & Audio" },
-        { id: "trail", label: "Trek & Trail" },
-        { id: "bike", label: "Bikepacking" },
-        { id: "apparel", label: "Apparel" },
-        { id: "travel", label: "eSIM & Travel" },
-      ];
-      let activeCategory = "all";
+      let CATEGORY_ORDER = ["camera", "trail", "bike", "apparel", "travel", "other"];
       let affiliateOnly = false;
+      const uiState = {};
 
       function escapeHtml(s) {
         return String(s ?? "")
@@ -101,109 +134,267 @@
           .replace(/"/g, "&quot;");
       }
 
-      function buildCategoryButtons() {
-        const mount = document.getElementById("gear-cat-buttons");
-        mount.innerHTML = CATEGORIES.map(
-          (c) =>
-            `<button type="button" class="filter-btn${c.id === activeCategory ? " active" : ""}" data-cat="${escapeHtml(c.id)}">${escapeHtml(c.label)}</button>`
-        ).join("");
-        mount.querySelectorAll(".filter-btn").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            mount.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
-            activeCategory = btn.getAttribute("data-cat");
-            renderGear();
-          });
-        });
-      }
-
       function hasAffiliateLink(item) {
         return Boolean(item.linkUrl) && item.badgeType !== "exact-only";
       }
 
-      function renderGear() {
-        const mount = document.getElementById("gear-grid-mount");
-        const filtered = GEAR_ITEMS.filter((item) => {
-          if (activeCategory !== "all" && item.category !== activeCategory) return false;
+      function visibleItems() {
+        return GEAR_ITEMS.filter((item) => {
           if (affiliateOnly && !hasAffiliateLink(item)) return false;
           return true;
         });
+      }
 
-        document.getElementById("gear-result-count").textContent =
-          `${filtered.length} item${filtered.length === 1 ? "" : "s"}` +
-          (filtered.length !== GEAR_ITEMS.length ? ` (of ${GEAR_ITEMS.length})` : "");
+      function itemsForCategory(catId) {
+        return visibleItems().filter((i) => i.category === catId);
+      }
 
-        if (!filtered.length) {
+      function categoryIdsWithItems() {
+        const present = new Set(visibleItems().map((i) => i.category || "other"));
+        const ordered = CATEGORY_ORDER.filter((id) => present.has(id));
+        for (const id of present) {
+          if (!ordered.includes(id)) ordered.push(id);
+        }
+        return ordered;
+      }
+
+      function getState(id) {
+        if (!uiState[id]) uiState[id] = { expanded: false };
+        return uiState[id];
+      }
+
+      function metaFor(catId) {
+        return (
+          CATEGORY_META[catId] || {
+            id: catId,
+            label: catId,
+            blurb: "",
+            tone: "tone-other",
+          }
+        );
+      }
+
+      function affiliateNote(item) {
+        if (item.badgeType === "exact-only") {
+          return "No affiliate — listed for full loadout honesty";
+        }
+        if (item.badgeType === "match") {
+          return "Taobao purchase · Western match linked when available";
+        }
+        if (hasAffiliateLink(item)) {
+          return "May include affiliate / partner link";
+        }
+        return "Shop link · affiliate pending";
+      }
+
+      function renderItemCard(item) {
+        const why = item.whyLike || item.desc || "";
+        const how = item.howIUse || "";
+        const linkBlock = item.linkUrl
+          ? `<a class="btn btn-primary btn-sm gear-item-shop" href="${escapeHtml(item.linkUrl)}" target="_blank" rel="noopener sponsored">${escapeHtml(item.linkLabel || "Shop →")}</a>`
+          : `<span class="gear-item-no-link">No shop link yet</span>`;
+
+        const initial = escapeHtml((item.brand || item.name || "?").trim().charAt(0).toUpperCase() || "?");
+
+        return `
+          <article class="gear-item-card" data-badge="${escapeHtml(item.badgeType)}">
+            <div class="gear-item-visual" aria-hidden="true">
+              ${
+                item.imageUrl
+                  ? `<img src="${escapeHtml(item.imageUrl)}" alt="" loading="lazy" />`
+                  : `<span class="gear-item-mono">${initial}</span>`
+              }
+              <span class="gear-badge ${escapeHtml(item.badgeType)}">${escapeHtml(item.badgeLabel)}</span>
+            </div>
+            <div class="gear-item-body">
+              <p class="gear-item-brand">${escapeHtml(item.brand || "—")}</p>
+              <h3 class="gear-item-name">${escapeHtml(item.name)}</h3>
+              ${
+                item.usedIn
+                  ? `<p class="gear-item-used"><span>Used on</span> ${escapeHtml(item.usedIn)}</p>`
+                  : ""
+              }
+              ${why ? `<p class="gear-item-why"><strong>Why I carry it</strong> ${escapeHtml(why)}</p>` : ""}
+              ${how ? `<p class="gear-item-how"><strong>How I use it</strong> ${escapeHtml(how)}</p>` : ""}
+              ${item.exactItem ? `<p class="gear-item-exact"><strong>Exact</strong> ${escapeHtml(item.exactItem)}</p>` : ""}
+              <p class="gear-aff-note">${escapeHtml(affiliateNote(item))}</p>
+              <div class="gear-item-cta">${linkBlock}</div>
+            </div>
+          </article>`;
+      }
+
+      function renderCategoryCard(catId, items, expanded) {
+        const meta = metaFor(catId);
+        const peek = items.slice(0, 4);
+
+        if (expanded) {
+          return `
+            <article class="gear-kit is-expanded" id="kit-${escapeHtml(catId)}" data-kit="${escapeHtml(catId)}">
+              <div class="gear-kit-header">
+                <div>
+                  <p class="eyebrow">${items.length} item${items.length === 1 ? "" : "s"}</p>
+                  <h2 class="gear-kit-title">${escapeHtml(meta.label)}</h2>
+                  <p class="gear-kit-blurb">${escapeHtml(meta.blurb)}</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" data-collapse="${escapeHtml(catId)}">
+                  ↑ Collapse
+                </button>
+              </div>
+              <div class="gear-item-grid">
+                ${items.map(renderItemCard).join("")}
+              </div>
+              <div class="gear-kit-footer">
+                <button type="button" class="btn btn-primary" data-collapse="${escapeHtml(catId)}">
+                  ↑ Back to kits
+                </button>
+              </div>
+            </article>`;
+        }
+
+        return `
+          <button type="button" class="gear-kit-card ${escapeHtml(meta.tone)}" data-expand="${escapeHtml(catId)}" aria-label="Open ${escapeHtml(meta.label)} kit">
+            <div class="gear-kit-card-hero">
+              <span class="gear-kit-card-title">${escapeHtml(meta.label)}</span>
+              <span class="gear-kit-count">${items.length} item${items.length === 1 ? "" : "s"}</span>
+            </div>
+            <div class="gear-kit-card-peek">
+              ${
+                peek.length
+                  ? peek
+                      .map(
+                        (item) =>
+                          `<span class="gear-peek-chip" title="${escapeHtml(item.name)}">${escapeHtml(
+                            (item.brand || item.name || "").split(" ")[0] || "•"
+                          )}</span>`
+                      )
+                      .join("")
+                  : `<span class="gear-peek-empty">No items yet</span>`
+              }
+              <span class="gear-kit-open-label">Open kit →</span>
+            </div>
+          </button>`;
+      }
+
+      function setHashForKit(id) {
+        const next = id ? `#kit-${id}` : "#";
+        if (location.hash !== next) {
+          history.replaceState(null, "", next === "#" ? location.pathname + location.search : next);
+        }
+      }
+
+      function paint() {
+        const mount = document.getElementById("gear-mount");
+        const ids = categoryIdsWithItems();
+        const anyExpanded = ids.some((id) => getState(id).expanded);
+
+        document.getElementById("gear-view-hint").textContent = anyExpanded
+          ? "Showing kit contents — collapse to return to all kits."
+          : "Pick a kit to open — same idea as Projects expand.";
+
+        if (!ids.length) {
           mount.innerHTML = `<p class="gear-empty">No gear matches these filters.</p>`;
+          mount.classList.remove("is-expanded-view");
           return;
         }
 
-        mount.innerHTML = filtered
-          .map((item) => {
-            const affiliateNote =
-              item.badgeType === "exact-only"
-                ? `<span class="gear-aff-note">No affiliate — listed for full loadout honesty</span>`
-                : item.badgeType === "match"
-                  ? `<span class="gear-aff-note">Taobao purchase · Western match linked when available</span>`
-                  : hasAffiliateLink(item)
-                    ? `<span class="gear-aff-note">May include affiliate / partner link</span>`
-                    : `<span class="gear-aff-note">Shop link · affiliate pending</span>`;
+        if (anyExpanded) {
+          mount.classList.add("is-expanded-view");
+          const openId = ids.find((id) => getState(id).expanded);
+          setHashForKit(openId);
+          mount.innerHTML = renderCategoryCard(openId, itemsForCategory(openId), true);
+        } else {
+          mount.classList.remove("is-expanded-view");
+          setHashForKit(null);
+          mount.innerHTML = `<div class="gear-kit-grid">${ids
+            .map((id) => renderCategoryCard(id, itemsForCategory(id), false))
+            .join("")}</div>`;
+        }
 
-            const linkBlock = item.linkUrl
-              ? `<a class="btn btn-primary btn-sm" style="align-self: flex-start;" href="${escapeHtml(item.linkUrl)}" target="_blank" rel="noopener sponsored">${escapeHtml(item.linkLabel || "Open →")}</a>`
-              : `<span style="font-size: 0.78rem; font-style: italic; color: var(--muted);">No public shop link yet</span>`;
+        wire(mount);
+      }
 
-            return `
-          <article class="gear-card" data-category="${escapeHtml(item.category)}" data-badge="${escapeHtml(item.badgeType)}">
-            <div>
-              <div class="gear-card-top">
-                <h3 style="margin: 0;">${escapeHtml(item.name)}</h3>
-                <span class="gear-badge ${escapeHtml(item.badgeType)}">${escapeHtml(item.badgeLabel)}</span>
-              </div>
-              <p style="font-size: 0.84rem; font-weight: 600; color: var(--accent); margin: 0.4rem 0 0.25rem;">
-                Used in: ${escapeHtml(item.usedIn || "—")}
-              </p>
-              <p style="margin: 0; color: var(--muted); font-size: 0.92rem;">
-                ${escapeHtml(item.desc || "")}
-              </p>
-              ${affiliateNote}
-            </div>
-            <div class="gear-meta-line">
-              <span><strong>Exact item:</strong> ${escapeHtml(item.exactItem || "—")}</span>
-              ${linkBlock}
-            </div>
-          </article>`;
-          })
-          .join("");
+      function wire(root) {
+        root.querySelectorAll("[data-expand]").forEach((el) => {
+          el.addEventListener("click", () => {
+            const id = el.getAttribute("data-expand");
+            Object.keys(uiState).forEach((k) => {
+              uiState[k].expanded = false;
+            });
+            getState(id).expanded = true;
+            paint();
+            document.getElementById(`kit-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+        root.querySelectorAll("[data-collapse]").forEach((el) => {
+          el.addEventListener("click", () => {
+            const id = el.getAttribute("data-collapse");
+            getState(id).expanded = false;
+            paint();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        });
+      }
+
+      function applyHash() {
+        const m = (location.hash || "").match(/^#kit-([a-z0-9_-]+)$/i);
+        Object.keys(uiState).forEach((k) => {
+          uiState[k].expanded = false;
+        });
+        if (m && categoryIdsWithItems().includes(m[1])) {
+          getState(m[1]).expanded = true;
+        }
       }
 
       async function init() {
-        buildCategoryButtons();
         const toggleBtn = document.getElementById("toggle-affiliate-only");
         toggleBtn.addEventListener("click", () => {
           affiliateOnly = !affiliateOnly;
           toggleBtn.classList.toggle("active", affiliateOnly);
           toggleBtn.textContent = affiliateOnly
-            ? "Showing: Only Affiliate / Partner Links"
-            : "Showing: Full Honest Kit (Click for Affiliate-Only)";
-          renderGear();
+            ? "Showing: Affiliate / Partner Only"
+            : "Showing: Full Honest Kit";
+          Object.keys(uiState).forEach((k) => {
+            uiState[k].expanded = false;
+          });
+          paint();
         });
 
         try {
           const res = await fetch("assets/gear-data.json", { cache: "no-cache" });
           if (!res.ok) throw new Error("Failed to load gear-data.json");
           const data = await res.json();
+
           if (Array.isArray(data.categories) && data.categories.length) {
-            CATEGORIES = data.categories;
-            buildCategoryButtons();
+            const fromData = data.categories.map((c) => c.id).filter((id) => id && id !== "all");
+            if (fromData.length) CATEGORY_ORDER = fromData;
+            data.categories.forEach((c) => {
+              if (!c.id || c.id === "all") return;
+              if (!CATEGORY_META[c.id]) {
+                CATEGORY_META[c.id] = {
+                  id: c.id,
+                  label: c.label || c.id,
+                  blurb: c.blurb || "",
+                  tone: "tone-other",
+                };
+              } else {
+                if (c.label) CATEGORY_META[c.id].label = c.label;
+                if (c.blurb) CATEGORY_META[c.id].blurb = c.blurb;
+              }
+            });
           }
+
           GEAR_ITEMS = (data.items || []).filter((i) => i.showOnPage !== false);
           document.getElementById("stat-count").innerHTML = `<strong>Items</strong> ${GEAR_ITEMS.length}`;
+          document.getElementById("stat-kits").innerHTML = `<strong>Kits</strong> ${categoryIdsWithItems().length}`;
           document.getElementById("stat-synced").innerHTML = `<strong>Synced</strong> ${(data.generatedAt || "").slice(0, 10) || "—"}`;
-          renderGear();
+          applyHash();
+          paint();
+          window.addEventListener("hashchange", () => {
+            applyHash();
+            paint();
+          });
         } catch (err) {
-          document.getElementById("gear-result-count").textContent = "Could not load gear data.";
-          document.getElementById("gear-grid-mount").innerHTML = `<p class="gear-empty">${escapeHtml(err.message || err)}</p>`;
+          document.getElementById("gear-mount").innerHTML = `<p class="gear-empty">${escapeHtml(err.message || err)}</p>`;
         }
       }
 

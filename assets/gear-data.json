@@ -1,31 +1,32 @@
 {
-  "generatedAt": "2026-10-19T12:54:00Z",
+  "generatedAt": "2026-10-20T05:50:43Z",
   "sourceSheet": "https://docs.google.com/spreadsheets/d/1iP9jVPMB6Di0mt2drN-1EEDP0DDAorksRrSqfvfav5I/edit",
   "sheetTab": "Gear",
   "categories": [
     {
-      "id": "all",
-      "label": "All Gear"
-    },
-    {
       "id": "camera",
-      "label": "Camera & Audio"
+      "label": "Camera & Audio",
+      "blurb": "How I film and record on the road — action cams, mounts, audio."
     },
     {
       "id": "trail",
-      "label": "Trek & Trail"
+      "label": "Trek & Trail",
+      "blurb": "On-foot days — vests, shoes, anything that survives long miles."
     },
     {
       "id": "bike",
-      "label": "Bikepacking"
+      "label": "Bikepacking",
+      "blurb": "Bags, straps, and repair bits from Taiwan / Korea bike days."
     },
     {
       "id": "apparel",
-      "label": "Apparel"
+      "label": "Apparel",
+      "blurb": "Clothes that show up on camera and survive the day."
     },
     {
       "id": "travel",
-      "label": "eSIM & Travel"
+      "label": "eSIM & Travel",
+      "blurb": "Connectivity and travel basics that keep the trip moving."
     }
   ],
   "items": [
@@ -37,10 +38,13 @@
       "badgeLabel": "Affiliate / Shop",
       "usedIn": "Peru Salkantay Trek",
       "desc": "UPF technical button-down + hood used on the Salkantay trek — fun prints, thumbholes, built for long sun exposure days.",
+      "whyLike": "Fun prints + UPF that still looks good on camera for long sun days.",
+      "howIUse": "Daily trek shirt on Salkantay — hood up for sun, sleeves for wind.",
       "exactItem": "Triple Crown Button Down Long Sleeve (confirm print/size)",
       "whereBought": "jollygear.com (US DTC) — confirm if bought or gifted",
       "linkLabel": "Shop Jolly Gear →",
       "linkUrl": "https://jollygear.com/",
+      "imageUrl": null,
       "section": "Apparel",
       "affiliateAvailable": "Unknown — no public Impact/Amazon affiliate found; Community/ambassador page exists",
       "showOnPage": true,
@@ -54,10 +58,13 @@
       "badgeLabel": "Affiliate / Shop",
       "usedIn": "Peru Salkantay · Korea bike",
       "desc": "Primary action cam for high-altitude trekking, rain riding, and handlebar POVs.",
+      "whyLike": "Tiny, tough, and good enough for high-altitude + handlebar POVs.",
+      "howIUse": "Chest mount on trek, handlebar / helmet on bike days.",
       "exactItem": "DJI Osmo Action 6 Adventure Combo + chest/handlebar mounts",
       "whereBought": "DJI Store / Amazon",
       "linkLabel": "Check price on DJI Store →",
       "linkUrl": "https://www.dji.com",
+      "imageUrl": null,
       "section": "Camera & Audio",
       "affiliateAvailable": "Yes",
       "showOnPage": true,
@@ -71,10 +78,13 @@
       "badgeLabel": "Taobao → Amazon Match",
       "usedIn": "Peru Salkantay · Hong Kong 4 Trails",
       "desc": "Bought on Taobao in China. Same factory-style vest sold globally on Amazon under Aonijie / Inoxto.",
+      "whyLike": "Light, cheap, and carries water without a heavy pack.",
+      "howIUse": "5L vest for fastpacking / multi-day passes when I refuse a big backpack.",
       "exactItem": "Taobao 5L trail vest (global match: Aonijie 5L)",
       "whereBought": "Taobao (China)",
       "linkLabel": "View Amazon Global equivalent →",
       "linkUrl": "https://www.amazon.com",
+      "imageUrl": null,
       "section": "Trek & Trail",
       "affiliateAvailable": "Partial — Amazon Global equivalent",
       "showOnPage": true,
@@ -88,10 +98,13 @@
       "badgeLabel": "Affiliate / Shop",
       "usedIn": "Peru Salkantay Pass · China trails",
       "desc": "Grippy trail runners used instead of heavy boots for multi-day mountain passes.",
+      "whyLike": "(Confirm model) Grippy enough for passes without heavy boots.",
+      "howIUse": "Main footwear for Salkantay Pass and China trail days — model TBD.",
       "exactItem": "Trail runner rotation — exact model TBD",
       "whereBought": "TBD",
       "linkLabel": "Check trail runners →",
       "linkUrl": "https://www.amazon.com",
+      "imageUrl": null,
       "section": "Trek & Trail",
       "affiliateAvailable": "Likely (Amazon / brand)",
       "showOnPage": true,
@@ -105,10 +118,13 @@
       "badgeLabel": "Taobao → Amazon Match",
       "usedIn": "Taiwan 1000km · Korea bike",
       "desc": "Waterproof saddle bag used on Taiwan 1000km and Korea bike days. Rhinowalk sells the same line on Amazon.",
+      "whyLike": "Actually waterproof on multi-day wet rides.",
+      "howIUse": "Behind-the-saddle bag for Taiwan 1000km and Korea bike camping bits.",
       "exactItem": "Rhinowalk 10L waterproof seat bag",
       "whereBought": "Taobao Rhinowalk flagship · Amazon US/UK/CA",
       "linkLabel": "Shop Rhinowalk on Amazon →",
       "linkUrl": "https://www.amazon.com",
+      "imageUrl": null,
       "section": "Bikepacking",
       "affiliateAvailable": "Yes — Amazon",
       "showOnPage": true,
@@ -122,10 +138,13 @@
       "badgeLabel": "Exact Kit · No Affiliate",
       "usedIn": "Taiwan 1000km",
       "desc": "Domestic workshop strap with no Western listing — included so the loadout stays 100% transparent.",
+      "whyLike": "Custom fit for the frame — no Western SKU needed.",
+      "howIUse": "Holds tools/spare bits on the Taiwan bike frame; honesty-only listing.",
       "exactItem": "Taobao local bike-shop frame strap + basic repair bits",
       "whereBought": "Taobao",
       "linkLabel": null,
       "linkUrl": null,
+      "imageUrl": null,
       "section": "Bikepacking",
       "affiliateAvailable": "No",
       "showOnPage": true,
@@ -139,10 +158,13 @@
       "badgeLabel": "Partner Link",
       "usedIn": "Peru · Korea · Taiwan · HK · China",
       "desc": "Instant data on landing without hunting airport SIMs.",
+      "whyLike": "Skip airport SIM chaos the second I land.",
+      "howIUse": "Install before landing; swap regions as I hop countries.",
       "exactItem": "Airalo or Trip.com regional eSIM",
       "whereBought": "App stores",
       "linkLabel": "Get travel eSIM →",
       "linkUrl": "https://www.airalo.com",
+      "imageUrl": null,
       "section": "eSIM & Travel",
       "affiliateAvailable": "Yes — partner/affiliate portals",
       "showOnPage": true,
