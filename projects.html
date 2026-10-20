@@ -432,13 +432,32 @@
         return url;
       }
 
+      /** hq/sd YouTube thumbs are 4:3 letterboxed — use 16:9 maxres for wide films. */
+      function filmThumbSrc(url) {
+        if (!url) return "";
+        const m = String(url).match(/i\.ytimg\.com\/vi\/([^/]+)\//i);
+        if (m) return `https://i.ytimg.com/vi/${m[1]}/maxresdefault.jpg`;
+        return thumbSrc(url);
+      }
+
+      function filmThumbFallback(url) {
+        const m = String(url || "").match(/i\.ytimg\.com\/vi\/([^/]+)\//i);
+        return m ? `https://i.ytimg.com/vi/${m[1]}/mqdefault.jpg` : "";
+      }
+
       function renderPhoneCard(post, extraClass = "") {
         if (!post) return "";
         const m = meta(post.platform);
         const mark = platMark(post);
-        const src = thumbSrc(post.thumbnail);
+        const isWide = isLandscapeFilm(post);
+        const src = isWide ? filmThumbSrc(post.thumbnail) : thumbSrc(post.thumbnail);
+        const fb = isWide ? filmThumbFallback(post.thumbnail) : "";
+        // Wide films sit off-screen in the scroller — lazy never fires (black frame). Use eager.
+        const loading = isWide ? "eager" : "lazy";
         const thumb = src
-          ? `<img src="${escapeHtml(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
+          ? `<img src="${escapeHtml(src)}" alt="" loading="${loading}" referrerpolicy="no-referrer"${
+              fb ? ` onerror="this.onerror=null;this.src='${escapeHtml(fb)}'"` : ""
+            } />`
           : "";
         const extra = extraClass ? ` ${extraClass}` : "";
         const platBadge = `<span class="plat-logo-badge ${mark.key}" title="${escapeHtml(mark.title)}">${mark.logo}</span>`;
@@ -472,7 +491,6 @@
         }
 
         // YT Shorts (and day beats) stay tall 9:16; only landscape films go wide
-        const isWide = isLandscapeFilm(post);
         return `
           <a class="phone-card ${m.className}${isWide ? " is-wide-film" : ""}${extra}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
             <div class="phone-screen ${isWide ? "is-wide-screen" : "is-tall-screen"}">

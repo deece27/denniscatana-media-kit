@@ -5,10 +5,10 @@
   "projects": [
     {
       "id": "cycling-taiwan",
-      "name": "Cycling Taiwan",
+      "name": "Cycling 1,000km Around Taiwan",
       "sheetProject": "Cycling Taiwan",
       "tag": "Flagship",
-      "summary": "1000km around Taiwan — day-by-day across Instagram, TikTok, and YouTube. Peak post and full feed from the All Social Posts sheet.",
+      "summary": "A short form video series showcasing the beauty and challenge of cycling around the entire island of Taiwan. (April 2026)",
       "totals": {
         "posts": 101,
         "views": 616910,
@@ -37,7 +37,7 @@
       "peak": {
         "platform": "Instagram",
         "type": "Reel",
-        "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
+        "title": "Cycling 1000km around Tiawan \ud83d\udccdDay 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
         "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
         "permalinkId": "DXCOs9-j3Ye",
         "date": "2026-04-12",
@@ -52,7 +52,7 @@
       "peaksByPlatform": {
         "TikTok": {
           "platform": "TikTok",
-          "title": "While I’m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
+          "title": "While I\u2019m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315366741282066",
           "date": "2026-08-02",
           "views": 4805,
@@ -61,7 +61,7 @@
         },
         "Instagram": {
           "platform": "Instagram",
-          "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
+          "title": "Cycling 1000km around Tiawan \ud83d\udccdDay 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
           "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
           "date": "2026-04-12",
           "views": 178096,
@@ -82,7 +82,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Super minimal and ultra light, this is almost all I’ll need to cycle around the entire island of Taiwan. It should take a little less than 2 weeks to cover the 1000+km   At first t",
+          "title": "Super minimal and ultra light, this is almost all I\u2019ll need to cycle around the entire island of Taiwan. It should take a little less than 2 weeks to cover the 1000+km   At first t",
           "url": "https://www.instagram.com/reel/DW6ldKKj-3k/",
           "permalinkId": "DW6ldKKj-3k",
           "date": "2026-04-09",
@@ -96,7 +96,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling.  Let’s GOOOOO 🤩🚵   #taiwan #cycletouring #",
+          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling.  Let\u2019s GOOOOO \ud83e\udd29\ud83d\udeb5   #taiwan #cycletouring #",
           "url": "https://www.instagram.com/reel/DW56thWBLnC/",
           "permalinkId": "DW56thWBLnC",
           "date": "2026-04-09",
@@ -110,7 +110,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "📍Day 0 - My Inspiration and Flight to Taipei  Today’s km: 0km Total km: 0km Today’s elevation: 0m  Total elevation: 0m  Cal burned: 0 cal  Skip to the second half if you just wanna",
+          "title": "\ud83d\udccdDay 0 - My Inspiration and Flight to Taipei  Today\u2019s km: 0km Total km: 0km Today\u2019s elevation: 0m  Total elevation: 0m  Cal burned: 0 cal  Skip to the second half if you just wanna",
           "url": "https://www.instagram.com/reel/DW9cxMcj3J1/",
           "permalinkId": "DW9cxMcj3J1",
           "date": "2026-04-10",
@@ -124,7 +124,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
+          "title": "Cycling 1000km around Tiawan \ud83d\udccdDay 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
           "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
           "permalinkId": "DXCOs9-j3Ye",
           "date": "2026-04-12",
@@ -138,7 +138,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "While I’m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
+          "title": "While I\u2019m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
           "url": "https://www.instagram.com/reel/DXDLVFqkq67/",
           "permalinkId": "DXDLVFqkq67",
           "date": "2026-04-12",
@@ -152,7 +152,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 2 - Wind and existential joy from Hsinchu to Gaomei   We’re told to appreciate the little, subtle and simple things in life, but sometimes, it’s b",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 2 - Wind and existential joy from Hsinchu to Gaomei   We\u2019re told to appreciate the little, subtle and simple things in life, but sometimes, it\u2019s b",
           "url": "https://www.instagram.com/reel/DXFFg9Yj4j2/",
           "permalinkId": "DXFFg9Yj4j2",
           "date": "2026-04-13",
@@ -166,7 +166,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Is it just me or are chip bags insanely hard to open in Taiwan?  (From day 1 of cycling 1,000km around #taiwan 🇹🇼🚴‍♂️)",
+          "title": "Is it just me or are chip bags insanely hard to open in Taiwan?  (From day 1 of cycling 1,000km around #taiwan \ud83c\uddf9\ud83c\uddfc\ud83d\udeb4\u200d\u2642\ufe0f)",
           "url": "https://www.instagram.com/reel/DXEeJy8D88V/",
           "permalinkId": "DXEeJy8D88V",
           "date": "2026-04-13",
@@ -180,7 +180,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "If you’re gunna act like an influencer, at least keep your eyes on the road 😅  #taiwan #huandao #cycletouring #bikepacking",
+          "title": "If you\u2019re gunna act like an influencer, at least keep your eyes on the road \ud83d\ude05  #taiwan #huandao #cycletouring #bikepacking",
           "url": "https://www.instagram.com/reel/DXHm9JKD3cG/",
           "permalinkId": "DXHm9JKD3cG",
           "date": "2026-04-14",
@@ -194,7 +194,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 3 - A little anxious and a lot of rest  Total: 219/1,000km  We hit the ground running (actually..biking) in the first two days, and the distance/e",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 3 - A little anxious and a lot of rest  Total: 219/1,000km  We hit the ground running (actually..biking) in the first two days, and the distance/e",
           "url": "https://www.instagram.com/reel/DXLeIFmD_6U/",
           "permalinkId": "DXLeIFmD_6U",
           "date": "2026-04-16",
@@ -208,7 +208,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "If you have a better rest day tip, let’s hear it 👂 #bikepacking #cycletouring #taiwan #tip",
+          "title": "If you have a better rest day tip, let\u2019s hear it \ud83d\udc42 #bikepacking #cycletouring #taiwan #tip",
           "url": "https://www.instagram.com/reel/DXMvAGWjxJM/",
           "permalinkId": "DXMvAGWjxJM",
           "date": "2026-04-16",
@@ -222,7 +222,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 4 - The biggest thrill in recent memory Total: 284/1,000km  Today was a genuinely a roller coaster from start to finish. I was worried cuz, well, ",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 4 - The biggest thrill in recent memory Total: 284/1,000km  Today was a genuinely a roller coaster from start to finish. I was worried cuz, well, ",
           "url": "https://www.instagram.com/reel/DXPP18CD_MV/",
           "permalinkId": "DXPP18CD_MV",
           "date": "2026-04-17",
@@ -236,7 +236,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "I don’t think I’ve ever seen a rooster as an indoor house pet before lmao. who needs a guard dog when 🤷‍♂️. Found in Day 4 of cycling around Taiwan in my way up to SunMoon Lake! #t",
+          "title": "I don\u2019t think I\u2019ve ever seen a rooster as an indoor house pet before lmao. who needs a guard dog when \ud83e\udd37\u200d\u2642\ufe0f. Found in Day 4 of cycling around Taiwan in my way up to SunMoon Lake! #t",
           "url": "https://www.instagram.com/reel/DXRt9hIj871/",
           "permalinkId": "DXRt9hIj871",
           "date": "2026-04-18",
@@ -250,7 +250,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 5 - Sunmoon Lake and Tim! Total: 391/1,000km  They say that comparison is the thief of joy, and the high expectation for SunMoon lake compared to ",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 5 - Sunmoon Lake and Tim! Total: 391/1,000km  They say that comparison is the thief of joy, and the high expectation for SunMoon lake compared to ",
           "url": "https://www.instagram.com/reel/DXVac6Fj1eW/",
           "permalinkId": "DXVac6Fj1eW",
           "date": "2026-04-20",
@@ -264,7 +264,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "The things you’re see cycling 1000 km around Taiwan 😂",
+          "title": "The things you\u2019re see cycling 1000 km around Taiwan \ud83d\ude02",
           "url": "https://www.instagram.com/reel/DXYde6Fj3F9/",
           "permalinkId": "DXYde6Fj3F9",
           "date": "2026-04-21",
@@ -278,7 +278,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 6 - The longest road to Kaohsiung Total: 514/1,000km  Last month I ran into some youtubers on my 10 day thru-hike and we stuck together for the la",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 6 - The longest road to Kaohsiung Total: 514/1,000km  Last month I ran into some youtubers on my 10 day thru-hike and we stuck together for the la",
           "url": "https://www.instagram.com/reel/DXjl-_dCCbo/",
           "permalinkId": "DXjl-_dCCbo",
           "date": "2026-04-25",
@@ -292,7 +292,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 7 - Rest day is best day (kinda) Total: 506/1,000km  Looking back at this whole day, in hindsight, I probably didnt need the rest day. i felt no m",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 7 - Rest day is best day (kinda) Total: 506/1,000km  Looking back at this whole day, in hindsight, I probably didnt need the rest day. i felt no m",
           "url": "https://www.instagram.com/reel/DXntB_8iB4O/",
           "permalinkId": "DXntB_8iB4O",
           "date": "2026-04-27",
@@ -320,7 +320,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1,000km around Taiwan. Rest day over, the mile’s ain’t gunna ride themselves, Day 8, let’s go!   #Cycletouring #bikepacking #taiwan",
+          "title": "Cycling 1,000km around Taiwan. Rest day over, the mile\u2019s ain\u2019t gunna ride themselves, Day 8, let\u2019s go!   #Cycletouring #bikepacking #taiwan",
           "url": "https://www.instagram.com/reel/DXtrKE7DyeC/",
           "permalinkId": "DXtrKE7DyeC",
           "date": "2026-04-29",
@@ -334,7 +334,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 8 - West coast is best coast (for now)   Total 602/1,000km I’ve seen quite a bit of complaints for cycling the west side of Taiwan. Long stretches",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 8 - West coast is best coast (for now)   Total 602/1,000km I\u2019ve seen quite a bit of complaints for cycling the west side of Taiwan. Long stretches",
           "url": "https://www.instagram.com/reel/DXvWcbnot8-/",
           "permalinkId": "DXvWcbnot8-",
           "date": "2026-04-30",
@@ -348,7 +348,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Wax apple? Rose apple? Lian Wu it is. Yuuuuum. Make sure to grab this if you’re cycling around Taiwan in the spring 🤤#bikepacking #cycletouring #taiwan #waxapple",
+          "title": "Wax apple? Rose apple? Lian Wu it is. Yuuuuum. Make sure to grab this if you\u2019re cycling around Taiwan in the spring \ud83e\udd24#bikepacking #cycletouring #taiwan #waxapple",
           "url": "https://www.instagram.com/reel/DX6thiaBGV_/",
           "permalinkId": "DX6thiaBGV_",
           "date": "2026-05-04",
@@ -362,7 +362,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would be the hardest ride of the trip. It was going to b",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would be the hardest ride of the trip. It was going to b",
           "url": "https://www.instagram.com/reel/DYFMBwhIt_9/",
           "permalinkId": "DYFMBwhIt_9",
           "date": "2026-05-08",
@@ -376,7 +376,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "At least we got one last good shot. 🪦 Cycling 1,000km around Taiwan, Day 9 #cycletouring #taiwan #bikepacking",
+          "title": "At least we got one last good shot. \ud83e\udea6 Cycling 1,000km around Taiwan, Day 9 #cycletouring #taiwan #bikepacking",
           "url": "https://www.instagram.com/reel/DYMDfqaI8si/",
           "permalinkId": "DYMDfqaI8si",
           "date": "2026-05-11",
@@ -390,7 +390,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "I think we feel ‘unworthy’ to do the big stuff, as if..we didn’t earn it or something, not that we aren’t able to accomplish it. We make excuses for ourselves, and often times it’s",
+          "title": "I think we feel \u2018unworthy\u2019 to do the big stuff, as if..we didn\u2019t earn it or something, not that we aren\u2019t able to accomplish it. We make excuses for ourselves, and often times it\u2019s",
           "url": "https://www.instagram.com/reel/DYzKkGPvoL8/",
           "permalinkId": "DYzKkGPvoL8",
           "date": "2026-05-26",
@@ -404,7 +404,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a top tier scary expereince. i saw a cool hot air balo",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a top tier scary expereince. i saw a cool hot air balo",
           "url": "https://www.instagram.com/reel/DY1-GiooWT4/",
           "permalinkId": "DY1-GiooWT4",
           "date": "2026-05-27",
@@ -418,7 +418,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Even cyclists aren’t safe from unrealistic expectation 🤷‍♂️.  Some funny moments from Day 10 of cycling 1000km around Taiwan   #shortking #tallguy #taiwan #cycletouring #funny",
+          "title": "Even cyclists aren\u2019t safe from unrealistic expectation \ud83e\udd37\u200d\u2642\ufe0f.  Some funny moments from Day 10 of cycling 1000km around Taiwan   #shortking #tallguy #taiwan #cycletouring #funny",
           "url": "https://www.instagram.com/reel/DY4kBaHhSEV/",
           "permalinkId": "DY4kBaHhSEV",
           "date": "2026-05-28",
@@ -446,7 +446,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 11 - Scotty Doesn’t Know Total 916/1,000km  After today, I’m convinced that we need low days; otherwise, what do we compare the good days to? Toda",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 11 - Scotty Doesn\u2019t Know Total 916/1,000km  After today, I\u2019m convinced that we need low days; otherwise, what do we compare the good days to? Toda",
           "url": "https://www.instagram.com/reel/DZIEWFOIEdF/",
           "permalinkId": "DZIEWFOIEdF",
           "date": "2026-06-03",
@@ -474,7 +474,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "So after the earthquake in 2024, Taroko Gorge is still under repair. It’s really quite a shame, because it all seems so beautiful, all the possible hikes, and biking/ driving route",
+          "title": "So after the earthquake in 2024, Taroko Gorge is still under repair. It\u2019s really quite a shame, because it all seems so beautiful, all the possible hikes, and biking/ driving route",
           "url": "https://www.instagram.com/reel/DaZS0GGIxkK/",
           "permalinkId": "DaZS0GGIxkK",
           "date": "2026-07-05",
@@ -488,7 +488,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 12 - Taroko and Trains Initially, I was torn between visiting Taroko Gorge or not, but being so close, I felt it would be such a shame to pass. As",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 12 - Taroko and Trains Initially, I was torn between visiting Taroko Gorge or not, but being so close, I felt it would be such a shame to pass. As",
           "url": "https://www.instagram.com/reel/DafqkkUIHpb/",
           "permalinkId": "DafqkkUIHpb",
           "date": "2026-07-07",
@@ -516,7 +516,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 13 - The day has finally come.. I wasn’t exactly sure how long this whole trip would take, honestly. A lot of folks online are saying 7-9 days is ",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 13 - The day has finally come.. I wasn\u2019t exactly sure how long this whole trip would take, honestly. A lot of folks online are saying 7-9 days is ",
           "url": "https://www.instagram.com/reel/Da4ODCdoIhh/",
           "permalinkId": "Da4ODCdoIhh",
           "date": "2026-07-17",
@@ -544,7 +544,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan 📍Day 13 - The End. “Cycling Taiwan was pretty dam awesome. but if there is a takeaway from all these videos, it’s  not the specific spots to visit, the",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 13 - The End. \u201cCycling Taiwan was pretty dam awesome. but if there is a takeaway from all these videos, it\u2019s  not the specific spots to visit, the",
           "url": "https://www.instagram.com/reel/DbGKczsosuZ/",
           "permalinkId": "DbGKczsosuZ",
           "date": "2026-07-22",
@@ -572,7 +572,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1,000km around Taiwan. 🇹🇼🚴‍♂️ A little music video showing my 13 day journey around the island. I’m proud of some of these shots! all shot on iPhone.  What an adventure ~ o",
+          "title": "Cycling 1,000km around Taiwan. \ud83c\uddf9\ud83c\uddfc\ud83d\udeb4\u200d\u2642\ufe0f A little music video showing my 13 day journey around the island. I\u2019m proud of some of these shots! all shot on iPhone.  What an adventure ~ o",
           "url": "https://www.instagram.com/reel/DbRoTtLIpWl/",
           "permalinkId": "DbRoTtLIpWl",
           "date": "2026-07-27",
@@ -595,12 +595,12 @@
           "comments": 4,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "https://i.ytimg.com/vi/lfM9PSMkrU8/hqdefault.jpg"
+          "thumbnail": "https://i.ytimg.com/vi/lfM9PSMkrU8/maxresdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling. Let’s GOOOOO 🤩🚵 #taiwan #cycletouring #bik",
+          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling. Let\u2019s GOOOOO \ud83e\udd29\ud83d\udeb5 #taiwan #cycletouring #bik",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315324534017288",
           "permalinkId": "7667315324534017288",
           "date": "2026-07-29",
@@ -628,7 +628,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Super minimal and ultra light, this is almost all I’ll need to cycle around the entire island of Taiwan. It should take a little less than 2 weeks to cover the 1000+km   At first t",
+          "title": "Super minimal and ultra light, this is almost all I\u2019ll need to cycle around the entire island of Taiwan. It should take a little less than 2 weeks to cover the 1000+km   At first t",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315359887789319",
           "permalinkId": "7667315359887789319",
           "date": "2026-07-30",
@@ -656,7 +656,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "📍Day 0 - My Inspiration and Flight to Taipei Today’s km: 0km Total km: 0km Today’s elevation: 0m Total elevation: 0m Cal burned: 0 cal Skip to the second half if you just wanna see",
+          "title": "\ud83d\udccdDay 0 - My Inspiration and Flight to Taipei Today\u2019s km: 0km Total km: 0km Today\u2019s elevation: 0m Total elevation: 0m Cal burned: 0 cal Skip to the second half if you just wanna see",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315386265767176",
           "permalinkId": "7667315386265767176",
           "date": "2026-07-31",
@@ -684,7 +684,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
+          "title": "Cycling 1000km around Tiawan \ud83d\udccdDay 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315384294460679",
           "permalinkId": "7667315384294460679",
           "date": "2026-08-01",
@@ -712,7 +712,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "While I’m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
+          "title": "While I\u2019m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315366741282066",
           "permalinkId": "7667315366741282066",
           "date": "2026-08-02",
@@ -740,7 +740,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan 📍Day 2 - Wind and existential joy from Hsinchu to Gaomei   We’re told to appreciate the little, subtle and simple things in life, but sometimes, it’s b",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 2 - Wind and existential joy from Hsinchu to Gaomei   We\u2019re told to appreciate the little, subtle and simple things in life, but sometimes, it\u2019s b",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315402094972178",
           "permalinkId": "7667315402094972178",
           "date": "2026-08-03",
@@ -768,7 +768,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Is it just me or are chip bags insanely hard to open in Taiwan?  (From day 1 of cycling 1,000km around #taiwan 🇹🇼🚴‍♂️)",
+          "title": "Is it just me or are chip bags insanely hard to open in Taiwan?  (From day 1 of cycling 1,000km around #taiwan \ud83c\uddf9\ud83c\uddfc\ud83d\udeb4\u200d\u2642\ufe0f)",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315391026285842",
           "permalinkId": "7667315391026285842",
           "date": "2026-08-04",
@@ -810,7 +810,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "If you’re gunna act like an influencer, at least keep your eyes on the road 😅  #taiwan #huandao #cycletouring #bikepacking",
+          "title": "If you\u2019re gunna act like an influencer, at least keep your eyes on the road \ud83d\ude05  #taiwan #huandao #cycletouring #bikepacking",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315391491853575",
           "permalinkId": "7667315391491853575",
           "date": "2026-08-05",
@@ -824,7 +824,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan 📍Day 3 - A little anxious and a lot of rest Total: 219/1,000km We hit the ground running (actually..biking) in the first two days, and the distance/ele",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 3 - A little anxious and a lot of rest Total: 219/1,000km We hit the ground running (actually..biking) in the first two days, and the distance/ele",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315386265783560",
           "permalinkId": "7667315386265783560",
           "date": "2026-08-06",
@@ -866,7 +866,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "If you have a better rest day tip, let’s hear it 👂 #bikepacking #cycletouring #taiwan #tip",
+          "title": "If you have a better rest day tip, let\u2019s hear it \ud83d\udc42 #bikepacking #cycletouring #taiwan #tip",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315378820877575",
           "permalinkId": "7667315378820877575",
           "date": "2026-08-07",
@@ -880,7 +880,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan 📍Day 4 - The biggest thrill in recent memory Total: 284/1,000km Today was a genuinely a roller coaster from start to finish. I was worried cuz, well, h",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 4 - The biggest thrill in recent memory Total: 284/1,000km Today was a genuinely a roller coaster from start to finish. I was worried cuz, well, h",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315400408829192",
           "permalinkId": "7667315400408829192",
           "date": "2026-08-08",
@@ -908,7 +908,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "I don’t think I’ve ever seen a rooster as an indoor house pet before lmao. who needs a guard dog when 🤷‍♂️. Found in Day 4 of cycling around Taiwan in my way up to SunMoon Lake! #t",
+          "title": "I don\u2019t think I\u2019ve ever seen a rooster as an indoor house pet before lmao. who needs a guard dog when \ud83e\udd37\u200d\u2642\ufe0f. Found in Day 4 of cycling around Taiwan in my way up to SunMoon Lake! #t",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315388253785351",
           "permalinkId": "7667315388253785351",
           "date": "2026-08-09",
@@ -936,7 +936,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan 📍Day 5 - Sunmoon Lake and Tim! Total: 391/1,000km They say that comparison is the thief of joy, and the high expectation for SunMoon lake compared to m",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 5 - Sunmoon Lake and Tim! Total: 391/1,000km They say that comparison is the thief of joy, and the high expectation for SunMoon lake compared to m",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315390560603400",
           "permalinkId": "7667315390560603400",
           "date": "2026-08-10",
@@ -964,7 +964,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "IRL Clickbait 😂 The things you’re see cycling 1000 km around Taiwan 😂 #huandao #taiwan #sunmoonlake #bikepacking #cycletouring",
+          "title": "IRL Clickbait \ud83d\ude02 The things you\u2019re see cycling 1000 km around Taiwan \ud83d\ude02 #huandao #taiwan #sunmoonlake #bikepacking #cycletouring",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315396172680466",
           "permalinkId": "7667315396172680466",
           "date": "2026-08-11",
@@ -978,7 +978,7 @@
         {
           "platform": "YouTube",
           "type": "Short",
-          "title": "IRL Clickbait  😂",
+          "title": "IRL Clickbait  \ud83d\ude02",
           "url": "https://www.youtube.com/watch?v=QWTtxo3Isq4",
           "permalinkId": "QWTtxo3Isq4",
           "date": "2026-08-11",
@@ -992,7 +992,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan 📍Day 6 - The longest road to Kaohsiung Total: 514/1,000km lLst month I ran into some youtubers on my 10 day thru-hike and we stuck together for the las",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 6 - The longest road to Kaohsiung Total: 514/1,000km lLst month I ran into some youtubers on my 10 day thru-hike and we stuck together for the las",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315364107177223",
           "permalinkId": "7667315364107177223",
           "date": "2026-08-12",
@@ -1020,7 +1020,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Day 7 of Cycling 1000km around Taiwan Cycling 1000km around Taiwan 📍Day 7 - Rest day is best day (kinda) Total: 506/1,000km Looking back at this whole day, in hindsight, I probably",
+          "title": "Day 7 of Cycling 1000km around Taiwan Cycling 1000km around Taiwan \ud83d\udccdDay 7 - Rest day is best day (kinda) Total: 506/1,000km Looking back at this whole day, in hindsight, I probably",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315391663787282",
           "permalinkId": "7667315391663787282",
           "date": "2026-08-13",
@@ -1076,7 +1076,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1,000km around Taiwan. Rest day over, the mile’s ain’t gunna ride themselves, Day 8, let’s go! #Cycletouring #bikepacking #taiwan",
+          "title": "Cycling 1,000km around Taiwan. Rest day over, the mile\u2019s ain\u2019t gunna ride themselves, Day 8, let\u2019s go! #Cycletouring #bikepacking #taiwan",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315401528773906",
           "permalinkId": "7667315401528773906",
           "date": "2026-08-15",
@@ -1104,7 +1104,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan 📍Day 8 - Finished with the West Total 602/1,000km I’ve seen quite a bit of complaints for cycling the west side of Taiwan. Long stretches of farms, ind",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 8 - Finished with the West Total 602/1,000km I\u2019ve seen quite a bit of complaints for cycling the west side of Taiwan. Long stretches of farms, ind",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315384743185682",
           "permalinkId": "7667315384743185682",
           "date": "2026-08-16",
@@ -1132,7 +1132,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Found this by the roadside in Taiwan  Wax apple? Rose apple? Lian Wu it is. Yuuuuum. Make sure to grab this if you’re cycling around Taiwan in the spring 🤤#bikepacking #cycletourin",
+          "title": "Found this by the roadside in Taiwan  Wax apple? Rose apple? Lian Wu it is. Yuuuuum. Make sure to grab this if you\u2019re cycling around Taiwan in the spring \ud83e\udd24#bikepacking #cycletourin",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315385225596167",
           "permalinkId": "7667315385225596167",
           "date": "2026-08-17",
@@ -1160,7 +1160,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan 📍Day 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would be the hardest ride of the trip. It was going to b",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would be the hardest ride of the trip. It was going to b",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315402615033096",
           "permalinkId": "7667315402615033096",
           "date": "2026-08-18",
@@ -1202,7 +1202,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "I think we feel ‘unworthy’ to do the big stuff, as if..we didn’t earn it or something, not that we aren’t able to accomplish it. We make excuses for ourselves, and often times it’s",
+          "title": "I think we feel \u2018unworthy\u2019 to do the big stuff, as if..we didn\u2019t earn it or something, not that we aren\u2019t able to accomplish it. We make excuses for ourselves, and often times it\u2019s",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315405295226119",
           "permalinkId": "7667315405295226119",
           "date": "2026-08-19",
@@ -1216,7 +1216,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "At least we got one last good shot. 🪦 Cycling 1,000km around Taiwan, Day 9 #cycletouring #taiwan #bikepacking #huandao",
+          "title": "At least we got one last good shot. \ud83e\udea6 Cycling 1,000km around Taiwan, Day 9 #cycletouring #taiwan #bikepacking #huandao",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315383275212050",
           "permalinkId": "7667315383275212050",
           "date": "2026-08-20",
@@ -1244,7 +1244,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan 📍Day 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a top-tier scary experience. I saw a cool hot air ball",
+          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a top-tier scary experience. I saw a cool hot air ball",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315383350709511",
           "permalinkId": "7667315383350709511",
           "date": "2026-08-21",
@@ -1286,7 +1286,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Even cyclists aren’t safe from unrealistic expectation 🤷‍♂️.  Some funny moments from Day 10 of cycling 1000km around Taiwan  #shortking #tallguy #taiwan #cycletouring #funny",
+          "title": "Even cyclists aren\u2019t safe from unrealistic expectation \ud83e\udd37\u200d\u2642\ufe0f.  Some funny moments from Day 10 of cycling 1000km around Taiwan  #shortking #tallguy #taiwan #cycletouring #funny",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315380909722888",
           "permalinkId": "7667315380909722888",
           "date": "2026-08-22",
@@ -1342,7 +1342,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "ycling 1000km around Taiwan 📍Day 11 - Scotty Doesn’t Know Total 916/1,000km After today, I’m convinced that we need low days; otherwise, what do we compare the good days to? Today ",
+          "title": "ycling 1000km around Taiwan \ud83d\udccdDay 11 - Scotty Doesn\u2019t Know Total 916/1,000km After today, I\u2019m convinced that we need low days; otherwise, what do we compare the good days to? Today ",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315390887791880",
           "permalinkId": "7667315390887791880",
           "date": "2026-08-24",
@@ -1384,7 +1384,7 @@
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "The state of Taroko Gorge in 2026 So after the earthquake in 2024, Taroko Gorge is still under repair. It’s really quite a shame, because it all seems so beautiful, all the possibl",
+          "title": "The state of Taroko Gorge in 2026 So after the earthquake in 2024, Taroko Gorge is still under repair. It\u2019s really quite a shame, because it all seems so beautiful, all the possibl",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315411645402375",
           "permalinkId": "7667315411645402375",
           "date": "2026-08-26",

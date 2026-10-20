@@ -2334,6 +2334,13 @@ h3 {
   transition: transform 0.35s ease;
 }
 
+/* Wide films: fill 16:9 (avoid letterbox bars from 4:3 YT thumbs) */
+.phone-screen.is-wide-screen > img,
+.phone-screen.is-long-screen > img {
+  object-fit: cover;
+  object-position: center center;
+}
+
 .phone-card:hover .phone-screen > img,
 .phone-card:hover .feed-post-media > img {
   transform: scale(1.02);
@@ -2492,6 +2499,18 @@ h3 {
     rgba(0, 0, 0, 0.82) 100%
   );
   pointer-events: none;
+}
+
+/* Wide films: no heavy top bar — keep bottom fade for title/metrics only */
+.phone-screen.is-wide-screen .phone-screen-scrim,
+.phone-screen.is-long-screen .phone-screen-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0) 28%,
+    rgba(0, 0, 0, 0.08) 58%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
 }
 
 /* Top & Bottom Overlay Chrome Inside Phone Screen */
