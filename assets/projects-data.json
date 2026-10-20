@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-19T16:57:52Z",
-  "source": "/cursor/stores/bc-fef0428a-847c-4d0d-827b-cf3c4a0db826/media/social-posts-sheet/all-social-posts.csv",
+  "generatedAt": "2026-10-20T11:09:14Z",
+  "source": "/cursor/stores/bc-fef0428a-847c-4d0d-827b-cf3c4a0db826/media/social-posts-sheet/assigned-projects.csv",
   "sheetUrl": "https://docs.google.com/spreadsheets/d/15jVzyTbLt2oeWIgLLqROgmPgZe76EAUDZGIQ3EGCmTM/edit",
   "projects": [
     {
@@ -37,7 +37,7 @@
       "peak": {
         "platform": "Instagram",
         "type": "Reel",
-        "title": "Cycling 1000km around Tiawan \ud83d\udccdDay 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
+        "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
         "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
         "permalinkId": "DXCOs9-j3Ye",
         "date": "2026-04-12",
@@ -52,16 +52,16 @@
       "peaksByPlatform": {
         "TikTok": {
           "platform": "TikTok",
-          "title": "While I\u2019m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
+          "title": "While I’m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315366741282066",
           "date": "2026-08-02",
           "views": 4805,
           "likes": 455,
-          "thumbnail": "assets/thumbs/tiktok/7667315366741282066.jpg"
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o4hyPX1EQAMhAQzyze884ATArMWQUMSnDOufDf~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=1925144b&x-expires=1792504800&x-signature=sx1H9F6fWUUqe%2FZIqfHOAynhOho%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         "Instagram": {
           "platform": "Instagram",
-          "title": "Cycling 1000km around Tiawan \ud83d\udccdDay 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
+          "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
           "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
           "date": "2026-04-12",
           "views": 178096,
@@ -82,7 +82,7 @@
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Super minimal and ultra light, this is almost all I\u2019ll need to cycle around the entire island of Taiwan. It should take a little less than 2 weeks to cover the 1000+km   At first t",
+          "title": "Super minimal and ultra light, this is almost all I’ll need to cycle around the entire island of Taiwan. It should take a little less than 2 weeks to cover the 1000+km   At first t",
           "url": "https://www.instagram.com/reel/DW6ldKKj-3k/",
           "permalinkId": "DW6ldKKj-3k",
           "date": "2026-04-09",
@@ -91,12 +91,13 @@
           "comments": 11,
           "shares": 32,
           "saves": 39,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/661589597_18572950063018991_5129537500036178286_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=J6mgODLiY_8Q7kNvwFm9-zG&_nc_oc=AdpqnhM3FmXLwW3vZ1BKrK7M8QuSM5t2YuCpaRlI4eJBr4z98Ji_3p9yY9jloy51B74&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQLto12ZkzCsWwRaXXpkrNne5jPcdWX5inr3lPaaIaqHQGm8GaPd4nINOumuQMYJIZ6iVSATJ6C9&oh=00_AQP4MycLwoCCbvD9sHoXPOy4WobLysspauwNIIdNCn8pgw&oe=6ADBEF25"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling.  Let\u2019s GOOOOO \ud83e\udd29\ud83d\udeb5   #taiwan #cycletouring #",
+          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling.  Let’s GOOOOO 🤩🚵   #taiwan #cycletouring #",
           "url": "https://www.instagram.com/reel/DW56thWBLnC/",
           "permalinkId": "DW56thWBLnC",
           "date": "2026-04-09",
@@ -105,12 +106,13 @@
           "comments": 18,
           "shares": 32,
           "saves": 20,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/658954175_18572876593018991_5099330056559828145_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=8Qp5w2dZNjYQ7kNvwEiE416&_nc_oc=Adpl6hrJHCXwCAnQW60rxqcl3pLjblxayj9VAj-gMXNIlhK7ui4iPb_rcjTYXhIr29w&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQJSdvKM6ZOjvSmYC4u7F6ivOzRTbozYQz1h2-QuyeRV2umfU13bXJgAd25S1zh5Y9xJd7Izrgdu&oh=00_AQPqKXsiKXbOK1TTm8xlx8kRw9qFxUg2iGXNRTv7zxWsIQ&oe=6ADC15CD"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "\ud83d\udccdDay 0 - My Inspiration and Flight to Taipei  Today\u2019s km: 0km Total km: 0km Today\u2019s elevation: 0m  Total elevation: 0m  Cal burned: 0 cal  Skip to the second half if you just wanna",
+          "title": "📍Day 0 - My Inspiration and Flight to Taipei  Today’s km: 0km Total km: 0km Today’s elevation: 0m  Total elevation: 0m  Cal burned: 0 cal  Skip to the second half if you just wanna",
           "url": "https://www.instagram.com/reel/DW9cxMcj3J1/",
           "permalinkId": "DW9cxMcj3J1",
           "date": "2026-04-10",
@@ -119,12 +121,13 @@
           "comments": 5,
           "shares": 16,
           "saves": 11,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/661356584_18573194119018991_8193116022147879740_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=PEmmrVZJRt0Q7kNvwHZqoqe&_nc_oc=AdqwaiJbA4FW5ICcRZz-N98rw4PoMQlHEacz7b5YNLQITxRnRfO1U0-Oh6762ah_RVk&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQL1FRCa4LKyqejUs7kBBSWuNIuUuuSnpw6J-fdXiIr3P9zg4TQZj5CVddZWLgT3WbYaR6Qj70Rn&oh=00_AQNilmtELvRaNVtd8iNLg7UryH4tKKdki3_agdzj0IVyqQ&oe=6ADBFF61"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Tiawan \ud83d\udccdDay 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
+          "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
           "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
           "permalinkId": "DXCOs9-j3Ye",
           "date": "2026-04-12",
@@ -133,12 +136,13 @@
           "comments": 172,
           "shares": 5156,
           "saves": 2365,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/670729770_18573546163018991_4965636497687325910_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=DvLh534rRGEQ7kNvwHdWlro&_nc_oc=Adq0SfFc9HDupDCJjITaC1b0hG1iqnfXW05Bi7NU6TCe2fQfL-7YVw_POW58IqWGAP4&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQKC_PpCF16D415GtMe5pihz2dKVAmUItRWMoxwjpQcmC4usvOb6-h3yCIU8Jy1BpCEok6_yScxf&oh=00_AQNcJt3US1erMIlWopcUMXqn_rnwuFJEBy1Z4fsWsXgqnQ&oe=6ADBEC89"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "While I\u2019m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
+          "title": "While I’m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
           "url": "https://www.instagram.com/reel/DXDLVFqkq67/",
           "permalinkId": "DXDLVFqkq67",
           "date": "2026-04-12",
@@ -147,12 +151,13 @@
           "comments": 9,
           "shares": 76,
           "saves": 31,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/670610176_18573632047018991_3986527915536671761_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=gV8yXjnq250Q7kNvwFsJkIy&_nc_oc=AdohL8MS0OLQjhEFxEqq4DwWSpmKTvvcEuGqxrEBluJiTBJ996ATCmZvhkgRWdlbI3w&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQL3OiiAvrj8buxwP0CTJiuZxEgeZGyNxdaiRLXz_V8MCmqold-hDBFYb38J_smRVky0OlewsUPo&oh=00_AQMD4Lt8uNVmmiduWC27nWeAIP4Ku4VfihqGAEduEVa-CA&oe=6ADC11DC"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 2 - Wind and existential joy from Hsinchu to Gaomei   We\u2019re told to appreciate the little, subtle and simple things in life, but sometimes, it\u2019s b",
+          "title": "Cycling 1000km around Taiwan 📍Day 2 - Wind and existential joy from Hsinchu to Gaomei   We’re told to appreciate the little, subtle and simple things in life, but sometimes, it’s b",
           "url": "https://www.instagram.com/reel/DXFFg9Yj4j2/",
           "permalinkId": "DXFFg9Yj4j2",
           "date": "2026-04-13",
@@ -161,12 +166,13 @@
           "comments": 47,
           "shares": 285,
           "saves": 94,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/670371713_18573771223018991_944436682477343662_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=R_UH4psRiKoQ7kNvwHIXiV7&_nc_oc=AdquwpuGosJoQEpOK-0hdf3NitMBWmqUNg-SGcY_rS5y2FDDcg1qsgBO2P31EwyGYT8&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQKt7dYnbleC46P_mzFaDMfVU1xMHP2D975145CVzPdBObWLu_bg73VQYteQPtsbTrDwVmmg78uU&oh=00_AQOv23Hao9phrf5xK9tImytidhmvibV7tAhH7DMfiOBEMQ&oe=6ADC0E8D"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Is it just me or are chip bags insanely hard to open in Taiwan?  (From day 1 of cycling 1,000km around #taiwan \ud83c\uddf9\ud83c\uddfc\ud83d\udeb4\u200d\u2642\ufe0f)",
+          "title": "Is it just me or are chip bags insanely hard to open in Taiwan?  (From day 1 of cycling 1,000km around #taiwan 🇹🇼🚴‍♂️)",
           "url": "https://www.instagram.com/reel/DXEeJy8D88V/",
           "permalinkId": "DXEeJy8D88V",
           "date": "2026-04-13",
@@ -175,12 +181,13 @@
           "comments": 27,
           "shares": 26,
           "saves": 4,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/670842685_1883983422260448_6385678249792066462_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=IeXP_B2M-EcQ7kNvwErL7Lt&_nc_oc=AdonW7kJbSBpupiJIuDAT7HSCQjp8uZD8k4fIvYyIeu8EYq_OB4nRFqLnHWBx_0sy90&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQJjeAb0cAZYYQy43kPDdKQNxzeRJxKVJjT5PSQODK8KX_JJ1Leg2zer61TfcPZLmnxRSuebiT6e&oh=00_AQNtLjxGVBaG2CXncUl468CA8x1oR6F-2Kfad2y8Qul4HQ&oe=6ADC1351"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "If you\u2019re gunna act like an influencer, at least keep your eyes on the road \ud83d\ude05  #taiwan #huandao #cycletouring #bikepacking",
+          "title": "If you’re gunna act like an influencer, at least keep your eyes on the road 😅  #taiwan #huandao #cycletouring #bikepacking",
           "url": "https://www.instagram.com/reel/DXHm9JKD3cG/",
           "permalinkId": "DXHm9JKD3cG",
           "date": "2026-04-14",
@@ -189,12 +196,13 @@
           "comments": 2,
           "shares": 15,
           "saves": 6,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/671126419_1654197418931652_3007751258314081883_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=qJ_akWqp4IcQ7kNvwENwVpX&_nc_oc=Adr2O2-G147j4W1SCWkzV8VzXy-3qUIq2iHXntn2sbat7p2REJQ0dvwpFcsuXx3vxFY&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQK1T179jUmW4xJ9Yqtze7NZz_b6poRykBzprEEFSX6xOCyuvHIW7VdQBB2DxWkC3e-slgBDQ66g&oh=00_AQO0dNfZ5SZhEaY-mN0FmJPZ_m2B8tagNf0aX2vwrlq9VA&oe=6ADBE287"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 3 - A little anxious and a lot of rest  Total: 219/1,000km  We hit the ground running (actually..biking) in the first two days, and the distance/e",
+          "title": "Cycling 1000km around Taiwan 📍Day 3 - A little anxious and a lot of rest  Total: 219/1,000km  We hit the ground running (actually..biking) in the first two days, and the distance/e",
           "url": "https://www.instagram.com/reel/DXLeIFmD_6U/",
           "permalinkId": "DXLeIFmD_6U",
           "date": "2026-04-16",
@@ -203,12 +211,13 @@
           "comments": 26,
           "shares": 189,
           "saves": 69,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/670549961_18574312627018991_2358487275073353145_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=6aJmYTk1dZ8Q7kNvwHfnqfG&_nc_oc=AdqPwcr4OjE4Hs6gK1-5pHJ_B2CCwV4dtrA_heWqDEYIhU38WDkgS4nD3xipjo_3qKk&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQLR6b1M0BDt3n3jUvSih74IBt44AAbJawlQV303advZnLxyVf5w79_1UW72Dh1SJYrv6mwal6OO&oh=00_AQNyDeIT_tslQSji2F0hXooq7NPVw4qBuPJZfLLV5sBuQA&oe=6ADBE5EC"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "If you have a better rest day tip, let\u2019s hear it \ud83d\udc42 #bikepacking #cycletouring #taiwan #tip",
+          "title": "If you have a better rest day tip, let’s hear it 👂 #bikepacking #cycletouring #taiwan #tip",
           "url": "https://www.instagram.com/reel/DXMvAGWjxJM/",
           "permalinkId": "DXMvAGWjxJM",
           "date": "2026-04-16",
@@ -217,12 +226,13 @@
           "comments": 6,
           "shares": 6,
           "saves": 9,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/670156442_1474879664376450_7583937148532851184_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ZXCzb0FuYxcQ7kNvwERoUud&_nc_oc=AdpEw2G5DovG3K2mKTepMvibhmzDhNeW9WaZHGHggik16kiwJnD8AuRqwxIkmqsWszQ&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQI1avavsz4iMddVpeTqRBlQl536M8QXxXXopWXLzqg-J5ZduoDhmZYXmKG8iQlRmvz4YyLq0och&oh=00_AQNx8YIe0pVkl2O8nCctS-GbLI1kecshdLa8QX5tqXOudw&oe=6ADC0E93"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 4 - The biggest thrill in recent memory Total: 284/1,000km  Today was a genuinely a roller coaster from start to finish. I was worried cuz, well, ",
+          "title": "Cycling 1000km around Taiwan 📍Day 4 - The biggest thrill in recent memory Total: 284/1,000km  Today was a genuinely a roller coaster from start to finish. I was worried cuz, well, ",
           "url": "https://www.instagram.com/reel/DXPP18CD_MV/",
           "permalinkId": "DXPP18CD_MV",
           "date": "2026-04-17",
@@ -231,12 +241,13 @@
           "comments": 23,
           "shares": 94,
           "saves": 36,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/670668383_18574657060018991_3121022366590853540_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=UJUTCz6UF-UQ7kNvwHzHcY5&_nc_oc=AdosZCxIOzsPnBaMwvRU76_DS4OjxHn5Kglua4XmpMKlVCHzjRXjEItHZutN4GJwS7k&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQJV8EN4fKEOgTQkS6meTqq88nPWht0YMvhKHTqEqi-Muajj6ImcWkdj9N_CgscGyCVcERmRNzkL&oh=00_AQObUBY_LdUIBsWpGtkFCFynU40VfspJkMI5WO-GrQtSEQ&oe=6ADBFA0D"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "I don\u2019t think I\u2019ve ever seen a rooster as an indoor house pet before lmao. who needs a guard dog when \ud83e\udd37\u200d\u2642\ufe0f. Found in Day 4 of cycling around Taiwan in my way up to SunMoon Lake! #t",
+          "title": "I don’t think I’ve ever seen a rooster as an indoor house pet before lmao. who needs a guard dog when 🤷‍♂️. Found in Day 4 of cycling around Taiwan in my way up to SunMoon Lake! #t",
           "url": "https://www.instagram.com/reel/DXRt9hIj871/",
           "permalinkId": "DXRt9hIj871",
           "date": "2026-04-18",
@@ -245,12 +256,13 @@
           "comments": 22,
           "shares": 522,
           "saves": 187,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/670823368_1082179558311498_3226837566579210821_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=8gV-uehAstgQ7kNvwGYNJkT&_nc_oc=AdrQztk7NMaZUHwP75rgSBh6_ZpXBR-CSA0_otRDZstmnZu7v10rsF8lS1B1NAYv42M&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQJ41BkKJ-EloFo62F_TfBWlwC1CcC4elTugWXxCZ4aLciApWrVSYg8NAGsoGIrlA60NxQH1iEfI&oh=00_AQO2Xfj1t6zNU8AzJvXfP9Z2p4s1VA7FjwaRzn0VsCL-0A&oe=6ADBF8DB"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 5 - Sunmoon Lake and Tim! Total: 391/1,000km  They say that comparison is the thief of joy, and the high expectation for SunMoon lake compared to ",
+          "title": "Cycling 1000km around Taiwan 📍Day 5 - Sunmoon Lake and Tim! Total: 391/1,000km  They say that comparison is the thief of joy, and the high expectation for SunMoon lake compared to ",
           "url": "https://www.instagram.com/reel/DXVac6Fj1eW/",
           "permalinkId": "DXVac6Fj1eW",
           "date": "2026-04-20",
@@ -259,12 +271,13 @@
           "comments": 29,
           "shares": 130,
           "saves": 45,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/670880289_18575248591018991_4590541069690038142_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=5FPtZKy_wDcQ7kNvwHg0M-G&_nc_oc=AdqwVWtUErK0GcfR9ctTuyKhIgHIXTf8oRvUxLHsRreICjus-WoJFg4cu71qxlXd9NQ&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQIJ0lZU2tN6uMqLtig_eUdqm31I5JpgwvPSEn0mFcqdkcYnQWka2d9bsc63e4zVq3UfTwX9Viw7&oh=00_AQMEr7yAa44wCOokCZ8ff80RRYrRDy5YT_jCirHSIdYagA&oe=6ADC1402"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "The things you\u2019re see cycling 1000 km around Taiwan \ud83d\ude02",
+          "title": "The things you’re see cycling 1000 km around Taiwan 😂",
           "url": "https://www.instagram.com/reel/DXYde6Fj3F9/",
           "permalinkId": "DXYde6Fj3F9",
           "date": "2026-04-21",
@@ -273,12 +286,13 @@
           "comments": 5,
           "shares": 43,
           "saves": 7,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/671780109_1465986118341729_8326280258009016163_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=u05LSFi126kQ7kNvwEYmC3K&_nc_oc=Adp8nlluXI-qMd1gDeqGSLNn_ycyBH6ITn861loPmthAzxvFPO3lcbBx3etzglw1pVQ&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQICK3f1bw7C-DCbQ3DRTb9XN12sroNaGx_t4LFNQvHfxvgxs6tji7I0I1PJpVep4wDPbeLKbKPF&oh=00_AQN_1f6AmQHWUV5veO0BcpIzzFC6Gm8dBSwgaU6O-QMpiA&oe=6ADC0E78"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 6 - The longest road to Kaohsiung Total: 514/1,000km  Last month I ran into some youtubers on my 10 day thru-hike and we stuck together for the la",
+          "title": "Cycling 1000km around Taiwan 📍Day 6 - The longest road to Kaohsiung Total: 514/1,000km  Last month I ran into some youtubers on my 10 day thru-hike and we stuck together for the la",
           "url": "https://www.instagram.com/reel/DXjl-_dCCbo/",
           "permalinkId": "DXjl-_dCCbo",
           "date": "2026-04-25",
@@ -287,12 +301,13 @@
           "comments": 10,
           "shares": 38,
           "saves": 15,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/673141191_18576625792018991_4483393948102264238_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=GoC-HWNlOHMQ7kNvwFzACKK&_nc_oc=AdolgCMaAiCznS5cL4fymrIEMdOg6Go_xR74TxkyuyM0DnpUF0c17BsBUtlvvo2Sui0&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQLG-srcfaCBX9CmG-5Eu-JW3_kaNidrXz5n-8N3_cXn3v3wCblCgBPxKpYLftNndfkFUZTgEgL0&oh=00_AQPTIQmL82vw1V3t02xCqOM9b_P_vDMepGMqKMCtFqzipQ&oe=6ADC04C7"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 7 - Rest day is best day (kinda) Total: 506/1,000km  Looking back at this whole day, in hindsight, I probably didnt need the rest day. i felt no m",
+          "title": "Cycling 1000km around Taiwan 📍Day 7 - Rest day is best day (kinda) Total: 506/1,000km  Looking back at this whole day, in hindsight, I probably didnt need the rest day. i felt no m",
           "url": "https://www.instagram.com/reel/DXntB_8iB4O/",
           "permalinkId": "DXntB_8iB4O",
           "date": "2026-04-27",
@@ -301,6 +316,7 @@
           "comments": 2,
           "shares": 2,
           "saves": 2,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/673832007_18577109053018991_7318798440247382318_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=16fnvPfa2ogQ7kNvwFcZ26s&_nc_oc=Adq8J_NIHsgffweTG70OjfYnz6xqqXUCIldCOVwqr1P3wLoH0QxSGPxLkje77ty0C70&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQKK7YN2IAv9aR3kTCh_sAYs0k0UPP3IjO9NxWnCTkZUGR1Ol_bc-w9Ffi4kjpdXo9Gq-NLhc6vL&oh=00_AQOkvTOY-C2lDBYgJMQYBwRo3UpSe1WGYqhRROU7MniGPA&oe=6ADBF947"
         },
         {
@@ -315,12 +331,13 @@
           "comments": 35,
           "shares": 74,
           "saves": 22,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/683665850_2029956601273670_3098511867191481196_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=RKsmYOPXH-MQ7kNvwE1ZaYy&_nc_oc=AdqQGgwkImcz8LCC2eZcN5U329DxXvfoY2v4J3gmo498f1KTGfb6vNJ3YSL0uJkd7lo&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQKBdrK1pizQDjt7FNa4u2jGeJ6MGmIWGH0-6wSrX_wz-4fNn5WAcIOGSoII2441pyNc-eKYSvxz&oh=00_AQPyGzgOfCl3dAb6GVLZwkQ5QkR5hcJpQC81acIsOOdQ6g&oe=6ADBFAD2"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1,000km around Taiwan. Rest day over, the mile\u2019s ain\u2019t gunna ride themselves, Day 8, let\u2019s go!   #Cycletouring #bikepacking #taiwan",
+          "title": "Cycling 1,000km around Taiwan. Rest day over, the mile’s ain’t gunna ride themselves, Day 8, let’s go!   #Cycletouring #bikepacking #taiwan",
           "url": "https://www.instagram.com/reel/DXtrKE7DyeC/",
           "permalinkId": "DXtrKE7DyeC",
           "date": "2026-04-29",
@@ -329,12 +346,13 @@
           "comments": 2,
           "shares": 1,
           "saves": 0,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/682027516_1835131813835653_4787373285377472174_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=TSp02z9yWzwQ7kNvwGHrWqx&_nc_oc=Adq5_ZD68Id1YqoHrQ7ZCmMjWPlERw6ok2VQMvB4iAA9L2C_4LpaDp8dcUyj-TZYiJg&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQKlTz9QG4Ub946x6emCNEO3gAQpw7kK3-Ps4aPh175jJ5scjnBLxlnpPfzik_NvZV1ibNnxPya4&oh=00_AQMD1AE2SNtYCZ040dmxDpc-C7eaRrXgh_B7EXY2K-_MNQ&oe=6ADBE6CC"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 8 - West coast is best coast (for now)   Total 602/1,000km I\u2019ve seen quite a bit of complaints for cycling the west side of Taiwan. Long stretches",
+          "title": "Cycling 1000km around Taiwan 📍Day 8 - West coast is best coast (for now)   Total 602/1,000km I’ve seen quite a bit of complaints for cycling the west side of Taiwan. Long stretches",
           "url": "https://www.instagram.com/reel/DXvWcbnot8-/",
           "permalinkId": "DXvWcbnot8-",
           "date": "2026-04-30",
@@ -343,12 +361,13 @@
           "comments": 13,
           "shares": 39,
           "saves": 10,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/671743592_18577978117018991_8911300908830431423_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=bm4FxFGqerIQ7kNvwE_H0d5&_nc_oc=AdoXRk4K8JgxLxc1tB0m36uT9m0l1rChQIvc6JVV1eqxnSvh0b4a-IJcx0nZobE5-Lg&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQK9mzmEAjs1FeM1aeiVqBIN80kWftjHmC0GV-d84AZh-Vs4cs7feIJyAPTRXwN8Ojw8PBeHNcW8&oh=00_AQNbGpuLxYKNJ486D9KLPJ5L4_rIXf07vEOuiJe_P6XOGQ&oe=6ADBF1C3"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Wax apple? Rose apple? Lian Wu it is. Yuuuuum. Make sure to grab this if you\u2019re cycling around Taiwan in the spring \ud83e\udd24#bikepacking #cycletouring #taiwan #waxapple",
+          "title": "Wax apple? Rose apple? Lian Wu it is. Yuuuuum. Make sure to grab this if you’re cycling around Taiwan in the spring 🤤#bikepacking #cycletouring #taiwan #waxapple",
           "url": "https://www.instagram.com/reel/DX6thiaBGV_/",
           "permalinkId": "DX6thiaBGV_",
           "date": "2026-05-04",
@@ -357,12 +376,13 @@
           "comments": 60,
           "shares": 519,
           "saves": 121,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/686940208_18579198982018991_7113097703829906055_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=t-oSnyuuDD0Q7kNvwGpTJdw&_nc_oc=AdqXLMeVGfxm84C09oX3Zj_4PouHKuoAD43Y5TDZkxJfu_IeVyu3KAkBlMtnOkq2WrI&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQIj-V4TrodJ_Ec5Zt35eEF5zOEQDG2QOtI9Y2qSD1ivTnsSWSAMWuzPwI3DInq4T05xPdYNFtoG&oh=00_AQOduYaxSAugNVYUVbIXoeiLihaSc4R4bbrM6PlkdpWlWg&oe=6ADC00F5"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would be the hardest ride of the trip. It was going to b",
+          "title": "Cycling 1000km around Taiwan 📍Day 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would be the hardest ride of the trip. It was going to b",
           "url": "https://www.instagram.com/reel/DYFMBwhIt_9/",
           "permalinkId": "DYFMBwhIt_9",
           "date": "2026-05-08",
@@ -371,12 +391,13 @@
           "comments": 20,
           "shares": 19,
           "saves": 16,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/693375533_18580268782018991_6674394315346979584_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=pJE79lT-eMEQ7kNvwE5PGcq&_nc_oc=AdqU-QFiLiC8LqvGDQjg4GCArkQKIsLskdxj-t-a4Tz7gpG8pCMkvttzuP02y2kcyS8&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQLkMaTiWrQZu1awyFOhELn-cmubSewPlmfD-9T_0AR7X_sI_tgeCxy1dkkSnHigwoCq0AzXGIYU&oh=00_AQMSlaGJ4aUGtBW4EAUqWkr-n113EEpQBOQ_AlUR5r4Fbg&oe=6ADBDFA8"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "At least we got one last good shot. \ud83e\udea6 Cycling 1,000km around Taiwan, Day 9 #cycletouring #taiwan #bikepacking",
+          "title": "At least we got one last good shot. 🪦 Cycling 1,000km around Taiwan, Day 9 #cycletouring #taiwan #bikepacking",
           "url": "https://www.instagram.com/reel/DYMDfqaI8si/",
           "permalinkId": "DYMDfqaI8si",
           "date": "2026-05-11",
@@ -385,12 +406,13 @@
           "comments": 2,
           "shares": 0,
           "saves": 0,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/691526519_18581061805018991_8577488931048799801_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1b2uROkyRewQ7kNvwH7rD9F&_nc_oc=AdpQ6qSYCtnPGW8WOAR-EwHkaJflTrUZH7Sw1RV-kwgA88HeQhbPXK4MHTvL-U27oLk&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQJNTOLJXejbB4stiOZXfBlF1TwY-Hn0w6iG2x8Qv7iv6rueANDJPAK7JZ2SS6epLABMwAO6C55F&oh=00_AQNZxd4j8TKy_hHKNZn_QYKHElq2PINaftiPqaA2JFvH4A&oe=6ADBE2DF"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "I think we feel \u2018unworthy\u2019 to do the big stuff, as if..we didn\u2019t earn it or something, not that we aren\u2019t able to accomplish it. We make excuses for ourselves, and often times it\u2019s",
+          "title": "I think we feel ‘unworthy’ to do the big stuff, as if..we didn’t earn it or something, not that we aren’t able to accomplish it. We make excuses for ourselves, and often times it’s",
           "url": "https://www.instagram.com/reel/DYzKkGPvoL8/",
           "permalinkId": "DYzKkGPvoL8",
           "date": "2026-05-26",
@@ -399,12 +421,13 @@
           "comments": 1,
           "shares": 22,
           "saves": 12,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/705907415_18585410614018991_2067581062116729242_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Uo_nSHwjpcgQ7kNvwGZLjv2&_nc_oc=AdrmFUc4i8TWDrFIf6XCFel5tmUCZK96Ed9c3fD5eG_9a5HDA-f0pwpKs-neLs7sQ3I&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQL4PeVHwQAgHwkFVQWT93GY4lzQblBpnCe4hAPu9RMPHl6LR3FHeOmxT7Zlb0tFgs3VoZgDct6a&oh=00_AQNkJsty_ALprS_BiL1dExClzcIGqPY2BtbmD55gcsrkPQ&oe=6ADBE73D"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a top tier scary expereince. i saw a cool hot air balo",
+          "title": "Cycling 1000km around Taiwan 📍Day 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a top tier scary expereince. i saw a cool hot air balo",
           "url": "https://www.instagram.com/reel/DY1-GiooWT4/",
           "permalinkId": "DY1-GiooWT4",
           "date": "2026-05-27",
@@ -413,12 +436,13 @@
           "comments": 10,
           "shares": 57,
           "saves": 18,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/709881353_18585765403018991_3131260245733132793_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=kimXyBWoGmwQ7kNvwGm-iSz&_nc_oc=AdrOO_vhuN70Fbw8FRLEg8qjqtUVcgQirxucyGwpcEpNsBE42jcC-QyfvJRpXhsLXnY&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQKOWF2zyEL37vk89uoJkpa_-q5O8W8imIApvEbSVMKL1UCUWRX080Xe9ZcHdmrboneo2K91BHaf&oh=00_AQPjrswKJOIZa9bGoztUhu0-7DB1TZZWsgfPtApCF-FhaQ&oe=6ADBDF99"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Even cyclists aren\u2019t safe from unrealistic expectation \ud83e\udd37\u200d\u2642\ufe0f.  Some funny moments from Day 10 of cycling 1000km around Taiwan   #shortking #tallguy #taiwan #cycletouring #funny",
+          "title": "Even cyclists aren’t safe from unrealistic expectation 🤷‍♂️.  Some funny moments from Day 10 of cycling 1000km around Taiwan   #shortking #tallguy #taiwan #cycletouring #funny",
           "url": "https://www.instagram.com/reel/DY4kBaHhSEV/",
           "permalinkId": "DY4kBaHhSEV",
           "date": "2026-05-28",
@@ -427,6 +451,7 @@
           "comments": 2,
           "shares": 18,
           "saves": 1,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/707815851_18586027945018991_8039583158937957534_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=F0GXWRvCQOwQ7kNvwEd28IX&_nc_oc=AdoZ6o7ztKs8qvLgaLLyjjZSs_rtZbh0wOyz5bCkEkHYAgVctYFF9l9K-eItafE0l0o&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQJ8HxJGog8o1Ilke0hKhgsTnk-WFwS9ZfKg5HYvXlU9R8Lyobwbd0fZYYrMuQ3PWSrdVVRZrs3G&oh=00_AQOgkSTNliWjoRRdvjwWMT211QVgwhkNaFco1_Xy8dS8wA&oe=6ADC0EA5"
         },
         {
@@ -441,12 +466,13 @@
           "comments": 0,
           "shares": 4,
           "saves": 5,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/712158737_18587722255018991_6713582068042967587_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=5swggWWzQAMQ7kNvwFOnNfY&_nc_oc=AdozdvYiRmzlVeoTsZ_tI8qjePqEi_UCKGacW-ZHANuUGaEYdpsDIstNL0D3a0QzSYg&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQIUcKxtmT4pkAzJOuITTP6XvnZxe0rKpqUp7GoH5LfCaI2MYkmvmiAaWpzJfqRDLRnvrjkQyczE&oh=00_AQPAmligeLxyxa6oLrRu_ZAZ8oYs45K4JcXKq0YanYKnvA&oe=6ADBFBF2"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 11 - Scotty Doesn\u2019t Know Total 916/1,000km  After today, I\u2019m convinced that we need low days; otherwise, what do we compare the good days to? Toda",
+          "title": "Cycling 1000km around Taiwan 📍Day 11 - Scotty Doesn’t Know Total 916/1,000km  After today, I’m convinced that we need low days; otherwise, what do we compare the good days to? Toda",
           "url": "https://www.instagram.com/reel/DZIEWFOIEdF/",
           "permalinkId": "DZIEWFOIEdF",
           "date": "2026-06-03",
@@ -455,6 +481,7 @@
           "comments": 5,
           "shares": 42,
           "saves": 24,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/712178774_18588003796018991_5719910488959864523_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=V5hNt-mBsM0Q7kNvwHwTqOn&_nc_oc=AdoJyiyPUeFnNAmGVDPZd9hBV2LCWiMGJVkgI3KfMVVvVWPn4uBz5Z2Q7nwoyzlJeFA&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQLa1gaPfh-LzV5Sd3wwqXLm_wfThKYVTJRQtGkKT9eppQdrdJGx9wQFXydT9QvbU-xaM54WOrW9&oh=00_AQNJ37upBSLfsCbv3zwLp_NSr5BVhAdKYy_u10UD6_i61Q&oe=6ADBE90E"
         },
         {
@@ -469,12 +496,13 @@
           "comments": 6,
           "shares": 0,
           "saves": 5,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/732366990_18597291541018991_2822916277465210234_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Zo8jmrafX_MQ7kNvwEKZbO7&_nc_oc=AdpmYdwMtoSB04-7XXi0cNurK1ycJJUvoC-3qQcxYPdPzwnN3pjQiC4hsn-NLX_G-ns&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQIS8VGmxOIxorez0e5PVgz-kT127v36pCiz9ReAyauCzAo9ysG0kLAVkpaJkicP3609PZ65n8MS&oh=00_AQNsa1KJ7x5A1fGpYUDThxSxTjh2XYlFblG45WESi-Iggg&oe=6ADBE97C"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "So after the earthquake in 2024, Taroko Gorge is still under repair. It\u2019s really quite a shame, because it all seems so beautiful, all the possible hikes, and biking/ driving route",
+          "title": "So after the earthquake in 2024, Taroko Gorge is still under repair. It’s really quite a shame, because it all seems so beautiful, all the possible hikes, and biking/ driving route",
           "url": "https://www.instagram.com/reel/DaZS0GGIxkK/",
           "permalinkId": "DaZS0GGIxkK",
           "date": "2026-07-05",
@@ -483,12 +511,13 @@
           "comments": 53,
           "shares": 618,
           "saves": 171,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/734622999_18597603562018991_6377418829691059103_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ecEYiMceizAQ7kNvwH4FxsY&_nc_oc=AdpkdRXSC88RsRPnylmZtmLNoBripoNo0pXcAlFTau2Jgz7kvGZfQ2xuH_gOyrSYZ1g&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQIlTamEfi-u46oMYWJ-u1RxYKnr9yqm-ufBAUWxwifiXS8zI6RvOusEeNL4E1I5jzmWztfKL7fR&oh=00_AQORy3CT2j7Zje90a2IdtfffclJ7iTL8LXYFaiB-VoaRCw&oe=6ADC0C82"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 12 - Taroko and Trains Initially, I was torn between visiting Taroko Gorge or not, but being so close, I felt it would be such a shame to pass. As",
+          "title": "Cycling 1000km around Taiwan 📍Day 12 - Taroko and Trains Initially, I was torn between visiting Taroko Gorge or not, but being so close, I felt it would be such a shame to pass. As",
           "url": "https://www.instagram.com/reel/DafqkkUIHpb/",
           "permalinkId": "DafqkkUIHpb",
           "date": "2026-07-07",
@@ -497,6 +526,7 @@
           "comments": 4,
           "shares": 17,
           "saves": 18,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/736343079_18598349497018991_781990731183381311_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=dqDm0Wdgn0wQ7kNvwESc8K6&_nc_oc=Adp1hBhJGQrFq2VzjcUARrqgfXdaFZgKxBl7MPk7ZPv5z1LMlHqg48hB_Zd-o4_iWco&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQJmzNCPy22OoLWLtvPZTDf17LBouL5dF0Zt8uFkKMjUKs930mSeIe6rkmfWNIhvInpnZC0MvIfU&oh=00_AQNi7JK663fdz1LXQZ6S151zBHb6ORWGneQPLiHttpPn3w&oe=6ADC04B0"
         },
         {
@@ -511,12 +541,13 @@
           "comments": 5,
           "shares": 2,
           "saves": 2,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/746780035_18600650653018991_6224429504583524274_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=azSllR8dyhkQ7kNvwG55uhS&_nc_oc=AdpQ02eICd32r-3wRsr0H-vgTvIG8_p3UhUu6N3L6SBfcAbkP1eQSc3JAHkL3QHidYM&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQKf5ZFo704jHIxb2WNlJltKjjLAOmhLHxeSo-tghcqh-Hf63WlrGM00qbfIKWDshlTgAVd9OdCV&oh=00_AQNUWIiWTomA44IQmMctK8JCQgVKn9eCpSR1hNqstYEt3A&oe=6ADBE4CC"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 13 - The day has finally come.. I wasn\u2019t exactly sure how long this whole trip would take, honestly. A lot of folks online are saying 7-9 days is ",
+          "title": "Cycling 1000km around Taiwan 📍Day 13 - The day has finally come.. I wasn’t exactly sure how long this whole trip would take, honestly. A lot of folks online are saying 7-9 days is ",
           "url": "https://www.instagram.com/reel/Da4ODCdoIhh/",
           "permalinkId": "Da4ODCdoIhh",
           "date": "2026-07-17",
@@ -525,6 +556,7 @@
           "comments": 3,
           "shares": 16,
           "saves": 8,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/748343453_18601230691018991_4771330656544116326_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=DqZzWChD2JEQ7kNvwESp8Rf&_nc_oc=AdrNDQ54ksX6-3j77Nlqx4zzJfS_prCMCLwt_zOyTRuRMplxHGIefdO3_BtEoE6ZFfQ&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQKKrsscwsJSD4me97AZSNdaLHgYsD_G_z0YUiSN0G11Gl--vLoPEDgJef30O_pe2vSoh3scWVu_&oh=00_AQOjC22hzVGJD_lIkyas4v9_7rJCYXICuCDeboPVzCavyA&oe=6ADBF8A1"
         },
         {
@@ -539,12 +571,13 @@
           "comments": 3,
           "shares": 2,
           "saves": 1,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/750738034_18601976719018991_8837964650253428854_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=-FQL_Ry9VEQQ7kNvwEEy6qf&_nc_oc=AdrCF_ZwiTzWMhXH_9UgwV-PVI_KKlYMnSFtOx845z38--TxFoYinGzzol5FfkGyHxY&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQLXYTuzg6qRCzSOTf-AVgg0yRZV6eyxqUBAooWVb6Bc4rGO4QD0BARzHaMmutCXJ_lmiKtXfkTh&oh=00_AQPNjLK3YynhG9lWhHLs3iinRlLQTHMOjFGxkpEz3B2Gyw&oe=6ADBF37D"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 13 - The End. \u201cCycling Taiwan was pretty dam awesome. but if there is a takeaway from all these videos, it\u2019s  not the specific spots to visit, the",
+          "title": "Cycling 1000km around Taiwan 📍Day 13 - The End. “Cycling Taiwan was pretty dam awesome. but if there is a takeaway from all these videos, it’s  not the specific spots to visit, the",
           "url": "https://www.instagram.com/reel/DbGKczsosuZ/",
           "permalinkId": "DbGKczsosuZ",
           "date": "2026-07-22",
@@ -553,6 +586,7 @@
           "comments": 2,
           "shares": 26,
           "saves": 12,
+          "duration": null,
           "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/753541260_18602875384018991_1964765397933415782_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=BYVaiinsQV0Q7kNvwEY0kQy&_nc_oc=AdrLoYEqo1XarihpezmJXfHMIBbyvHQw_Nctdfi0jU07pGSW-IDWRU52WJzB8_Ki-jw&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQIstf8l7BlA_GKyDdUjJFbqRp7TskUGT47VXBT5jf2gI8oNAy9V8lkpqrW2FvIbTYlG4eeW2EKd&oh=00_AQM755f_Z4JvasQEq1QHVDLjplOraE20SEl1wHOQArLugw&oe=6ADBEB60"
         },
         {
@@ -567,12 +601,13 @@
           "comments": 1,
           "shares": 0,
           "saves": 0,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/755868002_18603376531018991_2075275348457290252_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_M8T2U1i26wQ7kNvwGHk5G3&_nc_oc=Adp4bb2shN531GdphZMkVVDDzSL93-8jKTLEmv1XB3w5hgeahS0Olp3853L-_jLeMZk&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQJWFYiX0KBv2RoeBPoXs0gTt1gdNsSX13qkKDJecSKfWG_PGSgA1OO5ukyO_HSSYQxTunAGM4HN&oh=00_AQOmNLFrhUszxCmYW3FhotTAs87mo1RLb_IveUPEsqtKWA&oe=6ADC0C2C"
         },
         {
           "platform": "Instagram",
           "type": "Reel",
-          "title": "Cycling 1,000km around Taiwan. \ud83c\uddf9\ud83c\uddfc\ud83d\udeb4\u200d\u2642\ufe0f A little music video showing my 13 day journey around the island. I\u2019m proud of some of these shots! all shot on iPhone.  What an adventure ~ o",
+          "title": "Cycling 1,000km around Taiwan. 🇹🇼🚴‍♂️ A little music video showing my 13 day journey around the island. I’m proud of some of these shots! all shot on iPhone.  What an adventure ~ o",
           "url": "https://www.instagram.com/reel/DbRoTtLIpWl/",
           "permalinkId": "DbRoTtLIpWl",
           "date": "2026-07-27",
@@ -581,6 +616,7 @@
           "comments": 12,
           "shares": 28,
           "saves": 23,
+          "duration": null,
           "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/756909063_18604229446018991_2078183544231885533_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=sfd3k6_n47IQ7kNvwHJUsUU&_nc_oc=Adqc07RFgw7idnLCfixoloGDGJTHlG980SyYBVkWAPD44di4xYr8NZnBj9He2CiX9oo&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=NgKXRG_TA1C15jt_5GwfHQ&_nc_tpa=Q5bMBQIunkB7YWN7NoK5BhOrpGn2UDyUJPEaDiTL-jibpU3qLxqFoltPN9WEP-YQ21imKnSfU-f_C8O0&oh=00_AQOg0VynELIfNCmXBJUrK5Qj_uTzukYs37PjM3UiIEDrAg&oe=6ADC01B0"
         },
         {
@@ -595,12 +631,13 @@
           "comments": 4,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "https://i.ytimg.com/vi/lfM9PSMkrU8/maxresdefault.jpg"
+          "duration": "637",
+          "thumbnail": "https://i.ytimg.com/vi/lfM9PSMkrU8/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling. Let\u2019s GOOOOO \ud83e\udd29\ud83d\udeb5 #taiwan #cycletouring #bik",
+          "title": "24 hours from now ill be on the bike cycling around the entirety of Taiwan, should take a bit under 2 weeks, with over 1000km of cycling. Let’s GOOOOO 🤩🚵 #taiwan #cycletouring #bik",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315324534017288",
           "permalinkId": "7667315324534017288",
           "date": "2026-07-29",
@@ -609,7 +646,8 @@
           "comments": 4,
           "shares": 1,
           "saves": 2,
-          "thumbnail": "assets/thumbs/tiktok/7667315324534017288.jpg"
+          "duration": "67",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oAEBni19eAs9gJBoIvoBE0BwihsSOM9ZBJwAKk~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=2c375867&x-expires=1792504800&x-signature=JMro4Rhuw16tRNSZhwjge2ort00%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -623,12 +661,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "67",
           "thumbnail": "https://i.ytimg.com/vi/7QvGxTmRCbg/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Super minimal and ultra light, this is almost all I\u2019ll need to cycle around the entire island of Taiwan. It should take a little less than 2 weeks to cover the 1000+km   At first t",
+          "title": "Super minimal and ultra light, this is almost all I’ll need to cycle around the entire island of Taiwan. It should take a little less than 2 weeks to cover the 1000+km   At first t",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315359887789319",
           "permalinkId": "7667315359887789319",
           "date": "2026-07-30",
@@ -637,7 +676,8 @@
           "comments": 3,
           "shares": 0,
           "saves": 3,
-          "thumbnail": "assets/thumbs/tiktok/7667315359887789319.jpg"
+          "duration": "144",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMREkiT0EgrCU7ZBfnPDfBgVZAAFBA4g05VqIl~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=5838308d&x-expires=1792504800&x-signature=0IeqXS6fq6owF72tuV3Ypbtgytk%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -651,12 +691,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "145",
           "thumbnail": "https://i.ytimg.com/vi/v2KqUL0LQJs/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "\ud83d\udccdDay 0 - My Inspiration and Flight to Taipei Today\u2019s km: 0km Total km: 0km Today\u2019s elevation: 0m Total elevation: 0m Cal burned: 0 cal Skip to the second half if you just wanna see",
+          "title": "📍Day 0 - My Inspiration and Flight to Taipei Today’s km: 0km Total km: 0km Today’s elevation: 0m Total elevation: 0m Cal burned: 0 cal Skip to the second half if you just wanna see",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315386265767176",
           "permalinkId": "7667315386265767176",
           "date": "2026-07-31",
@@ -665,7 +706,8 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315386265767176.jpg"
+          "duration": "173",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/ogBnO05gIAJMxEiynPKiBY6gTFCIewWMAyAgi1~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=7de93dfa&x-expires=1792504800&x-signature=WhRXxah%2Blzo80Ma3FpVraXM8yXE%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -679,12 +721,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "174",
           "thumbnail": "https://i.ytimg.com/vi/ygMcmP1ZvbQ/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Tiawan \ud83d\udccdDay 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
+          "title": "Cycling 1000km around Tiawan 📍Day 1 - Pick up Bike in Taipei and head to Hsinchu.  Total: 89/1,000km  The initial feelings of starting an adventure is always so thrilling, but know",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315384294460679",
           "permalinkId": "7667315384294460679",
           "date": "2026-08-01",
@@ -693,7 +736,8 @@
           "comments": 3,
           "shares": 3,
           "saves": 6,
-          "thumbnail": "assets/thumbs/tiktok/7667315384294460679.jpg"
+          "duration": "178",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oct0o1ZpfAA1BEBHBxBnmlIwdiKU8Mh7VqiEAd~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=0ceb3e8d&x-expires=1792504800&x-signature=TnkLXm%2Bhqkz0dFR%2B%2Ftn5oi6YRO0%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -707,12 +751,13 @@
           "comments": 2,
           "shares": 0,
           "saves": 0,
+          "duration": "178",
           "thumbnail": "https://i.ytimg.com/vi/Z6Ux1lqLQwE/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "While I\u2019m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
+          "title": "While I’m waiting to pick up my bike to cycle 1000km around Taiwan, I discovered this gem..  Are there other cities doing this?   #communitygarden #repurpose #gardening #taiwan #ta",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315366741282066",
           "permalinkId": "7667315366741282066",
           "date": "2026-08-02",
@@ -721,7 +766,8 @@
           "comments": 5,
           "shares": 14,
           "saves": 26,
-          "thumbnail": "assets/thumbs/tiktok/7667315366741282066.jpg"
+          "duration": "41",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o4hyPX1EQAMhAQzyze884ATArMWQUMSnDOufDf~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=1925144b&x-expires=1792504800&x-signature=sx1H9F6fWUUqe%2FZIqfHOAynhOho%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -735,12 +781,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "41",
           "thumbnail": "https://i.ytimg.com/vi/IRxUVEx4MHc/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 2 - Wind and existential joy from Hsinchu to Gaomei   We\u2019re told to appreciate the little, subtle and simple things in life, but sometimes, it\u2019s b",
+          "title": "Cycling 1000km around Taiwan 📍Day 2 - Wind and existential joy from Hsinchu to Gaomei   We’re told to appreciate the little, subtle and simple things in life, but sometimes, it’s b",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315402094972178",
           "permalinkId": "7667315402094972178",
           "date": "2026-08-03",
@@ -749,7 +796,8 @@
           "comments": 1,
           "shares": 1,
           "saves": 2,
-          "thumbnail": "assets/thumbs/tiktok/7667315402094972178.jpg"
+          "duration": "174",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMHlIhXzAQerAIyOUIQj8eLOEIDPS0eTD6EOGd~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=bed42ca1&x-expires=1792504800&x-signature=THaGW5XKkyzChBnmnGcGXUDe7TQ%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -763,12 +811,13 @@
           "comments": 3,
           "shares": 0,
           "saves": 0,
+          "duration": "174",
           "thumbnail": "https://i.ytimg.com/vi/VfwlR60nfd0/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Is it just me or are chip bags insanely hard to open in Taiwan?  (From day 1 of cycling 1,000km around #taiwan \ud83c\uddf9\ud83c\uddfc\ud83d\udeb4\u200d\u2642\ufe0f)",
+          "title": "Is it just me or are chip bags insanely hard to open in Taiwan?  (From day 1 of cycling 1,000km around #taiwan 🇹🇼🚴‍♂️)",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315391026285842",
           "permalinkId": "7667315391026285842",
           "date": "2026-08-04",
@@ -777,7 +826,8 @@
           "comments": 3,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315391026285842.jpg"
+          "duration": "19",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oIfq5wVZCYDZlnNERsF9tE4VBeUiIgB56wCUEA~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=fa2f9d25&x-expires=1792504800&x-signature=0ckvXXffSQKnOlDoPkNafRyvUhk%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&s=PUBLISH&sc=cover&biz_tag=tt_video"
         },
         {
           "platform": "YouTube",
@@ -791,6 +841,7 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "20",
           "thumbnail": "https://i.ytimg.com/vi/joDgYHEuZ5I/hqdefault.jpg"
         },
         {
@@ -805,12 +856,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "22",
           "thumbnail": "https://i.ytimg.com/vi/LbrxoKixZEQ/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "If you\u2019re gunna act like an influencer, at least keep your eyes on the road \ud83d\ude05  #taiwan #huandao #cycletouring #bikepacking",
+          "title": "If you’re gunna act like an influencer, at least keep your eyes on the road 😅  #taiwan #huandao #cycletouring #bikepacking",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315391491853575",
           "permalinkId": "7667315391491853575",
           "date": "2026-08-05",
@@ -819,12 +871,13 @@
           "comments": 4,
           "shares": 1,
           "saves": 2,
-          "thumbnail": "assets/thumbs/tiktok/7667315391491853575.jpg"
+          "duration": "22",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o4TIpQZugAFfB4l5VFfa7qDB3XZ9AECyN2IQEP~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=d9cfee15&x-expires=1792504800&x-signature=3Htbe4qS3MnTI8DhhSwEIzMId4E%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 3 - A little anxious and a lot of rest Total: 219/1,000km We hit the ground running (actually..biking) in the first two days, and the distance/ele",
+          "title": "Cycling 1000km around Taiwan 📍Day 3 - A little anxious and a lot of rest Total: 219/1,000km We hit the ground running (actually..biking) in the first two days, and the distance/ele",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315386265783560",
           "permalinkId": "7667315386265783560",
           "date": "2026-08-06",
@@ -833,7 +886,8 @@
           "comments": 1,
           "shares": 1,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315386265783560.jpg"
+          "duration": "174",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oEZsESchBGAVjei87wLeDrUBBEVATDlzIYeGnI~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=0a558ca0&x-expires=1792504800&x-signature=Z%2FqW6wAPvytW8pmSWHVP7tVxY0E%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast5&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -847,6 +901,7 @@
           "comments": 2,
           "shares": 0,
           "saves": 0,
+          "duration": "174",
           "thumbnail": "https://i.ytimg.com/vi/ZGVkgseRWA8/hqdefault.jpg"
         },
         {
@@ -861,12 +916,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "51",
           "thumbnail": "https://i.ytimg.com/vi/p2TGEOyGA3c/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "If you have a better rest day tip, let\u2019s hear it \ud83d\udc42 #bikepacking #cycletouring #taiwan #tip",
+          "title": "If you have a better rest day tip, let’s hear it 👂 #bikepacking #cycletouring #taiwan #tip",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315378820877575",
           "permalinkId": "7667315378820877575",
           "date": "2026-08-07",
@@ -875,12 +931,13 @@
           "comments": 1,
           "shares": 0,
           "saves": 2,
-          "thumbnail": "assets/thumbs/tiktok/7667315378820877575.jpg"
+          "duration": "50",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o8BKw8hfK1irBqAqArBncai8x3HMwA5EkKnSIB~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=906c9e55&x-expires=1792504800&x-signature=muS9PlZu8iCJHUaq6PBZXlOjLLU%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 4 - The biggest thrill in recent memory Total: 284/1,000km Today was a genuinely a roller coaster from start to finish. I was worried cuz, well, h",
+          "title": "Cycling 1000km around Taiwan 📍Day 4 - The biggest thrill in recent memory Total: 284/1,000km Today was a genuinely a roller coaster from start to finish. I was worried cuz, well, h",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315400408829192",
           "permalinkId": "7667315400408829192",
           "date": "2026-08-08",
@@ -889,7 +946,8 @@
           "comments": 4,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315400408829192.jpg"
+          "duration": "166",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMUzMtzSAjxQChgEhv9eiDAOOrXffo8BzA8MUQ~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=a0b24d9b&x-expires=1792504800&x-signature=ws1INQuHpX9sjBk77yhWZQtq878%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -903,12 +961,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "167",
           "thumbnail": "https://i.ytimg.com/vi/ApmzlZtQsZI/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "I don\u2019t think I\u2019ve ever seen a rooster as an indoor house pet before lmao. who needs a guard dog when \ud83e\udd37\u200d\u2642\ufe0f. Found in Day 4 of cycling around Taiwan in my way up to SunMoon Lake! #t",
+          "title": "I don’t think I’ve ever seen a rooster as an indoor house pet before lmao. who needs a guard dog when 🤷‍♂️. Found in Day 4 of cycling around Taiwan in my way up to SunMoon Lake! #t",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315388253785351",
           "permalinkId": "7667315388253785351",
           "date": "2026-08-09",
@@ -917,7 +976,8 @@
           "comments": 1,
           "shares": 0,
           "saves": 1,
-          "thumbnail": "assets/thumbs/tiktok/7667315388253785351.jpg"
+          "duration": "32",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oIDqlEeDMIpZjF9CTpWfl1sSYD0SBVgWnqE6AB~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=b2f04915&x-expires=1792504800&x-signature=fqJMRbQCjAAV6A4891uFUg4SyCM%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -931,12 +991,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "32",
           "thumbnail": "https://i.ytimg.com/vi/eYPiF-4ARWo/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 5 - Sunmoon Lake and Tim! Total: 391/1,000km They say that comparison is the thief of joy, and the high expectation for SunMoon lake compared to m",
+          "title": "Cycling 1000km around Taiwan 📍Day 5 - Sunmoon Lake and Tim! Total: 391/1,000km They say that comparison is the thief of joy, and the high expectation for SunMoon lake compared to m",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315390560603400",
           "permalinkId": "7667315390560603400",
           "date": "2026-08-10",
@@ -945,7 +1006,8 @@
           "comments": 1,
           "shares": 1,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315390560603400.jpg"
+          "duration": "179",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o0AlHwzuDQrfaPjsAWFBSCretDfnU8DIEdAxEz~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=1ea3db86&x-expires=1792504800&x-signature=KpdG7AXiOhDEDcX4u90%2F0hE%2F9Zo%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -959,12 +1021,13 @@
           "comments": 1,
           "shares": 0,
           "saves": 0,
+          "duration": "180",
           "thumbnail": "https://i.ytimg.com/vi/J28BNYb0WGM/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "IRL Clickbait \ud83d\ude02 The things you\u2019re see cycling 1000 km around Taiwan \ud83d\ude02 #huandao #taiwan #sunmoonlake #bikepacking #cycletouring",
+          "title": "IRL Clickbait 😂 The things you’re see cycling 1000 km around Taiwan 😂 #huandao #taiwan #sunmoonlake #bikepacking #cycletouring",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315396172680466",
           "permalinkId": "7667315396172680466",
           "date": "2026-08-11",
@@ -973,12 +1036,13 @@
           "comments": 1,
           "shares": 2,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315396172680466.jpg"
+          "duration": "17",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/okULPApP6UEh4EQqbZFfBBgHzYf498IMV4DpCr~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=2d250b0b&x-expires=1792504800&x-signature=R8P53DcHAW0NfdmaaVOdQB1TImg%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
           "type": "Short",
-          "title": "IRL Clickbait  \ud83d\ude02",
+          "title": "IRL Clickbait  😂",
           "url": "https://www.youtube.com/watch?v=QWTtxo3Isq4",
           "permalinkId": "QWTtxo3Isq4",
           "date": "2026-08-11",
@@ -987,12 +1051,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "18",
           "thumbnail": "https://i.ytimg.com/vi/QWTtxo3Isq4/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 6 - The longest road to Kaohsiung Total: 514/1,000km lLst month I ran into some youtubers on my 10 day thru-hike and we stuck together for the las",
+          "title": "Cycling 1000km around Taiwan 📍Day 6 - The longest road to Kaohsiung Total: 514/1,000km lLst month I ran into some youtubers on my 10 day thru-hike and we stuck together for the las",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315364107177223",
           "permalinkId": "7667315364107177223",
           "date": "2026-08-12",
@@ -1001,7 +1066,8 @@
           "comments": 4,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315364107177223.jpg"
+          "duration": "177",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/okoGSJWLIjfDQtLAU9eAQX1eXdmrCxEzPIDSU1~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=909ca8e0&x-expires=1792504800&x-signature=L8Q3eL2hZj9dxBssVvS2ZBeWgw8%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1015,12 +1081,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "177",
           "thumbnail": "https://i.ytimg.com/vi/_6D0xxKLxXE/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Day 7 of Cycling 1000km around Taiwan Cycling 1000km around Taiwan \ud83d\udccdDay 7 - Rest day is best day (kinda) Total: 506/1,000km Looking back at this whole day, in hindsight, I probably",
+          "title": "Day 7 of Cycling 1000km around Taiwan Cycling 1000km around Taiwan 📍Day 7 - Rest day is best day (kinda) Total: 506/1,000km Looking back at this whole day, in hindsight, I probably",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315391663787282",
           "permalinkId": "7667315391663787282",
           "date": "2026-08-13",
@@ -1029,7 +1096,8 @@
           "comments": 1,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315391663787282.jpg"
+          "duration": "78",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oIqEiEkDAGlCifeFfoUrDDA7EWnGXzIq0TTJ8o~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=f68f7f13&x-expires=1792504800&x-signature=wEem4TW51gYUCKj%2BJVrOvd720XA%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1043,6 +1111,7 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "78",
           "thumbnail": "https://i.ytimg.com/vi/4F6KnALNFGQ/hqdefault.jpg"
         },
         {
@@ -1057,7 +1126,8 @@
           "comments": 7,
           "shares": 0,
           "saves": 1,
-          "thumbnail": "assets/thumbs/tiktok/7667315392917900551.jpg"
+          "duration": "30",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oYEkIpvf623Ej9CVppZqdBFaLGgDk1gBAof1nB~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=8335f056&x-expires=1792504800&x-signature=aR0CSFEA1zx8fD0va%2B%2BnGjY7WF4%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1071,12 +1141,13 @@
           "comments": 2,
           "shares": 0,
           "saves": 0,
+          "duration": "31",
           "thumbnail": "https://i.ytimg.com/vi/X1JfWOIaIxs/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1,000km around Taiwan. Rest day over, the mile\u2019s ain\u2019t gunna ride themselves, Day 8, let\u2019s go! #Cycletouring #bikepacking #taiwan",
+          "title": "Cycling 1,000km around Taiwan. Rest day over, the mile’s ain’t gunna ride themselves, Day 8, let’s go! #Cycletouring #bikepacking #taiwan",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315401528773906",
           "permalinkId": "7667315401528773906",
           "date": "2026-08-15",
@@ -1085,7 +1156,8 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315401528773906.jpg"
+          "duration": "27",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/okpe2FXCEIdEgGZ66nfUSuwAVYHuqDpNBAvqBR~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=552cad33&x-expires=1792504800&x-signature=Vcji4%2Fvn2MePrFKLZuEQpo3vwKM%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1099,12 +1171,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "27",
           "thumbnail": "https://i.ytimg.com/vi/9Ixr6jeUzvc/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 8 - Finished with the West Total 602/1,000km I\u2019ve seen quite a bit of complaints for cycling the west side of Taiwan. Long stretches of farms, ind",
+          "title": "Cycling 1000km around Taiwan 📍Day 8 - Finished with the West Total 602/1,000km I’ve seen quite a bit of complaints for cycling the west side of Taiwan. Long stretches of farms, ind",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315384743185682",
           "permalinkId": "7667315384743185682",
           "date": "2026-08-16",
@@ -1113,7 +1186,8 @@
           "comments": 0,
           "shares": 1,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315384743185682.jpg"
+          "duration": "169",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oQRsItUV2Ck5VtDvB2gFfZTFEfocqsEB7BAsnA~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=3b379b98&x-expires=1792504800&x-signature=415Tpn4Xtpd%2FvCC8O636PfmSm4k%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1127,12 +1201,13 @@
           "comments": 1,
           "shares": 0,
           "saves": 0,
+          "duration": "169",
           "thumbnail": "https://i.ytimg.com/vi/qtLQCm4RTic/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Found this by the roadside in Taiwan  Wax apple? Rose apple? Lian Wu it is. Yuuuuum. Make sure to grab this if you\u2019re cycling around Taiwan in the spring \ud83e\udd24#bikepacking #cycletourin",
+          "title": "Found this by the roadside in Taiwan  Wax apple? Rose apple? Lian Wu it is. Yuuuuum. Make sure to grab this if you’re cycling around Taiwan in the spring 🤤#bikepacking #cycletourin",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315385225596167",
           "permalinkId": "7667315385225596167",
           "date": "2026-08-17",
@@ -1141,7 +1216,8 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315385225596167.jpg"
+          "duration": "38",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/osKK8MihrI09On08BGmspuwEBPAuigBiYAK1eI~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=14ffcea8&x-expires=1792504800&x-signature=TroMlXRpri3vwSHC7Bbj5PuGwLQ%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1155,12 +1231,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "38",
           "thumbnail": "https://i.ytimg.com/vi/40wFN39cx-M/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would be the hardest ride of the trip. It was going to b",
+          "title": "Cycling 1000km around Taiwan 📍Day 9 - Hello, new coast, who dis? Total 704/1,000km I honestly started the day thinking this would be the hardest ride of the trip. It was going to b",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315402615033096",
           "permalinkId": "7667315402615033096",
           "date": "2026-08-18",
@@ -1169,7 +1246,8 @@
           "comments": 2,
           "shares": 1,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315402615033096.jpg"
+          "duration": "179",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oger2zI7qQmuFPocE1JzS9AIGeAeLDC8uCHU0Q~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=5574262d&x-expires=1792504800&x-signature=V%2BQ30K9VsKRWF2ckaXVK8kXRRZE%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1183,6 +1261,7 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "179",
           "thumbnail": "https://i.ytimg.com/vi/M_eoePd2lwo/hqdefault.jpg"
         },
         {
@@ -1197,12 +1276,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "41",
           "thumbnail": "https://i.ytimg.com/vi/4CcgxFXv0Sc/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "I think we feel \u2018unworthy\u2019 to do the big stuff, as if..we didn\u2019t earn it or something, not that we aren\u2019t able to accomplish it. We make excuses for ourselves, and often times it\u2019s",
+          "title": "I think we feel ‘unworthy’ to do the big stuff, as if..we didn’t earn it or something, not that we aren’t able to accomplish it. We make excuses for ourselves, and often times it’s",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315405295226119",
           "permalinkId": "7667315405295226119",
           "date": "2026-08-19",
@@ -1211,12 +1291,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315405295226119.jpg"
+          "duration": "41",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oE8qBVniKqofUOZtqwB9JIQMEAX128B4W7KAiA~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=9a2214db&x-expires=1792504800&x-signature=QS2IdLzf4TBgXR%2FO%2BMAzV8kYECo%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&s=PUBLISH&sc=cover&biz_tag=tt_video"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "At least we got one last good shot. \ud83e\udea6 Cycling 1,000km around Taiwan, Day 9 #cycletouring #taiwan #bikepacking #huandao",
+          "title": "At least we got one last good shot. 🪦 Cycling 1,000km around Taiwan, Day 9 #cycletouring #taiwan #bikepacking #huandao",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315383275212050",
           "permalinkId": "7667315383275212050",
           "date": "2026-08-20",
@@ -1225,7 +1306,8 @@
           "comments": 3,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315383275212050.jpg"
+          "duration": "25",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o0f3nr4ABBBEljgmz0D3UqI2ZE323rVZ6FfCh3~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=b9c63bf4&x-expires=1792504800&x-signature=Na4SQQsZm02vbOuj2N%2FI6YFokuM%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1239,12 +1321,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "25",
           "thumbnail": "https://i.ytimg.com/vi/nfoPfTmnMxM/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Cycling 1000km around Taiwan \ud83d\udccdDay 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a top-tier scary experience. I saw a cool hot air ball",
+          "title": "Cycling 1000km around Taiwan 📍Day 10 - Brown Street is good. Total 803/1,000km Okay, listen, getting chased by dogs has to be a top-tier scary experience. I saw a cool hot air ball",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315383350709511",
           "permalinkId": "7667315383350709511",
           "date": "2026-08-21",
@@ -1253,7 +1336,8 @@
           "comments": 1,
           "shares": 1,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315383350709511.jpg"
+          "duration": "179",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oAzpeeLI7AfiaWRZACtBntkYL41CocqgGJGseA~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=4584fca4&x-expires=1792504800&x-signature=Ij0DB%2B3qSv3DErZHLb3QK7AAVSc%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&s=PUBLISH&sc=cover&biz_tag=tt_video"
         },
         {
           "platform": "YouTube",
@@ -1267,6 +1351,7 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "180",
           "thumbnail": "https://i.ytimg.com/vi/xcW2rTWlv4Q/hqdefault.jpg"
         },
         {
@@ -1281,12 +1366,13 @@
           "comments": 2,
           "shares": 0,
           "saves": 0,
+          "duration": "42",
           "thumbnail": "https://i.ytimg.com/vi/zjXRWPqgnBY/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "Even cyclists aren\u2019t safe from unrealistic expectation \ud83e\udd37\u200d\u2642\ufe0f.  Some funny moments from Day 10 of cycling 1000km around Taiwan  #shortking #tallguy #taiwan #cycletouring #funny",
+          "title": "Even cyclists aren’t safe from unrealistic expectation 🤷‍♂️.  Some funny moments from Day 10 of cycling 1000km around Taiwan  #shortking #tallguy #taiwan #cycletouring #funny",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315380909722888",
           "permalinkId": "7667315380909722888",
           "date": "2026-08-22",
@@ -1295,7 +1381,8 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315380909722888.jpg"
+          "duration": "42",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/og1EBJvgiiAU7MCwIKsB0h1QevpJm81nBg4vAy~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=a661f8a0&x-expires=1792504800&x-signature=EMoHibM4zuwMG0DxO%2FQx5%2BFRvHY%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "TikTok",
@@ -1309,7 +1396,8 @@
           "comments": 0,
           "shares": 0,
           "saves": 1,
-          "thumbnail": "assets/thumbs/tiktok/7667315337431436552.jpg"
+          "duration": "59",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oAFUEjiTlRqP46ZnAABAInMxK31wqAlBueiQP1~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=6de8b5e4&x-expires=1792504800&x-signature=xv4ULM%2BxrkF%2B1oH8rgUPJTnRMDY%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1323,6 +1411,7 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "60",
           "thumbnail": "https://i.ytimg.com/vi/FoBaVGN8cBI/hqdefault.jpg"
         },
         {
@@ -1337,12 +1426,13 @@
           "comments": 8,
           "shares": 0,
           "saves": 0,
+          "duration": "180",
           "thumbnail": "https://i.ytimg.com/vi/EFCNXpWe8EA/hqdefault.jpg"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "ycling 1000km around Taiwan \ud83d\udccdDay 11 - Scotty Doesn\u2019t Know Total 916/1,000km After today, I\u2019m convinced that we need low days; otherwise, what do we compare the good days to? Today ",
+          "title": "ycling 1000km around Taiwan 📍Day 11 - Scotty Doesn’t Know Total 916/1,000km After today, I’m convinced that we need low days; otherwise, what do we compare the good days to? Today ",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315390887791880",
           "permalinkId": "7667315390887791880",
           "date": "2026-08-24",
@@ -1351,7 +1441,8 @@
           "comments": 1,
           "shares": 3,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315390887791880.jpg"
+          "duration": "179",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oo5eGpYbQffqAXBsjQQhvAGrFf6nFYMmJAp8W3~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=f860e051&x-expires=1792504800&x-signature=VBuOETjsEBNF2BYImp8uYT8AMIw%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1365,6 +1456,7 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "75",
           "thumbnail": "https://i.ytimg.com/vi/M88EjgMQQ9w/hqdefault.jpg"
         },
         {
@@ -1379,12 +1471,13 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
-          "thumbnail": "assets/thumbs/tiktok/7667315397158276359.jpg"
+          "duration": "74",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/okWC8EuDgLTBRmpFfPqVBDAqInP5zZQL6HfrOU~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=82429b6a&x-expires=1792504800&x-signature=hCR2WqgghvdQ%2Fbo7beFBJrwOvi4%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&s=PUBLISH&sc=cover&biz_tag=tt_video"
         },
         {
           "platform": "TikTok",
           "type": "TikTok",
-          "title": "The state of Taroko Gorge in 2026 So after the earthquake in 2024, Taroko Gorge is still under repair. It\u2019s really quite a shame, because it all seems so beautiful, all the possibl",
+          "title": "The state of Taroko Gorge in 2026 So after the earthquake in 2024, Taroko Gorge is still under repair. It’s really quite a shame, because it all seems so beautiful, all the possibl",
           "url": "https://www.tiktok.com/@denniscatanaa/video/7667315411645402375",
           "permalinkId": "7667315411645402375",
           "date": "2026-08-26",
@@ -1393,7 +1486,8 @@
           "comments": 2,
           "shares": 6,
           "saves": 1,
-          "thumbnail": "assets/thumbs/tiktok/7667315411645402375.jpg"
+          "duration": "42",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oUDzoQVgGOen0CTHAIeVAFGyvLUoeUDEjMQrkP~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=8e5e69b7&x-expires=1792504800&x-signature=qe7defLTI3Fa6GSrr2Lw0%2Frrk%2Bk%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
         },
         {
           "platform": "YouTube",
@@ -1407,6 +1501,7 @@
           "comments": 2,
           "shares": 0,
           "saves": 0,
+          "duration": "43",
           "thumbnail": "https://i.ytimg.com/vi/dTiuyGOAt6I/hqdefault.jpg"
         },
         {
@@ -1421,6 +1516,7 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "180",
           "thumbnail": "https://i.ytimg.com/vi/y68PKpthyU8/hqdefault.jpg"
         },
         {
@@ -1435,6 +1531,7 @@
           "comments": 1,
           "shares": 0,
           "saves": 0,
+          "duration": "42",
           "thumbnail": "https://i.ytimg.com/vi/MHch6jna73Y/hqdefault.jpg"
         },
         {
@@ -1449,6 +1546,7 @@
           "comments": 1,
           "shares": 0,
           "saves": 0,
+          "duration": "163",
           "thumbnail": "https://i.ytimg.com/vi/X8MwDdVNxBk/hqdefault.jpg"
         },
         {
@@ -1463,6 +1561,7 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "75",
           "thumbnail": "https://i.ytimg.com/vi/FHTOa14lN6g/hqdefault.jpg"
         },
         {
@@ -1477,6 +1576,7 @@
           "comments": 1,
           "shares": 0,
           "saves": 0,
+          "duration": "179",
           "thumbnail": "https://i.ytimg.com/vi/v9nu5PMgsmk/hqdefault.jpg"
         },
         {
@@ -1491,7 +1591,806 @@
           "comments": 0,
           "shares": 0,
           "saves": 0,
+          "duration": "175",
           "thumbnail": "https://i.ytimg.com/vi/8tJZZos7ILI/hqdefault.jpg"
+        }
+      ]
+    },
+    {
+      "id": "free-cruise",
+      "name": "How much does a free cruise really cost?",
+      "sheetProject": "Free Cruise",
+      "tag": "Series",
+      "summary": "Norwegian Getaway challenge with my sister — day-by-day cost breakdown across Instagram, TikTok, and YouTube.",
+      "totals": {
+        "posts": 48,
+        "views": 4169480,
+        "likes": 131650,
+        "comments": 695,
+        "shares": 660,
+        "saves": 2687,
+        "by_platform": {
+          "Instagram": {
+            "posts": 15,
+            "views": 1865227,
+            "likes": 22817
+          },
+          "TikTok": {
+            "posts": 13,
+            "views": 2289038,
+            "likes": 108454
+          },
+          "YouTube": {
+            "posts": 20,
+            "views": 15215,
+            "likes": 379
+          }
+        }
+      },
+      "peak": {
+        "platform": "TikTok",
+        "type": "TikTok",
+        "title": "Day 2 of how much a ‘Free’ Crusie really costs. #norwegiancruise ",
+        "url": "https://www.tiktok.com/@denniscatanaa/video/7453517001898675461",
+        "permalinkId": "7453517001898675461",
+        "date": "2024-12-28",
+        "views": 1071989,
+        "likes": 51415,
+        "comments": 162,
+        "shares": 190,
+        "saves": 1310,
+        "reach": null,
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/ocC5ANCcwiBA2EDAEniB6jfxIA32QYWhBJwelR~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=e7e4d2eb&x-expires=1792504800&x-signature=xtg2XUvYgGksLxgB7hM0%2FXMkMuA%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+      },
+      "peaksByPlatform": {
+        "Instagram": {
+          "platform": "Instagram",
+          "title": "Day 6 of how much a ‘Free’ cruise really costs Part 2  ..At port, with 3 cruises and apparently about 25,000 people, the lines were HUGE. royal Caribbean folks had like 30 min befo",
+          "url": "https://www.instagram.com/reel/DEZn8OszIHl/",
+          "date": "2025-01-04",
+          "views": 842707,
+          "likes": 15176,
+          "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.75761-15/472462893_18474862321018991_8121432817682525832_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1aJqsa0LFbwQ7kNvwFPqiy_&_nc_oc=AdpZEqlwwl2A3x6Qr8QS8IOl4Xq-ptYUgu9zGm1QUW_TpgsAphXscq-RbPEgZVQxlGY&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=zrBGsM-Mhipb-aYxr7lcJQ&_nc_tpa=Q5bMBQK68_jQkOgS8jGqVmmaEvUceGSm9KuC8gUvv6UPTFMcxHa9zT2X6XUAnOq0_Nu5kB8NOgyT1ycJ&oh=00_AQMo_uSTuWtVAatT8FDkNokf2LT3Thh4jHshCGY_8-SAoQ&oe=6ADC1668"
+        },
+        "TikTok": {
+          "platform": "TikTok",
+          "title": "Day 2 of how much a ‘Free’ Crusie really costs. #norwegiancruise ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7453517001898675461",
+          "date": "2024-12-28",
+          "views": 1071989,
+          "likes": 51415,
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/ocC5ANCcwiBA2EDAEniB6jfxIA32QYWhBJwelR~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=e7e4d2eb&x-expires=1792504800&x-signature=xtg2XUvYgGksLxgB7hM0%2FXMkMuA%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        "YouTube": {
+          "platform": "YouTube",
+          "title": "Day 6 of how much a ‘Free’ Cruise really costs #norwegiancruiseline #cozumel",
+          "url": "https://www.youtube.com/watch?v=iBj_K-ZasNw",
+          "date": "2025-01-04",
+          "views": 3587,
+          "likes": 99,
+          "thumbnail": "https://i.ytimg.com/vi/iBj_K-ZasNw/hqdefault.jpg"
+        }
+      },
+      "posts": [
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "So I won a free cruise..but, what will it actually costs?  My sister and I set sail on a Caribbean Cruise Vacation with the Norwegian Getaway, and set out to find out how much it’l",
+          "url": "https://www.instagram.com/reel/DD8ZvgVP1Xk/",
+          "permalinkId": "DD8ZvgVP1Xk",
+          "date": "2024-12-24",
+          "views": 497115,
+          "likes": 3857,
+          "comments": 28,
+          "shares": 69,
+          "saves": 247,
+          "duration": null,
+          "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.75761-15/471642259_18472640356018991_4443512717983574364_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Pjwd6Rgrzy8Q7kNvwEwwKi2&_nc_oc=AdrrqfzMpjdCA4NhYVqthwvw9KnvfoAMLkU-EcGTMaci6BUlYjSFFbTNtMfTEJwg0RM&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQLqacFLScY1h1u20nY1Vq3yA53Bp7b8T0tAKvSfpU22VSe5QXJgy6-RlObnRiOmkyDKIJj3qkmB&oh=00_AQN930QNmAbqRs7NM0JwFcK1PnUglx7VXh4be3Kx33JA1A&oe=6ADBE02E"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Day 2 of how much a ‘free’ cruise really costs. We’re out at sea for the day, and quite quickly found out there are way more paid things to do than not. so we spent the day reading",
+          "url": "https://www.instagram.com/reel/DEBC6kOvmxr/",
+          "permalinkId": "DEBC6kOvmxr",
+          "date": "2024-12-25",
+          "views": 56623,
+          "likes": 440,
+          "comments": 5,
+          "shares": 4,
+          "saves": 12,
+          "duration": null,
+          "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.75761-15/470914352_18473026270018991_373865529999929880_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=KBx3_l3-xDAQ7kNvwFpamkm&_nc_oc=AdoV-9986DF0Kw4Jm6nMol5S17oe1TMGYbDnQsyykPumVfxGVDoTiRg0kfa4vfTeXgA&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQJCcwemwIr63hWl-6zNJfsMJubctTv-F2mHCczx-Z8R60sa2sbJYq3SHsmEpRfzRVnB-1QEyLoR&oh=00_AQMDtG2pS3UukLTEd68RLQSjLya32hw4067ZrkTEDCFFyg&oe=6ADBE6C6"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "I mean. There’s free coffee too, but, just let us be extra ok, thaaaaanks 💁‍♂️  #norwegiancruiseline #coffee #aeropress",
+          "url": "https://www.instagram.com/reel/DEAmTuuvjPL/",
+          "permalinkId": "DEAmTuuvjPL",
+          "date": "2024-12-25",
+          "views": 33713,
+          "likes": 164,
+          "comments": 8,
+          "shares": 4,
+          "saves": 8,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.75761-15/471662442_18472982074018991_8314191859532863254_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=XC6GTwLqoKsQ7kNvwHtYp88&_nc_oc=AdplHFY_ljOKh6yxvfBGvkz6c4Z5JYPOToaN7vVDplMQMX_nEgFKh4N-5aA8G2fk3HA&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQJjmEarVGf4GJLIvhHErQX_gcAaYGCARVT1vvizN9Y0KcM05JWxDyhYeLxri_XYNrv8MMq4z14k&oh=00_AQOY4fUNzJLJQB5GhsOhmcaGPyobqspK1lWLrMXFKphjIQ&oe=6ADBFD5D"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "We won a Free Cruise. What will it cost?",
+          "url": "https://www.youtube.com/watch?v=YifeVX5Dp9U",
+          "permalinkId": "YifeVX5Dp9U",
+          "date": "2024-12-26",
+          "views": 115,
+          "likes": 1,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "926",
+          "thumbnail": "https://i9.ytimg.com/vi/YifeVX5Dp9U/hqdefault.jpg?sqp=CLzQ2NYG&rs=AOn4CLBfVMRe-UbvsxJuIhZbHSbOEJ5cZA"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Day 1 of how much a ‘Free’ Cruise really costs. ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7453099168568052997",
+          "permalinkId": "7453099168568052997",
+          "date": "2024-12-27",
+          "views": 718621,
+          "likes": 37863,
+          "comments": 182,
+          "shares": 173,
+          "saves": 659,
+          "duration": "88",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/og3AyEIXHVGAjegSRZARLNdCevSADOQIdeIzm0~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=360f0fd3&x-expires=1792504800&x-signature=d0CJUIWtuNMc65ijKn2vqyGp%2BIE%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Day 3 of how much a ‘Free’ Cruise really costs.  First stop: Costa Maya, Mexico! Thank god cuz it starting to feel like we’re running out of things to do on the boat.  Now, when se",
+          "url": "https://www.instagram.com/reel/DEFQGwGuqnT/",
+          "permalinkId": "DEFQGwGuqnT",
+          "date": "2024-12-27",
+          "views": 30499,
+          "likes": 395,
+          "comments": 6,
+          "shares": 6,
+          "saves": 14,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.75761-15/471616658_18473331379018991_471201155104386757_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=f_qjiVdfKo8Q7kNvwEycFrs&_nc_oc=AdpVLccv05WG3zFLlTkE4CIPPtaXtElkeUDmAms-uJuk1lGS42Zgh-IhxNyXUGEYGoU&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQJ76B1WnGUkmkTFKyAS-AxQByUjYLC2EMpKVCfRW0YxD51o40DMh2OYsFWs7ybnwXUtbCO0qZiT&oh=00_AQMEShX_Tx8kymOFywJmI-3fMR1aJCprRE9pmH7KJJnscw&oe=6ADBE0C8"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Why do they look like they’re spinning in slow motion?   #costamaya #mexico",
+          "url": "https://www.instagram.com/reel/DEGCVqzyAXK/",
+          "permalinkId": "DEGCVqzyAXK",
+          "date": "2024-12-27",
+          "views": 21337,
+          "likes": 71,
+          "comments": 0,
+          "shares": 1,
+          "saves": 1,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.75761-15/470913105_18473399806018991_3437075882402181016_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=lTkPHvrl05cQ7kNvwEIujx6&_nc_oc=AdoRwlGzHe1UPKzxUvY57sFBilVBcnp336GLX1zOzMSp9BUSnBFvAb9dx_bol4PiKs4&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQKkZio6iQWKZhMeA7VlDHRKn3zhR-WSH0HM3WWzWho8500szIuoZBWIiBQdVr71CcVI_dxijlJg&oh=00_AQMNMSMQCFFFoagn_qDsz-yMUh22tP6X4bTtv0ijRru_Fw&oe=6ADBE37F"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Day 1 of how much a ‘Free’ Cruise really costs #cruise #norwegiancruiseline #travelvlog",
+          "url": "https://www.youtube.com/watch?v=nVrMQNnBisk",
+          "permalinkId": "nVrMQNnBisk",
+          "date": "2024-12-27",
+          "views": 2765,
+          "likes": 84,
+          "comments": 3,
+          "shares": 0,
+          "saves": 0,
+          "duration": "88",
+          "thumbnail": "https://i.ytimg.com/vi/nVrMQNnBisk/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Day 2 of how much a ‘Free’ cruise really costs. #cruise #norwegiancruiseline #travelvlog",
+          "url": "https://www.youtube.com/watch?v=UDcKjsfjbtg",
+          "permalinkId": "UDcKjsfjbtg",
+          "date": "2024-12-27",
+          "views": 282,
+          "likes": 1,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "89",
+          "thumbnail": "https://i.ytimg.com/vi/UDcKjsfjbtg/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Trying to figure out what to do at sea for $0",
+          "url": "https://www.youtube.com/watch?v=7dkhjFX25fo",
+          "permalinkId": "7dkhjFX25fo",
+          "date": "2024-12-27",
+          "views": 23,
+          "likes": 1,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "507",
+          "thumbnail": "https://i9.ytimg.com/vi/7dkhjFX25fo/hqdefault.jpg?sqp=CLzQ2NYG&rs=AOn4CLBEFf79Ij7TsGsxzM6bpXL0df_Y6g"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Day 2 of how much a ‘Free’ Crusie really costs. #norwegiancruise ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7453517001898675461",
+          "permalinkId": "7453517001898675461",
+          "date": "2024-12-28",
+          "views": 1071989,
+          "likes": 51415,
+          "comments": 162,
+          "shares": 190,
+          "saves": 1310,
+          "duration": "88",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/ocC5ANCcwiBA2EDAEniB6jfxIA32QYWhBJwelR~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=e7e4d2eb&x-expires=1792504800&x-signature=xtg2XUvYgGksLxgB7hM0%2FXMkMuA%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Day 3 continued of how much a ‘Free’ Cruise really costs.   We spent some time in Mahahual, walking almost the whole length. Grabbed some coconuts, Delicious tacos at @nohochkaybea",
+          "url": "https://www.instagram.com/reel/DEITIh3PFZu/",
+          "permalinkId": "DEITIh3PFZu",
+          "date": "2024-12-28",
+          "views": 31609,
+          "likes": 357,
+          "comments": 2,
+          "shares": 2,
+          "saves": 11,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.75761-15/471806881_18473561848018991_3262877589544191015_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Ai9Q2Uc-l3AQ7kNvwEaogta&_nc_oc=Ado7Wx2TtQ6-qawAMJYd8x3cqAijHXybxF2q4_cjUSK7grH_pC7FQ8p2cHLp3vRsE4Q&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQKXYTUsDjdhTRmqY32Oa-aghlopnaztJNY-n-7WqqnhKXK9EhAXKlJ-7FLXmdmV9lI7ae7SBE3Y&oh=00_AQN_H4x_gqBZ9G9Pik3zdkU4LbVxxwa_VIHIrCYcaMjUcw&oe=6ADC0E1B"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Short",
+          "title": "When the good coffee on a cruise costs $$ #norwegiancruiseline #travelvlog",
+          "url": "https://www.youtube.com/watch?v=m7LVtMuePiU",
+          "permalinkId": "m7LVtMuePiU",
+          "date": "2024-12-28",
+          "views": 720,
+          "likes": 9,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "30",
+          "thumbnail": "https://i.ytimg.com/vi/m7LVtMuePiU/hqdefault.jpg"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Day 3 of how much a ‘Free’ Cruise really costs #norwegiancruise #costamaya ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7453979290040896774",
+          "permalinkId": "7453979290040896774",
+          "date": "2024-12-29",
+          "views": 52974,
+          "likes": 2333,
+          "comments": 28,
+          "shares": 13,
+          "saves": 33,
+          "duration": "89",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/oUzuAx1iOZELuArzAqAII22infB4KNCEgB5Bov~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=c4ddd2be&x-expires=1792504800&x-signature=NIlw6oHHSqhhY9DFgRoB6f6C4i4%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&s=PUBLISH&sc=cover&biz_tag=tt_video"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Keeping this free cruise as free as possible #norwegiancruise #coffee @seforacatana ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7453838409212185861",
+          "permalinkId": "7453838409212185861",
+          "date": "2024-12-29",
+          "views": 30057,
+          "likes": 316,
+          "comments": 6,
+          "shares": 6,
+          "saves": 7,
+          "duration": "24",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/o4sJJAc7iAR5KF7AgfAfDMfRI4i4QEeAiZeAIY~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=47991ef9&x-expires=1792504800&x-signature=Fx418aXUf7uL159pLnf6olqVAS8%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "No better feeling than hearing salsa music in the wild, so you drop everything, and dance!   #salsadance #costamaya",
+          "url": "https://www.instagram.com/reel/DEJFPR7Si5w/",
+          "permalinkId": "DEJFPR7Si5w",
+          "date": "2024-12-29",
+          "views": 18743,
+          "likes": 162,
+          "comments": 3,
+          "shares": 2,
+          "saves": 1,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.75761-15/471649327_18473621869018991_2445777585776943463_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=BeHuedRp7ZkQ7kNvwF92vH-&_nc_oc=Adq0zNHzvGVrUxeQquhfFp05HLk01QSO9TUBp_29X3e3RKJGB7F8MFs2cqeQE4WWTCA&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQKU5SXLd6nMhuSorLC9-fwniLcNDugOIf64T2C3lrtWM6tZXg84Wl6NlHub_cSuHWhaqdxtlRTR&oh=00_AQP9yrfj9vbRGtqJ6aOYvayaJ7XtTSaDS-Ddr6cuOiTzNg&oe=6ADBF826"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Notice the details around you.  6 hours In Costa Maya & Mahahual, Mexico  #norwegiancruiseline #costamaya #mahahual",
+          "url": "https://www.instagram.com/reel/DEKoQLVO0zj/",
+          "permalinkId": "DEKoQLVO0zj",
+          "date": "2024-12-29",
+          "views": 17058,
+          "likes": 60,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.75761-15/471793428_18473731756018991_8529929710754835530_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=C3P2CQJL2KEQ7kNvwGAo3DC&_nc_oc=AdrfVcJBPWpKbCPEWiQ-jbpNs5ZQgecJ4RhBfP7wlsqVPwDGTkRk70gKrvL85O8HFoc&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQL2-Efl4YitY-u5Bvp-92jTQxlX1ska85QQQiYUJd5OOJJgqSqYgJEWlxq4zwSnx3UFcJIqGhXu&oh=00_AQMq0kU_TeAHYveh2PS3wYMEh9wjt0jWkNSB91eKNthX9Q&oe=6ADBEF9D"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Day 3 of how much a ‘Free’ Cruise really costs (part 2) #norwegiancruise #costamaya ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7454203714539212037",
+          "permalinkId": "7454203714539212037",
+          "date": "2024-12-30",
+          "views": 58759,
+          "likes": 2451,
+          "comments": 27,
+          "shares": 15,
+          "saves": 42,
+          "duration": "89",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/oAAAiUBQIp3im0EBM67iEEJPBBmAT0KAtZywA~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=ef2b1fb2&x-expires=1792504800&x-signature=5r28SG6R8iZNnlCPJ573cXxvKNI%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Day 4 of how much a ‘Free’ Cruise really costs.   We made it to Belize..or rather, a Norwegian Cruise Line owned sliver of land off the coast of Belize. weathers a bit drab, and ev",
+          "url": "https://www.instagram.com/reel/DELvCvfvrdR/",
+          "permalinkId": "DELvCvfvrdR",
+          "date": "2024-12-30",
+          "views": 40319,
+          "likes": 426,
+          "comments": 4,
+          "shares": 3,
+          "saves": 14,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.75761-15/471886053_18473824144018991_3616842550434281609_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=pzerot8xeEwQ7kNvwHdYpfK&_nc_oc=AdpEvQGB0axaGIrTZbOXbbIyFGxtZ6pO3AnkVk3PvzVo_ahOxU24-CMZb-TPLrIgvvA&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQIWahN_t6hj6bjdEkWeWySJ1kuw3OHVAyx8hz_WlN4DCm-OxtcEKV3F3m4ZcvEIXeTVLKcthwo1&oh=00_AQNY8ho9WyPfSLuSGaO1HBw7Dwff16abKEiKBgOKRHd--A&oe=6ADC09DD"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Day 3 of how much a ‘Free’ Cruise really costs (Part 2) #norwegiancruiseline #travelvlog",
+          "url": "https://www.youtube.com/watch?v=2yiDFqsnOno",
+          "permalinkId": "2yiDFqsnOno",
+          "date": "2024-12-30",
+          "views": 1325,
+          "likes": 36,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "90",
+          "thumbnail": "https://i.ytimg.com/vi/2yiDFqsnOno/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Day 3 of how much a ‘Free’ Cruise really costs (part 2) #norwegiancruiseline #travelvlog",
+          "url": "https://www.youtube.com/watch?v=wDrGGzt1d6A",
+          "permalinkId": "wDrGGzt1d6A",
+          "date": "2024-12-30",
+          "views": 712,
+          "likes": 12,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "89",
+          "thumbnail": "https://i.ytimg.com/vi/wDrGGzt1d6A/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Enjoying Costa Maya, Mexico for next to nothing.",
+          "url": "https://www.youtube.com/watch?v=sk850Wp7vCE",
+          "permalinkId": "sk850Wp7vCE",
+          "date": "2024-12-30",
+          "views": 21,
+          "likes": 0,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "1610",
+          "thumbnail": "https://i9.ytimg.com/vi/sk850Wp7vCE/hqdefault.jpg?sqp=CLzQ2NYG&rs=AOn4CLD4EYw1SDYc4Mu96pszPHkxvLAs0Q"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Day 4 of how much a ‘Free’ Cruise really costs #norwegiancruise #belize ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7454665842412817670",
+          "permalinkId": "7454665842412817670",
+          "date": "2024-12-31",
+          "views": 106105,
+          "likes": 4293,
+          "comments": 57,
+          "shares": 30,
+          "saves": 59,
+          "duration": "88",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/oMlI1uiBNABUn0ExCpWMSZoEBfA5igAqXBAziI~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=9e4d3b6c&x-expires=1792504800&x-signature=qeiK4woN%2F7mYL6zhH2az%2FnaiImw%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&s=PUBLISH&sc=cover&biz_tag=tt_video"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Costa Maya in 20 seconds. #norwegiancruise #costamaya ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7454359958814084358",
+          "permalinkId": "7454359958814084358",
+          "date": "2024-12-31",
+          "views": 13679,
+          "likes": 173,
+          "comments": 2,
+          "shares": 2,
+          "saves": 3,
+          "duration": "20",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/oc6NOAAZnBB9QxOzCfFEQTDqEcARmqAIEKf0Jz~tplv-tiktokx-dmt-logoccm:300:400:tos-useast2a-v-0068/o4LI5uiBUAWRlzEOCGp0NMoEBfAPigAFuBAzZI.heic?dr=8595&refresh_token=f2c5cfe5&x-expires=1792504800&x-signature=s9hGyTHv9ckTvCZTjV5MLQv4Vps%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Drop everything and DANCE #costamaya #salsadance @seforacatana ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7454583129257381125",
+          "permalinkId": "7454583129257381125",
+          "date": "2024-12-31",
+          "views": 12772,
+          "likes": 98,
+          "comments": 3,
+          "shares": 2,
+          "saves": 2,
+          "duration": "58",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/oM8PDcAn8AQGqfHjAMM7eeRIfQKIXiA0HfAgME~tplv-tiktokx-dmt-logoccm:300:400:tos-useast2a-v-0068/oQIgnEAMaQJOiflKI7fARfGCLBeAAReAHggPAY.heic?dr=8595&refresh_token=05f21380&x-expires=1792504800&x-signature=%2Fg5W1Jb29rcR47nKGufT3cZTALk%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Short",
+          "title": "When you hear salsa music in the wild, drop everything and dance! #salsadancing #costamaya",
+          "url": "https://www.youtube.com/watch?v=ZdBHVzDdWPQ",
+          "permalinkId": "ZdBHVzDdWPQ",
+          "date": "2024-12-31",
+          "views": 473,
+          "likes": 10,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "59",
+          "thumbnail": "https://i.ytimg.com/vi/ZdBHVzDdWPQ/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Short",
+          "title": "Costa Maya in 20 seconds #costamaya #norwegiancruiseline",
+          "url": "https://www.youtube.com/watch?v=yR562q7IuZ8",
+          "permalinkId": "yR562q7IuZ8",
+          "date": "2024-12-31",
+          "views": 455,
+          "likes": 11,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "21",
+          "thumbnail": "https://i.ytimg.com/vi/yR562q7IuZ8/hqdefault.jpg"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Day 5 of how much a ‘Free’ Cruise really costs #norwegiancruise #roatanhonduras🌴🇭🇳 ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7454977026714373381",
+          "permalinkId": "7454977026714373381",
+          "date": "2025-01-01",
+          "views": 94931,
+          "likes": 3807,
+          "comments": 35,
+          "shares": 17,
+          "saves": 48,
+          "duration": "85",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/oMvOfemkAAAWAjl9gQLU6kSGve4hq1sICIEHVg~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=57808f27&x-expires=1792504800&x-signature=H7gNyekwRbyx4DIWiu4DdOZyHRA%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Day 5 of how much a ‘Free’ Cruise really costs.  Definitely need some more money to enjoy Roatan, Honduras (but like, a normal amount) not enough to do for cheap near the port! app",
+          "url": "https://www.instagram.com/reel/DESXeq8uqfv/",
+          "permalinkId": "DESXeq8uqfv",
+          "date": "2025-01-01",
+          "views": 39265,
+          "likes": 287,
+          "comments": 3,
+          "shares": 5,
+          "saves": 7,
+          "duration": null,
+          "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.75761-15/472212689_18474403720018991_4079141100282018655_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=iglWagh5s3YQ7kNvwHDrAgA&_nc_oc=Adqkw88nox9qpTNQuJyVYBO-yKvxSwqY1ccVmnKJYmg-FQ_eu6fo-RXHwndw54nBAWY&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQI7Y9ItABaIyHNz7xfMb6zQoAuOFRciQd4px6aRIFWGlhCu0Bh0GP6ixMrpySNO5IiNJ3D71bIy&oh=00_AQNSO77HOiMjILtySesCNz-NLXzB3cZaa1eZQPTXSbnptw&oe=6ADC1109"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Day 4 of what a ‘Free’ Cruise really costs. #norwegiancruiseline #belize #travelvlog",
+          "url": "https://www.youtube.com/watch?v=XxTujjPBFTY",
+          "permalinkId": "XxTujjPBFTY",
+          "date": "2025-01-01",
+          "views": 581,
+          "likes": 13,
+          "comments": 2,
+          "shares": 0,
+          "saves": 0,
+          "duration": "89",
+          "thumbnail": "https://i.ytimg.com/vi/XxTujjPBFTY/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "This island in Belize is fake.",
+          "url": "https://www.youtube.com/watch?v=G0ovwCudNhM",
+          "permalinkId": "G0ovwCudNhM",
+          "date": "2025-01-01",
+          "views": 27,
+          "likes": 1,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "904",
+          "thumbnail": "https://i9.ytimg.com/vi/G0ovwCudNhM/hqdefault.jpg?sqp=CLzQ2NYG&rs=AOn4CLDZmz4dIZ2DgHEHuGqAZslKiAWUmA"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "I can’t be the only one that noticed this. #cruise #phenomenon",
+          "url": "https://www.instagram.com/reel/DET7DsixAs0/",
+          "permalinkId": "DET7DsixAs0",
+          "date": "2025-01-02",
+          "views": 21662,
+          "likes": 151,
+          "comments": 3,
+          "shares": 6,
+          "saves": 2,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.75761-15/472074068_18474538180018991_2768044950136372156_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=orpHDN_jKTIQ7kNvwHMVbLB&_nc_oc=AdrAm7ZAKBixfSQGsk8XAdcTw6yKzPZC2nvdbLGtRrYbvzvK6Kn5BV_6mv116vhHKPM&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQJBCNoqftvQmIri1ScVXC-K5-UL8JVEIK2Zem-W9Vyqdp2EgzlV17Wze2Sv2DWGyHZF2rhjXSuW&oh=00_AQPStWvhuNwoi9au78vLrN8uFV_e5cQnSZkDxGvKExgwhQ&oe=6ADBF759"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "This can’t just be me. ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7455184904158989573",
+          "permalinkId": "7455184904158989573",
+          "date": "2025-01-02",
+          "views": 10826,
+          "likes": 237,
+          "comments": 8,
+          "shares": 2,
+          "saves": 1,
+          "duration": "46",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/ocuIzAADzBgkxau2B3iioGBaCuAILVAIE5flEx~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=1ad9a5bf&x-expires=1792504800&x-signature=RlJlIFu7GlINrlMQ5ZKx%2BTxYBlU%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Day 5 of how much a ‘Free’ Cruise really costs. #norwegiancruiseline #travel",
+          "url": "https://www.youtube.com/watch?v=vGOtH3--l1w",
+          "permalinkId": "vGOtH3--l1w",
+          "date": "2025-01-02",
+          "views": 1386,
+          "likes": 39,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "85",
+          "thumbnail": "https://i.ytimg.com/vi/vGOtH3--l1w/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Short",
+          "title": "It can’t just be me.. #norwegiancruiseline #travel",
+          "url": "https://www.youtube.com/watch?v=4SdkmZRNF4c",
+          "permalinkId": "4SdkmZRNF4c",
+          "date": "2025-01-02",
+          "views": 87,
+          "likes": 5,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "46",
+          "thumbnail": "https://i.ytimg.com/vi/4SdkmZRNF4c/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Keeping a free cruise free..is tough.",
+          "url": "https://www.youtube.com/watch?v=J6fhKiSFVV0",
+          "permalinkId": "J6fhKiSFVV0",
+          "date": "2025-01-02",
+          "views": 22,
+          "likes": 0,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "610",
+          "thumbnail": "https://i9.ytimg.com/vi/J6fhKiSFVV0/hqdefault.jpg?sqp=CLzQ2NYG&rs=AOn4CLAOACUoKFNmkcMWSrBEhP_WX8hptQ"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Day 6 of how much a ‘Free’ cruise really costs   Last stop before turning back to New Orleans Port, we arrive in Cozumel Mexico! once again, skips the ‘enter through the gift shop’",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7455817419509042438",
+          "permalinkId": "7455817419509042438",
+          "date": "2025-01-03",
+          "views": 71735,
+          "likes": 3303,
+          "comments": 28,
+          "shares": 17,
+          "saves": 44,
+          "duration": "144",
+          "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/ogBvEE5IBQCEDBYxoifnAMAACitPAzgCF4vIs4~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=b7ea134c&x-expires=1792504800&x-signature=JkxhHXOsEzGS1ZhL%2FcEPmCwtkLY%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Day 6 of how much a ‘Free’ Cruise really costs.  Last stop before turning back to New Orleans Port, we arrive in Cozumel Mexico! once again, skips the ‘enter through the gift shop’",
+          "url": "https://www.instagram.com/reel/DEYR8gUT6sd/",
+          "permalinkId": "DEYR8gUT6sd",
+          "date": "2025-01-03",
+          "views": 40979,
+          "likes": 253,
+          "comments": 3,
+          "shares": 2,
+          "saves": 12,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.75761-15/472441705_18474861073018991_1054129307097202025_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ubp-4t2HB_AQ7kNvwFmV0gL&_nc_oc=AdpG6S4My0U1IiDdBOdVPFaM-O4ygtALmBCVjn-yep9oBpCKIem42dG36T-Dmkho3jY&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQKDthYWD0P6SDDoD3PPgrl7eApaZT6HQZZrz3Xc4ZZ7CVUxBCViQTcSx1gz6BXPBV2oPHiNfsFy&oh=00_AQPU9R6lyXLX9JFB1nfjxq_QAaNRIahobSxkVDgSrHu5_Q&oe=6ADC1203"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Can we sneak this on board? - Free Cruise: Cozumel, Mexico",
+          "url": "https://www.youtube.com/watch?v=Nu6L2nugHK0",
+          "permalinkId": "Nu6L2nugHK0",
+          "date": "2025-01-03",
+          "views": 27,
+          "likes": 0,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "1215",
+          "thumbnail": "https://i9.ytimg.com/vi/Nu6L2nugHK0/hqdefault.jpg?sqp=CLzQ2NYG&rs=AOn4CLDxDY96Tz0V61hfrWzf6IoX4rDb3g"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Day 6 of how much a ‘Free’ cruise really costs Part 2  ..At port, with 3 cruises and apparently about 25,000 people, the lines were HUGE. royal Caribbean folks had like 30 min befo",
+          "url": "https://www.instagram.com/reel/DEZn8OszIHl/",
+          "permalinkId": "DEZn8OszIHl",
+          "date": "2025-01-04",
+          "views": 842707,
+          "likes": 15176,
+          "comments": 40,
+          "shares": 62,
+          "saves": 86,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-1.cdninstagram.com/v/t51.75761-15/472462893_18474862321018991_8121432817682525832_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1aJqsa0LFbwQ7kNvwFPqiy_&_nc_oc=AdpZEqlwwl2A3x6Qr8QS8IOl4Xq-ptYUgu9zGm1QUW_TpgsAphXscq-RbPEgZVQxlGY&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=zrBGsM-Mhipb-aYxr7lcJQ&_nc_tpa=Q5bMBQK68_jQkOgS8jGqVmmaEvUceGSm9KuC8gUvv6UPTFMcxHa9zT2X6XUAnOq0_Nu5kB8NOgyT1ycJ&oh=00_AQMo_uSTuWtVAatT8FDkNokf2LT3Thh4jHshCGY_8-SAoQ&oe=6ADC1668"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "Safe right?",
+          "url": "https://www.instagram.com/reel/DEYhOoqScm_/",
+          "permalinkId": "DEYhOoqScm_",
+          "date": "2025-01-04",
+          "views": 31602,
+          "likes": 31,
+          "comments": 0,
+          "shares": 0,
+          "saves": 1,
+          "duration": null,
+          "thumbnail": "https://scontent-iad3-2.cdninstagram.com/v/t51.75761-15/472458279_18474877111018991_4963476912496964077_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=itnTb2TgUrsQ7kNvwFNVoGT&_nc_oc=AdqJQ8XMFkZVUxOe3vaJLovcquOZKaDGnJ3xAzncORfVDmncybUos5eqPbv-ijjHAa0&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=pgQft-YU7K50xv8eFIkFxA&_nc_tpa=Q5bMBQJPEug8o9jETThMskklTR3V9rL_QxxlCjnJHv2qficLlzG7h2z-c_4XQK7gwqZW-MrRYgo2-V96&oh=00_AQNL0DEx6V4aVOh2cQth5EluoXI2wVPqQuBN28qUtmiCVw&oe=6ADBE5D8"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Day 6 of how much a ‘Free’ Cruise really costs #norwegiancruiseline #cozumel",
+          "url": "https://www.youtube.com/watch?v=iBj_K-ZasNw",
+          "permalinkId": "iBj_K-ZasNw",
+          "date": "2025-01-04",
+          "views": 3587,
+          "likes": 99,
+          "comments": 1,
+          "shares": 0,
+          "saves": 0,
+          "duration": "144",
+          "thumbnail": "https://i.ytimg.com/vi/iBj_K-ZasNw/hqdefault.jpg"
+        },
+        {
+          "platform": "Instagram",
+          "type": "Reel",
+          "title": "This is day 7 of how much a ‘Free’ Cruise really costs.  Last full day before heading to port, we’re in a routine now, and besides the daily activities, buffet, gym, dancing, shows",
+          "url": "https://www.instagram.com/reel/DEeot-fRNeJ/",
+          "permalinkId": "DEeot-fRNeJ",
+          "date": "2025-01-06",
+          "views": 141996,
+          "likes": 987,
+          "comments": 6,
+          "shares": 10,
+          "saves": 23,
+          "duration": null,
+          "thumbnail": "https://scontent-iad6-1.cdninstagram.com/v/t51.75761-15/472548206_18475323085018991_6408260144554146797_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=HBjjeLJ-sAQQ7kNvwEFzPU-&_nc_oc=Adpp9FqDlJcz7QEXrpO1KIdJdUNoxCsTzfEe8j1NJ7zlNY-HK5ngs4gP7rQMESRk18A&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=zrBGsM-Mhipb-aYxr7lcJQ&_nc_tpa=Q5bMBQKKUr_DNu4x5pb0f4qyvdhQy3DoU22C372shmH_ah0wvJPhsk4-_Q8J5BHYOMqQgOafhFZZ-Pfn&oh=00_AQP8LjJvlxpJuLjRDCWvuNK8Gh5B8d8PZ_X3HNpdEI6cKg&oe=6ADBECC2"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "This is day 7 of how much a ‘Free’ Cruise really costs.  Last full day before heading to port, we’re in a routine now, and besides the daily activities, buffet, gym, dancing, shows",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7456730737144794373",
+          "permalinkId": "7456730737144794373",
+          "date": "2025-01-06",
+          "views": 29003,
+          "likes": 1346,
+          "comments": 15,
+          "shares": 8,
+          "saves": 22,
+          "duration": "76",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/oMDEKYUAEiZ0BmiIhUB8AISuoQIAiwvpBA7v3~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=de3b3ae2&x-expires=1792504800&x-signature=QAeDgpteD3I9J%2BWCahjqimvDQhs%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "TikTok",
+          "type": "TikTok",
+          "title": "Final Cost of how much a ‘Free’ Cruise really costs #norwegiancruise ",
+          "url": "https://www.tiktok.com/@denniscatanaa/video/7457390978081639686",
+          "permalinkId": "7457390978081639686",
+          "date": "2025-01-08",
+          "views": 17587,
+          "likes": 819,
+          "comments": 24,
+          "shares": 9,
+          "saves": 18,
+          "duration": "83",
+          "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/o0IA7dKRTIfA7AGZ2LQADFEFmeDyveA2wfUdZk~tplv-tiktokx-cropcenter-q:300:400:q70.heic?dr=8596&refresh_token=57ad8578&x-expires=1792504800&x-signature=UXuZAvefg9F5bzn86oiViVgVeFQ%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=132edbea&idc=useast8&biz_tag=tt_video&s=PUBLISH&sc=cover"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "So THIS is how much a ‘Free’ cruise really costs..",
+          "url": "https://www.youtube.com/watch?v=6NeITqeNYvw",
+          "permalinkId": "6NeITqeNYvw",
+          "date": "2025-01-08",
+          "views": 35,
+          "likes": 0,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "514",
+          "thumbnail": "https://i9.ytimg.com/vi/6NeITqeNYvw/hqdefault.jpg?sqp=CLzQ2NYG&rs=AOn4CLANz4lzbe8Cn8-328T_yClI_E-uBA"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "Day 7 of how much a ‘Free’ Cruise really costs #norwegiancruiseline",
+          "url": "https://www.youtube.com/watch?v=VxucveHXp-w",
+          "permalinkId": "VxucveHXp-w",
+          "date": "2025-01-11",
+          "views": 1920,
+          "likes": 40,
+          "comments": 0,
+          "shares": 0,
+          "saves": 0,
+          "duration": "76",
+          "thumbnail": "https://i.ytimg.com/vi/VxucveHXp-w/hqdefault.jpg"
+        },
+        {
+          "platform": "YouTube",
+          "type": "Long",
+          "title": "This is how much a ‘Free’ cruise REALLY costs us. #norwegiancruiseline #travel",
+          "url": "https://www.youtube.com/watch?v=g-725uayHWQ",
+          "permalinkId": "g-725uayHWQ",
+          "date": "2025-01-11",
+          "views": 652,
+          "likes": 17,
+          "comments": 1,
+          "shares": 0,
+          "saves": 0,
+          "duration": "84",
+          "thumbnail": "https://i.ytimg.com/vi/g-725uayHWQ/hqdefault.jpg"
         }
       ]
     }

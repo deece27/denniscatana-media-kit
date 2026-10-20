@@ -122,6 +122,7 @@ def main() -> None:
                         "comments": int(r["_Comments"]),
                         "shares": int(r["_Shares"]),
                         "saves": int(r["_Saves"]),
+                        "duration": (r.get("Duration") or "").strip() or None,
                         "thumbnail": r.get("Thumbnail URL") or "",
                     }
                     for r in feed
@@ -129,15 +130,28 @@ def main() -> None:
             }
         )
 
-    # Prefer Cycling Taiwan tag polish
+    # Display polish (keep sheetProject as the Sheet tag)
     for p in projects:
         if p["sheetProject"] == "Cycling Taiwan":
+            p["id"] = "cycling-taiwan"
+            p["name"] = "Cycling 1,000km Around Taiwan"
             p["tag"] = "Flagship"
             p["summary"] = (
-                "1000km around Taiwan — day-by-day across Instagram, TikTok, and YouTube. "
-                "Peak post and full feed from the All Social Posts sheet."
+                "A short form video series showcasing the beauty and challenge of "
+                "cycling around the entire island of Taiwan. (April 2026)"
             )
-            p["id"] = "cycling-taiwan"
+        elif p["sheetProject"] == "Free Cruise":
+            p["id"] = "free-cruise"
+            p["name"] = "How much does a free cruise really cost?"
+            p["tag"] = "Series"
+            p["summary"] = (
+                "Norwegian Getaway challenge with my sister — day-by-day cost breakdown "
+                "across Instagram, TikTok, and YouTube."
+            )
+
+    # Flagship first, then other series by name
+    rank = {"Flagship": 0, "Series": 1, "Project": 2}
+    projects.sort(key=lambda p: (rank.get(p.get("tag"), 9), p.get("name") or ""))
 
     payload = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
