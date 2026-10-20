@@ -1,0 +1,342 @@
+{
+  "standouts": [
+    {
+      "id": "coconuts",
+      "title": "Fake coconuts \u2014 Tengchong",
+      "views_label": "9.3M",
+      "sub": "7.1M reach \u00b7 39.1K likes \u00b7 IG Reel",
+      "url": "https://www.instagram.com/reel/DRJKm_OD0fl/",
+      "platform": "Instagram",
+      "hero_thumb": "assets/thumbs/kit-DRJKm_OD0fl.jpg",
+      "hero": {
+        "views": "9.3M",
+        "likes": "39.1K",
+        "shares": "2K",
+        "saves": "2.1K",
+        "reach": "7.1M"
+      },
+      "project": {
+        "title": "Tengchong / China culture",
+        "posts": 21,
+        "views": "9.4M",
+        "likes": "40K",
+        "shares": "2.1K",
+        "saves": "2.1K",
+        "by_platform": {
+          "Instagram": {
+            "posts": 10,
+            "views": "9.4M",
+            "likes": "39K"
+          },
+          "TikTok": {
+            "posts": 7,
+            "views": "6.5K",
+            "likes": "129"
+          },
+          "YouTube": {
+            "posts": 4,
+            "views": "1.2K",
+            "likes": "33"
+          }
+        },
+        "gallery": [
+          {
+            "thumb": "assets/thumbs/kit-DRJKm_OD0fl.jpg",
+            "views": "9.4M",
+            "url": "https://www.instagram.com/reel/DRJKm_OD0fl/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DQ5_6Quj8tB.jpg",
+            "views": "4.3K",
+            "url": "https://www.instagram.com/reel/DQ5_6Quj8tB/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DT_rKB8DkjN.jpg",
+            "views": "4.1K",
+            "url": "https://www.instagram.com/reel/DT_rKB8DkjN/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-7599531095067086101.jpg",
+            "views": "3.7K",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7599531095067086101",
+            "platform": "TikTok"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DSUQ4FjD4WU.jpg",
+            "views": "2.8K",
+            "url": "https://www.instagram.com/reel/DSUQ4FjD4WU/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DRO5XEHkW7T.jpg",
+            "views": "1.8K",
+            "url": "https://www.instagram.com/reel/DRO5XEHkW7T/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DRL0dlgDkFW.jpg",
+            "views": "1.7K",
+            "url": "https://www.instagram.com/reel/DRL0dlgDkFW/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DRmre1fDx31.jpg",
+            "views": "1.6K",
+            "url": "https://www.instagram.com/reel/DRmre1fDx31/",
+            "platform": "Instagram"
+          }
+        ],
+        "sheet_tagged": false
+      }
+    },
+    {
+      "id": "folding",
+      "title": "Folding-phone snack \u2014 China",
+      "views_label": "2.9M",
+      "sub": "55.2K likes \u00b7 8.4K shares \u00b7 4.1K saves",
+      "url": "https://www.instagram.com/reel/DTNx5XjCJKg/",
+      "platform": "Instagram",
+      "hero_thumb": "assets/thumbs/kit-DTNx5XjCJKg.jpg",
+      "hero": {
+        "views": "2.9M",
+        "likes": "55K",
+        "shares": "8.5K",
+        "saves": "4.2K",
+        "reach": "2.2M"
+      },
+      "project": {
+        "title": "Folding-phone snack",
+        "posts": 3,
+        "views": "2.9M",
+        "likes": "55K",
+        "shares": "8.5K",
+        "saves": "4.2K",
+        "by_platform": {
+          "Instagram": {
+            "posts": 1,
+            "views": "2.9M",
+            "likes": "55K"
+          },
+          "TikTok": {
+            "posts": 1,
+            "views": "9.2K",
+            "likes": "88"
+          },
+          "YouTube": {
+            "posts": 1,
+            "views": "4.4K",
+            "likes": "31"
+          }
+        },
+        "gallery": [
+          {
+            "thumb": "assets/thumbs/kit-DTNx5XjCJKg.jpg",
+            "views": "2.9M",
+            "url": "https://www.instagram.com/reel/DTNx5XjCJKg/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-7593023125919485204.jpg",
+            "views": "9.2K",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7593023125919485204",
+            "platform": "TikTok"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-pvlIkpldoP4.jpg",
+            "views": "4.4K",
+            "url": "https://www.youtube.com/watch?v=pvlIkpldoP4",
+            "platform": "YouTube"
+          }
+        ],
+        "sheet_tagged": false
+      }
+    },
+    {
+      "id": "japan",
+      "title": "Japan Day 6 \u2014 TikTok",
+      "views_label": "1.46M",
+      "sub": "Strongest TikTok single in the owned library",
+      "url": "https://www.tiktok.com/@denniscatanaa/video/7573737879113895186",
+      "platform": "TikTok",
+      "hero_thumb": "assets/thumbs/kit-japan-tt.jpg",
+      "hero": {
+        "views": "1.5M",
+        "likes": "120K",
+        "shares": "121K",
+        "saves": "7.3K",
+        "reach": null
+      },
+      "project": {
+        "title": "Travelling Japan",
+        "posts": 78,
+        "views": "1.5M",
+        "likes": "121K",
+        "shares": "122K",
+        "saves": "7.4K",
+        "by_platform": {
+          "Instagram": {
+            "posts": 28,
+            "views": "26K",
+            "likes": "476"
+          },
+          "YouTube": {
+            "posts": 26,
+            "views": "25K",
+            "likes": "366"
+          },
+          "TikTok": {
+            "posts": 24,
+            "views": "1.5M",
+            "likes": "121K"
+          }
+        },
+        "gallery": [
+          {
+            "thumb": "assets/thumbs/kit-japan-tt.jpg",
+            "views": "1.5M",
+            "url": "https://www.tiktok.com/@denniscatanaa/video/7573737879113895186",
+            "platform": "TikTok"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-XokvfiYbHMs.jpg",
+            "views": "5.9K",
+            "url": "https://www.youtube.com/watch?v=XokvfiYbHMs",
+            "platform": "YouTube"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DKJPtlutZkX.jpg",
+            "views": "3.4K",
+            "url": "https://www.instagram.com/reel/DKJPtlutZkX/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-kluiQdrX-_Q.jpg",
+            "views": "2.7K",
+            "url": "https://www.youtube.com/watch?v=kluiQdrX-_Q",
+            "platform": "YouTube"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DKAhVkAvijX.jpg",
+            "views": "2.4K",
+            "url": "https://www.instagram.com/reel/DKAhVkAvijX/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DLCo7AyOdYx.jpg",
+            "views": "2.3K",
+            "url": "https://www.instagram.com/reel/DLCo7AyOdYx/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DJ53e7CuWWG.jpg",
+            "views": "2K",
+            "url": "https://www.instagram.com/reel/DJ53e7CuWWG/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-6O0HTwWfLfc.jpg",
+            "views": "1.9K",
+            "url": "https://www.youtube.com/watch?v=6O0HTwWfLfc",
+            "platform": "YouTube"
+          }
+        ],
+        "sheet_tagged": false
+      }
+    },
+    {
+      "id": "taiwan",
+      "title": "Cycling Taiwan \u2014 Day 1",
+      "views_label": "178K",
+      "sub": "Peak of the 100-post Taiwan project \u00b7 11.7K likes",
+      "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
+      "platform": "Instagram",
+      "hero_thumb": "assets/thumbs/kit-DXCOs9-j3Ye.jpg",
+      "hero": {
+        "views": "178K",
+        "likes": "12K",
+        "shares": "5.2K",
+        "saves": "2.4K",
+        "reach": "145K"
+      },
+      "project": {
+        "title": "Cycling Taiwan",
+        "posts": 101,
+        "views": "617K",
+        "likes": "27K",
+        "shares": "8.2K",
+        "saves": "3.5K",
+        "by_platform": {
+          "TikTok": {
+            "posts": 29,
+            "views": "33K",
+            "likes": "1.4K"
+          },
+          "Instagram": {
+            "posts": 36,
+            "views": "560K",
+            "likes": "25K"
+          },
+          "YouTube": {
+            "posts": 36,
+            "views": "24K",
+            "likes": "449"
+          }
+        },
+        "gallery": [
+          {
+            "thumb": "assets/thumbs/kit-DXCOs9-j3Ye.jpg",
+            "views": "178K",
+            "url": "https://www.instagram.com/reel/DXCOs9-j3Ye/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DX6thiaBGV_.jpg",
+            "views": "65K",
+            "url": "https://www.instagram.com/reel/DX6thiaBGV_/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DaZS0GGIxkK.jpg",
+            "views": "61K",
+            "url": "https://www.instagram.com/reel/DaZS0GGIxkK/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DXRt9hIj871.jpg",
+            "views": "44K",
+            "url": "https://www.instagram.com/reel/DXRt9hIj871/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DXqs51_iNja.jpg",
+            "views": "25K",
+            "url": "https://www.instagram.com/reel/DXqs51_iNja/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DXFFg9Yj4j2.jpg",
+            "views": "20K",
+            "url": "https://www.instagram.com/reel/DXFFg9Yj4j2/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DXLeIFmD_6U.jpg",
+            "views": "15K",
+            "url": "https://www.instagram.com/reel/DXLeIFmD_6U/",
+            "platform": "Instagram"
+          },
+          {
+            "thumb": "assets/thumbs/kit-g-DXVac6Fj1eW.jpg",
+            "views": "15K",
+            "url": "https://www.instagram.com/reel/DXVac6Fj1eW/",
+            "platform": "Instagram"
+          }
+        ],
+        "sheet_tagged": true
+      }
+    }
+  ]
+}
