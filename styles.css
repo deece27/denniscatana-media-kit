@@ -1308,7 +1308,7 @@ h3 {
   border: none;
   color: #fff;
   box-shadow: none;
-  overflow: hidden;
+  overflow: visible;
   padding: 0;
 }
 
@@ -1316,8 +1316,13 @@ h3 {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
-  border-radius: inherit;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+}
+
+.phone-top-bar.is-views-only {
+  justify-content: flex-end;
 }
 
 .plat-logo-badge.youtube {
@@ -1474,25 +1479,7 @@ h3 {
 }
 
 .matrix-plat-gutter {
-  width: 44px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 0.55rem;
-  gap: 0;
-  position: sticky;
-  left: 0;
-  z-index: 2;
-  background: linear-gradient(90deg, #f2ede4 70%, rgba(242, 237, 228, 0));
-  padding-right: 0.25rem;
-}
-
-.project-block .matrix-plat-gutter .plat-logo-badge {
-  width: 1.7rem;
-  height: 1.7rem;
-  border-radius: 0.45rem;
+  display: none;
 }
 
 .matrix-plat-name {

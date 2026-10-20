@@ -408,16 +408,26 @@
         return slot.byPlatform.Instagram || slot.best || null;
       }
 
-      function renderPhoneCard(post, extraClass = "") {
+      /** Browsers can't paint TikTok CDN .heic covers — prefer local JPEG or proxy. */
+      function thumbSrc(url) {
+        if (!url) return "";
+        if (/\.heic(\?|$)/i.test(url)) {
+          return `https://wsrv.nl/?url=${encodeURIComponent(url)}&output=jpg`;
+        }
+        return url;
+      }
+
+      function renderPhoneCard(post, extraClass = "", { showPlat = true } = {}) {
         if (!post) return "";
         const m = meta(post.platform);
-        const thumb = post.thumbnail
-          ? `<img src="${escapeHtml(post.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
+        const src = thumbSrc(post.thumbnail);
+        const thumb = src
+          ? `<img src="${escapeHtml(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`
           : "";
         const extra = extraClass ? ` ${extraClass}` : "";
 
         if (isIgFeedPost(post)) {
-          const metric =
+          const metricChip =
             post.views && Number(post.views) > 0
               ? `<span class="views-chip solid" title="Views"><span class="views-icon">${m.viewsIcon}</span>${fmt(post.views)}</span>`
               : `<span class="views-chip solid" title="Likes">${fmt(post.likes)} likes</span>`;
@@ -430,7 +440,7 @@
               <div class="feed-post-header">
                 <img class="feed-post-avatar" src="${IG_AVATAR}" alt="" width="32" height="32" />
                 <span class="feed-post-user">${IG_HANDLE}</span>
-                ${metric}
+                ${metricChip}
               </div>
               <div class="feed-post-media">
                 ${thumb}
@@ -445,13 +455,16 @@
 
         // YT Shorts (and day beats) stay tall 9:16; only landscape films go wide
         const isWide = isLandscapeFilm(post);
+        const platBadge = showPlat
+          ? `<span class="plat-logo-badge ${m.key}" title="${escapeHtml(post.platform)}">${m.logo}</span>`
+          : "";
         return `
           <a class="phone-card ${m.className}${isWide ? " is-wide-film" : ""}${extra}" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
             <div class="phone-screen ${isWide ? "is-wide-screen" : "is-tall-screen"}">
               ${thumb}
               <div class="phone-screen-scrim"></div>
-              <div class="phone-top-bar">
-                <span class="plat-logo-badge ${m.key}" title="${escapeHtml(post.platform)}">${m.logo}</span>
+              <div class="phone-top-bar ${showPlat ? "" : "is-views-only"}">
+                ${platBadge}
                 <span class="views-chip" title="Views">
                   <span class="views-icon">${m.viewsIcon}</span>
                   ${fmt(post.views)}
@@ -510,9 +523,6 @@
         const m = meta(platform);
         return `
           <div class="matrix-plat-row" data-plat-row="${escapeHtml(m.key)}">
-            <div class="matrix-plat-gutter">
-              <span class="plat-logo-badge ${m.key}" title="${escapeHtml(platform)}">${m.logo}</span>
-            </div>
             ${slots
               .map((slot) => {
                 const filmClass = slot.isFilm ? " is-film-col" : "";
@@ -522,7 +532,7 @@
                 if (platform === "Instagram") {
                   const ig = slot.byPlatform.Instagram;
                   if (ig) {
-                    return `<div class="matrix-cell${filmClass}">${renderPhoneCard(ig)}</div>`;
+                    return `<div class="matrix-cell${filmClass}">${renderPhoneCard(ig, "", { showPlat: false })}</div>`;
                   }
                   // No IG — blank for Instagram-focused row (other platforms live in TT/YT rows)
                   return `<div class="matrix-cell${filmClass}">${renderBlankSlot()}</div>`;
@@ -530,7 +540,7 @@
                 if (!post) {
                   return `<div class="matrix-cell${filmClass}">${renderBlankSlot()}</div>`;
                 }
-                return `<div class="matrix-cell${filmClass}">${renderPhoneCard(post)}</div>`;
+                return `<div class="matrix-cell${filmClass}">${renderPhoneCard(post, "", { showPlat: false })}</div>`;
               })
               .join("")}
           </div>`;
