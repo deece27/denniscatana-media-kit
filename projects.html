@@ -177,9 +177,11 @@
       }
 
       /** Instagram is the master timeline: one column per IG post, chrono by IG date.
-       *  opts.includeFilms — when false, skip wide YT film columns (stats still from JSON totals). */
+       *  opts.includeFilms — when false, skip wide YT film columns (stats still from JSON totals).
+       *  opts.igMasterStrict — Free Cruise: Day-N description match only; kickoff → days → sides. */
       function buildSlots(posts, opts = {}) {
         const includeFilms = opts.includeFilms !== false;
+        const igMasterStrict = !!opts.igMasterStrict;
         const films = includeFilms ? posts.filter(isLandscapeFilm) : [];
         // Landscape YT films never occupy day columns (and may be omitted entirely).
         // Project totals in JSON still include them.
@@ -210,7 +212,7 @@
         });
 
         // Inject missing Day N columns when TT/YT have a series day IG never posted
-        // (e.g. Free Cruise Day 1) so alignment doesn't dump them into kickoff/side posts.
+        // (e.g. Free Cruise Day 1) so Day 1 TT/YT sit in their own column.
         const presentDays = new Set(
           slots.filter((s) => s.dayNum != null && s.dayNum >= 0).map((s) => s.dayNum)
         );
@@ -254,25 +256,44 @@
           let bestScore = 0;
           for (const slot of slots) {
             if (slot.byPlatform[post.platform]) continue; // prefer empty columns
+            // Strict mode: never park a non-day side clip onto a Day N column
+            if (igMasterStrict && slot.dayNum != null && slot.dayNum >= 0) continue;
             const ig = slot.byPlatform.Instagram;
-            const score = titleOverlap(post.title || "", ig.title || "");
+            if (!ig) continue;
+            const theme = cruiseThemeScore(post.title || "", ig.title || "");
+            const overlap = titleOverlap(post.title || "", ig.title || "");
+            // Strict: theme match or strong title overlap only (avoid “free cruise” false hits)
+            const score = igMasterStrict ? (theme >= 2 ? theme : overlap >= 5 ? overlap : 0) : Math.max(theme, overlap);
             if (score > bestScore) {
               bestScore = score;
               best = slot;
             }
           }
-          return bestScore >= 3 ? best : null;
+          const min = igMasterStrict ? 2 : 3;
+          return bestScore >= min ? best : null;
         }
 
-        function primaryDaySlot(n) {
+        function daySlotFor(post, info) {
+          const n = info.dayNum;
+          if (n == null) return null;
+          const emptyOn = (pred) =>
+            slots.find((s) => s.dayNum === n && pred(s) && !s.byPlatform[post.platform]);
+          if (info.primaryDay) {
+            return (
+              emptyOn((s) => s.primaryDay) ||
+              slots.find((s) => s.dayNum === n && s.primaryDay) ||
+              emptyOn(() => true)
+            );
+          }
+          // Part 2 / continued → secondary same-day column first
           return (
-            slots.find((s) => s.dayNum === n && s.primaryDay) ||
-            slots.find((s) => s.dayNum === n) ||
-            null
+            emptyOn((s) => !s.primaryDay) ||
+            emptyOn(() => true) ||
+            slots.find((s) => s.dayNum === n && !s.byPlatform[post.platform])
           );
         }
 
-        // Align TikTok / YouTube onto IG columns (ignore their own post dates)
+        // Align TikTok / YouTube onto IG columns by Day N / title — ignore upload dates
         for (const post of matrixPosts) {
           if (post.platform === "Instagram") continue;
           const info = classifyTitle(post.title || "");
@@ -290,78 +311,108 @@
                 : null) ||
               (info.label === "Prep" ? slots.find((s) => s.isPrep) : null);
           }
-          if (!slot && info.dayNum != null) {
-            const n = info.dayNum;
-            const primary = primaryDaySlot(n);
-            const emptySameDay = () =>
-              slots.find((s) => s.dayNum === n && !s.byPlatform[post.platform]);
-            if (primary && !primary.byPlatform[post.platform]) {
-              slot = primary;
-            } else if (info.primaryDay) {
-              // Second official beat (e.g. Day 13 part 2) — never overwrite primary
-              slot =
-                slots.find(
-                  (s) => s.dayNum === n && s.primaryDay && !s.byPlatform[post.platform]
-                ) || emptySameDay();
-            } else {
-              // Side post mentioning Day N → empty same-day column, not occupied primary
-              slot = emptySameDay();
-            }
-          }
+          if (!slot && info.dayNum != null) slot = daySlotFor(post, info);
           if (!slot) slot = bestTitleMatch(post);
           if (slot) put(slot, post);
         }
 
-        // Second pass: leftover TT/YT → empty columns by date proximity (not
-        // left→right), so side clips sit near the matching IG day instead of
-        // flooding kickoff / early empties.
-        function dateDist(a, b) {
-          if (!a || !b) return 1e9;
-          const ta = Date.parse(a);
-          const tb = Date.parse(b);
-          if (!Number.isFinite(ta) || !Number.isFinite(tb)) return 1e9;
-          return Math.abs(ta - tb);
-        }
-        for (const plat of ["TikTok", "YouTube"]) {
-          const peers = matrixPosts
-            .filter((p) => p.platform === plat)
-            .slice()
-            .sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
-          const used = new Set(
-            slots.map((s) => s.byPlatform[plat]?.url || s.byPlatform[plat]?.permalinkId).filter(Boolean)
-          );
-          const leftover = peers.filter((p) => !used.has(p.url || p.permalinkId));
-          for (const post of leftover) {
-            let best = null;
-            let bestScore = Infinity;
-            for (const slot of slots) {
-              if (slot.byPlatform[plat]) continue;
-              // Prefer empty non-primary side columns; still allow day gaps if needed
-              const dist = dateDist(post.date, slot.igDate || slot.byPlatform.Instagram?.date);
-              const bias = slot.primaryDay && !slot.byPlatform.Instagram ? 3 : slot.primaryDay ? 2 : 0;
-              const score = dist + bias * 86400000; // +1–3 days penalty
-              if (score < bestScore) {
-                bestScore = score;
-                best = slot;
-              }
-            }
-            if (best) put(best, post);
+        if (!igMasterStrict) {
+          // Taiwan / default: leftover TT/YT fill empties by date proximity
+          function dateDist(a, b) {
+            if (!a || !b) return 1e9;
+            const ta = Date.parse(a);
+            const tb = Date.parse(b);
+            if (!Number.isFinite(ta) || !Number.isFinite(tb)) return 1e9;
+            return Math.abs(ta - tb);
           }
-        }
+          for (const plat of ["TikTok", "YouTube"]) {
+            const peers = matrixPosts
+              .filter((p) => p.platform === plat)
+              .slice()
+              .sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
+            const used = new Set(
+              slots.map((s) => s.byPlatform[plat]?.url || s.byPlatform[plat]?.permalinkId).filter(Boolean)
+            );
+            const leftover = peers.filter((p) => !used.has(p.url || p.permalinkId));
+            for (const post of leftover) {
+              let best = null;
+              let bestScore = Infinity;
+              for (const slot of slots) {
+                if (slot.byPlatform[plat]) continue;
+                const dist = dateDist(post.date, slot.igDate || slot.byPlatform.Instagram?.date);
+                const bias = slot.primaryDay && !slot.byPlatform.Instagram ? 3 : slot.primaryDay ? 2 : 0;
+                const score = dist + bias * 86400000;
+                if (score < bestScore) {
+                  bestScore = score;
+                  best = slot;
+                }
+              }
+              if (best) put(best, post);
+            }
+          }
 
-        // Manual: slide the last day-column YT Short into the final day column
-        // (immediately left of Film) when that last day cell is empty.
-        if (slots.length) {
-          const lastDay = slots[slots.length - 1];
-          if (!lastDay.byPlatform.YouTube) {
-            for (let i = slots.length - 2; i >= 0; i--) {
-              if (slots[i].byPlatform.YouTube) {
-                lastDay.byPlatform.YouTube = slots[i].byPlatform.YouTube;
-                delete slots[i].byPlatform.YouTube;
-                break;
+          // Slide last day-column YT into final day when empty (Taiwan film strip neighbor)
+          if (slots.length) {
+            const lastDay = slots[slots.length - 1];
+            if (!lastDay.byPlatform.YouTube) {
+              for (let i = slots.length - 2; i >= 0; i--) {
+                if (slots[i].byPlatform.YouTube) {
+                  lastDay.byPlatform.YouTube = slots[i].byPlatform.YouTube;
+                  delete slots[i].byPlatform.YouTube;
+                  break;
+                }
               }
             }
           }
+        } else {
+          // Free Cruise: unmatched side TT/YT → trailing columns (don't jam kickoff/days)
+          for (const plat of ["TikTok", "YouTube"]) {
+            const peers = matrixPosts.filter((p) => p.platform === plat);
+            const used = new Set(
+              slots.map((s) => s.byPlatform[plat]?.url || s.byPlatform[plat]?.permalinkId).filter(Boolean)
+            );
+            for (const post of peers) {
+              if (used.has(post.url || post.permalinkId)) continue;
+              // Try pair onto an existing trailing side column with empty plat
+              const pair = slots.find(
+                (s) =>
+                  (s.dayNum == null || s.dayNum < 0) &&
+                  !s.byPlatform[plat] &&
+                  cruiseThemeScore(post.title || "", s.byPlatform.Instagram?.title || s.label || "") >= 2
+              );
+              if (pair) {
+                put(pair, post);
+                continue;
+              }
+              slots.push({
+                id: `side-${post.permalinkId || post.url}`,
+                label: shortLabel(post.title || "", "Clip"),
+                dayNum: null,
+                primaryDay: false,
+                isPrep: false,
+                isFilm: false,
+                igDate: post.date || "",
+                byPlatform: { [plat]: post },
+              });
+            }
+          }
+
+          // Column order: kickoff → Day 1…N (part2 after primary) → other IG sides → trailing clips
+          const kickoff = [];
+          const dayCols = [];
+          const sideCols = [];
+          for (const s of slots) {
+            const t = s.byPlatform.Instagram?.title || "";
+            if (s.dayNum != null && s.dayNum >= 0) dayCols.push(s);
+            else if (/won a free cruise|so i won/i.test(t)) kickoff.push(s);
+            else sideCols.push(s);
+          }
+          dayCols.sort(
+            (a, b) => a.dayNum - b.dayNum || Number(b.primaryDay) - Number(a.primaryDay)
+          );
+          sideCols.sort((a, b) => String(a.igDate || "").localeCompare(String(b.igDate || "")));
+          slots.length = 0;
+          slots.push(...kickoff, ...dayCols, ...sideCols);
         }
 
         // Landscape films after all day columns (far right)
@@ -383,6 +434,29 @@
           const best = candidates.sort((a, b) => (b.views || 0) - (a.views || 0))[0] || null;
           return { ...slot, best };
         });
+      }
+
+      /** Free Cruise side-clip themes (coffee / salsa / Costa Maya / “can’t just be me”). */
+      function cruiseThemeScore(a, b) {
+        const norm = (s) =>
+          String(s || "")
+            .toLowerCase()
+            .replace(/[\u2018\u2019\u02bc]/g, "'");
+        const x = norm(a);
+        const y = norm(b);
+        if (!x || !y) return 0;
+        const pairs = [
+          [/coffee/, /coffee/],
+          [/salsa|dance/, /salsa|dance/],
+          [/costa\s*maya/, /costa\s*maya/],
+          [/can'?t just be me|can'?t be the only one|noticed this/, /can'?t just be me|can'?t be the only one|noticed this/],
+          [/keeping (this )?free cruise|as free as possible/, /safe right|keeping/],
+          [/final cost/, /day\s*7|this is how much a .free. cruise really costs us/],
+        ];
+        for (const [pa, pb] of pairs) {
+          if (pa.test(x) && pb.test(y)) return 5;
+        }
+        return 0;
       }
 
       function classifyTitle(title) {
@@ -785,8 +859,11 @@
           const data = await res.json();
           PROJECTS = (data.projects || []).map((p) => ({
             ...p,
-            // Free Cruise: no horizontal long-form film strip (keep totals/stats).
-            _slots: buildSlots(p.posts || [], { includeFilms: p.id !== "free-cruise" }),
+            // Free Cruise: IG master day order, no wide films (totals/stats kept).
+            _slots: buildSlots(p.posts || [], {
+              includeFilms: p.id !== "free-cruise",
+              igMasterStrict: p.id === "free-cruise",
+            }),
           }));
           if (!PROJECTS.length) {
             mount.innerHTML = `<p class="section-intro">No projects assigned yet. Tag rows in the <a href="https://docs.google.com/spreadsheets/d/15jVzyTbLt2oeWIgLLqROgmPgZe76EAUDZGIQ3EGCmTM/edit" target="_blank" rel="noopener">All Social Posts sheet</a>.</p>`;
