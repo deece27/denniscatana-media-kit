@@ -312,9 +312,10 @@ h3 {
 }
 
 .kit-metric--lead .kit-metric__value {
-  font-size: clamp(1.35rem, 2.35vw, 1.95rem);
+  font-size: clamp(1.2rem, 2.1vw, 1.75rem);
   letter-spacing: -0.045em;
-  word-break: break-word;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .kit-metric__row {
