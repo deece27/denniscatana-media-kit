@@ -564,25 +564,38 @@
         const track = document.querySelector("[data-kit-reels-track]");
         if (!track) return;
 
-        function formatViews(n) {
+        function formatCount(n) {
           const v = Number(n) || 0;
           if (v >= 1e6) return (v / 1e6).toFixed(v >= 1e7 ? 0 : 1).replace(/\.0$/, "") + "M";
           if (v >= 1e3) return (v / 1e3).toFixed(v >= 1e4 ? 0 : 1).replace(/\.0$/, "") + "K";
-          return String(v);
+          return String(Math.round(v));
         }
+
+        const eyeIcon =
+          '<svg class="kit-hero__reel-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5c-5.5 0-9.5 4.5-10.8 6.2a1.2 1.2 0 0 0 0 1.6C2.5 14.5 6.5 19 12 19s9.5-4.5 10.8-6.2a1.2 1.2 0 0 0 0-1.6C21.5 9.5 17.5 5 12 5Zm0 11.2A4.2 4.2 0 1 1 12 7.8a4.2 4.2 0 0 1 0 8.4Zm0-2.4a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z"/></svg>';
+        const likeIcon =
+          '<svg class="kit-hero__reel-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.1 21.35 10.6 20C5.4 15.36 2 12.28 2 8.5A4.5 4.5 0 0 1 6.5 4 5.3 5.3 0 0 1 12 6.09 5.3 5.3 0 0 1 17.5 4 4.5 4.5 0 0 1 22 8.5c0 3.78-3.4 6.86-8.6 11.54l-1.3 1.31Z"/></svg>';
 
         function cardHtml(reel) {
           const src = reel.thumbnail || "";
-          const views = formatViews(reel.views);
-          const platform = reel.platform || "";
+          const views = formatCount(reel.views);
+          const likes = formatCount(reel.likes);
           return (
             '<div class="kit-hero__reel">' +
             '<img src="' +
             src +
             '" alt="" loading="lazy" decoding="async" />' +
             '<span class="kit-hero__reel-meta">' +
+            '<span class="kit-hero__reel-stat">' +
+            eyeIcon +
+            "<span>" +
             views +
-            (platform ? " · " + platform : "") +
+            "</span></span>" +
+            '<span class="kit-hero__reel-stat">' +
+            likeIcon +
+            "<span>" +
+            likes +
+            "</span></span>" +
             "</span></div>"
           );
         }
@@ -594,6 +607,10 @@
             if (!reels.length) return;
             const html = reels.map(cardHtml).join("");
             track.innerHTML = html + html;
+            // Restart marquee after content inject so the loop actually runs
+            track.style.animation = "none";
+            void track.offsetWidth;
+            track.style.removeProperty("animation");
             track.closest("[data-kit-reels]")?.classList.add("is-ready");
           })
           .catch(() => {});

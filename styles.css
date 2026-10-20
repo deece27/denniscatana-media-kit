@@ -506,7 +506,12 @@ h3 {
   width: max-content;
   height: 100%;
   padding-inline: 0.5rem;
-  animation: kit-reels-scroll 48s linear infinite;
+  will-change: transform;
+  animation: none;
+}
+
+.kit-hero__reels.is-ready .kit-hero__reels-track {
+  animation: kit-reels-scroll 28s linear infinite;
 }
 
 .kit-hero__reel {
@@ -542,17 +547,33 @@ h3 {
 
 .kit-hero__reel-meta {
   position: absolute;
-  left: 0.35rem;
-  right: 0.35rem;
-  bottom: 0.35rem;
-  font-size: 0.58rem;
+  left: 0.3rem;
+  right: 0.3rem;
+  bottom: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.35rem;
+  align-items: center;
+  font-size: 0.56rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: #f7f4ef;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1;
+}
+
+.kit-hero__reel-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  max-width: 100%;
+}
+
+.kit-hero__reel-ico {
+  width: 0.7rem;
+  height: 0.7rem;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
 }
 
 @keyframes kit-cover-drift {
