@@ -859,10 +859,10 @@
           const data = await res.json();
           PROJECTS = (data.projects || []).map((p) => ({
             ...p,
-            // Free Cruise: IG master day order, no wide films (totals/stats kept).
+            // Free Cruise / Japan: IG master day order. Free Cruise also hides wide films.
             _slots: buildSlots(p.posts || [], {
               includeFilms: p.id !== "free-cruise",
-              igMasterStrict: p.id === "free-cruise",
+              igMasterStrict: p.id === "free-cruise" || p.id === "japan",
             }),
           }));
           if (!PROJECTS.length) {

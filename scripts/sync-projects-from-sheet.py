@@ -34,11 +34,21 @@ def main() -> None:
     with args.csv.open(newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
 
+    # Sheet tags sometimes differ only by casing (e.g. TengChong / Tengchong).
+    CANONICAL = {
+        "tengchong": "Tengchong",
+        "hainan island": "Hainan Island",
+        "hiking in china": "Hiking in China",
+        "cycling taiwan": "Cycling Taiwan",
+        "free cruise": "Free Cruise",
+    }
+
     by_proj: dict[str, list] = defaultdict(list)
     for r in rows:
         proj = (r.get("Project") or "").strip()
         if proj.lower() in SKIP:
             continue
+        proj = CANONICAL.get(proj.lower(), proj)
         by_proj[proj].append(r)
 
     projects = []
@@ -147,6 +157,46 @@ def main() -> None:
             p["summary"] = (
                 "Norwegian Getaway challenge with my sister — day-by-day cost breakdown "
                 "across Instagram, TikTok, and YouTube."
+            )
+        elif p["sheetProject"] == "Japan":
+            p["id"] = "japan"
+            p["name"] = "Travelling Japan"
+            p["tag"] = "Series"
+            p["summary"] = (
+                "A day-by-day short-form series across Japan — temples, trails, and "
+                "the weird everyday moments in between. (June 2025)"
+            )
+        elif p["sheetProject"] == "Hainan Island":
+            p["id"] = "hainan-island"
+            p["name"] = "Hainan Island"
+            p["tag"] = "Series"
+            p["summary"] = (
+                "Exploring China’s “Hawaii” — Sanya beaches, Five-Finger Mountain, "
+                "Ocean Flower Island, and everything in between. (Feb 2026)"
+            )
+        elif p["sheetProject"] == "Hiking in China":
+            p["id"] = "hiking-in-china"
+            p["name"] = "What is hiking like in China?"
+            p["tag"] = "Series"
+            p["summary"] = (
+                "Station-to-station challenge hikes around Shenzhen — city trails, "
+                "red bridges, and a few questionable approvals. (Jan 2026)"
+            )
+        elif p["sheetProject"] == "Tengchong":
+            p["id"] = "tengchong"
+            p["name"] = "Tengchong, Yunnan"
+            p["tag"] = "Series"
+            p["summary"] = (
+                "National-holiday escape into Yunnan — hot springs, moss forests, "
+                "and the trails around Tengchong. (Nov–Dec 2025)"
+            )
+        elif p["sheetProject"] == "Tobermory":
+            p["id"] = "tobermory"
+            p["name"] = "Tobermory"
+            p["tag"] = "Series"
+            p["summary"] = (
+                "A long-weekend escape to Ontario’s Bruce Peninsula — The Grotto, "
+                "local runs, and a reminder you don’t need to fly far. (Sep 2026)"
             )
 
     # Flagship first, then other series by name
