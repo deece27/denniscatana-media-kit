@@ -88,16 +88,15 @@
         YouTube: { key: "youtube", short: "YT", className: "plat-youtube", logo: ICONS.youtube, viewsIcon: ICONS.eye },
       };
 
-      /** Per-post mark: IG / TT / YT Shorts / YT (long / horizontal). */
+      /** Per-post mark: IG / TT / YT Shorts (tall) / YT (horizontal long only). */
       function platMark(post) {
         if (!post) return { key: "ig", logo: ICONS.ig, title: "Instagram" };
         if (post.platform === "YouTube") {
-          const t = String(post.type || "").toLowerCase();
-          const url = String(post.url || "");
-          if (t === "short" || /youtube\.com\/shorts\//i.test(url)) {
-            return { key: "youtube-shorts", logo: ICONS.youtubeShorts, title: "YouTube Shorts" };
+          // Squiggly Shorts mark for all tall YT; classic play only on landscape films
+          if (isLandscapeFilm(post)) {
+            return { key: "youtube", logo: ICONS.youtube, title: "YouTube" };
           }
-          return { key: "youtube", logo: ICONS.youtube, title: "YouTube" };
+          return { key: "youtube-shorts", logo: ICONS.youtubeShorts, title: "YouTube Shorts" };
         }
         const m = meta(post.platform);
         return { key: m.key, logo: m.logo, title: post.platform };
@@ -458,11 +457,12 @@
               <div class="feed-post-header">
                 <img class="feed-post-avatar" src="${IG_AVATAR}" alt="" width="32" height="32" />
                 <span class="feed-post-user">${IG_HANDLE}</span>
-                <span class="feed-header-right">${metricChip}${platBadge}</span>
+                <span class="feed-header-right">${metricChip}</span>
               </div>
               <div class="feed-post-media">
                 ${thumb}
                 ${carousel}
+                <span class="feed-media-plat">${platBadge}</span>
               </div>
               <div class="feed-post-caption">
                 <span class="feed-post-user">${IG_HANDLE}</span>${escapeHtml(post.title || "")}
@@ -478,12 +478,12 @@
             <div class="phone-screen ${isWide ? "is-wide-screen" : "is-tall-screen"}">
               ${thumb}
               <div class="phone-screen-scrim"></div>
-              <div class="phone-top-bar is-plat-tr">
+              <div class="phone-top-bar is-plat-tl">
+                ${platBadge}
                 <span class="views-chip" title="Views">
                   <span class="views-icon">${m.viewsIcon}</span>
                   ${fmt(post.views)}
                 </span>
-                ${platBadge}
               </div>
               <div class="phone-bottom-bar">
                 <div class="clip-title" style="color:#fff">${escapeHtml(post.title || "")}</div>
