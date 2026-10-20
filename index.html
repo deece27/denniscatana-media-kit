@@ -70,44 +70,56 @@
               Download PDF
             </button>
           </div>
-          <p class="kit-hero__signal">
-            <span>21.1M</span> portfolio views · <span>9.3M</span> top Reel ·
-            <span>~7.5K</span> combined audience
-          </p>
         </div>
       </section>
 
-      <section id="proof" class="wrap kit-section">
-        <h2>Proof</h2>
+      <section id="numbers" class="wrap kit-section">
+        <h2>By the numbers</h2>
         <p class="section-intro">
-          Small following, large spikes. Portfolio totals from a full pull of owned
-          Instagram, TikTok, and YouTube posts.
+          Portfolio totals from a full pull of owned Instagram, TikTok, and YouTube
+          posts — spikes brands can actually measure.
         </p>
-        <div class="stats">
-          <div class="stat">
-            <div class="value">9.3M</div>
-            <div class="label">Top Reel views</div>
+        <div class="kit-metrics">
+          <div class="kit-metric kit-metric--lead">
+            <div class="kit-metric__value">
+              <span class="kit-metric__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 12S5.5 5.5 12 5.5 22.5 12 22.5 12 18.5 18.5 12 18.5 1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </span>
+              <span>21,000,000+</span>
+            </div>
+            <div class="kit-metric__label">across platforms (portfolio)</div>
           </div>
-          <div class="stat">
-            <div class="value">2.9M</div>
-            <div class="label">#2 viral Reel</div>
+
+          <button
+            type="button"
+            class="kit-metric kit-metric--action"
+            data-open-expand="coconuts"
+          >
+            <div class="kit-metric__value">
+              <span>9.3M</span>
+              <span class="kit-metric__ico kit-metric__ico--trail" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 12S5.5 5.5 12 5.5 22.5 12 22.5 12 18.5 18.5 12 18.5 1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </span>
+            </div>
+            <div class="kit-metric__label">Top Reel views · open post</div>
+          </button>
+
+          <div class="kit-metric">
+            <div class="kit-metric__value">
+              <span class="kit-metric__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.1 21.35 10.6 20C5.4 15.36 2 12.28 2 8.5A4.5 4.5 0 0 1 6.5 4 5.3 5.3 0 0 1 12 6.09 5.3 5.3 0 0 1 17.5 4 4.5 4.5 0 0 1 22 8.5c0 3.78-3.4 6.86-8.6 11.54l-1.3 1.31Z"/></svg>
+              </span>
+              <span>561,000+</span>
+            </div>
+            <div class="kit-metric__label">Total likes</div>
           </div>
-          <div class="stat">
-            <div class="value">21M+</div>
-            <div class="label">Post views (portfolio)</div>
-          </div>
-          <div class="stat">
-            <div class="value">7.5K</div>
-            <div class="label">Audience IG+TT+YT</div>
-          </div>
-          <div class="stat">
-            <div class="value">965</div>
-            <div class="label">Posts inventoried</div>
-          </div>
-          <div class="stat">
-            <div class="value">178K</div>
-            <div class="label">Taiwan peak Reel</div>
-          </div>
+
+          <a class="kit-metric kit-metric--action" href="projects.html">
+            <div class="kit-metric__value">
+              <span>6</span>
+            </div>
+            <div class="kit-metric__label">Trip projects · see page →</div>
+          </a>
         </div>
 
         <h3 class="kit-standout-heading">Standout work</h3>
@@ -116,7 +128,7 @@
         </p>
         <ul class="kit-expand-list">
 
-          <li class="kit-expand" data-kit-expand>
+          <li class="kit-expand" data-kit-expand id="kit-expand-coconuts" data-expand-id="coconuts">
             <button type="button" class="kit-expand__hit" aria-expanded="false">
               <span class="kit-expand__peek" aria-hidden="true">
                 <img src="assets/thumbs/kit-DRJKm_OD0fl.jpg" alt="" loading="lazy" />
@@ -556,6 +568,17 @@
 
           document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") cards.forEach(collapse);
+          });
+
+          document.querySelectorAll("[data-open-expand]").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              const id = btn.getAttribute("data-open-expand");
+              const card = document.querySelector(`[data-expand-id="${id}"]`);
+              if (!card) return;
+              expand(card);
+              card.scrollIntoView({ behavior: "smooth", block: "center" });
+            });
           });
         }
       })();
