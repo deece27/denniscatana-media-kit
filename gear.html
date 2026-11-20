@@ -46,7 +46,6 @@
       </button>
       <nav id="site-nav" class="nav no-print" aria-label="Primary">
         <a href="index.html">Media Kit</a>
-        <a href="projects.html">Projects</a>
         <a class="active" href="gear.html">Gear</a>
         <a href="about.html">About</a>
       </nav>
@@ -71,7 +70,7 @@
       </section>
 
       <div class="gear-toolbar">
-        <p class="gear-toolbar-hint" id="gear-view-hint">Pick a kit to open — same idea as Projects expand.</p>
+        <p class="gear-toolbar-hint" id="gear-view-hint">Pick a kit to open.</p>
         <div>
           <button type="button" class="filter-btn" id="toggle-affiliate-only">
             Showing: Full Honest Kit
@@ -99,7 +98,6 @@
       <p>
         © Dennis Catana ·
         <a href="index.html">Media Kit</a> ·
-        <a href="projects.html">Projects</a> ·
         <a href="gear.html">Gear</a> ·
         <a href="about.html">About</a>
         · Some links are affiliate / partner links that support future trips at no extra cost to you.
@@ -315,7 +313,7 @@
 
         document.getElementById("gear-view-hint").textContent = anyExpanded
           ? "Showing kit contents — collapse to return to all kits."
-          : "Pick a kit to open — same idea as Projects expand.";
+          : "Pick a kit to open.";
 
         if (!ids.length) {
           mount.innerHTML = `<p class="gear-empty">No gear matches these filters.</p>`;
